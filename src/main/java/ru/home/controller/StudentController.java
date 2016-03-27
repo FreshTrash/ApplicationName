@@ -10,7 +10,7 @@ import ru.home.repo.StudentRepo;
 import java.util.List;
 
 @RestController
-@RequestMapping("/api/region")
+@RequestMapping("/api/student")
 public class StudentController {
 
     @Autowired
