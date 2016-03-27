@@ -2,6 +2,7 @@ package ru.home.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 import ru.home.model.Region;
 import ru.home.model.University;
@@ -11,6 +12,7 @@ import ru.home.repo.UniversityRepo;
 import java.util.List;
 
 @RestController
+@RequestMapping("/api/univer")
 public class UniversityController {
 
     @Autowired
@@ -18,7 +20,7 @@ public class UniversityController {
     @Autowired
     private RegionRepo regionRepo;
 
-    @RequestMapping("/univer")
+    @RequestMapping(method = RequestMethod.GET)
     public List<University> findAll() {
         University university = new University();
         university.setName("SSTU");
