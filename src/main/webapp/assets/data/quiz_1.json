@@ -1,0 +1,27 @@
+{
+    "uid" : 1,
+    "name": "Wanna be a Front-end AngularJS Engineer",
+
+    "questions" : [
+        {
+            "question" : "Which is not an advantage of using a closure?",
+            "choices"  : [
+                "Prevent pollution of global scope",
+                "Encapsulation",
+                "Private properties and methods",
+                "Allow conditional use of ‘strict mode"
+            ],
+            "answer"   : "2"
+        },
+        {
+            "question" : "Given this:",
+            "details"  : "<img src='./assets/data/images/q1_1.jpg' /><p>Which message will be returned by injecting this service and executing 'myService.getMessage()'?</p>",
+            "choices"  : [
+                "Message one!",
+                "Message two!",
+                "Message three!"
+            ],
+            "answer"   : "2"
+        }
+    ]
+}

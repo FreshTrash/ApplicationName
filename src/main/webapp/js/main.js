@@ -1,53 +1,65 @@
-/**
- * AngularJS Tutorial 1
- * @author Nick Kaye <nick.c.kaye@gmail.com>
- */
+(function(define) {
+    "use strict";
 
-/**
- * Main AngularJS Web Application
- */
-var app = angular.module('tutorialWebApp', [
-  'ngRoute'
-]);
-
-/**
- * Configure the Routes
- */
-app.config(['$routeProvider', function ($routeProvider) {
-  $routeProvider
-    // Home
-    .when("/", {templateUrl: "partials/home.html", controller: "PageCtrl"})
-    // Pages
-    .when("/about", {templateUrl: "partials/about.html", controller: "PageCtrl"})
-    .when("/faq", {templateUrl: "partials/faq.html", controller: "PageCtrl"})
-    .when("/pricing", {templateUrl: "partials/pricing.html", controller: "PageCtrl"})
-    .when("/services", {templateUrl: "partials/services.html", controller: "PageCtrl"})
-    .when("/contact", {templateUrl: "partials/contact.html", controller: "PageCtrl"})
-    .when("/book", {templateUrl: "partials/book/book_template.html", controller: "PageCtrl"})
-    // Blog
-    .when("/test", {templateUrl: "partials/test/test.html", controller: "BlogCtrl"})
-    .when("/blog", {templateUrl: "partials/blog.html", controller: "BlogCtrl"})
-    .when("/blog/post", {templateUrl: "partials/blog_item.html", controller: "BlogCtrl"})
-    // else 404
-    .otherwise("/404", {templateUrl: "partials/404.html", controller: "PageCtrl"});
-}]);
-
-/**
- * Controls the Blog
- */
-app.controller('BlogCtrl', function (/* $scope, $location, $http */) {
-  console.log("Blog Controller reporting for duty.");
-});
-
-/**
- * Controls all other Pages
- */
-app.controller('PageCtrl', function (/* $scope, $location, $http */) {
-  console.log("Page Controller reporting for duty.");
+    define([
+            'utils/logger/ExternalLogger',
+            'utils/logger/LogDecorator',
+            'auth/AuthenticateModule',
+            './RouteManager.js',
+            'quiz/QuizModule'
+        ],
+        function($log, LogDecorator, AuthenticateModule, RouteManager, QuizModule) {
+            /**
+             * Specify main application dependencies...
+             * one of which is the Authentication module.
+             *
+             * @type {Array}
+             */
+            var app, appName = 'WebApp';
 
 
-  // Activates Tooltips for Social Links
-  $('.tooltip-social').tooltip({
-    selector: "a[data-toggle=tooltip]"
-  })
-});
+            $log = $log.getInstance("BOOTSTRAP");
+            $log.debug("Initializing {0}", [appName]);
+
+            /**
+             * Start the main application
+             *
+             * We manually start this bootstrap process; since ng:app is gone
+             * ( necessary to allow Loader splash pre-AngularJS activity to finish properly )
+             */
+            /**
+             * Controls the Blog
+             */
+
+            app = angular
+                .module(
+                    appName, ["ngRoute", "ngSanitize", AuthenticateModule, QuizModule]
+                )
+                .config(LogDecorator)
+                .config(RouteManager);
+
+
+
+            app.controller('BlogCtrl', function( /* $scope, $location, $http */ ) {
+                console.log("Blog Controller reporting for duty.");
+            });
+
+            /**
+             * Controls all other Pages
+             */
+            app.controller('PageCtrl', function( /* $scope, $location, $http */ ) {
+                console.log("Page Controller reporting for duty.");
+                /* // Activates Tooltips for Social Links
+                 $('.tooltip-social').tooltip({
+                   selector: "a[data-toggle=tooltip]"
+                 })*/
+            });
+
+
+            angular.bootstrap(document.getElementsByTagName("body")[0], [appName]);
+
+            return app;
+        }
+    );
+
+}(define));
