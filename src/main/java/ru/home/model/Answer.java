@@ -17,6 +17,7 @@ public class Answer {
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "answer_id")
     private Long id;
+
     @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "question_id")
     private Question question;

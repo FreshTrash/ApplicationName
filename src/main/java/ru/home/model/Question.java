@@ -28,7 +28,4 @@ public class Question {
     @Column(name = "date")
     private Date date;
 
-    @OneToMany
-    private List<Answer> answers;
-
 }

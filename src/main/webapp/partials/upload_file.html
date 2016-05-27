@@ -1,0 +1,11 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Upload file</title>
+</head>
+<body>
+<input type="file"  accept="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet, application/vnd.ms-excel"
+       ng-model="object.file" onchange="angular.element(this).scope().onFileSelect(this)"/>
+</body>
+</html>

@@ -1,9 +1,7 @@
 package ru.home.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import ru.home.model.Answer;
 import ru.home.model.Question;
 import ru.home.repo.AnswerRepo;
@@ -22,11 +20,12 @@ public class AnswerController {
 
     @RequestMapping(method = RequestMethod.GET)
     public List<Answer> findAll() {
-        Answer answer = new Answer();
-        answer.setAnswer("lol");
-        answer.setQuestion(questionRepo.findAll().get(0));
-        answerRepo.save(answer);
-
         return answerRepo.findAll();
+    }
+
+    @RequestMapping(method = RequestMethod.POST)
+    @ResponseBody
+    public List<Answer> save(@RequestBody List<Answer> answers) {
+        return answerRepo.save(answers);
     }
 }

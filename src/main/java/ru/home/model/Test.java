@@ -18,17 +18,21 @@ public class Test {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "test_id")
-    private int id;
+    private Long id;
     @Column(name = "name")
     private String name;
-    @Column(name = "author_id")
-    private int authorId;
-    @Column(name = "theme_id")
-    private int themeId;
+    @ManyToOne
+    @JoinColumn(name = "author_id")
+    private Teacher teacher;
+
+    @ManyToOne
+    @JoinColumn(name = "theme_id")
+    private Theme theme;
     @Column(name = "date")
     private Date date;
     @Column(name = "time_to_test")
     private int timeToTest;
 
-
+    @OneToMany
+    private List<Question> questions;
 }
