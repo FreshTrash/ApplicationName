@@ -1,3 +1,24 @@
+CREATE SEQUENCE public.question_question_id_seq NO MINVALUE NO MAXVALUE NO CYCLE;
+ALTER TABLE public.question ALTER COLUMN question_id SET DEFAULT nextval('public.question_question_id_seq');
+ALTER SEQUENCE public.question_question_id_seq OWNED BY public.question.question_id;
+
+CREATE SEQUENCE public.answer_answer_id_seq NO MINVALUE NO MAXVALUE NO CYCLE;
+ALTER TABLE public.answer ALTER COLUMN answer_id SET DEFAULT nextval('public.answer_answer_id_seq');
+ALTER SEQUENCE public.answer_answer_id_seq OWNED BY public.answer.answer_id;
+
+CREATE SEQUENCE public.teacher_teacher_id_seq NO MINVALUE NO MAXVALUE NO CYCLE;
+ALTER TABLE public.teacher ALTER COLUMN teacher_id SET DEFAULT nextval('public.teacher_teacher_id_seq');
+ALTER SEQUENCE public.teacher_teacher_id_seq OWNED BY public.teacher.teacher_id;
+
+CREATE SEQUENCE public.theme_theme_id_seq NO MINVALUE NO MAXVALUE NO CYCLE;
+ALTER TABLE public.theme ALTER COLUMN theme_id SET DEFAULT nextval('public.theme_theme_id_seq');
+ALTER SEQUENCE public.theme_theme_id_seq OWNED BY public.theme.theme_id;
+
+CREATE SEQUENCE public.test_test_id_seq NO MINVALUE NO MAXVALUE NO CYCLE;
+ALTER TABLE public.test ALTER COLUMN test_id SET DEFAULT nextval('public.test_test_id_seq');
+ALTER SEQUENCE public.test_test_id_seq OWNED BY public.test.test_id;
+
+
 insert into teacher(teacher_id, email, enabled, first_name, last_name, middle_name, password, type, user_name)  VALUES (1, 'teacher@m.do', true, 'teacher_name', 'teacher_lastname', 'teacher_middlename', 'password', 1, 'teacher1');
 insert into theme(theme_id, name) VALUES (1, 'Тема 1');
 insert into test(test_id, author_id, date, name, theme_id, time_to_test) VALUES (1, 1, now(), 'Тест1', 1, 30);
