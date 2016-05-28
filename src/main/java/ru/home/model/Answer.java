@@ -18,9 +18,8 @@ public class Answer {
     @Column(name = "answer_id")
     private Long id;
 
-    @ManyToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "question_id")
-    private Question question;
+    @Column(name = "question_id")
+    private Long questionId;
     @Column(name = "answer")
     private String answer;
     @Column(name = "correct")

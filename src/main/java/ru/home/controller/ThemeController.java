@@ -23,6 +23,12 @@ public class ThemeController {
         return themeRepo.findAll();
     }
 
+    @RequestMapping(value = "/{themeId}", method = RequestMethod.GET)
+    @ResponseBody
+    public Theme getById(@PathVariable("themeId") Long id) {
+        return themeRepo.findOne(id);
+    }
+
     @RequestMapping(method = RequestMethod.POST)
     @ResponseBody
     public List<Theme> save (@RequestBody List<Theme> themes) {

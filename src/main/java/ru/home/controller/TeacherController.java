@@ -1,6 +1,7 @@
 package ru.home.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
@@ -21,5 +22,9 @@ public class TeacherController {
     @RequestMapping(method = RequestMethod.GET)
     public List<Teacher> findAll() {
         return teacherRepo.findAll();
+    }
+    @RequestMapping(method = RequestMethod.POST)
+    public List<Teacher> save(@RequestBody List<Teacher> teachers) {
+        return teacherRepo.save(teachers);
     }
 }

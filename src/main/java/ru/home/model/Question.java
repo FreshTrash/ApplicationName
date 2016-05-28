@@ -28,4 +28,7 @@ public class Question {
     @Column(name = "date")
     private Date date;
 
+    @OneToMany(mappedBy = "questionId")
+    private List<Answer> answers;
+
 }
