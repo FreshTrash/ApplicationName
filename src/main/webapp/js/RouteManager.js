@@ -3,12 +3,12 @@
 
 
     define([
-            'utils/logger/ExternalLogger',
-            'quiz/controllers/TestController',
-            'quiz/controllers/ScoreController'
+            
+            './Controllers/ModelCtrl.js',
+           './Controllers/QuizzesController.js'
 
         ],
-        function($log, TestController, ScoreController, PageCtrl, BlogCtrl) {
+        function($log, PageCtrl, BlogCtrl, ModelCtrl) {
             /**
              * Route management constructor ()
              * - to be used in angular.config()
@@ -16,8 +16,7 @@
              * @see bootstrap.js
              */
             var RouteManager = function($routeProvider) {
-                $log.debug("Configuring $routeProvider...");
-
+               
                 $routeProvider
                     .when("/", { templateUrl: "partials/home.html", controller: "PageCtrl" })
                     // Pages
@@ -30,20 +29,15 @@
                     // Blog
                     .when("/blog", { templateUrl: "partials/blog.html", controller: "BlogCtrl" })
                     .when("/blog/post", { templateUrl: "partials/blog_item.html", controller: "BlogCtrl" })
-                    // else 404
+                    .when("/models", { templateUrl: "partials/models/model1.html", controller: "ModelCtrl" })
+                    
+                   .when('/quizzes', { templateUrl: "partials/quizzes.html", controller: "QuizzesController" })
 
-                .when('/quiz/:question?', {
-                        templateUrl: "./assets/views/quiz.tpl.html",
-                        controller: "TestController"
-                    })
-                    .when('/scoring', {
-                        templateUrl: "./assets/views/score.tpl.html",
-                        controller: "ScoreController"
-                    })
+
                     .otherwise("/404", { templateUrl: "partials/404.html", controller: "PageCtrl" });
             };
 
-            $log = $log.getInstance("RouteManager");
+            
 
             return ["$routeProvider", RouteManager];
         });

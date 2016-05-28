@@ -1,0 +1,245 @@
+<div class="container">
+    <div class="row">
+        <div class="col-lg-12">
+                        <h1 class="page-header">Расчет показателей надежности<br/>
+                <!-- <small>Резервированных и нерезервированных систем</small> -->
+            </h1>
+        </div>
+    </div>
+    <nav class="navbar navbar-default">
+        <ul class="nav navbar-nav navbar-nav-flex">
+            <li class="li-centred-text" ng-class="{ active: show_nonreserved}"><a href="" ng-click="show_law(0)">Нерезервированная<br/>система</a></li>
+            <li class="li-centred-text" ng-class="{ active: show_reserved_1}"><a href="" ng-click="show_law(1)">Постоянное<br/>резервирование</a></li>
+            <li class="li-centred-text" ng-class="{ active: show_reserved_2}"><a href="" ng-click="show_law(2)">Резервирование<br/>замещением</a></li>
+            <li class="li-centred-text" ng-class="{ active: show_reserved_3}"><a href="" ng-click="show_law(3)">Поэлементное<br/>резервирование</a></li>
+            <li class="li-centred-text" ng-class="{ active: show_reserved_4}"><a href="" ng-click="show_law(4)">Скользящее<br/>резервирование</a></li>
+            <li class="li-centred-text" ng-class="{ active: show_comparison}"><a href="" ng-click="show_law(5); comparison_calc()">Сравнение</a></li>
+        </ul>
+    </nav>
+    <div class="row">
+        <div class="col-lg-3">
+            <!-- <p class="p-header">Введите параметры системы</p> -->
+            <fieldset class="scheduler-border" ng-show="!show_comparison">
+                <legend class="scheduler-border">Общие параметры</legend>
+                <form name="form_total">
+                <button type="button" class="btn btn-default" ng-click="test_data()">Тестовые данные</button>
+                    <div class="form-group" ng-class="{ 'has-error': form_total.num_elem.$invalid && form_total.num_elem.$dirty}">
+                        <p class="input_header">Количество элементов, N</p>
+                        <input name="num_elem" type="number" ng-model="num_elem" ng-change="num_changed()" class="form-control input-size" placeholder="Введите количество элементов" min=1 max=15 required/>
+                        <div ng-messages="form_total.num_elem.$error" ng-if="form_total.num_elem.$dirty" class="my-messages">
+                            <p ng-message-exp="['min','max','number']">Введите значение между 1 и 15.</p>
+                            <p ng-message="required">Это поле обязательно для заполнения.</p>
+                        </div>
+                    </div>
+                    <div class="form-group" ng-class="{ 'has-error': form_total.rezerv_elem.$invalid && form_total.rezerv_elem.$dirty}" ng-show="show_reserved_3 || show_reserved_4">
+                        <p class="input_header">Количество резервных элементов</p>
+                        <input name="rezerv_elem" type="number" ng-model="rezerv_elem" class="form-control input-size" placeholder="Введите интенсивность отказов" min=0 max=15 required/>
+                        <div ng-messages="form_total.rezerv_elem.$error" ng-if="form_total.rezerv_elem.$dirty" class="my-messages">
+                            <p ng-message-exp="['min','max','number']">Введите значение между 0 и 15.</p>
+                            <p ng-message="required">Это поле обязательно для заполнения.</p>
+                        </div>
+                    </div>
+                    <div class="form-group" ng-class="{ 'has-error': form_total.exec_time.$invalid && form_total.exec_time.$dirty}">
+                        <p class="input_header">Время испытания:</p>
+                        <input name="exec_time" type="number" ng-model="exec_time" class="form-control input-size" placeholder="Введите время испытания" min=100 max=1000000 required/>
+                        <div ng-messages="form_total.exec_time.$error" ng-if="form_total.exec_time.$dirty" class="my-messages">
+                            <p ng-message-exp="['min','max','number']">Введите значение между 100 и 1000000.</p>
+                            <p ng-message="required">Это поле обязательно для заполнения.</p>
+                        </div>
+                    </div>
+                    <div class="form-group" ng-class="{ 'has-error': form_total.step.$invalid && form_total.step.$dirty}">
+                        <p class="input_header">Шаг расчета</p>
+                        <input name="step" type="number" ng-model="step" class="form-control input-size" placeholder="Введите шаг" min=1 max=100 required/>
+                        <div ng-messages="form_total.step.$error" ng-if="form_total.step.$dirty" class="my-messages">
+                            <p ng-message-exp="['min','max','number']">Введите значение между 1 и 100.</p>
+                            <p ng-message="required">Это поле обязательно для заполнения.</p>
+                        </div>
+                    </div>
+                    <div class="form-group" ng-class="{ 'has-error': form_total.total_lambda.$invalid && form_total.total_lambda.$dirty}" ng-show="!show_nonreserved">
+                        <p class="input_header">Интенсивность отказов одного элемента</p>
+                        <input name="total_lambda" type="number" ng-model="total_lambda" class="form-control input-size" placeholder="Введите интенсивность отказов" min=0 max=1 required/>
+                        <div ng-messages="form_total.total_lambda.$error" ng-if="form_total.total_lambda.$dirty" class="my-messages">
+                            <p ng-message-exp="['min','max','number']">Введите значение между 0 и 1.</p>
+                            <p ng-message="required">Это поле обязательно для заполнения.</p>
+                        </div>
+                    </div>
+                </form>
+            </fieldset>
+            <fieldset class="scheduler-border" ng-if="show_comparison && (reserved_1_T || reserved_2_T || reserved_3_T || reserved_4_T)">
+                <legend class="scheduler-border">Время безотказной работы</legend>
+                <div class="form-group" ng-if="reserved_1_T">
+                    <h5>Постоянное резервирование</h5>
+                    <p>{{reserved_1_T}} ч.</p>
+                </div>
+                <div class="form-group" ng-if="reserved_2_T">
+                    <h5>Резервирование замещением</h5>
+                    <p>{{reserved_2_T}} ч.</p>
+                </div>
+                <div class="form-group" ng-if="reserved_3_T">
+                    <h5>Поэлементное резервирование</h5>
+                    <p>{{reserved_3_T}} ч.</p>
+                </div>
+                <div class="form-group" ng-if="reserved_4_T">
+                    <h5>Скользящее резервирование</h5>
+                    <p>{{reserved_4_T}} ч.</p>
+                </div>
+                
+            </fieldset>
+            <!-- LAW DROPDOWNS  -->
+            <fieldset class="scheduler-border" ng-if="show_dropdowns && show_nonreserved">
+                <legend class="scheduler-border">Выберите закон</legend>
+                <!-- {{dropdown_data.elems}} -->
+                <p class="my-messages" ng-if="show_elem_warning">Выберите закон для всех элементов</p>
+                <div ng-model="dropdown_models" ng-repeat="elem in elems track by elem">
+                    <select required ng-model="dropdown_data.elems[elem]" ng-change="dropdown_changed()" class="form-control dropdown_margin">
+                        <option value="" disabled selected>Элемент №{{elem+1}}</option>
+                        <option ng-model="dropdown_data.availableOptions[$index]" ng-repeat="option in ::dropdown_data.availableOptions" value="{{option.id}}">{{option.name}}</option>
+                    </select>
+                </div>
+            </fieldset>
+        </div>
+        <div class="col-lg-3 vertical_line" ng-show="show_nonreserved">
+            <form name="form_exp">
+                <fieldset class="scheduler-border" ng-show="exp_if">
+                    <legend class="scheduler-border">Экспоненицальный</legend>
+                    <div class="form-group" ng-class="{ 'has-error': form_exp.lambda_exp.$invalid && form_exp.lambda_exp.$dirty}">
+                        <p class="input_header">Интенсивность отказов, лямбда</p>
+                        <input type="number" name="lambda_exp" ng-model="lambda_exp" class="form-control input-size" placeholder="Введите параметры формы" min=0 max=1 required/>
+                        <div ng-messages="form_exp.lambda_exp.$error" ng-if="form_exp.lambda_exp.$dirty" class="my-messages">
+                            <p ng-message-exp="['min','max','number']">Введите значение между 0 и 1.</p>
+                            <p ng-message="required">Это поле обязательно для заполнения.</p>
+                        </div>
+                    </div>
+                </fieldset>
+            </form>
+            <form name="form_gamma">
+                <fieldset class="scheduler-border" ng-show="gamma_if">
+                    <legend class="scheduler-border">Гамма</legend>
+                    <div class="form-group" ng-class="{ 'has-error': form_gamma.alpha_gam.$invalid && alpha_gam.num_elem.$dirty}">
+                        <p class="input_header">Параметр формы, альфа</p>
+                        <input type="number" name="alpha_gam" ng-model="alpha_gam" class="form-control input-size" placeholder="Введите параметры формы" min=0,0001 max=1000 required/>
+                        <div ng-messages="form_gamma.alpha_gam.$error" ng-if="form_gamma.alpha_gam.$dirty" class="my-messages">
+                            <p ng-message-exp="['min','max','number']">Введите значение между 0,0001 и 1000.</p>
+                            <p ng-message="required">Это поле обязательно для заполнения.</p>
+                        </div>
+                    </div>
+                    <div class="form-group" ng-class="{ 'has-error': form_gamma.beta_gam.$invalid && form_gamma.beta_gam.$dirty}">
+                        <p class="input_header">Параметр масштаба, бета</p>
+                        <input type="number" name="beta_gam" ng-model="beta_gam" class="form-control input-size" placeholder="Введите параметры формы" min=1 max=1000000 required/>
+                        <div ng-messages="form_gamma.beta_gam.$error" ng-if="form_gamma.beta_gam.$dirty" class="my-messages">
+                            <p ng-message-exp="['min','max','number']">Введите значение между 1 и 1000000.</p>
+                            <p ng-message="required">Это поле обязательно для заполнения.</p>
+                        </div>
+                    </div>
+                </fieldset>
+            </form>
+            <form name="form_usech">
+                <fieldset class="scheduler-border" ng-show="usech_if">
+                    <legend class="scheduler-border">Усеченное нормальное</legend>
+                    <div class="form-group" ng-class="{ 'has-error': form_usech.m_zero.$invalid && form_usech.m_zero.$dirty}">
+                        <p class="input_header">m0</p>
+                        <input type="number" name="m_zero" ng-model="m_zero" class="form-control input-size" placeholder="Введите параметры формы" min=1 max=1000000 required/>
+                        <div ng-messages="form_usech.m_zero.$error" ng-if="form_usech.m_zero.$dirty" class="my-messages">
+                            <p ng-message-exp="['min','max','number']">Введите значение между 1 и 1000000.</p>
+                            <p ng-message="required">Это поле обязательно для заполнения.</p>
+                        </div>
+                    </div>
+                    <div class="form-group" ng-class="{ 'has-error': form_usech.b_zero.$invalid && form_usech.b_zero.$dirty}">
+                        <p class="input_header">б0</p>
+                        <input type="number" name="b_zero" ng-model="b_zero" class="form-control input-size" placeholder="Введите параметры формы" min=1 max=1000000 required/>
+                        <div ng-messages="form_usech.b_zero.$error" ng-if="form_usech.b_zero.$dirty" class="my-messages">
+                            <p ng-message-exp="['min','max','number']">Введите значение между 1 и 1000000.</p>
+                            <p ng-message="required">Это поле обязательно для заполнения.</p>
+                        </div>
+                    </div>
+                </fieldset>
+            </form>
+            <form name="form_rel">
+                <fieldset class="scheduler-border" ng-show="relei_if">
+                    <legend class="scheduler-border">Рэлея</legend>
+                    <div class="form-group" ng-class="{ 'has-error': form_rel.lambda_rel.$invalid && form_rel.lambda_rel.$dirty}">
+                        <p class="input_header">Интенсивность отказов, лямбда</p>
+                        <input type="number" name="lambda_rel" ng-model="lambda_rel" class="form-control input-size" placeholder="Введите параметры формы" min=0 max=1 required/>
+                        <div ng-messages="form_rel.lambda_rel.$error" ng-if="form_rel.lambda_rel.$dirty" class="my-messages">
+                            <p ng-message-exp="['min','max','number']">Введите значение между 0 и 1.</p>
+                            <p ng-message="required">Это поле обязательно для заполнения.</p>
+                        </div>
+                    </div>
+                </fieldset>
+            </form>
+            <form name="form_veib">
+                <fieldset class="scheduler-border" ng-show="veib_if">
+                    <legend class="scheduler-border">Вейбулла</legend>
+                    <div class="form-group" ng-class="{ 'has-error': form_veib.alpha_veib.$invalid && form_veib.alpha_veib.$dirty}">
+                        <p class="input_header">Параметр формы, alpha</p>
+                        <input type="number" name="alpha_veib" ng-model="alpha_veib" class="form-control input-size" placeholder="Введите параметры формы" min=0,0000000001 max=10000000 required/>
+                        <div ng-messages="form_veib.alpha_veib.$error" ng-if="form_veib.alpha_veib.$dirty" class="my-messages">
+                            <p ng-message-exp="['min','max','number']">Введите значение между 0,0000000001 и 10000000.</p>
+                            <p ng-message="required">Это поле обязательно для заполнения.</p>
+                        </div>
+                    </div>
+                    <div class="form-group" ng-class="{ 'has-error': form_veib.beta_veib.$invalid && form_veib.beta_veib.$dirty}">
+                        <p class="input_header">Параметр масштаба, beta</p>
+                        <input type="number" name="beta_veib" ng-model="beta_veib" class="form-control input-size" placeholder="Введите параметры формы" min=0,0000000001 max=10000000 required/>
+                        <div ng-messages="form_veib.beta_veib.$error" ng-if="form_veib.beta_veib.$dirty" class="my-messages">
+                            <p ng-message-exp="['min','max','number']">Введите значение между 0,0000000001 и 10000000.</p>
+                            <p ng-message="required">Это поле обязательно для заполнения.</p>
+                        </div>
+                    </div>
+                </fieldset>
+            </form>
+        </div>
+        <div class="col-lg-6 vertical_line" ng-if="show_nonreserved_button_tables() && show_nonreserved">
+            <button type="button" class="btn btn-default navbar-btn" ng-click="start_nonreserved()">Рассчитать</button>
+            <div ng-if="show_nonreserved_tables">
+                <div ui-grid="grid_opts" style="height:91px; width:100%;"></div>
+                <div ui-grid="grid_opts_p" class="myGrid"></div>
+                <highchart id="chart1" config="chartConfig1"></highchart>
+                <div ui-grid="grid_opts_f" class="myGrid"></div>
+                <highchart id="chart2" config="chartConfig2"></highchart>
+                <div>
+                </div>
+            </div>
+        </div>
+        <!--  -->
+        <div class="col-lg-6 vertical_line" ng-if="show_reserved_1">
+        <button type="button" class="btn btn-default navbar-btn" ng-click="start_reserved_1()">Рассчитать</button>
+            <div ng-if="show_reserved_1_tables">
+                    <p>Время безотказной работы: {{reserved_1_T}} ч.</p>
+                <div ui-grid="grid_reserved_1_opts" class="myGrid"></div>
+                <highchart id="highchart_reserved_1_P" config="highchart_reserved_1_P_conf"></highchart>
+                <highchart id="highchart_reserved_1_F" config="highchart_reserved_1_F_conf"></highchart>
+            </div>
+        </div>
+        <div class="col-lg-6 vertical_line" ng-if="show_reserved_2">
+            <button type="button" class="btn btn-default navbar-btn" ng-click="start_reserved_2()">Рассчитать</button>
+            <div ng-if="show_reserved_2_tables">
+            <p>Время безотказной работы: {{reserved_2_T}} ч.</p>
+                <div ui-grid="grid_reserved_2_opts" class="myGrid"></div>
+                <highchart id="highchart_reserved_2_P" config="highchart_reserved_2_P_conf"></highchart>
+            </div>
+        </div>
+        <div class="col-lg-6 vertical_line" ng-if="show_reserved_3">
+            <button type="button" class="btn btn-default navbar-btn" ng-click="start_reserved_3()">Рассчитать</button>
+            <div ng-if="show_reserved_3_tables">
+            <p>Время безотказной работы: {{reserved_3_T}} ч.</p>
+                <div ui-grid="grid_reserved_3_opts" class="myGrid"></div>
+                <highchart id="highchart_reserved_3_P" config="highchart_reserved_3_P_conf"></highchart>
+            </div>
+        </div>
+        <div class="col-lg-6 vertical_line" ng-if="show_reserved_4">
+            <button type="button" class="btn btn-default navbar-btn" ng-click="start_reserved_4()">Рассчитать</button>
+            <div ng-if="show_reserved_4_tables">
+            <p>Время безотказной работы: {{reserved_4_T}} ч.</p>
+                <div ui-grid="grid_reserved_4_opts" class="myGrid"></div>
+                <highchart id="highchart_reserved_4_P" config="highchart_reserved_4_P_conf"></highchart>
+            </div>
+        </div>
+        <div class="col-lg-6" ng-if="show_comparison">
+            <highchart ng-if="reserved_1_T || reserved_2_T || reserved_3_T || reserved_4_T" id="highchart_comparison" config="highchart_comparison_conf"></highchart>
+            <h4 class="center" ng-if="!(reserved_1_T || reserved_2_T || reserved_3_T || reserved_4_T)">К сожалению сравнивать нечего<br/>Рассчитайте параметры по одному из законов</h4>
+        </div>
+
+    </div>
+</div>
+<!-- /.container -->

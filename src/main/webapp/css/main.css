@@ -1,14 +1,7 @@
-/*
-Custom CSS for...
-'Modern Business' HTML Theme by Start Bootstrap
-
-All Start Bootstrap themes are licensed under Apache 2.0.
-For more info and more free Bootstrap 3 HTML themes, visit http://startbootstrap.com!
-*/
-
 /* Global Styles */
 
-html, body {
+html,
+body {
     height: 100%;
 }
 
@@ -17,10 +10,43 @@ body {
     padding-bottom: 20px;
 }
 
-.dropdown {
-    cursor:pointer;
+select:required:invalid {
+    color: gray;
 }
 
+option[value=""][disabled] {
+    display: none;
+}
+
+option {
+    color: black;
+}
+
+.caret {
+    position: absolute;
+    right: 16px;
+    top: 16px;
+}
+
+.btn-default:hover,
+.btn-default:focus,
+.btn-default:active,
+.btn-default.active,
+.open .dropdown-toggle.btn-default {
+    background-color: #FFF;
+}
+
+.btn-group.open .dropdown-toggle {
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 8px rgba(102, 175, 233, 0.6)
+}
+
+.btn-group {
+    width: 100%
+}
+
+.dropdown-menu {
+    width: 100%;
+}
 
 .img-home-portfolio,
 .img-customer,
@@ -32,7 +58,9 @@ body {
     margin-top: 15px;
 }
 
+
 /* Page Sections */
+
 .section,
 .section-colored {
     padding: 50px 0;
@@ -53,7 +81,9 @@ body {
     border: 1px solid #cccccc;
 }
 
+
 /* Half Page Height Carousel Customization */
+
 .carousel {
     height: 50%;
 }
@@ -71,7 +101,9 @@ body {
     background-size: cover;
 }
 
+
 /* Social Icons Styles */
+
 .list-social-icons {
     margin-bottom: 45px;
 }
@@ -97,17 +129,23 @@ body {
     color: #d14836;
 }
 
+
 /* Service Page Styles */
+
 .service-icon {
     font-size: 50px;
 }
 
+
 /* 404 Page Styles */
+
 .error-404 {
     font-size: 8em;
 }
 
+
 /* Pricing Page Styles */
+
 .price {
     font-size: 4em;
 }
@@ -122,14 +160,136 @@ body {
     font-style: italic;
 }
 
-/* Footer Styles */
+.input-size {
+    width: 100%;
+    height: 85%;
+}
+
+.dropdown_margin {
+    margin-top: 12px;
+    width: 100%;
+}
+
+.vertical_line {
+    border-left: thin solid #bfbfbf;
+}
+
+.myGrid {
+    width: 100%;
+    height: 250px;
+}
+
+.input_header {
+    margin: 0 0 7px;
+}
+
+.form-group {
+    margin-bottom: 0.7em;
+}
+
+.form-control {
+    height: 32px;
+}
+
+.my-messages {
+    transition: 1s linear all;
+    margin: 3px 0 0 0;
+    color: #c81010
+}
+
+.p-header {
+    font-size: 1.2em;
+    text-align: center;
+}
+
+.navbar-btn {
+    width: 100%;
+}
+
+@media (min-width: 768px) {
+    .navbar-nav-flex {
+        margin: 0 auto;
+        display: table;
+        table-layout: auto;
+        float: none;
+        width: 100%;
+    }
+    .navbar-nav-flex>li {
+        display: table-cell;
+        float: none;
+        text-align: center;
+    }
+}
+
+.navbar-nav-flex > li > a {
+    padding-bottom: 7px;
+    padding-top: 7px;
+}
+
+.page-header {
+    border-bottom: 1px solid #eeeeee;
+    margin: 15px 0 20px;
+    padding-bottom: 9px;
+}
+
+.li-centred-text {
+    text-align: center;
+    vertical-align: middle;
+    line-height: 90px;
+}
+
+.container-fluid {
+    width: 100%;
+}
+
+.form-group > h5 {
+    margin-top: 13px;
+    margin-bottom: 7px;
+    font-size:15;
+}
+
+.center{
+    text-align: center;
+    line-height:1.5;
+
+}
+
+
+.my-messages.ng-active {}
+.my-messages.ng-inactive {}
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+input[type="number"] {
+    -moz-appearance: textfield;
+}
+fieldset.scheduler-border {
+    border: 1px groove #ddd !important;
+    padding: 0.4em 1.4em 1em 1.4em !important;
+    margin: 0 0 1em 0 !important;
+    -webkit-box-shadow: 0px 0px 0px 0px #000;
+    box-shadow: 0px 0px 0px 0px #000;
+}
+legend.scheduler-border {
+    width: inherit;
+    /* Or auto */
+    
+    padding: 0 2px;
+    /* To give a bit of padding on the left and right */
+    
+    border-bottom: none;
+    margin-bottom: 0px;
+    font-size: 16px;
+}
+
 footer {
     margin: 50px 0;
 }
 
 /* Responsive Styles */
 @media (max-width: 767px) {
-
     .carousel {
         height: 70%;
         /* increases the carousel height so it looks good on phones */
