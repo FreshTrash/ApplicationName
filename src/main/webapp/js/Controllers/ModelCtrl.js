@@ -6,7 +6,6 @@
 
             var ModelCtrl = function($scope) {
 
-
                 $scope.show_nonreserved = 1;
 
                 // show law that given to function
