@@ -33,6 +33,6 @@ public class Test {
     @Column(name = "time_to_test")
     private int timeToTest;
 
-    @OneToMany
+    @OneToMany(mappedBy = "testId")
     private List<Question> questions;
 }
