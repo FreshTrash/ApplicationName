@@ -15,7 +15,7 @@
              *
              * @see bootstrap.js
              */
-            var RouteManager = function($routeProvider) {
+            var RouteManage = function($routeProvider) {
                
                 $routeProvider
                     .when("/", { templateUrl: "partials/home.html", controller: "PageCtrl" })
@@ -39,7 +39,7 @@
 
             
 
-            return ["$routeProvider", RouteManager];
+            return ["$routeProvider", RouteManage];
         });
 
 

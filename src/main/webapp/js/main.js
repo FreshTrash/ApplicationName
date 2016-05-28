@@ -1,19 +1,20 @@
 (function(define) {
     "use strict";
 
-    define(['./RouteManager.js',
+    define(['./RouteManage.js',
              './Controllers/ModelModule.js',
+             './Controllers/QuizModule.js'
             
         ],
-        function(RouteManager,  ModelModule) {
+        function(RouteManage,  ModelModule, QuizModule) {
             
             var app, appName = 'WebApp';
 
             app = angular
                 .module(
-                    appName, ["ngRoute", "ngSanitize", "ui.grid", "highcharts-ng","ngMessages", ModelModule]
+                    appName, ["ngRoute", "ngSanitize", "ui.grid", "highcharts-ng", "ngMessages", ModelModule, QuizModule]
                 )
-                .config(RouteManager);
+                .config(RouteManage);
 
 
             app.controller('BlogCtrl', function( /* $scope, $location, $http */ ) {
