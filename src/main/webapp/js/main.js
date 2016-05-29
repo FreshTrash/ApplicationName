@@ -12,7 +12,7 @@
 
             app = angular
                 .module(
-                    appName, ["ngRoute", "ngSanitize", "ui.grid", "highcharts-ng", "ngMessages", ModelModule, QuizModule]
+                    appName, ["ngRoute", "ui.grid", "highcharts-ng", "ngMessages", "ngResource", ModelModule, QuizModule]
                 )
                 .config(RouteManage);
 

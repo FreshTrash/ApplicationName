@@ -16,34 +16,34 @@
             <p class="lead">Quizes
             </p>
             <!--THEMES-->
-            <div>
-                <ol>
-                    <li ng-click="ThemeChoosed($index)" ng-model="oneTheme"
-                        ng-repeat="theme in ::themes track by theme">{{theme}}
-                    </li>
-                </ol>
-            </div>
-
+            <ol start="integer" type="1">
+                <li ng-model="oneTheme" ng-repeat="theme in themes track by theme" ng-click="startQuizOnTheme($index)">{{::theme.name}}
+                </li>
+            </ol>
             <!--QUESTIONS-->
-            <h5>{{theme}}</h5>
+            <h3>{{choosedThemeName}} <small>Вопрос №{{questionId}}</small></h3>
             <div>
-                <h6>{{question}}</h6>
-                <div ng-model="answersModel" ng-repeat="answer in answers track by answer">
-                    <input type="checkbox" ng-checked="answerCheckboxChecked[$index]">
-                    <p class="answer">{{answer.name}}</p>
-                </div>
-                <button type="button" ng-click="submitAnswer($index)">Ответить</button>
+                <h4>{{questionName}}</h4>
+                <ul>
+                    <li class="answer" ng-model="answersModel" ng-repeat="answerIndex in questionAnswers track by $index">
+                        <div class="checkbox">
+                            <label>
+                                <input type="checkbox" class="answer-text" ng-model="checkboxChecked[$index]" ng-checked="checkboxChecked[$index]"> {{answerIndex.answer}}
+                            </label>
+                        </div>
+                    </li>
+                </ul>
+                <button type="button" ng-click="submitAnswer(questionId)">Ответить</button>
             </div>
-
+            {{checkboxChecked[1]}}
             <!--STATS-->
             <div>
-                <h5>{{themeName}}</h5>
                 <p>Правильных ответов: {{rightAnswers}}</p>
                 <div ng-model="right" ng-repeat="question in ::questions track by question">
                     <h6>{{question}}</h6>
                     <div ng-model="answers" ng-repeat="answer in answers track by answer">
                         <p class="answer" ng-class="{ 'right-answer' : isAnswerRight(answer.id)}">
-                            {{answer.name}}</p>
+                            {{answer.answer}}</p>
                     </div>
                 </div>
             </div>
