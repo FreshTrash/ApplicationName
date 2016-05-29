@@ -251,9 +251,22 @@ option {
 .center{
     text-align: center;
     line-height:1.5;
-
 }
 
+.answer {
+    font-size:18;
+    display: block;
+}
+
+.answer-checkbox{
+float: left;
+margin-left: 10px;
+}
+
+.answer-text{
+    margin: 5px 0px 5px 20px;
+    
+}
 
 .my-messages.ng-active {}
 .my-messages.ng-inactive {}
