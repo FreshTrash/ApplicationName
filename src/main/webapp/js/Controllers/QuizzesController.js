@@ -8,50 +8,81 @@
 
                 var Themes = $resource('/api/theme');
                 $scope.themes = Themes.query();
+                $scope.showThemes = true;
 
                 var Questions = $resource('/api/test/:id');
 
-                var choosedTheme = {};
-                $scope.startQuizOnTheme = function(index) {
+                var questions = [];
+                $scope.startQuizOnTheme = function(themeId) {
 
-                    Questions.get({ id: index + 1 }, function(data) {
-                        $scope.choosedThemeName = data.name;
+                    Questions.get({ id: themeId + 1 }, function(data) {
+                        questions = data.questions;
+                        $scope.choosedThemeName = data.theme.name;
                         $scope.questionId = data.questions[0].id;
                         $scope.questionName = data.questions[0].text;
-                        $scope.questionAnswers = data.questions[0].answers;
-                        choosedTheme = data;
+                        $scope.thisThemeQuestions = data.questions;
+                        $scope.totalQuestionsCount = questions.length;
+
                     });
+
+                    
 
                     $scope.showThemes = false;
                 }
 
+
                 $scope.submitAnswer = function(questionId) {
-                    // считаем правильный ответ
 
-                    var rightAnswers = [];
+                    var answersArr = $scope.thisThemeQuestions[questionId - 1].answers;
 
-
-//                     angular.forEach( choosedTheme.questions[questionId-1].answers,function(checkAnswer){
-// checkAnswer.
-//                     })
-
-                    // Выводим новый вопрос с ответами
-                    if (choosedTheme.questions[questionId] != undefined) {
-                        $scope.questionId = choosedTheme.questions[questionId].id;
-                        $scope.questionName = choosedTheme.questions[questionId].text;
-                        $scope.questionAnswers = choosedTheme.questions[questionId].answers;
-                        console.log(choosedTheme);
-                    } else {
-                        showAnswers();
+                    //Проверка на отсутствие ответа
+                    var isAnswerResponsed = false;
+                    for (var i = 0, len = answersArr.length; i < len; i++) {
+                        if (answersArr[i].userChoice === true) {
+                            isAnswerResponsed = true;
+                        } else {
+                            answersArr[i].userChoice = false;
+                        }
                     }
+
+                    // Если галочка проставлена
+                    if (isAnswerResponsed) {
+                        // Если вопроса нет, показываем следующий вопрос с ответами
+                        if (questions[questionId] !== undefined) {
+
+                            $scope.questionId = questions[questionId].id;
+                            $scope.questionName = questions[questionId].text;
+                            //$scope.thisThemeQuestions = choosedTheme.questions[questionId].answers;
+                        } else {
+                            showAnswers();
+                        }
+
+                    } else
+                        window.alert("Выберите один из вариантов");
 
                 }
 
                 var showAnswers = function() {
+                    $scope.showAnswers = true;
+                    // Находим правильный ответ
+                    var questionsArr = $scope.thisThemeQuestions;
 
+
+                    var len = questionsArr.length;
+                    var wrongAnswerCount = 0;
+                    for (var i = 0; i < len; i++) {
+                        for (var j = 0, len2 = questionsArr[i].answers.length; j < len; j++) {
+                            if (questionsArr[i].answers[j].userChoice != questionsArr[i].answers[j].correct) {
+                                wrongAnswerCount++;
+                                break;
+                            }
+                        }
+                    }
+
+                    $scope.rightAnswersPercent = ((len-wrongAnswerCount)/len)*100;
+
+                    // показываем результаты+
                 }
-
-
 
 
                 //            var Todo = $resource('/api/1/todo/:id');
@@ -89,6 +120,11 @@
                 //Todo.get({id: 123}, function(todo) {
                 //   $scope.todo = todo;
                 //});
+
+                 var roundFloat = function(number, del) {
+                    var residue = Math.pow(10, del)
+                    return (Math.round(number * residue) / residue);
+                };
 
             };
             return ["$scope", "$resource", QuizzesController];
