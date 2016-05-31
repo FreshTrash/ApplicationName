@@ -21,24 +21,25 @@
                 </li>
             </ol>
             <!--QUESTIONS-->
-            <h3>{{choosedThemeName}} <small>Вопрос №{{questionId}}</small></h3>
+            
+            <h3>{{choosedThemeName}} <small>Вопрос №{{questionId}} из {{totalQuestionsCount}}</small></h3>
             <div>
                 <h4>{{questionName}}</h4>
                 <ul>
-                    <li class="answer" ng-model="answersModel" ng-repeat="answerIndex in questionAnswers track by $index">
+                    <li class="answer" ng-model="answersModel" ng-repeat="answerIndex in thisThemeQuestions[questionId-1].answers">
                         <div class="checkbox">
                             <label>
-                                <input type="checkbox" class="answer-text" ng-model="checkboxChecked[$index]" ng-checked="checkboxChecked[$index]"> {{answerIndex.answer}}
+                                <input type="checkbox" class="answer-text" ng-model="answerIndex.userChoice"> {{answerIndex.answer}}
                             </label>
                         </div>
                     </li>
                 </ul>
                 <button type="button" ng-click="submitAnswer(questionId)">Ответить</button>
             </div>
-            {{checkboxChecked[1]}}
+            
             <!--STATS-->
             <div>
-                <p>Правильных ответов: {{rightAnswers}}</p>
+                <p>Процент правильных ответов: {{rightAnswersPercent}}%</p>
                 <div ng-model="right" ng-repeat="question in ::questions track by question">
                     <h6>{{question}}</h6>
                     <div ng-model="answers" ng-repeat="answer in answers track by answer">
