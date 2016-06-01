@@ -20,14 +20,17 @@
                         $scope.choosedThemeName = data.theme.name;
                         $scope.questionId = data.questions[0].id;
                         $scope.questionName = data.questions[0].text;
-                        $scope.thisThemeQuestions = data.questions;
+
                         $scope.totalQuestionsCount = questions.length;
 
+                        for (var i = 0, len = questions[0].answers.length; i < len; i++)
+                            questions[0].answers[i].userChoice = false;
+
+                        $scope.thisThemeQuestions = questions;
                     });
 
-                    
-
                     $scope.showThemes = false;
+                    $scope.showQuestions = true;
                 }
 
 
@@ -45,6 +48,8 @@
                         }
                     }
 
+                    $scope.thisThemeQuestions[questionId - 1].answers = answersArr;
+
                     // Если галочка проставлена
                     if (isAnswerResponsed) {
                         // Если вопроса нет, показываем следующий вопрос с ответами
@@ -54,7 +59,7 @@
                             $scope.questionName = questions[questionId].text;
                             //$scope.thisThemeQuestions = choosedTheme.questions[questionId].answers;
                         } else {
-                            showAnswers();
+                            answers();
                         }
 
                     } else
@@ -62,7 +67,8 @@
 
                 }
 
-                var showAnswers = function() {
+                var answers = function() {
+                    $scope.showQuestions = false;
                     $scope.showAnswers = true;
                     // Находим правильный ответ
                     var questionsArr = $scope.thisThemeQuestions;
@@ -71,17 +77,24 @@
                     var len = questionsArr.length;
                     var wrongAnswerCount = 0;
                     for (var i = 0; i < len; i++) {
-                        for (var j = 0, len2 = questionsArr[i].answers.length; j < len; j++) {
+                        for (var j = 0, len2 = questionsArr[i].answers.length; j < len2; j++) {
                             if (questionsArr[i].answers[j].userChoice != questionsArr[i].answers[j].correct) {
+                                console.log(questionsArr[i].answers[j].userChoice);
                                 wrongAnswerCount++;
                                 break;
                             }
                         }
                     }
 
-                    $scope.rightAnswersPercent = ((len-wrongAnswerCount)/len)*100;
+                    $scope.rightAnswersPercent = ((len - wrongAnswerCount) / len) * 100;
 
                     // показываем результаты+
+                }
+
+                $scope.backToThemes = function() {
+                    $scope.showThemes = true;
+                    $scope.showQuestions = false;
+                    $scope.showAnswers = false;
                 }
 
 
@@ -121,7 +134,7 @@
                 //   $scope.todo = todo;
                 //});
 
-                 var roundFloat = function(number, del) {
+                var roundFloat = function(number, del) {
                     var residue = Math.pow(10, del)
                     return (Math.round(number * residue) / residue);
                 };
