@@ -279,6 +279,10 @@ margin-left: 10px;
     
 }
 
+.navbar-inverse .navbar-brand{
+       color: #EEE;
+}
+
 .my-messages.ng-active {}
 .my-messages.ng-inactive {}
 input[type="number"]::-webkit-outer-spin-button,
