@@ -6,7 +6,8 @@
             var moduleName = "ModelModule";
 
             angular.module(moduleName, [])
-                .controller("ModelCtrl", ModelCtrl);
+                .controller("ModelCtrl", ModelCtrl, ["$scope"]);
+               
 
             return moduleName;
         });

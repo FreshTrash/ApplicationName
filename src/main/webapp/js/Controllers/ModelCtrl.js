@@ -1,10 +1,10 @@
 (function(define) {
     "use strict";
 
-    define([],
+    define(["ui.bootstrap.modal"],
         function() {
 
-            var ModelCtrl = function($scope, $uibModal) {
+            var ModelCtrl = function($scope, $uibModal, $resource) {
 
                 $scope.show_nonreserved = 1;
 
@@ -830,8 +830,6 @@
 
                     var chartGraph = [];
                     chartGraph.push({ "name": "P(t)", "data": P });
-                    // chartGraph.push({ "name": "f(t)", "data": f });
-                    // chartGraph.push({ "name": "Lambda(t)", "data": lambda_sys });
                     comparisonPush("Резервирование замещением", P);
 
 
@@ -1303,6 +1301,7 @@
                     data_reserved_4 = [];
 
 
+
                 $scope.grid_opts = {
                     columnDefs: column_def,
                     data: data_1
@@ -1336,7 +1335,6 @@
                     columnDefs: column_def_reserved_4,
                     data: data_reserved_4
                 };
-
 
 
                 $scope.grid_opts.enableHorizontalScrollbar = 0;
@@ -1450,36 +1448,72 @@
 
 
 
+
+
+
+
+
                 $scope.openModal = function() {
 
-                        var modalInstance = $uibModal.open({
-                            animation: true,
-                            templateUrl: 'myModalContent',
-                            controller: 'ModelCtrl',
-                            size: ""
-                                //resolve: 
-                        });
-                            console.log("open");
-                    
 
-                }
+                    var modalInstance = $uibModal.open({
+                        animation: true,
+                        templateUrl: 'myModalContent.html',
 
-                $scope.ok = function() {
-                    $uibModalInstance.close();
+                        controller: function($uibModalInstance, $scope) {
+                            //$scope.modalGridOpts.data.length = 0;
+
+                            var modalGridColumnDef = [],
+                                modalGridData = [];
+                            $scope.modalGridOpts = {
+                                columnDefs: modalGridColumnDef,
+                                data: modalGridData
+
+
+                            };
+                            $scope.modalGridOpts.enableRowSelection = true;
+                            $scope.modalGridOpts.enableRowHeaderSelection = false;
+                            $scope.modalGridOpts.multiSelect = false;
+                            $scope.modalGridOpts.modifierKeysToMultiSelect = false;
+                            $scope.modalGridOpts.noUnselect = true;
+                            $scope.modalGridOpts.enableHorizontalScrollbar = 0;
+
+
+
+                            modalGridColumnDef = [{ name: 'elem', displayName: 'Элемент' },
+                                { name: 'lambda', displayName: 'Lambda' }
+                            ];
+
+                            var ModalData = $resource('/api/asu_element');
+                            ModalData.query({}, function(data) {
+                                var modalData = data;
+
+                                //Строки таблицы
+                                for (var i = 0, len = modalData.length; i < len; i += 1) {
+                                    var obj = {
+                                        "elem": modalData[i].name,
+                                        "lambda": modalData[i].intensity,
+                                    };
+
+                                    modalGridData.push(obj);
+                                }
+                                $scope.modalGridOpts.modalGridColumnDef = modalGridColumnDef;
+                                $scope.modalGridOpts.modalGridData = modalGridData;
+
+                            });
+
+
+                            $scope.ok = function() {
+                                //$scope.total_lambda = choosedLambda
+                                $uibModalInstance.dismiss('cancel');
+                            }
+                            $scope.cancel = function() {
+                                $uibModalInstance.dismiss('cancel');
+                            }
+                        }
+                    });
+
                 };
-
-                $scope.cancel = function() {
-                    $uibModalInstance.dismiss('cancel');
-                };
-
-
-
-
-
-
-
-
-
 
 
 
@@ -1871,7 +1905,7 @@
                 //////////////////////
 
             };
-            return ["$scope", ModelCtrl];
+            return ["$scope", "$uibModal", "$resource", ModelCtrl];
         });
 
 
