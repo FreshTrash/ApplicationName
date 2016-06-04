@@ -1,7 +1,7 @@
 <div class="container">
     <div class="row">
         <div class="col-lg-12">
-                        <h1 class="page-header">Расчет показателей надежности<br/>
+            <h1 class="page-header">Расчет показателей надежности<br/>
                 <!-- <small>Резервированных и нерезервированных систем</small> -->
             </h1>
         </div>
@@ -16,13 +16,27 @@
             <li class="li-centred-text" ng-class="{ active: show_comparison}"><a href="" ng-click="show_law(5); comparison_calc()">Сравнение</a></li>
         </ul>
     </nav>
+
+    <script type="text/ng-template" id="myModalContent">
+        <div class="modal-header">
+            <h3 class="modal-title">I'm a modal!</h3>
+        </div>
+        <div class="modal-body">
+            KU
+        </div>
+        <div class="modal-footer">
+            <button class="btn btn-primary" type="button" ng-click="ok()">OK</button>
+            <button class="btn btn-warning" type="button" ng-click="cancel()">Cancel</button>
+        </div>
+    </script>
+
     <div class="row">
         <div class="col-lg-3">
             <!-- <p class="p-header">Введите параметры системы</p> -->
             <fieldset class="scheduler-border" ng-show="!show_comparison">
                 <legend class="scheduler-border">Общие параметры</legend>
                 <form name="form_total">
-                <button type="button" class="btn btn-default" ng-click="test_data()">Тестовые данные</button>
+                    <button type="button" class="btn btn-default" ng-click="test_data()">Тестовые данные</button>
                     <div class="form-group" ng-class="{ 'has-error': form_total.num_elem.$invalid && form_total.num_elem.$dirty}">
                         <p class="input_header">Количество элементов, N</p>
                         <input name="num_elem" type="number" ng-model="num_elem" ng-change="num_changed()" class="form-control input-size" placeholder="Введите количество элементов" min=1 max=15 required/>
@@ -57,6 +71,7 @@
                     </div>
                     <div class="form-group" ng-class="{ 'has-error': form_total.total_lambda.$invalid && form_total.total_lambda.$dirty}" ng-show="!show_nonreserved">
                         <p class="input_header">Интенсивность отказов одного элемента</p>
+                        <a href="" ng-click="openModal()">Выбрать элемент</a>
                         <input name="total_lambda" type="number" ng-model="total_lambda" class="form-control input-size" placeholder="Введите интенсивность отказов" min=0 max=1 required/>
                         <div ng-messages="form_total.total_lambda.$error" ng-if="form_total.total_lambda.$dirty" class="my-messages">
                             <p ng-message-exp="['min','max','number']">Введите значение между 0 и 1.</p>
@@ -83,7 +98,6 @@
                     <h5>Скользящее резервирование</h5>
                     <p>{{reserved_4_T}} ч.</p>
                 </div>
-                
             </fieldset>
             <!-- LAW DROPDOWNS  -->
             <fieldset class="scheduler-border" ng-if="show_dropdowns && show_nonreserved">
@@ -203,9 +217,9 @@
         </div>
         <!--  -->
         <div class="col-lg-6 vertical_line" ng-if="show_reserved_1">
-        <button type="button" class="btn btn-default navbar-btn" ng-click="start_reserved_1()">Рассчитать</button>
+            <button type="button" class="btn btn-default navbar-btn" ng-click="start_reserved_1()">Рассчитать</button>
             <div ng-if="show_reserved_1_tables">
-                    <p>Время безотказной работы: {{reserved_1_T}} ч.</p>
+                <p>Время безотказной работы: {{reserved_1_T}} ч.</p>
                 <div ui-grid="grid_reserved_1_opts" class="myGrid"></div>
                 <highchart id="highchart_reserved_1_P" config="highchart_reserved_1_P_conf"></highchart>
                 <highchart id="highchart_reserved_1_F" config="highchart_reserved_1_F_conf"></highchart>
@@ -214,7 +228,7 @@
         <div class="col-lg-6 vertical_line" ng-if="show_reserved_2">
             <button type="button" class="btn btn-default navbar-btn" ng-click="start_reserved_2()">Рассчитать</button>
             <div ng-if="show_reserved_2_tables">
-            <p>Время безотказной работы: {{reserved_2_T}} ч.</p>
+                <p>Время безотказной работы: {{reserved_2_T}} ч.</p>
                 <div ui-grid="grid_reserved_2_opts" class="myGrid"></div>
                 <highchart id="highchart_reserved_2_P" config="highchart_reserved_2_P_conf"></highchart>
             </div>
@@ -222,7 +236,7 @@
         <div class="col-lg-6 vertical_line" ng-if="show_reserved_3">
             <button type="button" class="btn btn-default navbar-btn" ng-click="start_reserved_3()">Рассчитать</button>
             <div ng-if="show_reserved_3_tables">
-            <p>Время безотказной работы: {{reserved_3_T}} ч.</p>
+                <p>Время безотказной работы: {{reserved_3_T}} ч.</p>
                 <div ui-grid="grid_reserved_3_opts" class="myGrid"></div>
                 <highchart id="highchart_reserved_3_P" config="highchart_reserved_3_P_conf"></highchart>
             </div>
@@ -230,7 +244,7 @@
         <div class="col-lg-6 vertical_line" ng-if="show_reserved_4">
             <button type="button" class="btn btn-default navbar-btn" ng-click="start_reserved_4()">Рассчитать</button>
             <div ng-if="show_reserved_4_tables">
-            <p>Время безотказной работы: {{reserved_4_T}} ч.</p>
+                <p>Время безотказной работы: {{reserved_4_T}} ч.</p>
                 <div ui-grid="grid_reserved_4_opts" class="myGrid"></div>
                 <highchart id="highchart_reserved_4_P" config="highchart_reserved_4_P_conf"></highchart>
             </div>
@@ -239,7 +253,6 @@
             <highchart ng-if="reserved_1_T || reserved_2_T || reserved_3_T || reserved_4_T" id="highchart_comparison" config="highchart_comparison_conf"></highchart>
             <h4 class="center" ng-if="!(reserved_1_T || reserved_2_T || reserved_3_T || reserved_4_T)">К сожалению сравнивать нечего<br/>Рассчитайте параметры по одному из законов</h4>
         </div>
-
     </div>
 </div>
 <!-- /.container -->

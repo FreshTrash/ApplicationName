@@ -2,9 +2,9 @@
     "use strict";
 
     head.js(
-//        {angular: "./dependencies/angular15.min.js"},
-            { require: "./dependencies/vendor/requirejs/require.js", size: "80196" }, { underscore: "./dependencies/vendor/underscore/underscore.js", size: "43568" },
-            { ngRoute: "./dependencies/vendor/angular-route/angular-route.js", size: "30052" }, { ngSanitize: "./dependencies/vendor/angular-sanitize/angular-sanitize.js", size: "19990" }
+            //        {angular: "./dependencies/angular15.min.js"},
+            { require: "./dependencies/vendor/requirejs/require.js", size: "80196" }, { underscore: "./dependencies/vendor/underscore/underscore.js", size: "43568" }, { ngRoute: "./dependencies/vendor/angular-route/angular-route.js", size: "30052" }, { ngSanitize: "./dependencies/vendor/angular-sanitize/angular-sanitize.js", size: "19990" },
+            {ngAnimate: "./dependencies/angular-animate.min.js"}
         )
         .ready("ALL", function() {
 
@@ -16,11 +16,15 @@
 
                 paths: {
                     // Configure alias to full paths
+                    "angular": "./dependencies/angular15.min"
 
                 },
                 shim: {
                     'underscore': {
                         exports: '_'
+                    },
+                    'ngAnimate': {
+                        deps: ['angular']
                     }
                 }
             });

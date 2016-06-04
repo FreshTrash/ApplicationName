@@ -4,7 +4,7 @@
     define([],
         function() {
 
-            var ModelCtrl = function($scope) {
+            var ModelCtrl = function($scope, $uibModal) {
 
                 $scope.show_nonreserved = 1;
 
@@ -696,12 +696,12 @@
                     chartGraph = [];
 
 
-                        
-                        for (i = 0; i <= len; i+=1) {
-                            f[i] = f[i] * 100000;
-                        }
-                       
-                    
+
+                    for (i = 0; i <= len; i += 1) {
+                        f[i] = f[i] * 100000;
+                    }
+
+
                     chartGraph.push({ "name": "f(t)", "data": f });
                     //chartGraph.push({ "name": "Lambda(t)", "data": lambda_sys });
 
@@ -709,7 +709,7 @@
 
                     $scope.highchart_reserved_1_F_conf = {
                         xAxis: {
-                          categories: desc_time,
+                            categories: desc_time,
                             title: {
                                 text: 'Время испытания, t'
                             }
@@ -1449,6 +1449,28 @@
                 ////////////////////////////
 
 
+
+                $scope.openModal = function() {
+
+                        var modalInstance = $uibModal.open({
+                            animation: true,
+                            templateUrl: 'myModalContent',
+                            controller: 'ModelCtrl',
+                            size: ""
+                                //resolve: 
+                        });
+                            console.log("open");
+                    
+
+                }
+
+                $scope.ok = function() {
+                    $uibModalInstance.close();
+                };
+
+                $scope.cancel = function() {
+                    $uibModalInstance.dismiss('cancel');
+                };
 
 
 
