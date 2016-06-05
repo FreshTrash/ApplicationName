@@ -283,6 +283,11 @@ margin-left: 10px;
        color: #EEE;
 }
 
+.modal-title-alert{
+    color: red;
+     text-decoration: underline;
+}
+
 .my-messages.ng-active {}
 .my-messages.ng-inactive {}
 input[type="number"]::-webkit-outer-spin-button,

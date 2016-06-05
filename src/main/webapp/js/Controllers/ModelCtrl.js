@@ -4,7 +4,7 @@
     define(["ui.bootstrap.modal"],
         function() {
 
-            var ModelCtrl = function($scope, $uibModal, $resource) {
+            var ModelCtrl = function($scope, $uibModal, $resource, ModalDialogDataShareService) {
 
                 $scope.show_nonreserved = 1;
 
@@ -1448,72 +1448,30 @@
 
 
 
-
-
-
-
-
                 $scope.openModal = function() {
-
 
                     var modalInstance = $uibModal.open({
                         animation: true,
                         templateUrl: 'myModalContent.html',
 
-                        controller: function($uibModalInstance, $scope) {
-                            //$scope.modalGridOpts.data.length = 0;
-
-                            var modalGridColumnDef = [],
-                                modalGridData = [];
-                            $scope.modalGridOpts = {
-                                columnDefs: modalGridColumnDef,
-                                data: modalGridData
-
-
-                            };
-                            $scope.modalGridOpts.enableRowSelection = true;
-                            $scope.modalGridOpts.enableRowHeaderSelection = false;
-                            $scope.modalGridOpts.multiSelect = false;
-                            $scope.modalGridOpts.modifierKeysToMultiSelect = false;
-                            $scope.modalGridOpts.noUnselect = true;
-                            $scope.modalGridOpts.enableHorizontalScrollbar = 0;
-
-
-
-                            modalGridColumnDef = [{ name: 'elem', displayName: 'Элемент' },
-                                { name: 'lambda', displayName: 'Lambda' }
-                            ];
-
-                            var ModalData = $resource('/api/asu_element');
-                            ModalData.query({}, function(data) {
-                                var modalData = data;
-
-                                //Строки таблицы
-                                for (var i = 0, len = modalData.length; i < len; i += 1) {
-                                    var obj = {
-                                        "elem": modalData[i].name,
-                                        "lambda": modalData[i].intensity,
-                                    };
-
-                                    modalGridData.push(obj);
-                                }
-                                $scope.modalGridOpts.modalGridColumnDef = modalGridColumnDef;
-                                $scope.modalGridOpts.modalGridData = modalGridData;
-
-                            });
-
-
-                            $scope.ok = function() {
-                                //$scope.total_lambda = choosedLambda
-                                $uibModalInstance.dismiss('cancel');
-                            }
-                            $scope.cancel = function() {
-                                $uibModalInstance.dismiss('cancel');
-                            }
-                        }
+                        controller: 'ModalDialogController'
+                        // resolve: {
+                        //     lammm: function() {
+                        //         return $scope.total_lambda;
+                        //     }
+                        // }
                     });
 
+                    
+
+                    modalInstance.result.then(function(selectedItem) {
+                        $scope.elemName = selectedItem.name;
+                        $scope.total_lambda = selectedItem.lambda;
+                        
+                    });
+                    //$scope.lammm = ModalDialogDataShareService.getLambda();
                 };
+
 
 
 
@@ -1905,7 +1863,7 @@
                 //////////////////////
 
             };
-            return ["$scope", "$uibModal", "$resource", ModelCtrl];
+            return ["$scope", "$uibModal", "$resource", "ModalDialogDataShareService", ModelCtrl, ];
         });
 
 
