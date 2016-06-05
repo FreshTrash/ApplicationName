@@ -38,7 +38,7 @@
             <fieldset class="scheduler-border" ng-show="!show_comparison">
                 <legend class="scheduler-border">Общие параметры</legend>
                 <form name="form_total">
-                    <button type="button" class="btn btn-default" ng-click="test_data()">Тестовые данные</button>
+                    
                     <div class="form-group" ng-class="{ 'has-error': form_total.num_elem.$invalid && form_total.num_elem.$dirty}">
                         <p class="input_header">Количество элементов, N</p>
                         <input name="num_elem" type="number" ng-model="num_elem" ng-change="num_changed()" class="form-control input-size" placeholder="Введите количество элементов" min=1 max=15 required/>
@@ -57,23 +57,23 @@
                     </div>
                     <div class="form-group" ng-class="{ 'has-error': form_total.exec_time.$invalid && form_total.exec_time.$dirty}">
                         <p class="input_header">Время испытания:</p>
-                        <input name="exec_time" type="number" ng-model="exec_time" class="form-control input-size" placeholder="Введите время испытания" min=100 max=1000000 required/>
+                        <input name="exec_time" type="number" ng-model="exec_time" class="form-control input-size" placeholder="Введите время испытания" min=1000 max=10000000 required/>
                         <div ng-messages="form_total.exec_time.$error" ng-if="form_total.exec_time.$dirty" class="my-messages">
-                            <p ng-message-exp="['min','max','number']">Введите значение между 100 и 1000000.</p>
+                            <p ng-message-exp="['min','max','number']">Введите значение между 100 и 10000000.</p>
                             <p ng-message="required">Это поле обязательно для заполнения.</p>
                         </div>
                     </div>
                     <div class="form-group" ng-class="{ 'has-error': form_total.step.$invalid && form_total.step.$dirty}">
                         <p class="input_header">Шаг расчета</p>
-                        <input name="step" type="number" ng-model="step" class="form-control input-size" placeholder="Введите шаг" min=1 max=100 required/>
+                        <input name="step" type="number" ng-model="step" class="form-control input-size" placeholder="Введите шаг" min=100 max=1000 required/>
                         <div ng-messages="form_total.step.$error" ng-if="form_total.step.$dirty" class="my-messages">
-                            <p ng-message-exp="['min','max','number']">Введите значение между 1 и 100.</p>
+                            <p ng-message-exp="['min','max','number']">Введите значение между 100 и 1000.</p>
                             <p ng-message="required">Это поле обязательно для заполнения.</p>
                         </div>
                     </div>
                     <div class="form-group" ng-class="{ 'has-error': form_total.total_lambda.$invalid && form_total.total_lambda.$dirty}" ng-show="!show_nonreserved">
-                        <p class="input_header">Интенсивность отказов одного элемента</p>
-                        <a href="" ng-click="openModal()">Выбрать элемент</a>
+                        <p class="input_header">Интенсивность отказов одного элемента <a href="" ng-click="openModal()">[Выбрать элемент]</a></p>
+                       
                         <p>{{elemName}}</p>
                         <input name="total_lambda" type="number" ng-model="total_lambda" class="form-control input-size" placeholder="Введите интенсивность отказов" min=0 max=1 required/>
                         <div ng-messages="form_total.total_lambda.$error" ng-if="form_total.total_lambda.$dirty" class="my-messages">
@@ -81,6 +81,7 @@
                             <p ng-message="required">Это поле обязательно для заполнения.</p>
                         </div>
                     </div>
+                    <button type="button" class="btn btn-default" ng-click="test_data()">Тестовые данные</button>
                 </form>
             </fieldset>
             <fieldset class="scheduler-border" ng-if="show_comparison && (reserved_1_T || reserved_2_T || reserved_3_T || reserved_4_T)">

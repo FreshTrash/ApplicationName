@@ -4,7 +4,7 @@
     define(["ui.bootstrap.modal"],
         function() {
 
-            var ModalDialogController = function($scope, $uibModalInstance, $resource, lammm) {
+            var ModalDialogController = function($scope, $uibModalInstance, $resource) {
 
                 //$scope.modalGridOpts.data.length = 0;
 
@@ -15,6 +15,9 @@
                     data: modalGridData
                 };
 
+                modalGridColumnDef = [{ name: 'elem', displayName: 'Элемент'},
+                    { name: 'lambda', displayName: 'Lambda' }
+                ];
                 $scope.modalGridOpts.enableRowSelection = true;
                 $scope.modalGridOpts.enableRowHeaderSelection = false;
                 $scope.modalGridOpts.multiSelect = false;
@@ -26,9 +29,10 @@
                     $scope.myGridApi = gridApi;
                 };
 
-                modalGridColumnDef = [{ name: 'elem', displayName: 'Элемент',width: 80},
-                    { name: 'lambda', displayName: 'Lambda' }
-                ];
+
+                    //modalGridColumnDef[0].width=150;
+                    $scope.modalGridOpts.modalGridColumnDef = modalGridColumnDef;
+                    $scope.modalGridOpts.modalGridData = modalGridData;
 
                 var ModalData = $resource('/api/asu_element');
                 ModalData.query({}, function(data) {
@@ -40,28 +44,25 @@
                             "elem": modalData[i].name,
                             "lambda": modalData[i].intensity,
                         };
-
                         modalGridData.push(obj);
                     }
-                    $scope.modalGridOpts.modalGridColumnDef = modalGridColumnDef;
-                    $scope.modalGridOpts.modalGridData = modalGridData;
                 });
 
 
                 $scope.ok = function() {
 
                     var selectedRow = $scope.myGridApi.selection.getSelectedRows();
-                   
+
                     if (selectedRow[0] === undefined ||
                         selectedRow[0] === null) {
                         $scope.showModalTitleAlert = true;
                     } else {
                         var outData = {
-                                name: selectedRow[0].elem,
-                                lambda: selectedRow[0].lambda
-                            }
-                          
-                            //$rootScope.changeElemLambda(selectedRow[0].name,selectedRow[0].lambda);
+                            name: selectedRow[0].elem,
+                            lambda: selectedRow[0].lambda
+                        }
+
+                        
                         $uibModalInstance.close(outData);
                     }
                     //showModalTitleAlert

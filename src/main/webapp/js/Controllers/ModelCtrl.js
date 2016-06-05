@@ -690,21 +690,14 @@
 
                     }
 
-
-
-
                     chartGraph = [];
 
-
-
                     for (i = 0; i <= len; i += 1) {
-                        f[i] = f[i] * 100000;
+                        f[i] = f[i] * 1000000;
                     }
-
 
                     chartGraph.push({ "name": "f(t)", "data": f });
                     //chartGraph.push({ "name": "Lambda(t)", "data": lambda_sys });
-
 
 
                     $scope.highchart_reserved_1_F_conf = {
@@ -1453,21 +1446,16 @@
                     var modalInstance = $uibModal.open({
                         animation: true,
                         templateUrl: 'myModalContent.html',
-
                         controller: 'ModalDialogController'
-                        // resolve: {
-                        //     lammm: function() {
-                        //         return $scope.total_lambda;
-                        //     }
-                        // }
+
                     });
 
-                    
+
 
                     modalInstance.result.then(function(selectedItem) {
                         $scope.elemName = selectedItem.name;
                         $scope.total_lambda = selectedItem.lambda;
-                        
+
                     });
                     //$scope.lammm = ModalDialogDataShareService.getLambda();
                 };
