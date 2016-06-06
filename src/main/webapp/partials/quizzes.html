@@ -1,62 +1,64 @@
 <div class="container">
     <div class="row">
         <div class="col-lg-12">
-            <h1 class="page-header">Тесты
-                <small>A Sample Blog Post</small>
-            </h1>
+            <h1 class="page-header">Пройдите тест для самопроверки</h1>
             <ol class="breadcrumb">
-                <li><a href="../index.html">Home</a>
+                <li><a href="#/">Домашняя</a>
                 </li>
-                <li class="active">Quizzes</li>
+                <li class="active">Тесты</li>
             </ol>
         </div>
     </div>
     <div class="row">
         <div class="col-lg-8">
-            <p class="lead">Quizes
-            </p>
             <!--THEMES-->
             <div ng-if="showThemes">
-            <ol start="integer" type="1">
-                <li ng-model="oneTheme" ng-repeat="theme in themes track by theme" ng-click="startQuizOnTheme($index)">{{::theme.name}}
-                </li>
-            </ol>
+                <h4>Выберите одну из тем</h4>
+                <ol start="integer" type="1">
+                    <a>
+                        <li class="theme-style" ng-repeat="theme in themes track by theme" ng-click="startQuizOnTheme($index)">{{::theme.name}}
+                        </li>
+                    </a>
+                </ol>
             </div>
             <!--QUESTIONS-->
             <div ng-if="showQuestions">
-            <p ng-click="backToThemes()"> << Вернуться к темам</p>
-            <h3>{{choosedThemeName}} <small>Вопрос №{{questionId}} из {{totalQuestionsCount}}</small></h3>
-            <div>
-                <h4>{{questionName}}</h4>
-                <ul>
-                    <li class="answer" ng-model="answersModel" ng-repeat="answerIndex in thisThemeQuestions[questionId-1].answers">
-                        <div class="checkbox">
-                            <label>
-                                <input type="checkbox" class="answer-text" ng-model="answerIndex.userChoice" > {{answerIndex.answer}}
-                            </label>
+                <h4>Выберите ответ</h4>
+                <a ng-click="backToThemes()"><< Вернуться к темам</a>
+                <div class="challenge">
+                        <h3>{{choosedThemeName}} <small>Вопрос №{{questionId}} из {{totalQuestionsCount}}</small></h3>
+                        <div>
+                            <h4>{{questionName}}</h4>
+                            <ul>
+                                <li class="answer" ng-repeat="answerIndex in thisThemeQuestions[questionId-1].answers">
+                                    <div class="checkbox">
+                                        <label>
+                                            <input type="checkbox" class="answer-text" ng-model="answerIndex.userChoice"> {{answerIndex.answer}}
+                                        </label>
+                                    </div>
+                                </li>
+                            </ul>
+                            
+                            <button type="button"  class="btn btn-primary" ng-click="submitAnswer(questionId)">Ответить</button>
                         </div>
-                    </li>
-                </ul>
-                <button type="button" ng-click="submitAnswer(questionId)">Ответить</button>
-            </div>
+                        </div>
             </div>
             <!--STATS-->
-
-
-
             <div ng-if="showAnswers">
-                <p ng-click="backToThemes()"> << Вернуться к темам</p>
-                <p>Процент правильных ответов: {{rightAnswersPercent}}%</p>
-
-                <div ng-model="right" ng-repeat="question in thisThemeQuestions" class="panel panel-default">
-                    <div class="panel-body"><h4 class="list-group-item-heading">№{{question.id}} {{question.text}}</h4></div><div class="panel-footer">
-                    <div class = "alert" ng-model="answers" ng-repeat="oneAnswer in question.answers" ng-class="{ 'alert alert-info' : oneAnswer.correct && !oneAnswer.userChoice , 'alert alert-danger' : oneAnswer.userChoice && !oneAnswer.correct ,  'alert alert-success': oneAnswer.correct && oneAnswer.userChoice}">
-                        <p class="list-group-item-text" >
-                            {{oneAnswer.answer}}</p>
-                    </div>
-                    </div>
-                </div>
-
+                <h4>Ваши ответы</h4>
+                <a ng-click="backToThemes()">
+                    << Вернуться к темам</a>
+                        <p id="right-answers-percent">Вы ответили правильно на {{rightAnswersPercent}}% вопросов</p>
+                        <div ng-model="right" ng-repeat="question in thisThemeQuestions" class="panel panel-default">
+                            <div class="panel-body">
+                                <h4 class="list-group-item-heading">№{{question.id}} {{question.text}}</h4></div>
+                            <div class="panel-footer">
+                                <div class="alert" ng-model="answers" ng-repeat="oneAnswer in question.answers" ng-class="{ 'alert alert-info' : oneAnswer.correct && !oneAnswer.userChoice , 'alert alert-danger' : oneAnswer.userChoice && !oneAnswer.correct ,  'alert alert-success': oneAnswer.correct && oneAnswer.userChoice}">
+                                    <p class="list-group-item-text">
+                                        {{oneAnswer.answer}}</p>
+                                </div>
+                            </div>
+                        </div>
             </div>
             <hr>
         </div>

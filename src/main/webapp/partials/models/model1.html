@@ -24,7 +24,7 @@
             {{selectedRow}}
         </div>
         <div class="modal-body">
-            <div ui-grid="modalGridOpts"  ui-grid-selection style="height:500px; width:100%;"></div>
+            <div ui-grid="modalGridOpts" ui-grid-selection style="height:500px; width:100%;"></div>
         </div>
         <div class="modal-footer">
             <button class="btn btn-primary" type="button" ng-click="ok()">OK</button>
@@ -40,7 +40,7 @@
                 <form name="form_total">
                     
                     <div class="form-group" ng-class="{ 'has-error': form_total.num_elem.$invalid && form_total.num_elem.$dirty}">
-                        <p class="input_header">Количество элементов, N</p>
+                        <p class="input_header">Количество элементов</p>
                         <input name="num_elem" type="number" ng-model="num_elem" ng-change="num_changed()" class="form-control input-size" placeholder="Введите количество элементов" min=1 max=15 required/>
                         <div ng-messages="form_total.num_elem.$error" ng-if="form_total.num_elem.$dirty" class="my-messages">
                             <p ng-message-exp="['min','max','number']">Введите значение между 1 и 15.</p>
@@ -56,7 +56,7 @@
                         </div>
                     </div>
                     <div class="form-group" ng-class="{ 'has-error': form_total.exec_time.$invalid && form_total.exec_time.$dirty}">
-                        <p class="input_header">Время испытания:</p>
+                        <p class="input_header">Время испытания</p>
                         <input name="exec_time" type="number" ng-model="exec_time" class="form-control input-size" placeholder="Введите время испытания" min=1000 max=10000000 required/>
                         <div ng-messages="form_total.exec_time.$error" ng-if="form_total.exec_time.$dirty" class="my-messages">
                             <p ng-message-exp="['min','max','number']">Введите значение между 100 и 10000000.</p>
@@ -72,7 +72,7 @@
                         </div>
                     </div>
                     <div class="form-group" ng-class="{ 'has-error': form_total.total_lambda.$invalid && form_total.total_lambda.$dirty}" ng-show="!show_nonreserved">
-                        <p class="input_header">Интенсивность отказов одного элемента <a href="" ng-click="openModal()">[Выбрать элемент]</a></p>
+                        <p class="input_header">Интенсивность отказов одного элемента<a href="" ng-click="openModal()">[Выбрать элемент]</a></p>
                        
                         <p>{{elemName}}</p>
                         <input name="total_lambda" type="number" ng-model="total_lambda" class="form-control input-size" placeholder="Введите интенсивность отказов" min=0 max=1 required/>
@@ -210,9 +210,12 @@
         <div class="col-lg-6 vertical_line" ng-if="show_nonreserved_button_tables() && show_nonreserved">
             <button type="button" class="btn btn-default navbar-btn" ng-click="start_nonreserved()">Рассчитать</button>
             <div ng-if="show_nonreserved_tables">
-                <div ui-grid="grid_opts" style="height:91px; width:100%;"></div>
+                <p class="data_header">Параметры законов распределения времени до отказа</p>
+                <div ui-grid="grid_opts" class="height-grid"></div>
+                 <p class="data_header">Вероятность безотказной работы элементов</p>
                 <div ui-grid="grid_opts_p" class="myGrid"></div>
                 <highchart id="chart1" config="chartConfig1"></highchart>
+                <p class="data_header">Плотности распределения времени безотказной работы элементов</p>
                 <div ui-grid="grid_opts_f" class="myGrid"></div>
                 <highchart id="chart2" config="chartConfig2"></highchart>
                 <div>
@@ -223,7 +226,8 @@
         <div class="col-lg-6 vertical_line" ng-if="show_reserved_1">
             <button type="button" class="btn btn-default navbar-btn" ng-click="start_reserved_1()">Рассчитать</button>
             <div ng-if="show_reserved_1_tables">
-                <p>Время безотказной работы: {{reserved_1_T}} ч.</p>
+                <p class="reserv-time">Время безотказной работы: {{reserved_1_T}} ч.</p>
+                <p class="data_header">Показатели надёжности резервированной системы</p>
                 <div ui-grid="grid_reserved_1_opts" class="myGrid"></div>
                 <highchart id="highchart_reserved_1_P" config="highchart_reserved_1_P_conf"></highchart>
                 <highchart id="highchart_reserved_1_F" config="highchart_reserved_1_F_conf"></highchart>
@@ -232,7 +236,8 @@
         <div class="col-lg-6 vertical_line" ng-if="show_reserved_2">
             <button type="button" class="btn btn-default navbar-btn" ng-click="start_reserved_2()">Рассчитать</button>
             <div ng-if="show_reserved_2_tables">
-                <p>Время безотказной работы: {{reserved_2_T}} ч.</p>
+                <p class="reserv-time">Время безотказной работы: {{reserved_2_T}} ч.</p>
+                <p class="data_header">Показатели надёжности резервированной системы</p>
                 <div ui-grid="grid_reserved_2_opts" class="myGrid"></div>
                 <highchart id="highchart_reserved_2_P" config="highchart_reserved_2_P_conf"></highchart>
             </div>
@@ -240,7 +245,8 @@
         <div class="col-lg-6 vertical_line" ng-if="show_reserved_3">
             <button type="button" class="btn btn-default navbar-btn" ng-click="start_reserved_3()">Рассчитать</button>
             <div ng-if="show_reserved_3_tables">
-                <p>Время безотказной работы: {{reserved_3_T}} ч.</p>
+                <p class="reserv-time">Время безотказной работы: {{reserved_3_T}} ч.</p>
+                <p class="data_header">Показатели надёжности резервированной системы</p>
                 <div ui-grid="grid_reserved_3_opts" class="myGrid"></div>
                 <highchart id="highchart_reserved_3_P" config="highchart_reserved_3_P_conf"></highchart>
             </div>
@@ -248,7 +254,8 @@
         <div class="col-lg-6 vertical_line" ng-if="show_reserved_4">
             <button type="button" class="btn btn-default navbar-btn" ng-click="start_reserved_4()">Рассчитать</button>
             <div ng-if="show_reserved_4_tables">
-                <p>Время безотказной работы: {{reserved_4_T}} ч.</p>
+                <p class="reserv-time">Время безотказной работы: {{reserved_4_T}} ч.</p>
+                <p class="data_header">Показатели надёжности резервированной системы</p>
                 <div ui-grid="grid_reserved_4_opts" class="myGrid"></div>
                 <highchart id="highchart_reserved_4_P" config="highchart_reserved_4_P_conf"></highchart>
             </div>

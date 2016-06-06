@@ -179,6 +179,11 @@ option {
     height: 250px;
 }
 
+.height-grid{
+    height:91px; 
+    width:100%;
+}
+
 .input_header {
     margin: 0 0 7px;
 }
@@ -254,8 +259,9 @@ option {
 }
 
 .answer {
-    font-size:18;
+    font-size:16px;
     display: block;
+
 }
 
 .list-group-item-heading{
@@ -275,8 +281,7 @@ margin-left: 10px;
 }
 
 .answer-text{
-    margin: 5px 0px 5px 20px;
-    
+    margin: 5px 5px 5px 20px;
 }
 
 .navbar-inverse .navbar-brand{
@@ -286,6 +291,44 @@ margin-left: 10px;
 .modal-title-alert{
     color: red;
      text-decoration: underline;
+}
+.challenge{
+    border-radius: 5px;
+        background-color: white;
+        border-style:solid;
+        border-width :1px;
+        border-color: #EBEBEB;
+        padding: 0px 5px 15px 20px;
+        margin-top: 10px;
+}
+
+#right-answers-percent{
+    text-align: center;
+    font-size: 18px;
+
+}
+
+.theme-style{
+    color:#333;
+    font-size:16px;
+
+}
+.btn-submit-answer{
+   padding:8px 25px;
+}
+
+.data_header{
+    margin: 10px 0px 3px;
+    text-align:center;
+    color: #333333;
+    font-size: 17px;
+    font-family: Dosis, sans-serif;
+}
+.reserv-time{
+    margin: 10px 0px 3px;
+    color: #333333;
+    font-size: 17px;
+    font-family: Dosis, sans-serif;
 }
 
 .my-messages.ng-active {}

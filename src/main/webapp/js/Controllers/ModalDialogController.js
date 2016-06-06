@@ -15,7 +15,7 @@
                     data: modalGridData
                 };
 
-                modalGridColumnDef = [{ name: 'elem', displayName: 'Элемент'},
+                modalGridColumnDef = [{ name: 'elem', displayName: 'Элемент' },
                     { name: 'lambda', displayName: 'Lambda' }
                 ];
                 $scope.modalGridOpts.enableRowSelection = true;
@@ -30,9 +30,9 @@
                 };
 
 
-                    //modalGridColumnDef[0].width=150;
-                    $scope.modalGridOpts.modalGridColumnDef = modalGridColumnDef;
-                    $scope.modalGridOpts.modalGridData = modalGridData;
+                //modalGridColumnDef[0].width=150;
+                $scope.modalGridOpts.modalGridColumnDef = modalGridColumnDef;
+                $scope.modalGridOpts.modalGridData = modalGridData;
 
                 var ModalData = $resource('/api/asu_element');
                 ModalData.query({}, function(data) {
@@ -61,12 +61,8 @@
                             name: selectedRow[0].elem,
                             lambda: selectedRow[0].lambda
                         }
-
-                        
                         $uibModalInstance.close(outData);
                     }
-                    //showModalTitleAlert
-
                 }
                 $scope.cancel = function() {
                     $uibModalInstance.dismiss('cancel');

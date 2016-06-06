@@ -402,7 +402,7 @@
 
 
                     //Столбцы таблицы P(t)
-                    column_def_p = [{ name: 'time', displayName: 'Время, ч.' }];
+                    column_def_p = [{ name: 'time', displayName: 'Время, ч', width: 80 }];
                     for (var index = 1; index <= N; ++index) {
                         var obj = { name: 'p' + index, displayName: 'P' + index + '(t)' };
                         column_def_p.push(obj);
@@ -717,10 +717,10 @@
 
                         yAxis: {
                             currentMin: 0,
-                            currentMax: 900,
-                            tickInterval: 100,
+                            currentMax: 10,
+                            tickInterval: 1,
                             title: {
-                                text: 'f(t) 10^-5'
+                                text: 'f(t) 10^-6'
                             },
                             plotLines: [{
                                 value: 0,
@@ -1342,8 +1342,17 @@
 
                 Highcharts.theme = {
                     plotOptions: {
-                        line: { animation: false, enableMouseTracking: true, stickyTracking: true, shadow: false, dataLabels: { style: { textShadow: false } } }
-
+                        line: { 
+                            animation: false, 
+                            enableMouseTracking: true, 
+                            stickyTracking: true, 
+                            shadow: false, 
+                            dataLabels: { 
+                                style: { 
+                                    textShadow: false 
+                                } 
+                            } 
+                        }
                     },
                     chart: {
                         type: 'line',
@@ -1439,8 +1448,6 @@
 
                 ////////////////////////////
 
-
-
                 $scope.openModal = function() {
 
                     var modalInstance = $uibModal.open({
@@ -1449,8 +1456,6 @@
                         controller: 'ModalDialogController'
 
                     });
-
-
 
                     modalInstance.result.then(function(selectedItem) {
                         $scope.elemName = selectedItem.name;
