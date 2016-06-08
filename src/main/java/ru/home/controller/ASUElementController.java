@@ -28,4 +28,10 @@ public class ASUElementController {
     public ASUElement findById(@PathVariable("id") Long id) {
         return elementRepo.findOne(id);
     }
+
+    @RequestMapping(method = RequestMethod.PUT)
+    @ResponseBody
+    public ASUElement editById(@RequestBody ASUElement element) {
+        return elementRepo.save(element);
+    }
 }

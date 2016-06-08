@@ -5,10 +5,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
-import ru.home.model.Student;
-import ru.home.model.Teacher;
-import ru.home.repo.StudentRepo;
-import ru.home.repo.TeacherRepo;
+import ru.home.model.User;
+import ru.home.repo.UserRepo;
 
 import java.util.List;
 
@@ -17,14 +15,14 @@ import java.util.List;
 public class TeacherController {
 
     @Autowired
-    private TeacherRepo teacherRepo;
+    private UserRepo userRepo;
 
     @RequestMapping(method = RequestMethod.GET)
-    public List<Teacher> findAll() {
-        return teacherRepo.findAll();
+    public List<User> findAll() {
+        return userRepo.findAll();
     }
     @RequestMapping(method = RequestMethod.POST)
-    public List<Teacher> save(@RequestBody List<Teacher> teachers) {
-        return teacherRepo.save(teachers);
+    public List<User> save(@RequestBody List<User> users) {
+        return userRepo.save(users);
     }
 }

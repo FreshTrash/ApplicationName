@@ -19,7 +19,7 @@ ALTER TABLE public.test ALTER COLUMN test_id SET DEFAULT nextval('public.test_te
 ALTER SEQUENCE public.test_test_id_seq OWNED BY public.test.test_id;
 
 
-insert into teacher(teacher_id, email, enabled, first_name, last_name, middle_name, password, type, user_name)  VALUES (1, 'teacher@m.do', true, 'teacher_name', 'teacher_lastname', 'teacher_middlename', 'password', 1, 'teacher1');
+insert into user(teacher_id, email, enabled, first_name, last_name, middle_name, password, type, user_name)  VALUES (1, 'teacher@m.do', true, 'teacher_name', 'teacher_lastname', 'teacher_middlename', 'password', 1, 'teacher1');
 insert into theme(theme_id, name) VALUES (1, 'Тема 1');
 insert into test(test_id, author_id, date, name, theme_id, time_to_test) VALUES (1, 1, now(), 'Тест1', 1, 30);
 
