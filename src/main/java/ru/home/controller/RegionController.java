@@ -5,9 +5,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 import ru.home.model.Region;
-import ru.home.model.Student;
 import ru.home.repo.RegionRepo;
-import ru.home.repo.StudentRepo;
 
 import java.util.List;
 

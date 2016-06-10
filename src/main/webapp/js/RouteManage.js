@@ -31,6 +31,7 @@
                     .when("/models", { templateUrl: "partials/models/model1.html", controller: "ModelCtrl" })
                     
                    .when('/quizzes', { templateUrl: "partials/quizzes.html", controller: "QuizzesController" })
+                   .when('/login', { templateUrl: "partials/login/login.jsp", controller: "QuizzesController" })
 
 
                     .otherwise("/404", { templateUrl: "partials/404.html", controller: "PageCtrl" });

@@ -22,11 +22,11 @@ public class Route {
 
     @ManyToOne
     @JoinColumn(name = "student_id")
-    private Student student;
+    private User student;
 
     @ManyToOne
     @JoinColumn(name = "teacher_id")
-    private Teacher teacher;
+    private User teacher;
 
     @ManyToOne
     @JoinColumn(name = "test_id")

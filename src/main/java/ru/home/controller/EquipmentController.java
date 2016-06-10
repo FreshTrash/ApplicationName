@@ -3,6 +3,7 @@ package ru.home.controller;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import ru.home.model.Equipment;
+import ru.home.repo.EquipmentRepo;
 
 import java.util.List;
 
@@ -11,7 +12,7 @@ import java.util.List;
  */
 @RestController
 @RequestMapping("/api/equipment")
-public class EquipmentRepo {
+public class EquipmentController {
 
     @Autowired
     private EquipmentRepo equipmentRepo;
@@ -25,6 +26,12 @@ public class EquipmentRepo {
     @RequestMapping(value = "{id}",method = RequestMethod.GET)
     @ResponseBody
     public Equipment findById(@PathVariable("id") Long id) {
-        return equipmentRepo.findById(id);
+        return equipmentRepo.findOne(id);
+    }
+
+    @RequestMapping(method=RequestMethod.PUT)
+    @ResponseBody
+    public List<Equipment> saveOrEdit(@RequestBody List<Equipment> equipments) {
+        return equipmentRepo.save(equipments);
     }
 }

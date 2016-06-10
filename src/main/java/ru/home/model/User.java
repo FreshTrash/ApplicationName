@@ -11,11 +11,11 @@ import javax.persistence.*;
 @Getter
 @Setter
 @Entity
-@Table(name = "teacher")
-public class Teacher {
+@Table(name = "_user")
+public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "teacher_id")
+    @Column(name = "user_id")
     private Long id;
     @Column(name = "first_name")
     private String firstName;
@@ -24,7 +24,7 @@ public class Teacher {
     @Column(name = "middle_name")
     private String middleName;
     @Column(name = "type")
-    private Integer type;
+    private String type;
     @Column(name = "user_name")
     private String username;
     @Column(name = "enabled")

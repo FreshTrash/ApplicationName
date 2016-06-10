@@ -23,7 +23,7 @@ public class Test {
     private String name;
     @ManyToOne
     @JoinColumn(name = "author_id")
-    private Teacher teacher;
+    private User user;
 
     @ManyToOne
     @JoinColumn(name = "theme_id")
