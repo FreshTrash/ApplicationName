@@ -3,16 +3,17 @@
 
     define(['./RouteManage.js',
              './Controllers/ModelModule.js',
-             './Controllers/QuizModule.js'
+             './Controllers/QuizModule.js',
+             './Controllers/AuthModule.js'
             
         ],
-        function(RouteManage,  ModelModule, QuizModule) {
+        function(RouteManage,  ModelModule, QuizModule, AuthModule) {
             
             var app, appName = 'WebApp';
 
             app = angular
                 .module(
-                    appName, ["ngRoute","ui.bootstrap.modal","ui.bootstrap.tpls", "ui.grid","ui.grid.selection", "highcharts-ng", "ngMessages", "ngResource", "ngAnimate","ngTouch", ModelModule, QuizModule]
+                    appName, ["ngRoute","ui.bootstrap.modal","ui.bootstrap.tpls", "ui.grid","ui.grid.selection", "highcharts-ng", "ngMessages", "ngResource", "ngAnimate","ngTouch", ModelModule, QuizModule, AuthModule]
                 )
                 .config(RouteManage);
 

@@ -4,13 +4,13 @@
     define(["ui.bootstrap.modal"],
         function() {
 
-            var ModelCtrl = function($scope, $uibModal, $resource, ModalDialogDataShareService) {
+            var ModelCtrl = function($scope, $uibModal, $resource) {
 
                 $scope.show_nonreserved = 1;
 
                 // show law that given to function
                 $scope.show_law = function(n) {
-                    Highcharts.setOptions(Highcharts.theme);
+                    //+Highcharts.setOptions(Highcharts.theme);
                     var total_show_laws = [0, 0, 0, 0, 0, 0];
 
                     for (var i = 0; i < 6; i += 1)
@@ -72,7 +72,6 @@
 
                     for (var key in law_obj) {
                         law_values_arr.push(law_obj[key]);
-
                     }
 
                     enable_if_arr = getValuesForNgif(law_values_arr);
@@ -81,8 +80,6 @@
                     $scope.usech_if = enable_if_arr[2];
                     $scope.relei_if = enable_if_arr[3];
                     $scope.veib_if = enable_if_arr[4];
-
-
                 }
 
                 function getValuesForNgif(law_values_arr) {
@@ -375,8 +372,7 @@
                     }
 
 
-
-                    //все что ниже, реально лучше не трогать (таблицы)
+                    
                     //Таблица 1
                     column_def = [{ name: 'empty', displayName: ' ', width: 50 }];
                     for (var index = 1; index <= N; ++index) {
@@ -1361,7 +1357,7 @@
                             fontFamily: "Dosis, sans-serif"
                         },
                         marginLeft: 60,
-                        marginBottom: 98,
+                        marginBottom: 110,
                         marginTop: 38
                     },
 
@@ -1856,7 +1852,7 @@
                 //////////////////////
 
             };
-            return ["$scope", "$uibModal", "$resource", "ModalDialogDataShareService", ModelCtrl, ];
+            return ["$scope", "$uibModal", "$resource", ModelCtrl ];
         });
 
 

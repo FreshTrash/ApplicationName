@@ -3,14 +3,12 @@
 
     define([
             './ModelCtrl.js',
-            './ModalDialogDataShareService.js',
             './ModalDialogController.js'
         ],
-        function(ModelCtrl, ModalDialogDataShareService, ModalDialogController) {
+        function(ModelCtrl, ModalDialogController) {
             var moduleName = "ModelModule";
 
             angular.module(moduleName,[])
-                .service("ModalDialogDataShareService", ModalDialogDataShareService)
                 .controller("ModelCtrl", ModelCtrl)
                 .controller("ModalDialogController", ModalDialogController);
 
