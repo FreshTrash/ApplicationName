@@ -9,7 +9,7 @@
             { ngSanitize: "./dependencies/vendor/angular-sanitize/angular-sanitize.js", size: "19990" },
             { ngAnimate: "./dependencies/angular-animate.min.js"},
             { 'ui.bootstrap':"dependencies/ui-bootstrap-tpls.js"},
-            {'ui.bootstrap.tpls':"dependencies/ui-bootstrap-tpls.js"}
+            { 'ui.bootstrap.tpls':"dependencies/ui-bootstrap-tpls.js"}
         )
         .ready("ALL", function() {
 

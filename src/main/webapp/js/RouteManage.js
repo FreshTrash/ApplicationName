@@ -3,9 +3,8 @@
 
 
     define([
-            
             './Controllers/ModelCtrl.js',
-           './Controllers/QuizzesController.js'
+            './Controllers/QuizzesController.js'
 
         ],
         function($log, PageCtrl, BlogCtrl, ModelCtrl) {
