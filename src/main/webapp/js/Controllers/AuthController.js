@@ -44,28 +44,27 @@
                     equipmentSelectDataUpdate();
 
                     $scope.modelGridOpts.enableHorizontalScrollbar = 0;
-
-
                 }
 
                 var modelColumns = [],
                     modelData = [];
                 $scope.modelGridOpts = {
-                    columnDefs: [{ name: 'Delete', cellTemplate: '<button  ng-click="grid.appScope.deleteRow(row)">Удалить</button>',enableCellEdit: false, width:70},
-                    	{ name: 'id', displayName: 'id', enableCellEdit: false, width: 60 },
-                        { name: 'elem', displayName: 'Элемент', enableCellEdit: true,minWidth:300 },
-                        { name: 'lambda', displayName: 'Lambda', enableCellEdit: true, type: 'number',maxWidth:120 },
+                    columnDefs: [{ name: 'Delete', cellTemplate: '<button  ng-click="grid.appScope.deleteRow(row)">Удалить</button>', enableCellEdit: false, width: 70 },
+                        { name: 'id', displayName: 'id', enableCellEdit: false, width: 60 },
+                        { name: 'elem', displayName: 'Элемент', enableCellEdit: true, minWidth: 300 },
+                        { name: 'lambda', displayName: 'Lambda', enableCellEdit: true, type: 'number', maxWidth: 120 },
                         { name: 'equipid', visible: false },
                         { name: 'equipname', visible: false }
                     ],
                     data: modelData,
-                    enableColumnResizing:true
+                    enableColumnResizing: true
                 };
 
 
                 $scope.equipmentSelectData = {
                     repeatSelect: false
                 };
+
 
                 $scope.deleteRow = function(row) {
                     var index = $scope.modelGridOpts.data.indexOf(row.entity);
@@ -80,11 +79,12 @@
                     })
                 }
 
-                $scope.equipmentSelectDataChanged = function(selectedEquipmentId) {
+                var AsuElementsData = $resource('/api/asu_element');
+                $scope.updateModelTable = function(selectedEquipmentId) {
                     $scope.modelGridOpts.data.length = 0;
-                    var AsuElementsData = $resource('/api/asu_element');
-                    AsuElementsData.query({}, function(data) {
 
+                    AsuElementsData.query({}, function(data) {
+                        $scope.modelQueryData = data;
                         var selectedAsuElements = findAsuElementsById(data, selectedEquipmentId);
                         //Строки таблицы
                         for (var i = 0, len = selectedAsuElements.length; i < len; i += 1) {
@@ -145,11 +145,47 @@
                     });
                 };
 
-                $scope.addAsuElement =function(){
-                	//SHOW FORM
-                	//
+
+
+                $scope.submitFormAddElement = function() {
+                    if (($scope.selectedEquipmentId !== undefined) && ($scope.elemName !== undefined) && ($scope.elemLambda !== undefined)) {
+                        var maxId = findMaxId($scope.modelQueryData);
+
+                        var data = {
+                            id: maxId + 1,
+                            equipment: {
+                                id: $scope.selectedEquipmentId,
+                                name: $scope.equipmentSelectData.availableOptions[$scope.selectedEquipmentId-1].name
+                            },
+                            name: $scope.elemName,
+                            intensity: $scope.elemLambda
+                        };
+
+                        console.log(data);                       
+                        $http.put('/api/asu_element/', JSON.stringify(data))
+                            .then(function(response) {
+                                $scope.msg.resp = "Данные сохранены!";
+                                var obj = {
+                                    "id": selectedAsuElements[i].id,
+                                    "elem": selectedAsuElements[i].name,
+                                    "lambda": selectedAsuElements[i].intensity,
+                                    "equipid": selectedAsuElements[i].equipment.id,
+                                    "equiname": selectedAsuElements[i].equipment.name,
+                                };
+                                modelData.push(obj);
+                            }, function(response) {
+                                $scope.msg.resp = "Данные сохранены.";
+
+                            });
+                    } else {
+                        window.alert("Введите все данные");
+                    }
 
                 };
+
+                var findMaxId = function(data) {
+                    return data[data.length - 1].id;
+                }
 
 
 
