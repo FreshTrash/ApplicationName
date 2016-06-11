@@ -97,11 +97,9 @@
 
 
                 $scope.show_nonreserved_button_tables = function() {
-
                     if ($scope.dropdown_data.elems)
                         return 1;
                     return 0;
-
                 }
 
 
@@ -135,7 +133,7 @@
                     // 
                     for (var i = 0; i < keys_of_dropdowns_length; i += 1) {
                         if (keys_of_dropdowns_arr[i] != i) {
-                            console.log("1 ret failed ");
+                            
                             return 0;
                         }
                     }
@@ -144,7 +142,7 @@
                     if ($scope.form_total.num_elem.$invalid ||
                         $scope.form_total.exec_time.$invalid ||
                         $scope.form_total.step.$invalid) {
-                        console.log("2 ret failed ");
+                        
                         return 0;
                     }
 
@@ -153,7 +151,7 @@
                     //если все dropdowns не выбраны
                     if (keys_of_dropdowns_length != $scope.num_elem) {
                         $scope.show_elem_warning = 1;
-                        console.log("3 ret failed ");
+                       
                         return 0;
                     }
 

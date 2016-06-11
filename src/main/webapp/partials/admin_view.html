@@ -27,23 +27,30 @@
         </div>
         <!-- <div class="col-lg-1"></div> -->
         <div class="col-lg-7">
-        <div ng-if="show_book">
-            book
-        </div>
-        <div ng-if="show_taskbook">
-            task
-        </div>
-        <div ng-if="show_quizz">
-            q
-        </div>
-        <div ng-if="show_model">
-            <!-- SELECT -->
-            <!-- UIGRID WITH CHANGE VALUES AVAILABLITY -->
-            <div ui-grid="modelGridOpts" class="myGrid"></div>
-        </div>
-        <div ng-if="show_users">
-            u
-        </div>
+            <div ng-if="show_book">
+                book
+            </div>
+            <div ng-if="show_taskbook">
+                task
+            </div>
+            <div ng-if="show_quizz">
+                q
+            </div>
+            <div ng-if="show_model">
+                <!-- SELECT -->
+                {{msg.resp}}
+                <select required ng-model="selectedEquipmentId" ng-change="equipmentSelectDataChanged(selectedEquipmentId)" class="form-control dropdown_margin">
+                    <option value="" disabled selected>Выберите тип оборудования</option>
+                    <option ng-repeat="option in equipmentSelectData.availableOptions" value="{{option.id}}">{{option.name}}</option>
+                </select>
+                <!-- UIGRID WITH CHANGE VALUES AVAILABLITY -->
+                <div ui-grid="modelGridOpts" ui-grid-edit  class="adminModelGrid"></div>
+                <button class="btn btn-primary" type="button" ng-click="addAsuElement()">Добавить элемент</button>
+                
+            </div>
+            <div ng-if="show_users">
+                u
+            </div>
         </div>
     </div>
 </div>

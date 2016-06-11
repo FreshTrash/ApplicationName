@@ -4,7 +4,7 @@
     define([],
         function() {
 
-            var AuthController = function($scope, $resource) {
+            var AuthController = function($scope, $resource, $http) {
 
                 var hideAll = function() {
                     $scope.show_book = false;
@@ -14,12 +14,8 @@
                     $scope.show_users = false;
                 };
 
-                var modelColumns = [],
-                    modelData = [];
-                $scope.modelGridOpts = {
-                    columnDefs: modelColumns,
-                    data: modelData
-                };
+
+
 
                 $scope.showBook = function() {
                     hideAll();
@@ -36,44 +32,126 @@
                     $scope.show_quizz = true;
                 }
 
+
+
+
+
+
                 $scope.showModel = function() {
                     hideAll();
                     $scope.show_model = true;
 
-
+                    equipmentSelectDataUpdate();
 
                     $scope.modelGridOpts.enableHorizontalScrollbar = 0;
 
 
-                    modelColumns = [{ name: 'elem', displayName: 'Элемент', width:100 },
-                        { name: 'lambda', displayName: 'Lambda', width:30 }
-                    ];
+                }
+
+                var modelColumns = [],
+                    modelData = [];
+                $scope.modelGridOpts = {
+                    columnDefs: [{ name: 'Delete', cellTemplate: '<button  ng-click="grid.appScope.deleteRow(row)">Удалить</button>',enableCellEdit: false, width:70},
+                    	{ name: 'id', displayName: 'id', enableCellEdit: false, width: 60 },
+                        { name: 'elem', displayName: 'Элемент', enableCellEdit: true,minWidth:300 },
+                        { name: 'lambda', displayName: 'Lambda', enableCellEdit: true, type: 'number',maxWidth:120 },
+                        { name: 'equipid', visible: false },
+                        { name: 'equipname', visible: false }
+                    ],
+                    data: modelData,
+                    enableColumnResizing:true
+                };
 
 
-                    // $scope.modalGridOpts.onRegisterApi = function(gridApi) {
-                    //     $scope.myGridApi = gridApi;
-                    // };
+                $scope.equipmentSelectData = {
+                    repeatSelect: false
+                };
 
+                $scope.deleteRow = function(row) {
+                    var index = $scope.modelGridOpts.data.indexOf(row.entity);
+                    $scope.modelGridOpts.data.splice(index, 1);
+                    //ADD $HTTP.DELETE METHOD
+                };
 
-                    //modalGridColumnDef[0].width=150;
+                var equipmentSelectDataUpdate = function() {
+                    var Equipment = $resource('/api/equipment');
+                    Equipment.query({}, function(data) {
+                        $scope.equipmentSelectData.availableOptions = data;
+                    })
+                }
 
+                $scope.equipmentSelectDataChanged = function(selectedEquipmentId) {
+                    $scope.modelGridOpts.data.length = 0;
+                    var AsuElementsData = $resource('/api/asu_element');
+                    AsuElementsData.query({}, function(data) {
 
-                    var Data = $resource('/api/asu_element');
-                    Data.query({}, function(data) {
+                        var selectedAsuElements = findAsuElementsById(data, selectedEquipmentId);
                         //Строки таблицы
-                        for (var i = 0, len = data.length; i < len; i += 1) {
+                        for (var i = 0, len = selectedAsuElements.length; i < len; i += 1) {
                             var obj = {
-                                "elem": data[i].name,
-                                "lambda": data[i].intensity,
+                                "id": selectedAsuElements[i].id,
+                                "elem": selectedAsuElements[i].name,
+                                "lambda": selectedAsuElements[i].intensity,
+                                "equipid": selectedAsuElements[i].equipment.id,
+                                "equiname": selectedAsuElements[i].equipment.name,
                             };
                             modelData.push(obj);
                         }
                     });
-   					$scope.modelGridOpts.modelColumns = modelColumns;
-                    $scope.modelGridOpts.modelData = modelData;
-                 
+                };
 
+                var findAsuElementsById = function(allAsuElements, equimentId) {
+                    var asuElementsOfChoosedEquipment = [];
+                    for (var i = 0, len = allAsuElements.length; i < len; i += 1) {
+                        if (allAsuElements[i].equipment.id == equimentId) {
+                            asuElementsOfChoosedEquipment.push(allAsuElements[i]);
+                        }
+                    }
+                    return asuElementsOfChoosedEquipment;
                 }
+
+
+                $scope.msg = {};
+
+                $scope.modelGridOpts.onRegisterApi = function(gridApi) {
+                    //set gridApi on scope
+                    $scope.gridApi = gridApi;
+                    gridApi.edit.on.afterCellEdit($scope, function(rowEntity, colDef, newValue, oldValue) {
+
+                        console.log(rowEntity);
+                        // {"id":1,"equipment":{"id":1,"name":"Гидравлическое оборудование"},"name":"Насосы шестеренчатые","intensity":1.3E-5}
+
+                        if (newValue !== oldValue) {
+                            var data = {
+                                id: rowEntity.id,
+                                equipment: {
+                                    id: rowEntity.equipid,
+                                    name: rowEntity.equipname,
+                                },
+                                name: rowEntity.elem,
+                                intensity: rowEntity.lambda
+                            };
+
+                            $http.put('/api/asu_element/', JSON.stringify(data))
+                                .then(function(response) {
+                                    $scope.msg.resp = "Данные сохранены!";
+                                }, function(response) {
+                                    $scope.msg.resp = "Данные сохранены.";
+
+                                });
+                        }
+
+                        $scope.$apply();
+                    });
+                };
+
+                $scope.addAsuElement =function(){
+                	//SHOW FORM
+                	//
+
+                };
+
+
 
                 $scope.showUsers = function() {
                     hideAll();
@@ -88,7 +166,7 @@
 
 
             };
-            return ["$scope", "$resource", AuthController];
+            return ["$scope", "$resource", "$http", AuthController];
         });
 
 

@@ -13,7 +13,8 @@
 
             app = angular
                 .module(
-                    appName, ["ngRoute","ui.bootstrap.modal","ui.bootstrap.tpls", "ui.grid","ui.grid.selection", "highcharts-ng", "ngMessages", "ngResource", "ngAnimate","ngTouch", ModelModule, QuizModule, AuthModule]
+                    appName, ["ngRoute","ui.bootstrap.modal","ui.bootstrap.tpls", "ui.grid","ui.grid.selection", "ui.grid.edit",
+                    "highcharts-ng", "ngMessages", "ngResource", "ngAnimate","ngTouch", ModelModule, QuizModule, AuthModule]
                 )
                 .config(RouteManage);
 
