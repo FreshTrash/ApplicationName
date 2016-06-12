@@ -1,6 +1,8 @@
 package ru.home.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import ru.home.model.ASUElement;
 import ru.home.repo.ASUElementRepo;
@@ -33,5 +35,11 @@ public class ASUElementController {
     @ResponseBody
     public ASUElement editById(@RequestBody ASUElement element) {
         return elementRepo.save(element);
+    }
+
+    @RequestMapping(value = "/{id}", method = RequestMethod.DELETE)
+    public ResponseEntity<String> deleteById(@PathVariable("id") Long id) {
+        elementRepo.delete(id);
+        return new ResponseEntity<>("Элемент успешно удален", HttpStatus.OK);
     }
 }
