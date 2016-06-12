@@ -37,29 +37,31 @@
                 q
             </div>
             <div ng-show="show_model">
-                               
+                
+                <h4>Выберите тип оборудования</h4>
                 <select required ng-model="selectedEquipmentId" ng-change="updateModelTable(selectedEquipmentId)" class="form-control dropdown_margin">
                     <option value="" disabled selected>Выберите тип оборудования</option>
                     <option ng-repeat="option in equipmentSelectData.availableOptions" value="{{option.id}}">{{option.name}}</option>
                 </select>
-              
+                {{msg.resp}}
+                <h4>Элементы АСУ</h4>
                 <div ui-grid="modelGridOpts" ui-grid-edit class="adminModelGrid"></div>
-              
+                <form name=addElementForm>
                 <fieldset class="scheduler-border">
                     <legend class="scheduler-border">Добавить элемент</legend>
                     
-                        <div class="form-group" ng-class="{ 'has-error': formAddElement.elemName.$invalid && formAddElement.elemName.$dirty}">
+                        <div class="form-group" ng-class="{ 'has-error': addElementForm.elemName.$invalid && addElementForm.elemName.$dirty}">
                             <p class="input_header">Название элемента</p>
-                            <input name="elemName" type="string" ng-model="elemName" class="form-control input-size" placeholder="Введите количество элементов" required/>
-                            <div ng-messages="formAddElement.elemName.$error" min='3' max='200' ng-if="formAddElement.elemName.$dirty" class="my-messages">
-                                <p ng-message-exp="['min','max','number']">Длина должна быть длиннее 3 символов</p>
+                            <input name="elemName" type="string" ng-model="elemName" class="form-control input-size" placeholder="Введите название элемента" required/>
+                            <div ng-messages="addElementForm.elemName.$error" min='3' max='200' ng-if="addElementForm.elemName.$dirty" class="my-messages">
+                                <p ng-message-exp="['min','max','number']">Название должно быть длиннее 3 символов</p>
                                 <p ng-message="required">Это поле обязательно для заполнения.</p>
                             </div>
                         </div>
-                        <div class="form-group" ng-class="{ 'has-error': formAddElement.elemLambda.$invalid && formAddElement.elemLambda.$dirty}">
+                        <div class="form-group" ng-class="{ 'has-error': addElementForm.elemLambda.$invalid && addElementForm.elemLambda.$dirty}">
                             <p class="input_header">Интенсивность отказов</p>
-                            <input name="elemLambda" type="number" ng-model="elemLambda" class="form-control input-size" placeholder="Введите количество элементов" min=0 max=1 required/>
-                            <div ng-messages="formAddElement.elemLambda.$error" ng-if="formAddElement.elemLambda.$dirty" class="my-messages">
+                            <input name="elemLambda" type="number" ng-model="elemLambda" class="form-control input-size" placeholder="Введите интенсивность откаов" min=0 max=1 required/>
+                            <div ng-messages="addElementForm.elemLambda.$error" ng-if="addElementForm.elemLambda.$dirty" class="my-messages">
                                 <p ng-message-exp="['min','max','number']">Введите значение между 0 и 1.</p>
                                 <p ng-message="required">Это поле обязательно для заполнения.</p>
                             </div>
@@ -67,6 +69,7 @@
                         <button class="btn btn-primary" ng-click="submitFormAddElement()">Добавить</button>
                    
                 </fieldset>
+                </form>
             </div>
             <div ng-if="show_users">
                 u

@@ -154,7 +154,7 @@
                         var data = {
                             id: maxId + 1,
                             equipment: {
-                                id: $scope.selectedEquipmentId,
+                                id: parseInt($scope.selectedEquipmentId,10),
                                 name: $scope.equipmentSelectData.availableOptions[$scope.selectedEquipmentId-1].name
                             },
                             name: $scope.elemName,
@@ -166,12 +166,13 @@
                             .then(function(response) {
                                 $scope.msg.resp = "Данные сохранены!";
                                 var obj = {
-                                    "id": selectedAsuElements[i].id,
-                                    "elem": selectedAsuElements[i].name,
-                                    "lambda": selectedAsuElements[i].intensity,
-                                    "equipid": selectedAsuElements[i].equipment.id,
-                                    "equiname": selectedAsuElements[i].equipment.name,
+                                    "id": data.id,
+                                    "elem": data.name,
+                                    "lambda": data.intensity,
+                                    "equipid": data.equipment.id,
+                                    "equiname": data.equipment.name,
                                 };
+                                
                                 modelData.push(obj);
                             }, function(response) {
                                 $scope.msg.resp = "Данные сохранены.";
@@ -180,6 +181,7 @@
                     } else {
                         window.alert("Введите все данные");
                     }
+
 
                 };
 
