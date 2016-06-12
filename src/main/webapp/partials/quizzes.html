@@ -24,23 +24,23 @@
             <!--QUESTIONS-->
             <div ng-if="showQuestions">
                 <h4>Выберите ответ</h4>
-                <a ng-click="backToThemes()"><< Вернуться к темам</a>
-                <div class="challenge">
-                        <h3>{{choosedThemeName}} <small>Вопрос №{{questionId}} из {{totalQuestionsCount}}</small></h3>
-                        <div>
-                            <h4>{{questionName}}</h4>
-                            <ul>
-                                <li class="answer" ng-repeat="answerIndex in thisThemeQuestions[questionId-1].answers">
-                                    <div class="checkbox">
-                                        <label>
-                                            <input type="checkbox" class="answer-text" ng-model="answerIndex.userChoice"> {{answerIndex.answer}}
-                                        </label>
-                                    </div>
-                                </li>
-                            </ul>
-                            
-                            <button type="button"  class="btn btn-primary" ng-click="submitAnswer(questionId)">Ответить</button>
-                        </div>
+                <a ng-click="backToThemes()">
+                    << Вернуться к темам</a>
+                        <div class="challenge">
+                            <h3>{{choosedThemeName}} <small>Вопрос №{{questionId}} из {{totalQuestionsCount}}</small></h3>
+                            <div>
+                                <h4>{{questionName}}</h4>
+                                <ul>
+                                    <li class="answer" ng-repeat="answerIndex in thisThemeQuestions[questionId-1].answers">
+                                        <div class="checkbox">
+                                            <label>
+                                                <input type="checkbox" class="answer-text" ng-model="answerIndex.userChoice"> {{answerIndex.answer}}
+                                            </label>
+                                        </div>
+                                    </li>
+                                </ul>
+                                <button type="button" class="btn btn-primary" ng-click="submitAnswer(questionId)">Ответить</button>
+                            </div>
                         </div>
             </div>
             <!--STATS-->

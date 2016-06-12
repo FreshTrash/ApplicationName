@@ -49,10 +49,10 @@
                 var modelColumns = [],
                     modelData = [];
                 $scope.modelGridOpts = {
-                    columnDefs: [{ name: 'Delete', cellTemplate: '<button  ng-click="grid.appScope.deleteRow(row)">Удалить</button>', enableCellEdit: false, width: 70 },
-                        { name: 'id', displayName: 'id', enableCellEdit: false, width: 60 },
-                        { name: 'elem', displayName: 'Элемент', enableCellEdit: true, minWidth: 300 },
-                        { name: 'lambda', displayName: 'Lambda', enableCellEdit: true, type: 'number', maxWidth: 120 },
+                    columnDefs: [{ name: 'Delete', cellTemplate: '<button  ng-click="grid.appScope.deleteRow(row)">Удалить</button>', enableCellEdit: false,width:70 },
+                        { name: 'id', displayName: 'id', enableCellEdit: false,width:50 },
+                        { name: 'elem', displayName: 'Элемент', enableCellEdit: true,width:420},
+                        { name: 'lambda', displayName: 'Lambda', enableCellEdit: true, type: 'number',width:120},
                         { name: 'equipid', visible: false },
                         { name: 'equipname', visible: false }
                     ],
@@ -95,6 +95,7 @@
                                 "equipid": selectedAsuElements[i].equipment.id,
                                 "equiname": selectedAsuElements[i].equipment.name,
                             };
+
                             modelData.push(obj);
                         }
                     });
@@ -166,16 +167,18 @@
                             .then(function(response) {
                                 $scope.msg.resp = "Данные сохранены!";
                                 var obj = {
-                                    "id": data.id,
-                                    "elem": data.name,
-                                    "lambda": data.intensity,
-                                    "equipid": data.equipment.id,
-                                    "equiname": data.equipment.name,
+                                    "id": data[0].id,
+                                    "elem": data[0].name,
+                                    "lambda": data[0].intensity,
+                                    "equipid": data[0].equipment.id,
+                                    "equiname": data[0].equipment.name,
                                 };
                                 
                                 modelData.push(obj);
                             }, function(response) {
-                                $scope.msg.resp = "Данные сохранены.";
+                                $scope.msg.resp =response;
+                                $scope.msg.data =data;
+
 
                             });
                     } else {

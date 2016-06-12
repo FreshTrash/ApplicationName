@@ -1,38 +1,36 @@
 <!DOCTYPE html>
 <html class="no-js">
 
-<head>
-    
-    <title>Надежность автоматизированных систем</title>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="description" content="ACME Inc.">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <head>
+        <title>Надежность автоматизированных систем</title>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="description" content="ACME Inc.">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="dependencies/bootstrap.min.css" />
+        <link rel="stylesheet" href="dependencies/font-awesome.min.css">
+        <link rel="stylesheet" href="dependencies/3.1.1/ui-grid.min.css">
+        <link rel="stylesheet" href="css/main.css">
+    </head>
 
-    <link rel="stylesheet" href="dependencies/bootstrap.min.css" />
-    <link rel="stylesheet" href="dependencies/font-awesome.min.css">
-    <link rel="stylesheet" href="dependencies/3.1.1/ui-grid.min.css">
-    <link rel="stylesheet" href="css/main.css">
-</head>
-
-<body>
-    
-    <div ng-include='"partials/templates/header.html"'></div>
-    <div ng-view> </div>
-    <div ng-include='"partials/templates/footer.html"'></div>
-
-    <script src="dependencies/angular15.min.js"></script>
-    <script src="dependencies/headjs-notify/src/load.js" type="text/javascript"></script>
-    <script src="js/boot.js" type="text/javascript"></script>
-    <script src="dependencies/3.1.1/ui-grid.min.js" type="text/javascript"></script>
-    <script src="dependencies/highstock.src.js"></script>
-    <script src="dependencies/highcharts-ng.js"></script>
-    <script src="dependencies/angular-messages.js"></script>
-    <script src="dependencies/angular-resource.min.js"></script>
-    <script src="dependencies/angular-touch.min.js"></script>
-<!--     <script src="dependencies/angular-animate.min.js"></script>
+    <body>
+        <div class="wrapper">
+            <div ng-include='"partials/templates/header.html"'></div>
+            <div ng-view> </div>
+            <div ng-include='"partials/templates/footer.html"'></div>
+        </div>
+        
+        <script src="dependencies/angular15.min.js"></script>
+        <script src="dependencies/headjs-notify/src/load.js" type="text/javascript"></script>
+        <script src="js/boot.js" type="text/javascript"></script>
+        <script src="dependencies/3.1.1/ui-grid.min.js" type="text/javascript"></script>
+        <script src="dependencies/highstock.src.js"></script>
+        <script src="dependencies/highcharts-ng.js"></script>
+        <script src="dependencies/angular-messages.js"></script>
+        <script src="dependencies/angular-resource.min.js"></script>
+        <script src="dependencies/angular-touch.min.js"></script>
+        <!--     <script src="dependencies/angular-animate.min.js"></script>
     <script src="dependencies/ui-bootstrap-tpls.js"></script> -->
-
-</body>
+    </body>
 
 </html>

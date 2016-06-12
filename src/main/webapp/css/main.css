@@ -1,13 +1,22 @@
 /* Global Styles */
+* {
+ box-sizing: border-box;
+}
+
+*:before,
+*:after {
+ box-sizing: border-box;
+}
 
 html,
 body {
     height: 100%;
+    position: relative;
 }
 
 body {
-    padding-top: 50px;
-    padding-bottom: 20px;
+ 
+
 }
 
 select:required:invalid {
@@ -179,13 +188,12 @@ option {
     height: 250px;
 }
 
-.height-grid{
-    height:91px; 
-    width:100%;
+.height-grid {
+    height: 91px;
+    width: 100%;
 }
 
-
-.adminModelGrid{
+.adminModelGrid {
     width: 100%;
     height: 350px;
 }
@@ -256,98 +264,101 @@ option {
 .form-group > h5 {
     margin-top: 13px;
     margin-bottom: 7px;
-    font-size:15;
+    font-size: 15;
 }
 
-.center{
+.center {
     text-align: center;
-    line-height:1.5;
+    line-height: 1.5;
 }
 
 .answer {
-    font-size:16px;
+    font-size: 16px;
     display: block;
-
 }
 
-.list-group-item-heading{
-        margin-left: 5px;
-        margin-top: 2px; 
-        margin-bottom: 2px; 
-}
-.alert{
-margin-bottom: 10px;
-padding:7px
-margin-left:20px;
+.list-group-item-heading {
+    margin-left: 5px;
+    margin-top: 2px;
+    margin-bottom: 2px;
 }
 
-.answer-checkbox{
-float: left;
-margin-left: 10px;
+.alert {
+    margin-bottom: 10px;
+    padding: 7px margin-left: 20px;
 }
 
-.answer-text{
+.answer-checkbox {
+    float: left;
+    margin-left: 10px;
+}
+
+.answer-text {
     margin: 5px 5px 5px 20px;
 }
 
-.navbar-inverse .navbar-brand{
-       color: #EEE;
+.navbar-inverse .navbar-brand {
+    color: #EEE;
 }
 
-.modal-title-alert{
+.modal-title-alert {
     color: red;
-     text-decoration: underline;
-}
-.challenge{
-    border-radius: 5px;
-        background-color: white;
-        border-style:solid;
-        border-width :1px;
-        border-color: #EBEBEB;
-        padding: 0px 5px 15px 20px;
-        margin-top: 10px;
+    text-decoration: underline;
 }
 
-#right-answers-percent{
+.challenge {
+    border-radius: 5px;
+    background-color: white;
+    border-style: solid;
+    border-width: 1px;
+    border-color: #EBEBEB;
+    padding: 0px 5px 15px 20px;
+    margin-top: 10px;
+}
+
+#right-answers-percent {
     text-align: center;
     font-size: 18px;
-
 }
 
-.theme-style{
-    color:#333;
-    font-size:16px;
-
-}
-.btn-submit-answer{
-   padding:8px 25px;
+.theme-style {
+    color: #333;
+    font-size: 16px;
 }
 
-.data_header{
+.btn-submit-answer {
+    padding: 8px 25px;
+}
+
+.data_header {
     margin: 10px 0px 3px;
-    text-align:center;
-    color: #333333;
-    font-size: 17px;
-    font-family: Dosis, sans-serif;
-}
-.reserv-time{
-    margin: 10px 0px 3px;
+    text-align: center;
     color: #333333;
     font-size: 17px;
     font-family: Dosis, sans-serif;
 }
 
+.reserv-time {
+    margin: 10px 0px 3px;
+    color: #333333;
+    font-size: 17px;
+    font-family: Dosis, sans-serif;
+}
 
 .my-messages.ng-active {}
+
 .my-messages.ng-inactive {}
+
 input[type="number"]::-webkit-outer-spin-button,
 input[type="number"]::-webkit-inner-spin-button {
     -webkit-appearance: none;
     margin: 0;
 }
+
 input[type="number"] {
     -moz-appearance: textfield;
 }
+
 fieldset.scheduler-border {
     border: 1px groove #ddd !important;
     padding: 0.4em 1.4em 1em 1.4em !important;
@@ -355,23 +366,49 @@ fieldset.scheduler-border {
     -webkit-box-shadow: 0px 0px 0px 0px #000;
     box-shadow: 0px 0px 0px 0px #000;
 }
+
 legend.scheduler-border {
     width: inherit;
     /* Or auto */
-    
     padding: 0 2px;
     /* To give a bit of padding on the left and right */
-    
     border-bottom: none;
     margin-bottom: 0px;
     font-size: 16px;
 }
 
-footer {
-    margin: 50px 0;
+.wrapper {
+    min-height: 100vh;
+    /* will cover the 100% of viewport */
+    overflow: hidden;
+    display: block;
+    position: relative;
+    padding-bottom: 100px;
+       padding-top: 50px;
+    /* height of your footer */
 }
 
+
+footer {
+
+    
+
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    padding-top: 12px;
+    padding-bottom:3px;
+    border: solid 1px ;
+    border-color:  #efefef;
+  /*background-color:;*/
+  text-align: center;
+line-height: 0.95;
+
+}
+
+
 /* Responsive Styles */
+
 @media (max-width: 767px) {
     .carousel {
         height: 70%;
