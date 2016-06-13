@@ -38,7 +38,6 @@ public class ASUElementController {
         return elementRepo.save(element);
     }
 
-    @Secured("ADMIN")
     @RequestMapping(value = "/{id}", method = RequestMethod.DELETE)
     public ResponseEntity<String> deleteById(@PathVariable("id") Long id) {
         elementRepo.delete(id);
