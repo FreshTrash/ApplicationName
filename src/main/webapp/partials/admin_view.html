@@ -46,10 +46,6 @@
                 </select>
                 {{msg.resp}}
                 <br>
-                {{msg.data}}
-                <h4>Элементы АСУ</h4>
-                <div ui-grid="modelGridOpts" ui-grid-edit class="adminModelGrid"></div>
-                <br>
                 <form name=addElementForm>
                 <fieldset class="scheduler-border">
                     <legend class="scheduler-border">Добавить элемент</legend>
@@ -74,6 +70,10 @@
                    
                 </fieldset>
                 </form>
+                <h4>Элементы АСУ</h4>
+                <div ui-grid="modelGridOpts" ui-grid-edit class="adminModelGrid"></div>
+                <br>
+                
             </div>
             <div ng-if="show_users">
                 u

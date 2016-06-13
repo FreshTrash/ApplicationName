@@ -67,13 +67,15 @@
 
 
                 $scope.deleteRow = function(row) {
-                    var index = $scope.modelGridOpts.data.indexOf(row.entity);
-                    $scope.modelGridOpts.data.splice(index, 1);
+
                     $http.delete('/api/asu_element/' + row.entity.id)
-                        .success(function() {
-                            
-                        })
- 
+                        .then(function() {
+                            var index = $scope.modelGridOpts.data.indexOf(row.entity);
+                            $scope.modelGridOpts.data.splice(index, 1);
+                        },function(response){
+                            $scope.msg.resp=response;
+                        });
+
                 };
 
                 var equipmentSelectDataUpdate = function() {
@@ -127,7 +129,7 @@
                         // {"id":1,"equipment":{"id":1,"name":"Гидравлическое оборудование"},"name":"Насосы шестеренчатые","intensity":1.3E-5}
 
                         if (newValue !== oldValue) {
-                            var data = {
+                            var data = [{
                                 id: rowEntity.id,
                                 equipment: {
                                     id: rowEntity.equipid,
@@ -135,7 +137,7 @@
                                 },
                                 name: rowEntity.elem,
                                 intensity: rowEntity.lambda
-                            };
+                            }];
 
                             $http.put('/api/asu_element/', JSON.stringify(data))
                                 .then(function(response) {
@@ -164,22 +166,22 @@
                             intensity: $scope.elemLambda
                         }];
 
-                        
+
                         $http.put('/api/asu_element/', JSON.stringify(data))
                             .then(function(response) {
                                 $scope.msg.resp = response;
                                 var obj = {
-                                     "id": response.data[0].id,
+                                    "id": response.data[0].id,
                                     "elem": data[0].name,
                                     "lambda": data[0].intensity,
                                     "equipid": data[0].equipment.id,
                                     "equiname": data[0].equipment.name,
                                 };
 
-                               modelData.push(obj);
+                                modelData.push(obj);
                             }, function(response) {
-                                $scope.msg.resp = response;
-                                $scope.msg.data = data;
+                                $scope.msg.resp = "Данные добавлены!";
+
 
 
                             });
