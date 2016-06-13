@@ -1,7 +1,7 @@
 (function(define) {
     "use strict";
 
-    define(["ui.bootstrap.modal"],
+    define([],
         function() {
 
             var ModalDialogController = function($scope, $uibModalInstance, $resource) {

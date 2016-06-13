@@ -8,9 +8,14 @@
 
             angular.module(moduleName, [])
                 .controller("AuthController", AuthController)
-                .factory("AuthFactory",AuthFactory);
+                .factory("AuthFactory", AuthFactory);
 
             return moduleName;
         });
 
 }(define, angular));
+
+
+
+
+

@@ -224,7 +224,7 @@ option {
 .navbar-btn {
     width: 100%;
 }
-
+/*
 @media (min-width: 768px) {
     .navbar-nav-flex {
         margin: 0 auto;
@@ -243,7 +243,7 @@ option {
 .navbar-nav-flex > li > a {
     padding-bottom: 7px;
     padding-top: 7px;
-}
+}*/
 
 .page-header {
     border-bottom: 1px solid #eeeeee;
