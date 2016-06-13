@@ -49,10 +49,10 @@
                 var modelColumns = [],
                     modelData = [];
                 $scope.modelGridOpts = {
-                    columnDefs: [{ name: 'Delete', cellTemplate: '<button  ng-click="grid.appScope.deleteRow(row)">Удалить</button>', enableCellEdit: false,width:70 },
-                        { name: 'id', displayName: 'id', enableCellEdit: false,width:50 },
-                        { name: 'elem', displayName: 'Элемент', enableCellEdit: true,width:420},
-                        { name: 'lambda', displayName: 'Lambda', enableCellEdit: true, type: 'number',width:120},
+                    columnDefs: [{ name: 'Delete', cellTemplate: '<button  ng-click="grid.appScope.deleteRow(row)">Удалить</button>', enableCellEdit: false, width: 70 },
+                        { name: 'id', displayName: 'id', enableCellEdit: false, width: 50 },
+                        { name: 'elem', displayName: 'Элемент', enableCellEdit: true, width: 420 },
+                        { name: 'lambda', displayName: 'Lambda', enableCellEdit: true, type: 'number', width: 120 },
                         { name: 'equipid', visible: false },
                         { name: 'equipname', visible: false }
                     ],
@@ -69,7 +69,11 @@
                 $scope.deleteRow = function(row) {
                     var index = $scope.modelGridOpts.data.indexOf(row.entity);
                     $scope.modelGridOpts.data.splice(index, 1);
-                    //ADD $HTTP.DELETE METHOD
+                    $http.delete('/api/asu_element/' + row.entity.id)
+                        .success(function() {
+                            
+                        })
+ 
                 };
 
                 var equipmentSelectDataUpdate = function() {
@@ -150,34 +154,32 @@
 
                 $scope.submitFormAddElement = function() {
                     if (($scope.selectedEquipmentId !== undefined) && ($scope.elemName !== undefined) && ($scope.elemLambda !== undefined)) {
-                        var maxId = findMaxId($scope.modelQueryData);
 
-                        var data = {
-                            id: maxId + 1,
+                        var data = [{
                             equipment: {
-                                id: parseInt($scope.selectedEquipmentId,10),
-                                name: $scope.equipmentSelectData.availableOptions[$scope.selectedEquipmentId-1].name
+                                id: parseInt($scope.selectedEquipmentId, 10),
+                                name: $scope.equipmentSelectData.availableOptions[$scope.selectedEquipmentId - 1].name
                             },
                             name: $scope.elemName,
                             intensity: $scope.elemLambda
-                        };
+                        }];
 
-                        console.log(data);                       
-                        $http.put('/api/asu_element/', JSON.stringify(data))
+                        
+                        $http.put('/api/asu_element/', data)
                             .then(function(response) {
-                                $scope.msg.resp = "Данные сохранены!";
+                                $scope.msg.resp = response;
                                 var obj = {
-                                    "id": data[0].id,
+                                    // "id": data[0].id,
                                     "elem": data[0].name,
                                     "lambda": data[0].intensity,
                                     "equipid": data[0].equipment.id,
                                     "equiname": data[0].equipment.name,
                                 };
-                                
+
                                 modelData.push(obj);
                             }, function(response) {
-                                $scope.msg.resp =response;
-                                $scope.msg.data =data;
+                                $scope.msg.resp = response;
+                                $scope.msg.data = data;
 
 
                             });
@@ -188,9 +190,6 @@
 
                 };
 
-                var findMaxId = function(data) {
-                    return data[data.length - 1].id;
-                }
 
 
 
