@@ -4,7 +4,7 @@
     define(["ui.bootstrap.modal"],
         function() {
 
-            var ModelCtrl = function($scope, $uibModal, $resource) {
+            var ModelCtrl = function($scope, $modal, $resource) {
 
                 $scope.show_nonreserved = 1;
 
@@ -1444,7 +1444,7 @@
 
                 $scope.openModal = function() {
 
-                    var modalInstance = $uibModal.open({
+                    var modalInstance = $modal.open({
                         animation: true,
                         templateUrl: 'myModalContent.html',
                         controller: 'ModalDialogController'
@@ -1850,7 +1850,7 @@
                 //////////////////////
 
             };
-            return ["$scope", "$uibModal", "$resource", ModelCtrl ];
+            return ["$scope", "$modal", "$resource", ModelCtrl ];
         });
 
 

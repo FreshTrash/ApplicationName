@@ -4,7 +4,7 @@
     define([],
         function() {
 
-            var ModalDialogController = function($scope, $uibModalInstance, $resource) {
+            var ModalDialogController = function($scope, $modalInstance, $resource) {
 
                 //$scope.modalGridOpts.data.length = 0;
 
@@ -61,16 +61,16 @@
                             name: selectedRow[0].elem,
                             lambda: selectedRow[0].lambda
                         }
-                        $uibModalInstance.close(outData);
+                        $modalInstance.close(outData);
                     }
                 }
                 $scope.cancel = function() {
-                    $uibModalInstance.dismiss('cancel');
+                    $modalInstance.dismiss('cancel');
                 }
 
 
             }
-            return ["$scope", "$uibModalInstance", "$resource", ModalDialogController];
+            return ["$scope", "$modalInstance", "$resource", ModalDialogController];
         });
 
 

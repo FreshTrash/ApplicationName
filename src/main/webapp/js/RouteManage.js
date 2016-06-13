@@ -21,12 +21,15 @@
                     .when("/", { templateUrl: "partials/home.html", controller: "PageCtrl" })
                     
                     .when("/about", { templateUrl: "partials/about.html", controller: "PageCtrl" })
-                    .when("/services", { templateUrl: "partials/services.html", controller: "PageCtrl" })
+                    // .when("/services", { templateUrl: "partials/services.html", controller: "PageCtrl" })
                     .when("/contact", { templateUrl: "partials/contact.html", controller: "PageCtrl" })
                     .when("/book", { templateUrl: "partials/book/book_template.html", controller: "PageCtrl" })
-                    
+                    .when('/taskbook', { templateUrl: "partials/taskbook.html", controller: "TaskbookController" })
+
                     .when("/models", { templateUrl: "partials/models/model1.html", controller: "ModelCtrl" })
                     .when('/quizzes', { templateUrl: "partials/quizzes.html", controller: "QuizzesController" })
+
+
                     .when('/admin', { templateUrl: "partials/admin_view.html", controller: "AuthController" })
                    
                    //Бага: ангуляр открывает /#/login, а такой страницы нет
