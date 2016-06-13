@@ -51,10 +51,12 @@ public class AppConfig extends WebMvcConfigurerAdapter {
     public DataSource dataSource() {
         DriverManagerDataSource dataSource = new DriverManagerDataSource();
         dataSource.setDriverClassName("org.postgresql.Driver");
-        // dataSource.setUrl("jdbc:h2:mem:AZ;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE");
         dataSource.setUrl("jdbc:postgresql://localhost:5432/academia");
         dataSource.setUsername("postgres");
         dataSource.setPassword("postgres");
+/*        dataSource.setUrl("jdbc:postgresql://ec2-54-243-210-223.compute-1.amazonaws.com:5432/dhd7irrv7r3qm?ssl=true&sslfactory=org.postgresql.ssl.NonValidatingFactory");
+        dataSource.setUsername("uxwjurwlrjvgsa");
+        dataSource.setPassword("tVKxVDBBwIrQ3XyvaJAeglcIQj");*/
         return dataSource;
     }
 
