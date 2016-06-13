@@ -123,7 +123,7 @@
                     $scope.gridApi = gridApi;
                     gridApi.edit.on.afterCellEdit($scope, function(rowEntity, colDef, newValue, oldValue) {
 
-                        console.log(rowEntity);
+                        //console.log(rowEntity);
                         // {"id":1,"equipment":{"id":1,"name":"Гидравлическое оборудование"},"name":"Насосы шестеренчатые","intensity":1.3E-5}
 
                         if (newValue !== oldValue) {
@@ -151,11 +151,11 @@
                 };
 
 
-
                 $scope.submitFormAddElement = function() {
                     if (($scope.selectedEquipmentId !== undefined) && ($scope.elemName !== undefined) && ($scope.elemLambda !== undefined)) {
 
                         var data = [{
+
                             equipment: {
                                 id: parseInt($scope.selectedEquipmentId, 10),
                                 name: $scope.equipmentSelectData.availableOptions[$scope.selectedEquipmentId - 1].name
@@ -165,18 +165,18 @@
                         }];
 
                         
-                        $http.put('/api/asu_element/', data)
+                        $http.put('/api/asu_element/', JSON.stringify(data))
                             .then(function(response) {
                                 $scope.msg.resp = response;
                                 var obj = {
-                                    // "id": data[0].id,
+                                     "id": response.data[0].id,
                                     "elem": data[0].name,
                                     "lambda": data[0].intensity,
                                     "equipid": data[0].equipment.id,
                                     "equiname": data[0].equipment.name,
                                 };
 
-                                modelData.push(obj);
+                               modelData.push(obj);
                             }, function(response) {
                                 $scope.msg.resp = response;
                                 $scope.msg.data = data;
