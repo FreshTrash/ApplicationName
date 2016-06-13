@@ -15,8 +15,8 @@ import javax.sql.DataSource;
 @EnableWebSecurity
 public class WebSecurity extends WebSecurityConfigurerAdapter {
 
-   /* @Autowired
-    DataSource dataSource;*/
+    @Autowired
+    DataSource dataSource;
 
     @Autowired
     public void configureGlobalSecurity(AuthenticationManagerBuilder auth) throws Exception {
@@ -24,11 +24,11 @@ public class WebSecurity extends WebSecurityConfigurerAdapter {
         auth.inMemoryAuthentication().withUser("admin").password("root123").roles("ADMIN");
         auth.inMemoryAuthentication().withUser("dba").password("root123").roles("ADMIN","DBA");
 
-      /*  auth.jdbcAuthentication().dataSource(dataSource)
+        auth.jdbcAuthentication().dataSource(dataSource)
                 .usersByUsernameQuery(
-                        "select username,password, enabled from users where username=?")
+                        "select user_name, password, enabled from _user where user_name=?")
                 .authoritiesByUsernameQuery(
-                        "select username, role from user_roles where username=?");*/
+                        "select username, role from user_roles where username=?");
     }
 
     @Override

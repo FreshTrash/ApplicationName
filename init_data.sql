@@ -19,7 +19,12 @@ ALTER TABLE public.test ALTER COLUMN test_id SET DEFAULT nextval('public.test_te
 ALTER SEQUENCE public.test_test_id_seq OWNED BY public.test.test_id;
 
 
-insert into _user(user_id, email, enabled, first_name, last_name, middle_name, password, type, user_name)  VALUES (1, 'user@m.do', true, 'user_name', 'user_lastname', 'user_middlename', 'password', 1, 'user1');
+
+insert into _user(email, enabled, first_name, last_name, middle_name, password, type, user_name) VALUES ('m1@m.r', true, 'user1', 'user1', 'user1', '123456', 'STUDENT', 'user1');
+insert into user_roles(username, role) VALUES ('user1', 'USER');
+insert into _user(email, enabled, first_name, last_name, middle_name, password, type, user_name) VALUES ('m2@m.r', true, 'admin1', 'admin1', 'admin1', '123456', 'STUDENT', 'admin1');
+insert into user_roles(username, role) VALUES ('admin1', 'ADMIN');
+
 insert into theme(theme_id, name) VALUES (1, 'Тема 1');
 insert into test(test_id, author_id, date, name, theme_id, time_to_test) VALUES (1, 1, now(), 'Тест1', 1, 30);
 
@@ -370,3 +375,5 @@ insert into asu_element(id, equipment_id, name, intensity) VALUES (144,	2,	'- п
 insert into asu_element(id, equipment_id, name, intensity) VALUES (145,	2,	'- ступицы колес (8 шт.)',	0.000001080);
 insert into asu_element(id, equipment_id, name, intensity) VALUES (146,	2,	'Контрольно-измерительные приборы',	0.000008670);
 insert into asu_element(id, equipment_id, name, intensity) VALUES (147,	2,	'Приборы освещения и сигнализации (перегорают лампочки)',	0.000012510);
+
+

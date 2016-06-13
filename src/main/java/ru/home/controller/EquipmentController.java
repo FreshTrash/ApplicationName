@@ -1,6 +1,8 @@
 package ru.home.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import ru.home.model.Equipment;
 import ru.home.repo.EquipmentRepo;
@@ -33,5 +35,11 @@ public class EquipmentController {
     @ResponseBody
     public List<Equipment> saveOrEdit(@RequestBody List<Equipment> equipments) {
         return equipmentRepo.save(equipments);
+    }
+
+    @RequestMapping(value = "/{id}", method = RequestMethod.DELETE)
+    public ResponseEntity<String> deleteById(@PathVariable("id") Long id) {
+        equipmentRepo.delete(id);
+        return new ResponseEntity<>("Элемент успешно удален", HttpStatus.OK);
     }
 }

@@ -11,7 +11,8 @@ import javax.persistence.*;
 @Getter
 @Setter
 @Entity
-@Table(name = "_user")
+@Table(name = "_user", uniqueConstraints=
+@UniqueConstraint(name="username_unique_key", columnNames={"user_name"}))
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
