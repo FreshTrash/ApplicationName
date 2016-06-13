@@ -34,7 +34,7 @@ public class ASUElementController {
 
     @RequestMapping(method = RequestMethod.PUT)
     @ResponseBody
-    public ASUElement editById(@RequestBody ASUElement element) {
+    public List<ASUElement> editById(@RequestBody List<ASUElement> element) {
         return elementRepo.save(element);
     }
 
