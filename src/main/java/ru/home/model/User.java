@@ -13,9 +13,11 @@ import javax.persistence.*;
 @Entity
 @Table(name = "_user", uniqueConstraints=
 @UniqueConstraint(name="username_unique_key", columnNames={"user_name"}))
+@SequenceGenerator(name="_user_seq", initialValue=200, allocationSize=100)
+
 public class User {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "_user_seq")
     @Column(name = "user_id")
     private Long id;
     @Column(name = "first_name")

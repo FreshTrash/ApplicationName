@@ -14,9 +14,10 @@ import java.util.List;
 @Setter
 @Entity
 @Table(name = "question")
+@SequenceGenerator(name="question_seq", initialValue=200, allocationSize=100)
 public class Question {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "question_seq")
     @Column(name = "question_id")
     private Long id;
     @Column(name = "test_id")
