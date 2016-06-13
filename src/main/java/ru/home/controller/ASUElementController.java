@@ -3,6 +3,7 @@ package ru.home.controller;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.annotation.Secured;
 import org.springframework.web.bind.annotation.*;
 import ru.home.model.ASUElement;
 import ru.home.repo.ASUElementRepo;
@@ -37,6 +38,7 @@ public class ASUElementController {
         return elementRepo.save(element);
     }
 
+    @Secured("ADMIN")
     @RequestMapping(value = "/{id}", method = RequestMethod.DELETE)
     public ResponseEntity<String> deleteById(@PathVariable("id") Long id) {
         elementRepo.delete(id);
