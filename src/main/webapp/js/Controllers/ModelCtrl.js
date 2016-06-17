@@ -11,9 +11,9 @@
                 // show law that given to function
                 $scope.show_law = function(n) {
                     //+Highcharts.setOptions(Highcharts.theme);
-                    var total_show_laws = [0, 0, 0, 0, 0, 0];
+                    var total_show_laws = [0, 0, 0, 0, 0, 0, 0];
 
-                    for (var i = 0; i < 6; i += 1)
+                    for (var i = 0; i < 7; i += 1)
                         if (i === n)
                             total_show_laws[i] = 1;
 
@@ -22,7 +22,8 @@
                     $scope.show_reserved_2 = total_show_laws[2];
                     $scope.show_reserved_3 = total_show_laws[3];
                     $scope.show_reserved_4 = total_show_laws[4];
-                    $scope.show_comparison = total_show_laws[5];
+                    $scope.show_reserved_5 = total_show_laws[5];
+                    $scope.show_comparison = total_show_laws[6];
                 };
 
 
@@ -133,7 +134,7 @@
                     // 
                     for (var i = 0; i < keys_of_dropdowns_length; i += 1) {
                         if (keys_of_dropdowns_arr[i] != i) {
-                            
+
                             return 0;
                         }
                     }
@@ -142,7 +143,7 @@
                     if ($scope.form_total.num_elem.$invalid ||
                         $scope.form_total.exec_time.$invalid ||
                         $scope.form_total.step.$invalid) {
-                        
+
                         return 0;
                     }
 
@@ -151,7 +152,7 @@
                     //если все dropdowns не выбраны
                     if (keys_of_dropdowns_length != $scope.num_elem) {
                         $scope.show_elem_warning = 1;
-                       
+
                         return 0;
                     }
 
@@ -370,7 +371,7 @@
                     }
 
 
-                    
+
                     //Таблица 1
                     column_def = [{ name: 'empty', displayName: ' ', width: 50 }];
                     for (var index = 1; index <= N; ++index) {
@@ -857,11 +858,6 @@
 
 
 
-
-
-
-
-
                 ///////Reserved 3 strat
                 $scope.start_reserved_3 = function() {
                     if (check_reserved_3_inputs()) {
@@ -1137,6 +1133,161 @@
 
 
 
+                ///////Reserved 2 strat
+                $scope.start_reserved_5 = function() {
+                    if (check_reserved_5_inputs()) {
+                        calculate_reserved_5();
+                        $scope.show_reserved_5_tables = true;
+                    } else {
+                        window.alert("Данные не валидны. Проверьте введенные значения.");
+                    }
+                }
+
+
+                var check_reserved_5_inputs = function() {
+                    if ($scope.form_total.num_elem.$invalid ||
+                        $scope.form_total.exec_time.$invalid ||
+                        $scope.form_total.step.$invalid ||
+                        $scope.form_total.total_lambda.$invalid ||
+                        $scope.form_total.rezerv_elem.$invalid)
+                        return 0;
+
+                    return 1;
+                }
+
+                var calculate_reserved_5 = function() {
+
+                    $scope.grid_reserved_5_opts.data.length = 0;
+                    var i = 0,
+                        T = 0;
+
+
+                    var n = parseInt($scope.num_elem, 10)
+                    var m = parseInt($scope.rezerv_elem, 10);
+
+                    var time = parseInt($scope.exec_time, 10);
+                    var step = parseInt($scope.step, 10);
+                    var lambda = parseFloat($scope.total_lambda);
+
+                    var len = parseInt((time / step), 10);
+
+
+                    var desc_time = [];
+                    desc_time[0] = 0;
+                    //рассчитываем время
+                    for (i = 0; i < len; ++i) {
+                        desc_time.push(step + desc_time[i]);
+                    }
+
+
+                    var P = new Array(n);
+                    var f = new Array(n);
+                    for (i = 0; i < n; ++i) {
+                        P[i] = new Array(len);
+                        f[i] = new Array(len);
+                    }
+
+
+                    for (i = 0; i < n; i += 1) {
+                        for (var j = 0; j <= len; j += 1) {
+                            var lam = 1 - Math.exp(-lambda * desc_time[j]);
+                            P[i][j] = roundFloat(binomialdistribution(i, n, lam), 5);
+                        }
+                    }
+
+
+
+
+
+                    // for (j = 0; j <= len; j++) {
+
+                    //     P[j] = 0;
+                    //     for (var z = 0; z <= m; z += 1) {
+                    //         b = Factorjal(z);
+                    //         P[j] = P[j] + ((Math.pow(lambda * desc_time[j], z)) / b);
+
+                    //     }
+                    //     P[j] = roundFloat(P[j] * Math.exp(-lambda * desc_time[j]), 7);
+
+                    // }
+
+                    // T = 1 / lambda * (m + 1);
+                    // $scope.reserved_5_T = roundFloat(T, 2);
+
+
+
+
+                    // Шапка таблицы
+                    column_def_reserved_5 = [{ name: 'time', displayName: 'Время, ч.' }
+                        // { name: 'p', displayName: 'P(t)' },
+
+                    ];
+                    for (i = 0; i < n; i += 1) {
+                        column_def_reserved_5.push({ name: 'p' + i, displayName: 'P' + i + '(t)' });
+                    }
+
+
+
+                    //Строки таблицы
+                    for (i = 0; i <= len; i += 1) {
+                        var true_obj = {
+                            "time": desc_time[i]
+                        };
+                        for (j = 0; j < n; j += 1) {
+                            true_obj['p' + j] = P[j][i];
+                        }
+                        data_reserved_5.push(true_obj);
+                    }
+
+
+                    $scope.grid_reserved_5_opts.columnDefs = column_def_reserved_5;
+                    $scope.grid_reserved_5_opts.data = data_reserved_5;
+
+
+                    var chartGraph = [];
+                    for (j = 0; j < n; j += 1) {
+                        chartGraph.push({ "name": 'P' + j + '(t)', "data": P[j] });
+                    }
+                    //chartGraph.push({ "name": "P(t)", "data": P });
+                    // comparisonPush("Резервирование замещением", P);
+
+
+                    $scope.highchart_reserved_5_P_conf = {
+                        series: chartGraph,
+                        title: {
+                            text: 'Вероятность безотказной работы системы.',
+                        },
+                        credits: {
+                            enabled: true
+                        },
+                        xAxis: {
+
+                            categories: desc_time,
+                            title: {
+                                text: 'Время испытания, t'
+                            },
+                            isDirty: true
+                        },
+                        yAxis: {
+                            currentMin: 0,
+                            currentMax: 1,
+                            tickInterval: 0.1,
+                            title: {
+                                text: 'Вероятность  безотказной работы, P'
+                            },
+                            plotLines: [{
+                                value: 0,
+                                width: 1,
+                                color: '#808080'
+                            }]
+                        },
+                        isDirty: true,
+
+                    }
+                }
+
+
+
 
                 //
                 // Comparison part
@@ -1285,7 +1436,9 @@
                     column_def_reserved_3 = [],
                     data_reserved_3 = [],
                     column_def_reserved_4 = [],
-                    data_reserved_4 = [];
+                    data_reserved_4 = [],
+                    column_def_reserved_5 = [],
+                    data_reserved_5 = [];
 
 
 
@@ -1322,6 +1475,10 @@
                     columnDefs: column_def_reserved_4,
                     data: data_reserved_4
                 };
+                $scope.grid_reserved_5_opts = {
+                    columnDefs: column_def_reserved_5,
+                    data: data_reserved_5
+                };
 
 
                 $scope.grid_opts.enableHorizontalScrollbar = 0;
@@ -1332,20 +1489,21 @@
                 $scope.grid_reserved_2_opts.enableHorizontalScrollbar = 0;
                 $scope.grid_reserved_3_opts.enableHorizontalScrollbar = 0;
                 $scope.grid_reserved_4_opts.enableHorizontalScrollbar = 0;
+                $scope.grid_reserved_5_opts.enableHorizontalScrollbar = 0;
 
 
                 Highcharts.theme = {
                     plotOptions: {
-                        line: { 
-                            animation: false, 
-                            enableMouseTracking: true, 
-                            stickyTracking: true, 
-                            shadow: false, 
-                            dataLabels: { 
-                                style: { 
-                                    textShadow: false 
-                                } 
-                            } 
+                        line: {
+                            animation: false,
+                            enableMouseTracking: true,
+                            stickyTracking: true,
+                            shadow: false,
+                            dataLabels: {
+                                style: {
+                                    textShadow: false
+                                }
+                            }
                         }
                     },
                     chart: {
@@ -1517,6 +1675,490 @@
                 //////////////////////
                 //////////////////////
                 //MATH STUFF
+
+
+
+                var binomialdistribution = function(k, n, p) {
+                    var result = 0;
+                    var dk = 0;
+                    var dn = 0;
+
+                    if (p >= 0 && p <= 1) {
+                        console.log("Domain error in BinomialDistribution");
+                    }
+                    if (k >= -1 && k <= n) {
+                        console.log("Domain error in BinomialDistribution");
+                    }
+
+                    if (k == -1) {
+                        result = 0;
+                        return result;
+                    }
+                    if (k == n) {
+                        result = 1;
+                        return result;
+                    }
+                    dn = n - k;
+                    if (k == 0) {
+                        dk = Math.pow(1.0 - p, dn);
+                    } else {
+                        dk = k + 1;
+                        dk = incompletebeta(dn, dk, 1.0 - p);
+                    }
+                    result = dk;
+                    return result;
+                }
+
+
+                var math = {
+                    machineepsilon: 5E-16,
+                    maxrealnumber: 1E300,
+                    minrealnumber: 1E-300
+                };
+
+
+                var incompletebeta = function(a, b, x) {
+                    var result = 0;
+                    var t = 0;
+                    var xc = 0;
+                    var w = 0;
+                    var y = 0;
+                    var flag = 0;
+                    var sg = 0;
+                    var big = 0;
+                    var biginv = 0;
+                    var maxgam = 0;
+                    var minlog = 0;
+                    var maxlog = 0;
+
+
+
+                    big = 4.503599627370496e15;
+                    biginv = 2.22044604925031308085e-16;
+                    maxgam = 171.624376956302725;
+                    minlog = Math.log(math.minrealnumber);
+                    maxlog = Math.log(math.maxrealnumber);
+
+                    if ((a) > (0) && (b) > (0)) {
+                        console.log("Domain error in BinomialDistribution");
+                    }
+                    if ((x) >= (0) && (x) <= (1)) {
+                        console.log("Domain error in BinomialDistribution");
+                    }
+
+                    if ((x) == (0)) {
+                        result = 0;
+                        return result;
+                    }
+                    if ((x) == (1)) {
+                        result = 1;
+                        return result;
+                    }
+                    flag = 0;
+                    if ((b * x) <= (1.0) & (x) <= (0.95)) {
+                        result = incompletebetaps(a, b, x, maxgam);
+                        return result;
+                    }
+                    w = 1.0 - x;
+                    if ((x) > (a / (a + b))) {
+                        flag = 1;
+                        t = a;
+                        a = b;
+                        b = t;
+                        xc = x;
+                        x = w;
+                    } else {
+                        xc = w;
+                    }
+                    if ((flag == 1 & (b * x) <= (1.0)) & (x) <= (0.95)) {
+                        t = incompletebetaps(a, b, x, maxgam);
+                        if ((t) <= (math.machineepsilon)) {
+                            result = 1.0 - math.machineepsilon;
+                        } else {
+                            result = 1.0 - t;
+                        }
+                        return result;
+                    }
+                    y = x * (a + b - 2.0) - (a - 1.0);
+                    if ((y) < (0.0)) {
+                        w = incompletebetafe(a, b, x, big, biginv);
+                    } else {
+                        w = incompletebetafe2(a, b, x, big, biginv) / xc;
+                    }
+                    y = a * Math.log(x);
+                    t = b * Math.log(xc);
+                    if (((a + b) < (maxgam) && (Math.abs(y)) < (maxlog)) && (Math.abs(t)) < (maxlog)) {
+                        t = Math.pow(xc, b);
+                        t = t * Math.pow(x, a);
+                        t = t / a;
+                        t = t * w;
+                        t = t * (gammafunction(a + b) / (gammafunction(a) * gammafunction(b)));
+                        if (flag == 1) {
+                            if ((t) <= (math.machineepsilon)) {
+                                result = 1.0 - math.machineepsilon;
+                            } else {
+                                result = 1.0 - t;
+                            }
+                        } else {
+                            result = t;
+                        }
+                        return result;
+                    }
+                    y = y + t + lngamma(a + b, sg) - lngamma(a, sg) - lngamma(b, sg);
+                    y = y + Math.log(w / a);
+                    if ((y) < (minlog)) {
+                        t = 0.0;
+                    } else {
+                        t = Math.exp(y);
+                    }
+                    if (flag == 1) {
+                        if ((t) <= (math.machineepsilon)) {
+                            t = 1.0 - math.machineepsilon;
+                        } else {
+                            t = 1.0 - t;
+                        }
+                    }
+                    result = t;
+                    return result;
+                }
+
+                var incompletebetafe = function(a, b, x, big, biginv) {
+                    var result = 0;
+                    var xk = 0;
+                    var pk = 0;
+                    var pkm1 = 0;
+                    var pkm2 = 0;
+                    var qk = 0;
+                    var qkm1 = 0;
+                    var qkm2 = 0;
+                    var k1 = 0;
+                    var k2 = 0;
+                    var k3 = 0;
+                    var k4 = 0;
+                    var k5 = 0;
+                    var k6 = 0;
+                    var k7 = 0;
+                    var k8 = 0;
+                    var r = 0;
+                    var t = 0;
+                    var ans = 0;
+                    var thresh = 0;
+                    var n = 0;
+
+                    k1 = a;
+                    k2 = a + b;
+                    k3 = a;
+                    k4 = a + 1.0;
+                    k5 = 1.0;
+                    k6 = b - 1.0;
+                    k7 = k4;
+                    k8 = a + 2.0;
+                    pkm2 = 0.0;
+                    qkm2 = 1.0;
+                    pkm1 = 1.0;
+                    qkm1 = 1.0;
+                    ans = 1.0;
+                    r = 1.0;
+                    n = 0;
+                    thresh = 3.0 * math.machineepsilon;
+                    do {
+                        xk = -(x * k1 * k2 / (k3 * k4));
+                        pk = pkm1 + pkm2 * xk;
+                        qk = qkm1 + qkm2 * xk;
+                        pkm2 = pkm1;
+                        pkm1 = pk;
+                        qkm2 = qkm1;
+                        qkm1 = qk;
+                        xk = x * k5 * k6 / (k7 * k8);
+                        pk = pkm1 + pkm2 * xk;
+                        qk = qkm1 + qkm2 * xk;
+                        pkm2 = pkm1;
+                        pkm1 = pk;
+                        qkm2 = qkm1;
+                        qkm1 = qk;
+                        if ((qk) != (0)) {
+                            r = pk / qk;
+                        }
+                        if ((r) != (0)) {
+                            t = Math.abs((ans - r) / r);
+                            ans = r;
+                        } else {
+                            t = 1.0;
+                        }
+                        if ((t) < (thresh)) {
+                            break;
+                        }
+                        k1 = k1 + 1.0;
+                        k2 = k2 + 1.0;
+                        k3 = k3 + 2.0;
+                        k4 = k4 + 2.0;
+                        k5 = k5 + 1.0;
+                        k6 = k6 - 1.0;
+                        k7 = k7 + 2.0;
+                        k8 = k8 + 2.0;
+                        if ((Math.abs(qk) + Math.abs(pk)) > (big)) {
+                            pkm2 = pkm2 * biginv;
+                            pkm1 = pkm1 * biginv;
+                            qkm2 = qkm2 * biginv;
+                            qkm1 = qkm1 * biginv;
+                        }
+                        if ((Math.abs(qk)) < (biginv) | (Math.abs(pk)) < (biginv)) {
+                            pkm2 = pkm2 * big;
+                            pkm1 = pkm1 * big;
+                            qkm2 = qkm2 * big;
+                            qkm1 = qkm1 * big;
+                        }
+                        n = n + 1;
+                    }
+                    while (n != 300);
+                    result = ans;
+                    return result;
+                }
+
+                var incompletebetafe2 = function(a, b, x, big, biginv) {
+                    var result = 0;
+                    var xk = 0;
+                    var pk = 0;
+                    var pkm1 = 0;
+                    var pkm2 = 0;
+                    var qk = 0;
+                    var qkm1 = 0;
+                    var qkm2 = 0;
+                    var k1 = 0;
+                    var k2 = 0;
+                    var k3 = 0;
+                    var k4 = 0;
+                    var k5 = 0;
+                    var k6 = 0;
+                    var k7 = 0;
+                    var k8 = 0;
+                    var r = 0;
+                    var t = 0;
+                    var ans = 0;
+                    var z = 0;
+                    var thresh = 0;
+                    var n = 0;
+
+                    k1 = a;
+                    k2 = b - 1.0;
+                    k3 = a;
+                    k4 = a + 1.0;
+                    k5 = 1.0;
+                    k6 = a + b;
+                    k7 = a + 1.0;
+                    k8 = a + 2.0;
+                    pkm2 = 0.0;
+                    qkm2 = 1.0;
+                    pkm1 = 1.0;
+                    qkm1 = 1.0;
+                    z = x / (1.0 - x);
+                    ans = 1.0;
+                    r = 1.0;
+                    n = 0;
+                    thresh = 3.0 * math.machineepsilon;
+                    do {
+                        xk = -(z * k1 * k2 / (k3 * k4));
+                        pk = pkm1 + pkm2 * xk;
+                        qk = qkm1 + qkm2 * xk;
+                        pkm2 = pkm1;
+                        pkm1 = pk;
+                        qkm2 = qkm1;
+                        qkm1 = qk;
+                        xk = z * k5 * k6 / (k7 * k8);
+                        pk = pkm1 + pkm2 * xk;
+                        qk = qkm1 + qkm2 * xk;
+                        pkm2 = pkm1;
+                        pkm1 = pk;
+                        qkm2 = qkm1;
+                        qkm1 = qk;
+                        if ((qk) != (0)) {
+                            r = pk / qk;
+                        }
+                        if ((r) != (0)) {
+                            t = Math.abs((ans - r) / r);
+                            ans = r;
+                        } else {
+                            t = 1.0;
+                        }
+                        if ((t) < (thresh)) {
+                            break;
+                        }
+                        k1 = k1 + 1.0;
+                        k2 = k2 - 1.0;
+                        k3 = k3 + 2.0;
+                        k4 = k4 + 2.0;
+                        k5 = k5 + 1.0;
+                        k6 = k6 + 1.0;
+                        k7 = k7 + 2.0;
+                        k8 = k8 + 2.0;
+                        if ((Math.abs(qk) + Math.abs(pk)) > (big)) {
+                            pkm2 = pkm2 * biginv;
+                            pkm1 = pkm1 * biginv;
+                            qkm2 = qkm2 * biginv;
+                            qkm1 = qkm1 * biginv;
+                        }
+                        if ((Math.abs(qk)) < (biginv) | (Math.abs(pk)) < (biginv)) {
+                            pkm2 = pkm2 * big;
+                            pkm1 = pkm1 * big;
+                            qkm2 = qkm2 * big;
+                            qkm1 = qkm1 * big;
+                        }
+                        n = n + 1;
+                    }
+                    while (n != 300);
+                    result = ans;
+                    return result;
+                }
+
+                var incompletebetaps = function(a, b, x, maxgam) {
+                    var result = 0;
+                    var s = 0;
+                    var t = 0;
+                    var u = 0;
+                    var v = 0;
+                    var n = 0;
+                    var t1 = 0;
+                    var z = 0;
+                    var ai = 0;
+                    var sg = 0;
+
+                    ai = 1.0 / a;
+                    u = (1.0 - b) * x;
+                    v = u / (a + 1.0);
+                    t1 = v;
+                    t = u;
+                    n = 2.0;
+                    s = 0.0;
+                    z = math.machineepsilon * ai;
+                    while ((Math.abs(v)) > (z)) {
+                        u = (n - b) * x / n;
+                        t = t * u;
+                        v = t / (a + n);
+                        s = s + v;
+                        n = n + 1.0;
+                    }
+                    s = s + t1;
+                    s = s + ai;
+                    u = a * Math.log(x);
+                    if ((a + b) < (maxgam) & (Math.abs(u)) < (Math.log(math.maxrealnumber))) {
+                        t = gammafunction(a + b) / (gammafunction(a) * gammafunction(b));
+                        s = s * t * Math.pow(x, a);
+                    } else {
+                        t = lngamma(a + b, sg) - lngamma(a, sg) - lngamma(b, sg) + u + Math.log(s);
+                        if ((t) < (Math.log(math.minrealnumber))) {
+                            s = 0.0;
+                        } else {
+                            s = Math.exp(t);
+                        }
+                    }
+                    result = s;
+                    return result;
+                }
+
+
+                var gammafunction = function(x) {
+                    var result = 0;
+                    var p = 0;
+                    var pp = 0;
+                    var q = 0;
+                    var qq = 0;
+                    var z = 0;
+                    var i = 0;
+                    var sgngam = 0;
+
+                    sgngam = 1;
+                    q = Math.abs(x);
+                    if ((q) > (33.0)) {
+                        if ((x) < (0.0)) {
+                            p = Math.floor(q);
+                            i = Math.round(p);
+                            if (i % 2 == 0) {
+                                sgngam = -1;
+                            }
+                            z = q - p;
+                            if ((z) > (0.5)) {
+                                p = p + 1;
+                                z = q - p;
+                            }
+                            z = q * Math.sin(Math.PI * z);
+                            z = Math.abs(z);
+                            z = Math.PI / (z * gammastirf(q));
+                        } else {
+                            z = gammastirf(x);
+                        }
+                        result = sgngam * z;
+                        return result;
+                    }
+                    z = 1;
+                    while ((x) >= (3)) {
+                        x = x - 1;
+                        z = z * x;
+                    }
+                    while ((x) < (0)) {
+                        if ((x) > (-0.000000001)) {
+                            result = z / ((1 + 0.5772156649015329 * x) * x);
+                            return result;
+                        }
+                        z = z / x;
+                        x = x + 1;
+                    }
+                    while ((x) < (2)) {
+                        if ((x) < (0.000000001)) {
+                            result = z / ((1 + 0.5772156649015329 * x) * x);
+                            return result;
+                        }
+                        z = z / x;
+                        x = x + 1.0;
+                    }
+                    if ((x) == (2)) {
+                        result = z;
+                        return result;
+                    }
+                    x = x - 2.0;
+                    pp = 1.60119522476751861407E-4;
+                    pp = 1.19135147006586384913E-3 + x * pp;
+                    pp = 1.04213797561761569935E-2 + x * pp;
+                    pp = 4.76367800457137231464E-2 + x * pp;
+                    pp = 2.07448227648435975150E-1 + x * pp;
+                    pp = 4.94214826801497100753E-1 + x * pp;
+                    pp = 9.99999999999999996796E-1 + x * pp;
+                    qq = -2.31581873324120129819E-5;
+                    qq = 5.39605580493303397842E-4 + x * qq;
+                    qq = -4.45641913851797240494E-3 + x * qq;
+                    qq = 1.18139785222060435552E-2 + x * qq;
+                    qq = 3.58236398605498653373E-2 + x * qq;
+                    qq = -2.34591795718243348568E-1 + x * qq;
+                    qq = 7.14304917030273074085E-2 + x * qq;
+                    qq = 1.00000000000000000320 + x * qq;
+                    result = z * pp / qq;
+                    return result;
+                }
+
+                var gammastirf = function(x) {
+                    var result = 0;
+                    var y = 0;
+                    var w = 0;
+                    var v = 0;
+                    var stir = 0;
+
+                    w = 1 / x;
+                    stir = 7.87311395793093628397E-4;
+                    stir = -2.29549961613378126380E-4 + w * stir;
+                    stir = -2.68132617805781232825E-3 + w * stir;
+                    stir = 3.47222221605458667310E-3 + w * stir;
+                    stir = 8.33333333333482257126E-2 + w * stir;
+                    w = 1 + w * stir;
+                    y = Math.exp(x);
+                    if ((x) > (143.01608)) {
+                        v = Math.pow(x, 0.5 * x - 0.25);
+                        y = v * (v / y);
+                    } else {
+                        y = Math.pow(x, x - 0.5) / y;
+                    }
+                    result = 2.50662827463100050242 * y * w;
+                    return result;
+                }
+
 
                 var Factorial = function(n) {
                     if (n === 0)
@@ -1850,7 +2492,7 @@
                 //////////////////////
 
             };
-            return ["$scope", "$modal", "$resource", ModelCtrl ];
+            return ["$scope", "$modal", "$resource", ModelCtrl];
         });
 
 

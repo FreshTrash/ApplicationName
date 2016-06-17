@@ -14,14 +14,13 @@
             <li class="li-centred-text" ng-class="{ active: show_reserved_2}"><a href="" ng-click="show_law(2)">Резервирование<br/>замещением</a></li>
             <li class="li-centred-text" ng-class="{ active: show_reserved_3}"><a href="" ng-click="show_law(3)">Поэлементное<br/>резервирование</a></li>
             <li class="li-centred-text" ng-class="{ active: show_reserved_4}"><a href="" ng-click="show_law(4)">Скользящее<br/>резервирование</a></li>
-            <li class="li-centred-text" ng-class="{ active: show_comparison}"><a href="" ng-click="show_law(5); comparison_calc()">Сравнение</a></li>
+            <li class="li-centred-text" ng-class="{ active: show_reserved_5}"><a href="" ng-click="show_law(5)">С дробной<br/>кратностью</a></li>
+            <li class="li-centred-text" ng-class="{ active: show_comparison}"><a href="" ng-click="show_law(6); comparison_calc()">Сравнение</a></li>
         </ul>
     </nav>
-
     <script type="text/ng-template" id="myModalContent.html">
         <div class="modal-header">
             <h3 class="modal-title" ng-class="{ 'modal-title-alert': showModalTitleAlert }">Выберите элемент из таблицы</h3>
-          
         </div>
         <div class="modal-body">
             <div ui-grid="modalGridOpts" ui-grid-selection style="height:500px; width:100%;"></div>
@@ -31,14 +30,12 @@
             <button class="btn btn-warning" type="button" ng-click="cancel()">Cancel</button>
         </div>
     </script>
-
     <div class="row">
         <div class="col-lg-3">
             <!-- <p class="p-header">Введите параметры системы</p> -->
             <fieldset class="scheduler-border" ng-show="!show_comparison">
                 <legend class="scheduler-border">Общие параметры</legend>
                 <form name="form_total">
-                    
                     <div class="form-group" ng-class="{ 'has-error': form_total.num_elem.$invalid && form_total.num_elem.$dirty}">
                         <p class="input_header">Количество элементов</p>
                         <input name="num_elem" type="number" ng-model="num_elem" ng-change="num_changed()" class="form-control input-size" placeholder="Введите количество элементов" min=1 max=15 required/>
@@ -47,7 +44,7 @@
                             <p ng-message="required">Это поле обязательно для заполнения.</p>
                         </div>
                     </div>
-                    <div class="form-group" ng-class="{ 'has-error': form_total.rezerv_elem.$invalid && form_total.rezerv_elem.$dirty}" ng-show="show_reserved_3 || show_reserved_4">
+                    <div class="form-group" ng-class="{ 'has-error': form_total.rezerv_elem.$invalid && form_total.rezerv_elem.$dirty}" ng-show="show_reserved_3 || show_reserved_4 || show_reserved_5">
                         <p class="input_header">Количество резервных элементов</p>
                         <input name="rezerv_elem" type="number" ng-model="rezerv_elem" class="form-control input-size" placeholder="Введите интенсивность отказов" min=0 max=15 required/>
                         <div ng-messages="form_total.rezerv_elem.$error" ng-if="form_total.rezerv_elem.$dirty" class="my-messages">
@@ -57,7 +54,7 @@
                     </div>
                     <div class="form-group" ng-class="{ 'has-error': form_total.exec_time.$invalid && form_total.exec_time.$dirty}">
                         <p class="input_header">Время испытания</p>
-                        <input name="exec_time" type="number" ng-model="exec_time" class="form-control input-size" placeholder="Введите время испытания" min=1000 max=10000000 required/>
+                        <input name="exec_time" type="number" ng-model="exec_time" class="form-control input-size" placeholder="Введите время испытания" min=100 max=10000000 required/>
                         <div ng-messages="form_total.exec_time.$error" ng-if="form_total.exec_time.$dirty" class="my-messages">
                             <p ng-message-exp="['min','max','number']">Введите значение между 100 и 10000000.</p>
                             <p ng-message="required">Это поле обязательно для заполнения.</p>
@@ -65,15 +62,14 @@
                     </div>
                     <div class="form-group" ng-class="{ 'has-error': form_total.step.$invalid && form_total.step.$dirty}">
                         <p class="input_header">Шаг расчета</p>
-                        <input name="step" type="number" ng-model="step" class="form-control input-size" placeholder="Введите шаг" min=100 max=1000 required/>
+                        <input name="step" type="number" ng-model="step" class="form-control input-size" placeholder="Введите шаг" min=50 max=1000 required/>
                         <div ng-messages="form_total.step.$error" ng-if="form_total.step.$dirty" class="my-messages">
-                            <p ng-message-exp="['min','max','number']">Введите значение между 100 и 1000.</p>
+                            <p ng-message-exp="['min','max','number']">Введите значение между 50 и 1000.</p>
                             <p ng-message="required">Это поле обязательно для заполнения.</p>
                         </div>
                     </div>
                     <div class="form-group" ng-class="{ 'has-error': form_total.total_lambda.$invalid && form_total.total_lambda.$dirty}" ng-show="!show_nonreserved">
                         <p class="input_header">Интенсивность отказов одного элемента<a href="" ng-click="openModal()">[Выбрать элемент]</a></p>
-                       
                         <p>{{elemName}}</p>
                         <input name="total_lambda" type="number" ng-model="total_lambda" class="form-control input-size" placeholder="Введите интенсивность отказов" min=0 max=1 required/>
                         <div ng-messages="form_total.total_lambda.$error" ng-if="form_total.total_lambda.$dirty" class="my-messages">
@@ -212,7 +208,7 @@
             <div ng-if="show_nonreserved_tables">
                 <p class="data_header">Параметры законов распределения времени до отказа</p>
                 <div ui-grid="grid_opts" class="height-grid"></div>
-                 <p class="data_header">Вероятность безотказной работы элементов</p>
+                <p class="data_header">Вероятность безотказной работы элементов</p>
                 <div ui-grid="grid_opts_p" class="myGrid"></div>
                 <highchart id="chart1" config="chartConfig1"></highchart>
                 <p class="data_header">Плотности распределения времени безотказной работы элементов</p>
@@ -258,6 +254,15 @@
                 <p class="data_header">Показатели надёжности резервированной системы</p>
                 <div ui-grid="grid_reserved_4_opts" class="myGrid"></div>
                 <highchart id="highchart_reserved_4_P" config="highchart_reserved_4_P_conf"></highchart>
+            </div>
+        </div>
+        <div class="col-lg-6 vertical_line" ng-if="show_reserved_5">
+            <button type="button" class="btn btn-default navbar-btn" ng-click="start_reserved_5()">Рассчитать</button>
+            <div ng-if="show_reserved_5_tables">
+                <p class="reserv-time">Время безотказной работы: {{reserved_5_T}} ч.</p>
+                <p class="data_header">Показатели надёжности резервированной системы</p>
+                <div ui-grid="grid_reserved_5_opts" class="myGrid"></div>
+                <highchart id="highchart_reserved_5_P" config="highchart_reserved_5_P_conf"></highchart>
             </div>
         </div>
         <div class="col-lg-6" ng-if="show_comparison">
