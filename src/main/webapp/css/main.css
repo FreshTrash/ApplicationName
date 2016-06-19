@@ -316,7 +316,7 @@ option {
     margin-top: 10px;
 }
 
-#right-answers-percent {
+.right-answers-percent {
     text-align: center;
     font-size: 18px;
 }
@@ -324,6 +324,7 @@ option {
 .theme-style {
     color: #333;
     font-size: 16px;
+    cursor: pointer;
 }
 
 .btn-submit-answer {

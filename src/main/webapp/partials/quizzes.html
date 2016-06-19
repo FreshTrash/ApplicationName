@@ -49,7 +49,8 @@
                 <h4>Ваши ответы</h4>
                 <a ng-click="backToThemes()">
                     << Вернуться к темам</a>
-                        <p id="right-answers-percent">Вы ответили правильно на {{rightAnswersPercent}}% вопросов</p>
+                        <p class="right-answers-percent">Вы ответили правильно на {{rightAnswersCount}} вопросов из {{totalQuestionsCount}}</p>
+                        <p class="right-answers-percent">Это {{rightAnswersPercent}}% от общего числа вопросов</p>
                         <div ng-model="right" ng-repeat="question in thisThemeQuestions" class="panel panel-default">
                             <div class="panel-body">
                                 <h4 class="list-group-item-heading">№{{question.id}} {{question.text}}</h4></div>

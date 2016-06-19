@@ -510,7 +510,7 @@
                     for (var index = 0; index < N; ++index) {
                         var f_tmp = [];
                         for (var index2 = 0; index2 <= len; ++index2) {
-                            f_tmp[index2] = f[index][index2] * 1000000;
+                            f_tmp[index2] = f[index][index2];
                         }
                         chartGraph.push({ "name": "f" + (index + 1) + "(t)", "data": f_tmp });
                     }
@@ -532,11 +532,8 @@
                             }
                         },
                         yAxis: {
-                            currentMin: 0,
-                            currentMax: 900,
-                            tickInterval: 100,
                             title: {
-                                text: 'f(t) 10^-6'
+                                text: 'f(t)'
                             },
                             plotLines: [{
                                 value: 0,
@@ -683,14 +680,6 @@
                     }
 
                     chartGraph = [];
-                    var maxF = 0;
-                    for (i = 0; i < len; i += 1) {
-                        if (f[i]>f[i+1]){
-                            maxF = f[i];
-                        }
-                        //f[i] = f[i] * 1000000;
-                    }
-
 
                     chartGraph.push({ "name": "f(t)", "data": f });
                     //chartGraph.push({ "name": "Lambda(t)", "data": lambda_sys });
@@ -712,11 +701,8 @@
                         },
 
                         yAxis: {
-                            currentMin: 0,
-                            currentMax: maxF,
-                            //tickInterval: 1,
                             title: {
-                                text: 'f(t) 10^-6'
+                                text: 'f(t)'
                             },
                             plotLines: [{
                                 value: 0,
@@ -725,6 +711,9 @@
                             }]
                         }
                     }
+                   
+     
+
 
                 };
 
