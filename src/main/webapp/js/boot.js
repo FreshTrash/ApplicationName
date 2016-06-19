@@ -15,8 +15,6 @@
 
             require.config({
                 appDir: '',
-                //baseUrl: './test',
-                // baseUrl: '',
 
 
                 paths: {
@@ -24,7 +22,6 @@
                 "angular": "./dependencies/angular15.min",
                  "ui.bootstrap.tpls": "dependencies/ui-bootstrap-tpls",
                  "ui.bootstrap.modal": "dependencies/ui-bootstrap-tpls",
-
 
                 },
                 shim: {

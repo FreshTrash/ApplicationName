@@ -38,17 +38,17 @@
                 <form name="form_total">
                     <div class="form-group" ng-class="{ 'has-error': form_total.num_elem.$invalid && form_total.num_elem.$dirty}">
                         <p class="input_header">Количество элементов</p>
-                        <input name="num_elem" type="number" ng-model="num_elem" ng-change="num_changed()" class="form-control input-size" placeholder="Введите количество элементов" min=1 max=15 required/>
+                        <input name="num_elem" type="number" ng-model="num_elem" ng-change="num_changed()" class="form-control input-size" placeholder="Введите количество элементов" min=1 max=20 required/>
                         <div ng-messages="form_total.num_elem.$error" ng-if="form_total.num_elem.$dirty" class="my-messages">
-                            <p ng-message-exp="['min','max','number']">Введите значение между 1 и 15.</p>
+                            <p ng-message-exp="['min','max','number']">Введите значение между 1 и 20.</p>
                             <p ng-message="required">Это поле обязательно для заполнения.</p>
                         </div>
                     </div>
                     <div class="form-group" ng-class="{ 'has-error': form_total.rezerv_elem.$invalid && form_total.rezerv_elem.$dirty}" ng-show="show_reserved_3 || show_reserved_4 || show_reserved_5">
                         <p class="input_header">Количество резервных элементов</p>
-                        <input name="rezerv_elem" type="number" ng-model="rezerv_elem" class="form-control input-size" placeholder="Введите интенсивность отказов" min=0 max=15 required/>
+                        <input name="rezerv_elem" type="number" ng-model="rezerv_elem" class="form-control input-size" placeholder="Введите интенсивность отказов" min=0 max=20 required/>
                         <div ng-messages="form_total.rezerv_elem.$error" ng-if="form_total.rezerv_elem.$dirty" class="my-messages">
-                            <p ng-message-exp="['min','max','number']">Введите значение между 0 и 15.</p>
+                            <p ng-message-exp="['min','max','number']">Введите значение между 0 и 20.</p>
                             <p ng-message="required">Это поле обязательно для заполнения.</p>
                         </div>
                     </div>
@@ -56,15 +56,15 @@
                         <p class="input_header">Время испытания</p>
                         <input name="exec_time" type="number" ng-model="exec_time" class="form-control input-size" placeholder="Введите время испытания" min=100 max=10000000 required/>
                         <div ng-messages="form_total.exec_time.$error" ng-if="form_total.exec_time.$dirty" class="my-messages">
-                            <p ng-message-exp="['min','max','number']">Введите значение между 100 и 10000000.</p>
+                            <p ng-message-exp="['min','max','number']">Введите значение между 100 и 100000000.</p>
                             <p ng-message="required">Это поле обязательно для заполнения.</p>
                         </div>
                     </div>
                     <div class="form-group" ng-class="{ 'has-error': form_total.step.$invalid && form_total.step.$dirty}">
                         <p class="input_header">Шаг расчета</p>
-                        <input name="step" type="number" ng-model="step" class="form-control input-size" placeholder="Введите шаг" min=50 max=1000 required/>
+                        <input name="step" type="number" ng-model="step" class="form-control input-size" placeholder="Введите шаг" min=5 max=1000 required/>
                         <div ng-messages="form_total.step.$error" ng-if="form_total.step.$dirty" class="my-messages">
-                            <p ng-message-exp="['min','max','number']">Введите значение между 50 и 1000.</p>
+                            <p ng-message-exp="['min','max','number']">Введите значение между 5 и 1000.</p>
                             <p ng-message="required">Это поле обязательно для заполнения.</p>
                         </div>
                     </div>
