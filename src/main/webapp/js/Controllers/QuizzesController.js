@@ -11,15 +11,19 @@
                 $scope.showThemes = true;
 
                 var Questions = $resource('/api/test/:id');
+                var questionsDataPreload = {};
+
+                Questions.get({ id: 1 }, function(data) {
+                    questionsDataPreload = data;
+                });
 
                 var questions = [];
                 $scope.startQuizOnTheme = function(themeId) {
-
-                    Questions.get({ id: themeId + 1 }, function(data) {
-                        questions = data.questions;
-                        $scope.choosedThemeName = data.theme.name;
-                        $scope.questionId = data.questions[0].id;
-                        $scope.questionName = data.questions[0].text;
+                    if (themeId === 0) {
+                        questions = questionsDataPreload.questions;
+                        $scope.choosedThemeName = questionsDataPreload.theme.name;
+                        $scope.questionId = questionsDataPreload.questions[0].id;
+                        $scope.questionName = questionsDataPreload.questions[0].text;
 
                         $scope.totalQuestionsCount = questions.length;
 
@@ -27,7 +31,23 @@
                             questions[0].answers[i].userChoice = false;
 
                         $scope.thisThemeQuestions = questions;
-                    });
+                    } else {
+                        Questions.get({ id: themeId + 1 }, function(data) {
+                            questions = data.questions;
+                            $scope.choosedThemeName = data.theme.name;
+                            $scope.questionId = data.questions[0].id;
+                            $scope.questionName = data.questions[0].text;
+
+                            $scope.totalQuestionsCount = questions.length;
+
+                            for (var i = 0, len = questions[0].answers.length; i < len; i++)
+                                questions[0].answers[i].userChoice = false;
+
+                            $scope.thisThemeQuestions = questions;
+                        });
+                    }
+
+
 
                     $scope.showThemes = false;
                     $scope.showQuestions = true;
@@ -79,14 +99,15 @@
                     for (var i = 0; i < len; i++) {
                         for (var j = 0, len2 = questionsArr[i].answers.length; j < len2; j++) {
                             if (questionsArr[i].answers[j].userChoice != questionsArr[i].answers[j].correct) {
-                                console.log(questionsArr[i].answers[j].userChoice);
+                                
                                 wrongAnswerCount++;
                                 break;
                             }
                         }
                     }
 
-                    $scope.rightAnswersPercent = ((len - wrongAnswerCount) / len) * 100;
+                    $scope.rightAnswersCount = len - wrongAnswerCount;
+                    $scope.rightAnswersPercent = roundFloat(((len - wrongAnswerCount) / len) * 100,0);
 
                     // показываем результаты+
                 }
@@ -96,43 +117,6 @@
                     $scope.showQuestions = false;
                     $scope.showAnswers = false;
                 }
-
-
-                //            var Todo = $resource('/api/1/todo/:id');
-                //
-                //            //create a todo
-                //            var todo1 = new Todo();
-                //            todo1.foo = 'bar';
-                //            todo1.something = 123;
-                //            todo1.$save();
-                //
-                //            //get and update a todo
-                //            var todo2 = Todo.get({id: 123});
-                //            todo2.foo += '!';
-                //            todo2.$save();
-                //
-                //            //which is basically the same as...
-                //            Todo.get({id: 123}, function(todo) {
-                //               todo.foo += '!';
-                //               todo.$save();
-                //            });
-                //
-                //            //get a list of todos
-                //            Todo.query(function(todos) {
-                //              //do something with todos
-                //              angular.forEach(todos, function(todo) {
-                //                 todo.foo += ' something';
-                //                 todo.$save();
-                //              });
-                //            });
-                //
-                //            //delete a todo
-                //            Todo.$delete({id: 123});
-
-
-                //Todo.get({id: 123}, function(todo) {
-                //   $scope.todo = todo;
-                //});
 
                 var roundFloat = function(number, del) {
                     var residue = Math.pow(10, del)

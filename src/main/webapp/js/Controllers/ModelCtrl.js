@@ -147,8 +147,6 @@
                         return 0;
                     }
 
-
-
                     //если все dropdowns не выбраны
                     if (keys_of_dropdowns_length != $scope.num_elem) {
                         $scope.show_elem_warning = 1;
@@ -156,10 +154,9 @@
                         return 0;
                     }
 
-
                     // 
-                    // если закон не выбран, значит форма для ввода параметров этого закона скрыта
-                    // проверяем поля для не скрытых форм
+                    // Если закон не выбран, значит форма для ввода параметров этого закона скрыта.
+                    // Проверяем поля для не скрытых форм
                     //
                     // enable_if_arr - массив, в котором каждый элемент или 0 или 1, 
                     // в зависимости от того скрыта форма или нет
@@ -513,7 +510,7 @@
                     for (var index = 0; index < N; ++index) {
                         var f_tmp = [];
                         for (var index2 = 0; index2 <= len; ++index2) {
-                            f_tmp[index2] = f[index][index2] * 1000000;
+                            f_tmp[index2] = f[index][index2];
                         }
                         chartGraph.push({ "name": "f" + (index + 1) + "(t)", "data": f_tmp });
                     }
@@ -535,11 +532,8 @@
                             }
                         },
                         yAxis: {
-                            currentMin: 0,
-                            currentMax: 900,
-                            tickInterval: 100,
                             title: {
-                                text: 'f(t) 10^-6'
+                                text: 'f(t)'
                             },
                             plotLines: [{
                                 value: 0,
@@ -687,10 +681,6 @@
 
                     chartGraph = [];
 
-                    for (i = 0; i <= len; i += 1) {
-                        f[i] = f[i] * 1000000;
-                    }
-
                     chartGraph.push({ "name": "f(t)", "data": f });
                     //chartGraph.push({ "name": "Lambda(t)", "data": lambda_sys });
 
@@ -711,11 +701,8 @@
                         },
 
                         yAxis: {
-                            currentMin: 0,
-                            currentMax: 10,
-                            tickInterval: 1,
                             title: {
-                                text: 'f(t) 10^-6'
+                                text: 'f(t)'
                             },
                             plotLines: [{
                                 value: 0,
@@ -724,6 +711,9 @@
                             }]
                         }
                     }
+                   
+     
+
 
                 };
 
@@ -778,15 +768,12 @@
                     P = [];
 
                     for (i = 0; i <= len; i++) {
-
                         P[i] = 0;
                         for (var z = 0; z <= m; z += 1) {
                             b = Factorial(z);
                             P[i] = P[i] + ((Math.pow(lambda * desc_time[i], z)) / b);
-
                         }
                         P[i] = roundFloat(P[i] * Math.exp(-lambda * desc_time[i]), 7);
-
                     }
 
                     T = 1 / lambda * (m + 1);
@@ -1195,37 +1182,17 @@
                         }
                     }
 
-
-
-
-
-                    // for (j = 0; j <= len; j++) {
-
-                    //     P[j] = 0;
-                    //     for (var z = 0; z <= m; z += 1) {
-                    //         b = Factorjal(z);
-                    //         P[j] = P[j] + ((Math.pow(lambda * desc_time[j], z)) / b);
-
-                    //     }
-                    //     P[j] = roundFloat(P[j] * Math.exp(-lambda * desc_time[j]), 7);
-
-                    // }
-
                     // T = 1 / lambda * (m + 1);
                     // $scope.reserved_5_T = roundFloat(T, 2);
-
-
-
 
                     // Шапка таблицы
                     column_def_reserved_5 = [{ name: 'time', displayName: 'Время, ч.' }
                         // { name: 'p', displayName: 'P(t)' },
 
                     ];
-                    for (i = 0; i < n; i += 1) {
+                    for (i = 1; i <= n; i += 1) {
                         column_def_reserved_5.push({ name: 'p' + i, displayName: 'P' + i + '(t)' });
                     }
-
 
 
                     //Строки таблицы
@@ -1234,7 +1201,7 @@
                             "time": desc_time[i]
                         };
                         for (j = 0; j < n; j += 1) {
-                            true_obj['p' + j] = P[j][i];
+                            true_obj['p' + (j+1)] = P[j][i];
                         }
                         data_reserved_5.push(true_obj);
                     }
@@ -1246,7 +1213,7 @@
 
                     var chartGraph = [];
                     for (j = 0; j < n; j += 1) {
-                        chartGraph.push({ "name": 'P' + j + '(t)', "data": P[j] });
+                        chartGraph.push({ "name": 'P' + (j+1) + '(t)', "data": P[j] });
                     }
                     //chartGraph.push({ "name": "P(t)", "data": P });
                     // comparisonPush("Резервирование замещением", P);

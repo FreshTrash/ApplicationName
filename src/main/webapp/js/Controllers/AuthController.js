@@ -14,9 +14,6 @@
                     $scope.show_users = false;
                 };
 
-
-
-
                 $scope.showBook = function() {
                     hideAll();
                     $scope.show_book = true;
@@ -31,11 +28,6 @@
                     hideAll();
                     $scope.show_quizz = true;
                 }
-
-
-
-
-
 
                 $scope.showModel = function() {
                     hideAll();
@@ -60,11 +52,9 @@
                     enableColumnResizing: true
                 };
 
-
                 $scope.equipmentSelectData = {
                     repeatSelect: false
                 };
-
 
                 $scope.deleteRow = function(row) {
 
@@ -75,7 +65,6 @@
                         },function(response){
                             $scope.msg.resp=response;
                         });
-
                 };
 
                 var equipmentSelectDataUpdate = function() {
@@ -144,10 +133,8 @@
                                     $scope.msg.resp = "Данные сохранены!";
                                 }, function(response) {
                                     $scope.msg.resp = "Данные сохранены.";
-
                                 });
                         }
-
                         $scope.$apply();
                     });
                 };
@@ -166,7 +153,6 @@
                             intensity: $scope.elemLambda
                         }];
 
-
                         $http.put('/api/asu_element/', JSON.stringify(data))
                             .then(function(response) {
                                 $scope.msg.resp = response;
@@ -177,34 +163,19 @@
                                     "equipid": data[0].equipment.id,
                                     "equiname": data[0].equipment.name,
                                 };
-
                                 modelData.push(obj);
                             }, function(response) {
                                 $scope.msg.resp = "Данные добавлены!";
-
-
-
                             });
                     } else {
                         window.alert("Введите все данные");
                     }
-
-
                 };
-
-
-
 
                 $scope.showUsers = function() {
                     hideAll();
                     $scope.show_users = true;
                 }
-
-
-
-
-
-
 
 
             };
