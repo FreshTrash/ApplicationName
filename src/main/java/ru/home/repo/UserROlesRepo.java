@@ -6,5 +6,5 @@ import ru.home.model.UserRole;
 /**
  * Created by Maksim on 21.06.2016.
  */
-public interface UserRolesRepo extends JpaRepository<UserRole, String> {
+public interface UserROlesRepo extends JpaRepository<UserRole, String> {
 }
