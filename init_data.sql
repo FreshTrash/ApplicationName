@@ -7,8 +7,8 @@ ALTER TABLE public.answer ALTER COLUMN answer_id SET DEFAULT nextval('public.ans
 ALTER SEQUENCE public.answer_answer_id_seq OWNED BY public.answer.answer_id;
 
 CREATE SEQUENCE public._user_user_id_seq NO MINVALUE NO MAXVALUE NO CYCLE;
-ALTER TABLE public._user ALTER COLUMN user_id SET DEFAULT nextval('public._user_user_id_seq');
-ALTER SEQUENCE public._user_user_id_seq OWNED BY public._user.user_id;
+ALTER TABLE public.users ALTER COLUMN user_id SET DEFAULT nextval('public._user_user_id_seq');
+ALTER SEQUENCE public._user_user_id_seq OWNED BY public.users.user_id;
 
 CREATE SEQUENCE public.theme_theme_id_seq NO MINVALUE NO MAXVALUE NO CYCLE;
 ALTER TABLE public.theme ALTER COLUMN theme_id SET DEFAULT nextval('public.theme_theme_id_seq');
@@ -20,9 +20,9 @@ ALTER SEQUENCE public.test_test_id_seq OWNED BY public.test.test_id;
 
 
 
-insert into _user(email, enabled, first_name, last_name, middle_name, password, type, user_name) VALUES ('m1@m.r', true, 'user1', 'user1', 'user1', '123456', 'STUDENT', 'user1');
+insert into users(email, enabled, first_name, last_name, middle_name, password, type, username) VALUES ('m1@m.r', true, 'user1', 'user1', 'user1', '123456', 'STUDENT', 'user1');
 insert into user_roles(username, role) VALUES ('user1', 'ROLE_USER');
-insert into _user(email, enabled, first_name, last_name, middle_name, password, type, user_name) VALUES ('m2@m.r', true, 'admin1', 'admin1', 'admin1', '123456', 'STUDENT', 'admin1');
+insert into users(email, enabled, first_name, last_name, middle_name, password, type, username) VALUES ('m2@m.r', true, 'admin1', 'admin1', 'admin1', '123456', 'STUDENT', 'admin1');
 insert into user_roles(username, role) VALUES ('admin1', 'ROLE_ADMIN');
 insert into users(email, enabled, first_name, last_name, middle_name, password, type, username) VALUES ('admin@m.r', true, 'admin', 'admin', 'admin', 'root123', 'ADMIN', 'admin');
 insert into user_roles(username, role) VALUES ('admin', 'ROLE_ADMIN');
