@@ -20,13 +20,13 @@ public class WebSecurity extends WebSecurityConfigurerAdapter {
 
     @Autowired
     public void configureGlobalSecurity(AuthenticationManagerBuilder auth) throws Exception {
-        auth.inMemoryAuthentication().withUser("user").password("abc123").roles("USER");
+/*        auth.inMemoryAuthentication().withUser("user").password("abc123").roles("USER");
         auth.inMemoryAuthentication().withUser("admin").password("root123").roles("ADMIN");
-        auth.inMemoryAuthentication().withUser("dba").password("root123").roles("ADMIN","DBA");
+        auth.inMemoryAuthentication().withUser("dba").password("root123").roles("ADMIN","DBA");*/
 
         auth.jdbcAuthentication().dataSource(dataSource)
                 .usersByUsernameQuery(
-                        "select user_name, password, enabled from _user where user_name=?")
+                        "select username, password, enabled from _user where username=?")
                 .authoritiesByUsernameQuery(
                         "select username, role from user_roles where username=?");
     }

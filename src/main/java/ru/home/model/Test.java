@@ -24,7 +24,7 @@ public class Test {
     private String name;
     @ManyToOne
     @JoinColumn(name = "author_id")
-    private User user;
+    private MyUser user;
 
     @ManyToOne
     @JoinColumn(name = "theme_id")

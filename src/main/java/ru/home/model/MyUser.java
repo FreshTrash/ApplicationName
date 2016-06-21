@@ -11,11 +11,11 @@ import javax.persistence.*;
 @Getter
 @Setter
 @Entity
-@Table(name = "_user", uniqueConstraints=
-@UniqueConstraint(name="username_unique_key", columnNames={"user_name"}))
+@Table(name = "users", uniqueConstraints=
+@UniqueConstraint(name="username_unique_key", columnNames={"username"}))
 @SequenceGenerator(name="_user_seq", initialValue=200, allocationSize=100)
 
-public class User {
+public class MyUser {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "_user_seq")
     @Column(name = "user_id")
@@ -28,7 +28,7 @@ public class User {
     private String middleName;
     @Column(name = "type")
     private String type;
-    @Column(name = "user_name")
+    @Column(name = "username")
     private String username;
     @Column(name = "enabled")
     private Boolean enabled;

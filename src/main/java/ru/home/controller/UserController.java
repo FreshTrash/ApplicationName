@@ -3,10 +3,17 @@ package ru.home.controller;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.annotation.Secured;
 import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.web.bind.annotation.*;
-import ru.home.model.User;
+import ru.home.model.MyUser;
+import ru.home.model.MyUser;
+import ru.home.model.UserRole;
 import ru.home.repo.UserRepo;
+import ru.home.repo.UserRolesRepo;
+
+import java.util.List;
+import java.util.stream.Collectors;
 
 
 /**
@@ -17,23 +24,35 @@ public class UserController {
 
     @Autowired
     private UserRepo userRepo;
+    @Autowired
+    private UserRolesRepo userRolesRepo;
 
     @RequestMapping(value = "/api/user/current", method = RequestMethod.GET)
-    public Object currentUser() {
-        return getPrincipal();
+    public MyUser currentUser() {
+        User userDetail = (User)getPrincipal();
+        List<MyUser> allUsers = userRepo.findAll();
+        return allUsers.stream().filter(user -> user.getUsername().equals(userDetail.getUsername())).collect(Collectors.toList()).get(0);
     }
 
     @RequestMapping(value = "/api/user", method = RequestMethod.PUT)
     @ResponseBody
-    public User saveUser(@RequestBody User user) {
-        return userRepo.save(user);
+    public MyUser saveUser(@RequestBody MyUser myUser) {
+        UserRole userRole = new UserRole();
+        userRole.setRole("ROLE_USER");
+        userRole.setUserName(myUser.getUsername());
+        userRolesRepo.save(userRole);
+        return this.userRepo.save(myUser);
     }
 
     @Secured("ADMIN")
     @RequestMapping(value = "/api/admin", method = RequestMethod.PUT)
     @ResponseBody
-    public User saveAdmin(@RequestBody User user) {
-        return userRepo.save(user);
+    public MyUser saveAdmin(@RequestBody MyUser myUser) {
+        UserRole userRole = new UserRole();
+        userRole.setRole("ROLE_ADMIN");
+        userRole.setUserName(myUser.getUsername());
+        userRolesRepo.save(userRole);
+        return userRepo.save(myUser);
     }
 
     private Object getPrincipal(){

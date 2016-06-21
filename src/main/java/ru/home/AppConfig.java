@@ -50,13 +50,14 @@ public class AppConfig extends WebMvcConfigurerAdapter {
     @Bean
     public DataSource dataSource() {
         DriverManagerDataSource dataSource = new DriverManagerDataSource();
-/*        dataSource.setDriverClassName("org.postgresql.Driver");
+        dataSource.setDriverClassName("org.postgresql.Driver");
         dataSource.setUrl("jdbc:postgresql://localhost:5432/academia");
+
         dataSource.setUsername("postgres");
-        dataSource.setPassword("postgres");*/
-        dataSource.setUrl("jdbc:postgresql://ec2-54-243-210-223.compute-1.amazonaws.com:5432/dhd7irrv7r3qm?ssl=true&sslfactory=org.postgresql.ssl.NonValidatingFactory");
+        dataSource.setPassword("postgres");
+/*        dataSource.setUrl("jdbc:postgresql://ec2-54-243-210-223.compute-1.amazonaws.com:5432/dhd7irrv7r3qm?ssl=true&sslfactory=org.postgresql.ssl.NonValidatingFactory");
         dataSource.setUsername("uxwjurwlrjvgsa");
-        dataSource.setPassword("tVKxVDBBwIrQ3XyvaJAeglcIQj");
+        dataSource.setPassword("tVKxVDBBwIrQ3XyvaJAeglcIQj");*/
         return dataSource;
     }
 
@@ -68,6 +69,7 @@ public class AppConfig extends WebMvcConfigurerAdapter {
     Properties additionalProperties() {
         Properties properties = new Properties();
         properties.setProperty("hibernate.hbm2ddl.auto", "update");
+        properties.setProperty("hibernate.show_sql", "true");
         properties.setProperty("hibernate.dialect", "org.hibernate.dialect.PostgreSQLDialect");
         return properties;
     }
