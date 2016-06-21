@@ -7,10 +7,9 @@ import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.web.bind.annotation.*;
 import ru.home.model.MyUser;
-import ru.home.model.MyUser;
 import ru.home.model.UserRole;
 import ru.home.repo.UserRepo;
-import ru.home.repo.UserRolesRepo;
+import ru.home.repo.UserRoleRepo;
 
 import java.util.List;
 import java.util.stream.Collectors;
@@ -25,7 +24,8 @@ public class UserController {
     @Autowired
     private UserRepo userRepo;
     @Autowired
-    private UserRolesRepo userRolesRepo;
+    private UserRoleRepo userRolesRepo;
+
 
     @RequestMapping(value = "/api/user/current", method = RequestMethod.GET)
     public MyUser currentUser() {
