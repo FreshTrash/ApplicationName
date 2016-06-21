@@ -136,6 +136,12 @@
             <artifactId>jackson-core</artifactId>
             <version>${jackson-annotations.version}</version>
         </dependency>
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok-maven</artifactId>
+            <version>1.16.8.0</version>
+            <type>pom</type>
+        </dependency>
 
         <dependency>
             <groupId>com.fasterxml.jackson.core</groupId>
