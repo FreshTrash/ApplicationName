@@ -16,10 +16,8 @@
             <div ng-if="showThemes">
                 <h4>Выберите одну из тем</h4>
                 <ol start="integer" type="1">
-                    <a>
-                        <li class="theme-style" ng-repeat="theme in themes track by theme" ng-click="startQuizOnTheme($index)">{{::theme.name}}
-                        </li>
-                    </a>
+                    <li ng-repeat="theme in themes" ><a class="theme-style" ng-click="startQuizOnTheme($index)">{{::theme.name}}</a>
+                    </li>
                 </ol>
             </div>
             <!--QUESTIONS-->

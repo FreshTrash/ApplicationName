@@ -11,27 +11,10 @@
                 $scope.showThemes = true;
 
                 var Questions = $resource('/api/test/:id');
-                var questionsDataPreload = {};
-
-                Questions.get({ id: 1 }, function(data) {
-                    questionsDataPreload = data;
-                });
 
                 var questions = [];
                 $scope.startQuizOnTheme = function(themeId) {
-                    if (themeId === 0) {
-                        questions = questionsDataPreload.questions;
-                        $scope.choosedThemeName = questionsDataPreload.theme.name;
-                        $scope.questionId = questionsDataPreload.questions[0].id;
-                        $scope.questionName = questionsDataPreload.questions[0].text;
-
-                        $scope.totalQuestionsCount = questions.length;
-
-                        for (var i = 0, len = questions[0].answers.length; i < len; i++)
-                            questions[0].answers[i].userChoice = false;
-
-                        $scope.thisThemeQuestions = questions;
-                    } else {
+                 
                         Questions.get({ id: themeId + 1 }, function(data) {
                             questions = data.questions;
                             $scope.choosedThemeName = data.theme.name;
@@ -45,7 +28,7 @@
 
                             $scope.thisThemeQuestions = questions;
                         });
-                    }
+                    
 
 
 
