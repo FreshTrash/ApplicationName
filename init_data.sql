@@ -25,9 +25,9 @@ insert into user_roles(username, role) VALUES ('user1', 'USER');
 insert into _user(email, enabled, first_name, last_name, middle_name, password, type, user_name) VALUES ('m2@m.r', true, 'admin1', 'admin1', 'admin1', '123456', 'STUDENT', 'admin1');
 insert into user_roles(username, role) VALUES ('admin1', 'ADMIN');
 
-insert into theme(theme_id, name) VALUES (1, 'Терминология САПРиУ');
-insert into theme(theme_id, name) VALUES (2, 'Теория надежности');
-insert into test(test_id, author_id, date, name, theme_id, time_to_test) VALUES (1, 1, now(), 'Терминология САПРиУ', 1, 30);
+insert into theme(theme_id, name) VALUES (2, 'Терминология САПРиУ');
+insert into theme(theme_id, name) VALUES (3, 'Теория надежности');
+insert into test(test_id, author_id, date, name, theme_id, time_to_test) VALUES (3, 1, now(), 'Терминология САПРиУ', 2, 30);
 
 insert into question(question_id, date, test_id, text, type) VALUES (1, now(), 1, 'Лингвистическое обеспечение это', 1);
 insert into answer(answer, correct, question_id) VALUES ('совокупность технических средств, используемых в автоматизированного проектировании', false, 1);
