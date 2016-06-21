@@ -32,7 +32,7 @@ public class TestController {
         return testRepo.findAll();
     }
 
-    @Secured("ROLE_ADMIN")
+    @Secured({"ROLE_USER", "ROLE_ADMIN"})
     @RequestMapping(value = "/{testId}", method = RequestMethod.GET)
     @ResponseBody
     public Test findById(@PathVariable("testId") Long testId) {
