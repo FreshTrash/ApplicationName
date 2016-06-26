@@ -4,17 +4,19 @@
     define(['./RouteManage.js',
             './Controllers/ModelModule.js',
             './Controllers/QuizModule.js',
-            './Controllers/AuthModule.js'
-
+            './Controllers/AuthModule.js',
+            './Controllers/BookModule.js'
         ],
-        function(RouteManage, ModelModule, QuizModule, AuthModule) {
+        function(RouteManage, ModelModule, QuizModule, AuthModule, BookModule) {
 
             var app, appName = 'WebApp';
 
             app = angular
                 .module(
-                    appName, ["ngRoute", "ui.bootstrap.modal", "ui.bootstrap.tpls", "ui.grid", "ui.grid.selection", "ui.grid.edit",
-                        "highcharts-ng", "ngMessages", "ngResource", "ngAnimate", "ngTouch", ModelModule, QuizModule, AuthModule,"ui.bootstrap"
+                    appName, ["ngRoute", "ui.bootstrap.modal", "ui.bootstrap.tpls",
+                        "ui.grid", "ui.grid.selection", "ui.grid.edit", "highcharts-ng",
+                        "ngMessages", "ngResource", "ngAnimate", "ngTouch", ModelModule,
+                        QuizModule, AuthModule, BookModule, "ui.bootstrap","angularCSS"
                     ]
                 )
                 .config(RouteManage);
@@ -42,11 +44,12 @@
             //      })
             // });
 
+
             app.directive('header', function() {
                 return {
-                    restrict: 'A', //This menas that it will be used as an attribute and NOT as an element. I don't like creating custom HTML elements
+                    restrict: 'A',
                     replace: true,
-                    scope: { user: '=' }, // This is one of the cool things :). Will be explained in post.
+                    scope: { user: '=' },
                     templateUrl: "/partials/templates/header.html",
                     controller: ['$scope', '$filter', function($scope, $filter) {
                         //$scope.navbarCollapsed = true;// Your behaviour goes here :)

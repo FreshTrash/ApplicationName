@@ -23,7 +23,7 @@
                     .when("/about", { templateUrl: "partials/about.html", controller: "PageCtrl" })
                     // .when("/services", { templateUrl: "partials/services.html", controller: "PageCtrl" })
                     .when("/contact", { templateUrl: "partials/contact.html", controller: "PageCtrl" })
-                    .when("/book", { templateUrl: "partials/book/book_template.html", controller: "PageCtrl" })
+                    .when("/book", { templateUrl: "partials/book/book_template.html", controller: "BookController" ,css:"css/book.css"})
                     .when('/taskbook', { templateUrl: "partials/taskbook.html", controller: "TaskbookController" })
 
                     .when("/models", { templateUrl: "partials/models/model1.html", controller: "ModelCtrl" })
