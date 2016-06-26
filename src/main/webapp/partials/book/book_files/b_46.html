@@ -1,0 +1,928 @@
+
+<H3 LANG="ru-RU" CLASS="western"><A NAME="__RefHeading__99_1940486968"></A>
+Расчет надежности мостиковой схемы</H3>
+<P LANG="ru-RU" STYLE="text-indent: 0.49in; margin-bottom: 0in; line-height: 170%">
+    <FONT SIZE=4>Рассмотренные выше достоинства системы с индивидуальным резервированием базировались на допущении об абсолютно надежной &quot;перемычке&quot; СД между двумя цепочками элементов (рис. 3.36&nbsp;а).</FONT>
+</P>
+<P LANG="ru-RU" CLASS="western" ALIGN=LEFT STYLE="text-indent: 0in; margin-bottom: 0in; line-height: 170%">
+    <BR>
+</P>
+<P LANG="ru-RU" CLASS="western" ALIGN=CENTER STYLE="text-indent: 0in; margin-bottom: 0in; line-height: 170%">
+    <IMG SRC="./partials/book/book_files/i_8cd199184a27afda_html_49ac8fb8.jpg" NAME="graphics84" ALIGN=BOTTOM WIDTH=642 HEIGHT=182 BORDER=0>
+</P>
+<P LANG="ru-RU" CLASS="western" ALIGN=CENTER STYLE="text-indent: 0in; margin-top: 0.04in; margin-bottom: 0in; line-height: 170%">
+    Рис. 3.36. Структурные надежностные схемы мостикового соединения</P>
+<P LANG="ru-RU" CLASS="western" ALIGN=LEFT STYLE="text-indent: 0in; margin-bottom: 0in; line-height: 170%">
+    <BR>
+</P>
+<P LANG="ru-RU" STYLE="margin-bottom: 0in; line-height: 170%">
+    <FONT SIZE=4>На практике &quot;перемычка&quot; может иметь отказы типа &quot;обрыв&quot;, интенсивность которых </FONT>
+    <FONT FACE="Symbol, serif">
+        <FONT SIZE=4>
+            <I></I>
+        </FONT>
+    </FONT>
+    <SUB><FONT SIZE=4><I>п</I></FONT></SUB>
+    <FONT SIZE=4>
+        соизмерима с </FONT>
+    <FONT FACE="Symbol, serif">
+        <FONT SIZE=4>
+            <I></I>
+        </FONT>
+    </FONT>
+    <FONT SIZE=4>
+        элементов. При учете </FONT>
+    <FONT FACE="Symbol, serif">
+        <FONT SIZE=4>
+            <I></I>
+        </FONT>
+    </FONT>
+    <SUB><FONT SIZE=4><I>п</I></FONT></SUB>
+    <FONT SIZE=4>
+        структурная надежностная схема системы принимает вид, показанный на рис. 3.36&nbsp;б.</FONT>
+</P>
+<P LANG="ru-RU" STYLE="margin-bottom: 0in; line-height: 170%">
+    <FONT SIZE=4>Такая схема получила название </FONT>
+    <FONT SIZE=4>
+        <B>мостиковой</B>
+    </FONT>
+    <FONT SIZE=4>. Для расчета показателей надежности мостиковой схемы
+        <IMG SRC="./partials/book/book_files/i_8cd199184a27afda_html_c0d2a96b.gif" NAME="Object665" ALIGN=ABSMIDDLE WIDTH=62 HEIGHT=21> и
+        <IMG SRC="./partials/book/book_files/i_8cd199184a27afda_html_55aa75d7.gif" NAME="Object666" ALIGN=ABSMIDDLE WIDTH=25 HEIGHT=24> первоначально положим </FONT>
+    <FONT FACE="Symbol, serif">
+        <FONT SIZE=4>
+            <I></I>
+        </FONT>
+    </FONT>
+    <SUB><FONT SIZE=4>1</FONT></SUB>
+    <FONT SIZE=4>=</FONT>
+    <FONT FACE="Symbol, serif">
+        <FONT SIZE=4>
+            <I></I>
+        </FONT>
+    </FONT>
+    <SUB><FONT SIZE=4>2</FONT></SUB>
+    <FONT SIZE=4>=</FONT>
+    <FONT FACE="Symbol, serif">
+        <FONT SIZE=4>
+            <I></I>
+        </FONT>
+    </FONT>
+    <SUB><FONT SIZE=4>3</FONT></SUB>
+    <FONT SIZE=4>=</FONT>
+    <FONT FACE="Symbol, serif">
+        <FONT SIZE=4>
+            <I></I>
+        </FONT>
+    </FONT>
+    <SUB><FONT SIZE=4>4</FONT></SUB>
+    <FONT SIZE=4>=</FONT>
+    <FONT FACE="Symbol, serif">
+        <FONT SIZE=4>
+            <I></I>
+        </FONT>
+    </FONT>
+    <SUB><FONT SIZE=4>5</FONT></SUB>
+    <FONT SIZE=4>=</FONT>
+    <FONT FACE="Symbol, serif">
+        <FONT SIZE=4>
+            <I></I>
+        </FONT>
+    </FONT>
+    <FONT SIZE=4>, а элементам присвоим номера с 1 по 5 (см. рис. 3.37).</FONT>
+</P>
+<P LANG="ru-RU" CLASS="western" ALIGN=LEFT STYLE="text-indent: 0in; margin-bottom: 0in; line-height: 170%">
+    <BR>
+</P>
+<P CLASS="western" ALIGN=CENTER STYLE="text-indent: 0in; margin-bottom: 0in; line-height: 170%">
+    <IMG SRC="./partials/book/book_files/i_8cd199184a27afda_html_2826f8f1.png" NAME="graphics85" ALIGN=BOTTOM WIDTH=323 HEIGHT=145 BORDER=0>
+</P>
+<P CLASS="western" ALIGN=CENTER STYLE="text-indent: 0in; margin-bottom: 0in; line-height: 170%">
+    <BR>
+</P>
+<P LANG="ru-RU" CLASS="western" ALIGN=CENTER STYLE="text-indent: 0in; margin-bottom: 0in; line-height: 170%">
+    Рис. 3.37. Структурная надежностная схема мостикового соединения
+</P>
+<P LANG="ru-RU" CLASS="western" ALIGN=CENTER STYLE="text-indent: 0in; margin-bottom: 0in; line-height: 170%">
+    равнонадежных элементов с ненадежной перемычкой
+</P>
+<P LANG="ru-RU" CLASS="western" ALIGN=CENTER STYLE="text-indent: 0in; margin-bottom: 0in; line-height: 170%">
+    <BR>
+</P>
+<P LANG="ru-RU" STYLE="margin-bottom: 0in; line-height: 170%">
+    <FONT SIZE=4>Напомним, что система работоспособна, если существует цепь АБ. Работоспособность системы возможна при разном числе исправных элементов или разных состояниях системы. Одно и тоже состояние может быть реализовано разными элементами (номерами элементов), т.е. каждое состояние характеризуется несколькими вариантами наборов исправных элементов. Выпишем возможные состояния работоспособности и их варианты в табл.&nbsp;5.</FONT>
+</P>
+<P LANG="ru-RU" CLASS="western" ALIGN=CENTER STYLE="text-indent: 0in; margin-bottom: 0in; line-height: 170%">
+    <BR>
+</P>
+<P LANG="ru-RU" CLASS="western" ALIGN=RIGHT STYLE="text-indent: 0in; margin-bottom: 0in; line-height: 170%">
+    <FONT SIZE=4>Таблица 5 </FONT>
+</P>
+<P LANG="ru-RU" CLASS="western" ALIGN=CENTER STYLE="text-indent: 0in; margin-bottom: 0.17in; line-height: 170%">
+    <FONT SIZE=4>
+        <B>Состояния работоспособности
+и отказа мостиковой схемы</B>
+    </FONT>
+</P>
+<TABLE WIDTH=650 CELLPADDING=7 CELLSPACING=0>
+    <COL WIDTH=64>
+    <COL WIDTH=70>
+    <COL WIDTH=76>
+    <COL WIDTH=118>
+    <COL WIDTH=62>
+    <COL WIDTH=175>
+    <TR>
+        <TD ROWSPAN=2 WIDTH=64 STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0in">
+            <P LANG="ru-RU" CLASS="western" ALIGN=CENTER STYLE="margin-left: -0.1in; text-indent: 0in">
+                Состояние</P>
+        </TD>
+        <TD COLSPAN=2 WIDTH=160 STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0in">
+            <P LANG="ru-RU" CLASS="western" ALIGN=CENTER STYLE="margin-left: -0.1in; text-indent: 0in">
+                Число элементов схемы</P>
+        </TD>
+        <TD ROWSPAN=2 WIDTH=118 STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0in">
+            <P LANG="ru-RU" CLASS="western" ALIGN=CENTER STYLE="margin-left: -0.1in; text-indent: 0in">
+                Состояние системы</P>
+        </TD>
+        <TD ROWSPAN=2 WIDTH=62 STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0in">
+            <P LANG="ru-RU" CLASS="western" ALIGN=CENTER STYLE="margin-left: -0.1in; text-indent: 0in">
+                Число вариантов состояния</P>
+        </TD>
+        <TD ROWSPAN=2 WIDTH=175 STYLE="border: 1px solid #000000; padding: 0in 0.08in">
+            <P LANG="ru-RU" CLASS="western" ALIGN=CENTER STYLE="margin-left: -0.1in; text-indent: 0in">
+                Вероятность возникновения варианта состояния
+            </P>
+        </TD>
+    </TR>
+    <TR>
+        <TD WIDTH=70 STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0in">
+            <P LANG="ru-RU" CLASS="western" ALIGN=CENTER STYLE="margin-left: -0.1in; text-indent: 0in">
+                исправных</P>
+        </TD>
+        <TD WIDTH=76 STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0in">
+            <P LANG="ru-RU" CLASS="western" ALIGN=CENTER STYLE="margin-left: -0.1in; text-indent: 0in">
+                отказавших</P>
+        </TD>
+    </TR>
+    <TR>
+        <TD WIDTH=64 STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0in">
+            <P CLASS="western" ALIGN=CENTER STYLE="margin-left: -0.1in; text-indent: 0in">
+                I</P>
+        </TD>
+        <TD WIDTH=70 STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0in">
+            <P LANG="ru-RU" CLASS="western" ALIGN=CENTER STYLE="margin-left: -0.1in; text-indent: 0in">
+                5</P>
+        </TD>
+        <TD WIDTH=76 STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0in">
+            <P LANG="ru-RU" CLASS="western" ALIGN=CENTER STYLE="margin-left: -0.1in; text-indent: 0in">
+                0</P>
+        </TD>
+        <TD WIDTH=118 STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0in">
+            <P LANG="ru-RU" CLASS="western" ALIGN=CENTER STYLE="margin-left: -0.1in; text-indent: 0in">
+                Работоспособное</P>
+        </TD>
+        <TD WIDTH=62 STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0in">
+            <P LANG="ru-RU" CLASS="western" ALIGN=CENTER STYLE="margin-left: -0.1in; text-indent: 0in">
+                1</P>
+        </TD>
+        <TD WIDTH=175 STYLE="border: 1px solid #000000; padding: 0in 0.08in">
+            <P CLASS="western" ALIGN=CENTER STYLE="margin-left: -0.1in; text-indent: 0in">
+                <IMG SRC="./partials/book/book_files/i_8cd199184a27afda_html_cc1f6991.gif" NAME="Object667" ALIGN=ABSMIDDLE WIDTH=25 HEIGHT=20>
+            </P>
+        </TD>
+    </TR>
+    <TR>
+        <TD WIDTH=64 STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0in">
+            <P CLASS="western" ALIGN=CENTER STYLE="margin-left: -0.1in; text-indent: 0in">
+                II</P>
+        </TD>
+        <TD WIDTH=70 STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0in">
+            <P LANG="ru-RU" CLASS="western" ALIGN=CENTER STYLE="margin-left: -0.1in; text-indent: 0in">
+                4</P>
+        </TD>
+        <TD WIDTH=76 STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0in">
+            <P LANG="ru-RU" CLASS="western" ALIGN=CENTER STYLE="margin-left: -0.1in; text-indent: 0in">
+                1</P>
+        </TD>
+        <TD WIDTH=118 STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0in">
+            <P LANG="ru-RU" CLASS="western" ALIGN=CENTER STYLE="margin-left: -0.1in; text-indent: 0in">
+                Работоспособное</P>
+        </TD>
+        <TD WIDTH=62 STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0in">
+            <P LANG="ru-RU" CLASS="western" ALIGN=CENTER STYLE="margin-left: -0.1in; text-indent: 0in">
+                5</P>
+        </TD>
+        <TD WIDTH=175 STYLE="border: 1px solid #000000; padding: 0in 0.08in">
+            <P LANG="ru-RU" CLASS="western" ALIGN=CENTER STYLE="margin-left: -0.1in; text-indent: 0in">
+                <IMG SRC="./partials/book/book_files/i_8cd199184a27afda_html_2d017b45.gif" NAME="Object668" ALIGN=ABSMIDDLE WIDTH=126 HEIGHT=20>
+            </P>
+        </TD>
+    </TR>
+    <TR>
+        <TD WIDTH=64 STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0in">
+            <P CLASS="western" ALIGN=CENTER STYLE="margin-left: -0.1in; text-indent: 0in">
+                III</P>
+        </TD>
+        <TD WIDTH=70 STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0in">
+            <P LANG="ru-RU" CLASS="western" ALIGN=CENTER STYLE="margin-left: -0.1in; text-indent: 0in">
+                3</P>
+        </TD>
+        <TD WIDTH=76 STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0in">
+            <P LANG="ru-RU" CLASS="western" ALIGN=CENTER STYLE="margin-left: -0.1in; text-indent: 0in">
+                2</P>
+        </TD>
+        <TD WIDTH=118 STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0in">
+            <P LANG="ru-RU" CLASS="western" ALIGN=CENTER STYLE="margin-left: -0.1in; text-indent: 0in">
+                Работоспособное</P>
+        </TD>
+        <TD WIDTH=62 STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0in">
+            <P LANG="ru-RU" CLASS="western" ALIGN=CENTER STYLE="margin-left: -0.1in; text-indent: 0in">
+                8</P>
+        </TD>
+        <TD WIDTH=175 STYLE="border: 1px solid #000000; padding: 0in 0.08in">
+            <P LANG="ru-RU" CLASS="western" ALIGN=CENTER STYLE="margin-left: -0.1in; text-indent: 0in">
+                <IMG SRC="./partials/book/book_files/i_8cd199184a27afda_html_bedf0276.gif" NAME="Object669" ALIGN=ABSMIDDLE WIDTH=137 HEIGHT=20>
+            </P>
+        </TD>
+    </TR>
+    <TR>
+        <TD WIDTH=64 STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0in">
+            <P CLASS="western" ALIGN=CENTER STYLE="margin-left: -0.1in; text-indent: 0in">
+                IV</P>
+        </TD>
+        <TD WIDTH=70 STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0in">
+            <P CLASS="western" ALIGN=CENTER STYLE="margin-left: -0.1in; text-indent: 0in">
+                2</P>
+        </TD>
+        <TD WIDTH=76 STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0in">
+            <P LANG="ru-RU" CLASS="western" ALIGN=CENTER STYLE="margin-left: -0.1in; text-indent: 0in">
+                3</P>
+        </TD>
+        <TD WIDTH=118 STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0in">
+            <P LANG="ru-RU" CLASS="western" ALIGN=CENTER STYLE="margin-left: -0.1in; text-indent: 0in">
+                Работоспособное</P>
+        </TD>
+        <TD WIDTH=62 STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0in">
+            <P LANG="ru-RU" CLASS="western" ALIGN=CENTER STYLE="margin-left: -0.1in; text-indent: 0in">
+                2</P>
+        </TD>
+        <TD WIDTH=175 STYLE="border: 1px solid #000000; padding: 0in 0.08in">
+            <P LANG="ru-RU" CLASS="western" ALIGN=CENTER STYLE="margin-left: -0.1in; text-indent: 0in">
+                <IMG SRC="./partials/book/book_files/i_8cd199184a27afda_html_7bd5e1e7.gif" NAME="Object670" ALIGN=ABSMIDDLE WIDTH=137 HEIGHT=20>
+            </P>
+        </TD>
+    </TR>
+    <TR>
+        <TD WIDTH=64 STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0in">
+            <P CLASS="western" ALIGN=CENTER STYLE="margin-left: -0.1in; text-indent: 0in">
+                V</P>
+        </TD>
+        <TD WIDTH=70 STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0in">
+            <P CLASS="western" ALIGN=CENTER STYLE="margin-left: -0.1in; text-indent: 0in">
+                1</P>
+        </TD>
+        <TD WIDTH=76 STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0in">
+            <P CLASS="western" ALIGN=CENTER STYLE="margin-left: -0.1in; text-indent: 0in">
+                4</P>
+        </TD>
+        <TD WIDTH=118 STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0in">
+            <P LANG="ru-RU" CLASS="western" ALIGN=CENTER STYLE="margin-left: -0.1in; text-indent: 0in">
+                Отказ</P>
+        </TD>
+        <TD WIDTH=62 STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0in">
+            <P LANG="ru-RU" CLASS="western" ALIGN=CENTER STYLE="margin-left: -0.1in; text-indent: 0in">
+                4</P>
+        </TD>
+        <TD WIDTH=175 STYLE="border: 1px solid #000000; padding: 0in 0.08in">
+            <P LANG="ru-RU" CLASS="western" ALIGN=CENTER STYLE="margin-left: -0.1in; text-indent: 0in">
+                -</P>
+        </TD>
+    </TR>
+</TABLE>
+<P STYLE="margin-bottom: 0in; line-height: 170%">
+    <BR>
+</P>
+<P LANG="ru-RU" STYLE="margin-bottom: 0in; line-height: 170%">
+    <FONT SIZE=4>Вероятности возникновения состояний </FONT>
+    <FONT SIZE=4>
+        <SPAN LANG="en-US">I</SPAN>
+    </FONT>
+    <FONT SIZE=4>-</FONT>
+    <FONT SIZE=4>
+        <SPAN LANG="en-US">IV</SPAN>
+    </FONT>
+    <FONT SIZE=4>:</FONT>
+</P>
+<P LANG="ru-RU" CLASS="western" ALIGN=LEFT STYLE="margin-left: 0.49in; text-indent: 0in; margin-bottom: 0in; line-height: 170%">
+    <FONT SIZE=4>
+        <I>Р</I>
+    </FONT>
+    <SUB><FONT SIZE=4><SPAN LANG="en-US"><I>I</I></SPAN></FONT></SUB>
+    <FONT SIZE=4>=</FONT>
+    <FONT SIZE=4>
+        <I>Р</I>
+    </FONT>
+    <FONT FACE="Symbol, serif">
+        <FONT SIZE=4>
+            <SPAN LANG="en-US"><I></I></SPAN>
+        </FONT>
+    </FONT>
+    <FONT SIZE=4>
+        <SPAN LANG="en-US"><I>P</I></SPAN>
+    </FONT>
+    <FONT FACE="Symbol, serif">
+        <FONT SIZE=4>
+            <SPAN LANG="en-US"><I></I></SPAN>
+        </FONT>
+    </FONT>
+    <FONT SIZE=4>
+        <SPAN LANG="en-US"><I>P</I></SPAN>
+    </FONT>
+    <FONT FACE="Symbol, serif">
+        <FONT SIZE=4>
+            <SPAN LANG="en-US"><I></I></SPAN>
+        </FONT>
+    </FONT>
+    <FONT SIZE=4>
+        <SPAN LANG="en-US"><I>P</I></SPAN>
+    </FONT>
+    <FONT FACE="Symbol, serif">
+        <FONT SIZE=4>
+            <SPAN LANG="en-US"><I></I></SPAN>
+        </FONT>
+    </FONT>
+    <FONT SIZE=4>
+        <SPAN LANG="en-US"><I>P</I></SPAN>
+    </FONT>
+    <FONT SIZE=4>=
+    </FONT>
+    <FONT SIZE=4>
+        <I>Р</I>
+    </FONT>
+    <SUP><FONT SIZE=4><I>5</I></FONT></SUP>
+    <FONT SIZE=4>;</FONT>
+</P>
+<P LANG="ru-RU" CLASS="western" ALIGN=LEFT STYLE="margin-left: 0.49in; text-indent: 0in; margin-bottom: 0in; line-height: 170%">
+    <FONT SIZE=4>
+        <I>Р</I>
+    </FONT>
+    <SUB><FONT SIZE=4><SPAN LANG="en-US"><I>II</I></SPAN></FONT></SUB>
+    <FONT SIZE=4>=5</FONT>
+    <FONT FACE="Symbol, serif">
+        <FONT SIZE=4>
+            <SPAN LANG="en-US"></SPAN>
+        </FONT>
+    </FONT>
+    <FONT SIZE=4>
+        <I>Р</I>
+    </FONT>
+    <FONT FACE="Symbol, serif">
+        <FONT SIZE=4>
+            <SPAN LANG="en-US"><I></I></SPAN>
+        </FONT>
+    </FONT>
+    <FONT SIZE=4>
+        <SPAN LANG="en-US"><I>P</I></SPAN>
+    </FONT>
+    <FONT FACE="Symbol, serif">
+        <FONT SIZE=4>
+            <SPAN LANG="en-US"><I></I></SPAN>
+        </FONT>
+    </FONT>
+    <FONT SIZE=4>
+        <SPAN LANG="en-US"><I>P</I></SPAN>
+    </FONT>
+    <FONT FACE="Symbol, serif">
+        <FONT SIZE=4>
+            <SPAN LANG="en-US"><I></I></SPAN>
+        </FONT>
+    </FONT>
+    <FONT SIZE=4>
+        <SPAN LANG="en-US"><I>P</I></SPAN>
+    </FONT>
+    <FONT FACE="Symbol, serif">
+        <FONT SIZE=4>
+            <SPAN LANG="en-US"><I></I></SPAN>
+        </FONT>
+    </FONT>
+    <FONT SIZE=4>
+        <SPAN LANG="en-US"><I>Q</I></SPAN>
+    </FONT>
+    <FONT SIZE=4>=5</FONT>
+    <FONT FACE="Symbol, serif">
+        <FONT SIZE=4>
+            <SPAN LANG="en-US"></SPAN>
+        </FONT>
+    </FONT>
+    <FONT SIZE=4>
+        <I>Р</I>
+    </FONT>
+    <SUP><FONT SIZE=4><I>4</I></FONT></SUP>
+    <FONT SIZE=4>
+    </FONT>
+    <FONT FACE="Symbol, serif">
+        <FONT SIZE=4>
+            <SPAN LANG="en-US"></SPAN>
+        </FONT>
+    </FONT>
+    <FONT SIZE=4>(1-</FONT>
+    <FONT SIZE=4>
+        <SPAN LANG="en-US"><I>P</I></SPAN>
+    </FONT>
+    <FONT SIZE=4>)=5</FONT>
+    <FONT FACE="Symbol, serif">
+        <FONT SIZE=4>
+            <SPAN LANG="en-US"></SPAN>
+        </FONT>
+    </FONT>
+    <FONT SIZE=4>
+        <SPAN LANG="en-US"><I>P</I></SPAN>
+    </FONT>
+    <SUP><FONT SIZE=4><I>4</I></FONT></SUP>
+    <FONT SIZE=4>-5</FONT>
+    <FONT FACE="Symbol, serif">
+        <FONT SIZE=4>
+            <SPAN LANG="en-US"></SPAN>
+        </FONT>
+    </FONT>
+    <FONT SIZE=4>
+        <SPAN LANG="en-US"><I>P</I></SPAN>
+    </FONT>
+    <FONT SIZE=4>;</FONT>
+</P>
+<P LANG="ru-RU" CLASS="western" ALIGN=LEFT STYLE="margin-left: 0.49in; text-indent: 0in; margin-bottom: 0in; line-height: 170%">
+    <FONT SIZE=4>
+        <I>Р</I>
+    </FONT>
+    <SUB><FONT SIZE=4><SPAN LANG="en-US"><I>III</I></SPAN></FONT></SUB>
+    <FONT SIZE=4>=8</FONT>
+    <FONT FACE="Symbol, serif">
+        <FONT SIZE=4>
+            <SPAN LANG="en-US"></SPAN>
+        </FONT>
+    </FONT>
+    <FONT SIZE=4>
+        <SPAN LANG="en-US"><I>P</I></SPAN>
+    </FONT>
+    <FONT FACE="Symbol, serif">
+        <FONT SIZE=4>
+            <SPAN LANG="en-US"><I></I></SPAN>
+        </FONT>
+    </FONT>
+    <FONT SIZE=4>
+        <SPAN LANG="en-US"><I>P</I></SPAN>
+    </FONT>
+    <FONT FACE="Symbol, serif">
+        <FONT SIZE=4>
+            <SPAN LANG="en-US"><I></I></SPAN>
+        </FONT>
+    </FONT>
+    <FONT SIZE=4>
+        <SPAN LANG="en-US"><I>P</I></SPAN>
+    </FONT>
+    <FONT FACE="Symbol, serif">
+        <FONT SIZE=4>
+            <SPAN LANG="en-US"><I></I></SPAN>
+        </FONT>
+    </FONT>
+    <FONT SIZE=4>
+        <SPAN LANG="en-US"><I>Q</I></SPAN>
+    </FONT>
+    <FONT FACE="Symbol, serif">
+        <FONT SIZE=4>
+            <SPAN LANG="en-US"><I></I></SPAN>
+        </FONT>
+    </FONT>
+    <FONT SIZE=4>
+        <SPAN LANG="en-US"><I>Q</I></SPAN>
+    </FONT>
+    <FONT SIZE=4>=8</FONT>
+    <FONT FACE="Symbol, serif">
+        <FONT SIZE=4>
+            <SPAN LANG="en-US"></SPAN>
+        </FONT>
+    </FONT>
+    <FONT SIZE=4>
+        <I>Р</I>
+    </FONT>
+    <SUP><FONT SIZE=4><I>3</I></FONT></SUP>
+    <FONT FACE="Symbol, serif">
+        <FONT SIZE=4>
+            <SPAN LANG="en-US"><I></I></SPAN>
+        </FONT>
+    </FONT>
+    <FONT SIZE=4>
+        <SPAN LANG="en-US"><I>Q</I></SPAN>
+    </FONT>
+    <SUP><FONT SIZE=4><I>2</I></FONT></SUP>
+    <FONT SIZE=4>
+        =8</FONT>
+    <FONT FACE="Symbol, serif">
+        <FONT SIZE=4>
+            <SPAN LANG="en-US"></SPAN>
+        </FONT>
+    </FONT>
+    <FONT SIZE=4>
+        <I>Р</I>
+    </FONT>
+    <SUP><FONT SIZE=4><I>3</I></FONT></SUP>
+    <FONT FACE="Symbol, serif">
+        <FONT SIZE=4>
+            <SPAN LANG="en-US"></SPAN>
+        </FONT>
+    </FONT>
+    <FONT SIZE=4>(1-</FONT>
+    <FONT SIZE=4>
+        <SPAN LANG="en-US"><I>P</I></SPAN>
+    </FONT>
+    <FONT SIZE=4>)</FONT>
+    <SUP><FONT SIZE=4>2</FONT></SUP>
+    <FONT SIZE=4>=8</FONT>
+    <FONT FACE="Symbol, serif">
+        <FONT SIZE=4>
+            <SPAN LANG="en-US"></SPAN>
+        </FONT>
+    </FONT>
+    <FONT SIZE=4>
+        <SPAN LANG="en-US"><I>P</I></SPAN>
+    </FONT>
+    <SUP><FONT SIZE=4><I>3</I></FONT></SUP>
+    <FONT SIZE=4>
+        - 16</FONT>
+    <FONT FACE="Symbol, serif">
+        <FONT SIZE=4>
+            <SPAN LANG="en-US"></SPAN>
+        </FONT>
+    </FONT>
+    <FONT SIZE=4>
+        <SPAN LANG="en-US"><I>P</I></SPAN>
+    </FONT>
+    <SUP><FONT SIZE=4><I>4</I></FONT></SUP>
+    <FONT SIZE=4>
+        - 8</FONT>
+    <FONT FACE="Symbol, serif">
+        <FONT SIZE=4>
+            <SPAN LANG="en-US"></SPAN>
+        </FONT>
+    </FONT>
+    <FONT SIZE=4>
+        <SPAN LANG="en-US"><I>P</I></SPAN>
+    </FONT>
+    <SUP><FONT SIZE=4><I>5</I></FONT></SUP>
+    <FONT SIZE=4>;</FONT>
+</P>
+<P LANG="ru-RU" CLASS="western" ALIGN=LEFT STYLE="margin-left: 0.49in; text-indent: 0in; margin-bottom: 0in; line-height: 170%">
+    <FONT SIZE=4>
+        <I>Р</I>
+    </FONT>
+    <SUB><FONT SIZE=4><SPAN LANG="en-US"><I>IV</I></SPAN></FONT></SUB>
+    <FONT SIZE=4>=2</FONT>
+    <FONT FACE="Symbol, serif">
+        <FONT SIZE=4>
+            <SPAN LANG="en-US"></SPAN>
+        </FONT>
+    </FONT>
+    <FONT SIZE=4>
+        <SPAN LANG="en-US"><I>P</I></SPAN>
+    </FONT>
+    <FONT FACE="Symbol, serif">
+        <FONT SIZE=4>
+            <SPAN LANG="en-US"><I></I></SPAN>
+        </FONT>
+    </FONT>
+    <FONT SIZE=4>
+        <SPAN LANG="en-US"><I>P</I></SPAN>
+    </FONT>
+    <FONT FACE="Symbol, serif">
+        <FONT SIZE=4>
+            <SPAN LANG="en-US"><I></I></SPAN>
+        </FONT>
+    </FONT>
+    <FONT SIZE=4>
+        <SPAN LANG="en-US"><I>Q</I></SPAN>
+    </FONT>
+    <FONT FACE="Symbol, serif">
+        <FONT SIZE=4>
+            <SPAN LANG="en-US"><I></I></SPAN>
+        </FONT>
+    </FONT>
+    <FONT SIZE=4>
+        <SPAN LANG="en-US"><I>Q</I></SPAN>
+    </FONT>
+    <FONT FACE="Symbol, serif">
+        <FONT SIZE=4>
+            <SPAN LANG="en-US"><I></I></SPAN>
+        </FONT>
+    </FONT>
+    <FONT SIZE=4>
+        <SPAN LANG="en-US"><I>Q</I></SPAN>
+    </FONT>
+    <FONT SIZE=4>=2</FONT>
+    <FONT FACE="Symbol, serif">
+        <FONT SIZE=4>
+            <SPAN LANG="en-US"></SPAN>
+        </FONT>
+    </FONT>
+    <FONT SIZE=4>
+        <I>Р</I>
+    </FONT>
+    <SUP><FONT SIZE=4><I>2</I></FONT></SUP>
+    <FONT FACE="Symbol, serif">
+        <FONT SIZE=4>
+            <SPAN LANG="en-US"><I></I></SPAN>
+        </FONT>
+    </FONT>
+    <FONT SIZE=4>
+        <SPAN LANG="en-US"><I>Q</I></SPAN>
+    </FONT>
+    <SUP><FONT SIZE=4><I>3</I></FONT></SUP>
+    <FONT SIZE=4>
+        =2</FONT>
+    <FONT FACE="Symbol, serif">
+        <FONT SIZE=4>
+            <SPAN LANG="en-US"></SPAN>
+        </FONT>
+    </FONT>
+    <FONT SIZE=4>
+        <I>Р</I>
+    </FONT>
+    <SUP><FONT SIZE=4><I>2</I></FONT></SUP>
+    <FONT FACE="Symbol, serif">
+        <FONT SIZE=4>
+            <SPAN LANG="en-US"></SPAN>
+        </FONT>
+    </FONT>
+    <FONT SIZE=4>(1-</FONT>
+    <FONT SIZE=4>
+        <SPAN LANG="en-US"><I>P</I></SPAN>
+    </FONT>
+    <FONT SIZE=4>)</FONT>
+    <SUP><FONT SIZE=4>3</FONT></SUP>
+    <FONT SIZE=4>=2</FONT>
+    <FONT FACE="Symbol, serif">
+        <FONT SIZE=4>
+            <SPAN LANG="en-US"></SPAN>
+        </FONT>
+    </FONT>
+    <FONT SIZE=4>
+        <SPAN LANG="en-US"><I>P</I></SPAN>
+    </FONT>
+    <SUP><FONT SIZE=4><I>2</I></FONT></SUP>
+    <FONT SIZE=4>
+        + 6</FONT>
+    <FONT FACE="Symbol, serif">
+        <FONT SIZE=4>
+            <SPAN LANG="en-US"></SPAN>
+        </FONT>
+    </FONT>
+    <FONT SIZE=4>
+        <SPAN LANG="en-US"><I>P</I></SPAN>
+    </FONT>
+    <SUP><FONT SIZE=4><I>4</I></FONT></SUP>
+    <FONT SIZE=4>
+        - 6</FONT>
+    <FONT FACE="Symbol, serif">
+        <FONT SIZE=4>
+            <SPAN LANG="en-US"></SPAN>
+        </FONT>
+    </FONT>
+    <FONT SIZE=4>
+        <SPAN LANG="en-US"><I>P</I></SPAN>
+    </FONT>
+    <SUP><FONT SIZE=4><I>3</I></FONT></SUP>
+    <FONT SIZE=4>
+        - 2</FONT>
+    <FONT FACE="Symbol, serif">
+        <FONT SIZE=4>
+            <SPAN LANG="en-US"></SPAN>
+        </FONT>
+    </FONT>
+    <FONT SIZE=4>
+        <SPAN LANG="en-US"><I>P</I></SPAN>
+    </FONT>
+    <SUP><FONT SIZE=4><I>5</I></FONT></SUP>
+    <FONT SIZE=4>,</FONT>
+</P>
+<P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0in; margin-bottom: 0in; line-height: 170%">
+    <FONT SIZE=4>где
+        <IMG SRC="./partials/book/book_files/i_8cd199184a27afda_html_35cfe408.gif" NAME="Object671" ALIGN=ABSMIDDLE WIDTH=90 HEIGHT=20>,
+    </FONT>
+    <FONT SIZE=4>
+        <SPAN LANG="en-US"><I>Q</I></SPAN>
+    </FONT>
+    <FONT SIZE=4>=1-</FONT>
+    <FONT SIZE=4>
+        <SPAN LANG="en-US"><I>P</I></SPAN>
+    </FONT>
+    <FONT SIZE=4>, число вариантов определяется непосредственным анализом существования цепи АБ при разных состояниях.</FONT>
+</P>
+<P LANG="ru-RU" STYLE="margin-bottom: 0in; line-height: 170%">
+    <FONT SIZE=4>Работоспособная система может находиться в одном из четырех состояний </FONT>
+    <FONT SIZE=4>
+        <SPAN LANG="en-US">I</SPAN>
+    </FONT>
+    <FONT SIZE=4>,
+    </FONT>
+    <FONT SIZE=4>
+        <SPAN LANG="en-US">II</SPAN>
+    </FONT>
+    <FONT SIZE=4>,
+    </FONT>
+    <FONT SIZE=4>
+        <SPAN LANG="en-US">III</SPAN>
+    </FONT>
+    <FONT SIZE=4>,
+    </FONT>
+    <FONT SIZE=4>
+        <SPAN LANG="en-US">IV</SPAN>
+    </FONT>
+    <FONT SIZE=4>
+        с вероятностями </FONT>
+    <FONT SIZE=4>
+        <I>Р</I>
+    </FONT>
+    <SUB><FONT SIZE=4><SPAN LANG="en-US"><I>I</I></SPAN></FONT></SUB>
+    <FONT SIZE=4>,
+    </FONT>
+    <FONT SIZE=4>
+        <SPAN LANG="en-US"><I>P</I></SPAN>
+    </FONT>
+    <SUB><FONT SIZE=4><SPAN LANG="en-US"><I>II</I></SPAN></FONT></SUB>
+    <FONT SIZE=4>,
+    </FONT>
+    <FONT SIZE=4>
+        <SPAN LANG="en-US"><I>P</I></SPAN>
+    </FONT>
+    <SUB><FONT SIZE=4><SPAN LANG="en-US"><I>III</I></SPAN></FONT></SUB>
+    <FONT SIZE=4>,
+    </FONT>
+    <FONT SIZE=4>
+        <SPAN LANG="en-US"><I>P</I></SPAN>
+    </FONT>
+    <SUB><FONT SIZE=4><SPAN LANG="en-US"><I>IV</I></SPAN></FONT></SUB>
+    <FONT SIZE=4>, тогда </FONT>
+</P>
+<P LANG="ru-RU" CLASS="western" ALIGN=CENTER STYLE="text-indent: 0in; margin-bottom: 0in; line-height: 170%">
+    <FONT SIZE=4>
+        <I>Р</I>
+    </FONT>
+    <SUB><FONT SIZE=4><I>с</I></FONT></SUB>
+    <FONT SIZE=4>(</FONT>
+    <FONT SIZE=4>
+        <SPAN LANG="en-US"><I>t</I></SPAN>
+    </FONT>
+    <FONT SIZE=4>)=
+    </FONT>
+    <FONT SIZE=4>
+        <I>Р</I>
+    </FONT>
+    <SUB><FONT SIZE=4><SPAN LANG="en-US"><I>I</I></SPAN></FONT></SUB>
+    <FONT SIZE=4>
+        + </FONT>
+    <FONT SIZE=4>
+        <I>Р</I>
+    </FONT>
+    <SUB><FONT SIZE=4><SPAN LANG="en-US"><I>II</I></SPAN></FONT></SUB>
+    <FONT SIZE=4>
+        + </FONT>
+    <FONT SIZE=4>
+        <I>Р</I>
+    </FONT>
+    <SUB><FONT SIZE=4><SPAN LANG="en-US"><I>III</I></SPAN></FONT></SUB>
+    <FONT SIZE=4>
+        + </FONT>
+    <FONT SIZE=4>
+        <I>Р</I>
+    </FONT>
+    <SUB><FONT SIZE=4><SPAN LANG="en-US"><I>IV</I></SPAN></FONT></SUB>
+    <FONT SIZE=4>
+        = 2</FONT>
+    <FONT SIZE=4>
+        <I>Р</I>
+    </FONT>
+    <SUP><FONT SIZE=4><I>5</I></FONT></SUP>
+    <FONT SIZE=4>
+        <I>
+</I>
+    </FONT>
+    <FONT SIZE=4>– 5</FONT>
+    <FONT SIZE=4>
+        <I>Р</I>
+    </FONT>
+    <SUP><FONT SIZE=4><I>4</I></FONT></SUP>
+    <FONT SIZE=4>
+        <I>
+</I>
+    </FONT>
+    <FONT SIZE=4>+ 2</FONT>
+    <FONT SIZE=4>
+        <I>Р</I>
+    </FONT>
+    <SUP><FONT SIZE=4><I>3</I></FONT></SUP>
+    <FONT SIZE=4>
+        <I>
+</I>
+    </FONT>
+    <FONT SIZE=4>+ 2</FONT>
+    <FONT SIZE=4>
+        <I>Р</I>
+    </FONT>
+    <SUP><FONT SIZE=4><I>2</I></FONT></SUP>
+    <FONT SIZE=4>
+        <I>.</I>
+    </FONT>
+</P>
+<P LANG="ru-RU" STYLE="margin-bottom: 0in; line-height: 170%">
+    <FONT SIZE=4>Далее находим
+    </FONT>
+</P>
+<P LANG="ru-RU" CLASS="western" ALIGN=CENTER STYLE="text-indent: 0in; margin-bottom: 0in; line-height: 170%">
+    <IMG SRC="./partials/book/book_files/i_8cd199184a27afda_html_29edb566.gif" NAME="Object672" ALIGN=ABSMIDDLE WIDTH=239 HEIGHT=38>
+    <FONT SIZE=4>.</FONT>
+</P>
+<P LANG="ru-RU" STYLE="margin-bottom: 0in; line-height: 170%">
+    <FONT SIZE=4>Показатель эффективности резервирования</FONT>
+</P>
+<P LANG="ru-RU" CLASS="western" ALIGN=CENTER STYLE="text-indent: 0in; margin-bottom: 0in; line-height: 170%">
+    <IMG SRC="./partials/book/book_files/i_8cd199184a27afda_html_cf4ea6a5.gif" NAME="Object673" ALIGN=ABSMIDDLE WIDTH=180 HEIGHT=48>
+    <FONT SIZE=4>.</FONT>
+</P>
+<P LANG="ru-RU" STYLE="margin-bottom: 0in; line-height: 170%">
+    <FONT SIZE=4>Итак, средняя наработка на отказ мостиковой схемы на 12,5% ниже аналогичного показателя для схемы с индивидуальным резервом.</FONT>
+</P>
+<P LANG="ru-RU" STYLE="margin-bottom: 0in; line-height: 170%">
+    <FONT SIZE=4>Допущение о равнонадежности всех элементов схемы и &quot;перемычки&quot; весьма жесткое. Если считать равнонадежными только элементы с интенсивностью </FONT>
+    <FONT FACE="Symbol, serif">
+        <FONT SIZE=4>
+            <I></I>
+        </FONT>
+    </FONT>
+    <FONT SIZE=4>, а &quot;перемычку&quot; характеризовать интенсивностью отказа </FONT>
+    <FONT FACE="Symbol, serif">
+        <FONT SIZE=4>
+            <I></I>
+        </FONT>
+    </FONT>
+    <SUB><FONT SIZE=4><I>п</I></FONT></SUB>
+    <FONT SIZE=4>, то получим более сложные формулы для расчета
+        <IMG SRC="./partials/book/book_files/i_8cd199184a27afda_html_c0d2a96b.gif" NAME="Object674" ALIGN=ABSMIDDLE WIDTH=62 HEIGHT=21> и
+        <IMG SRC="./partials/book/book_files/i_8cd199184a27afda_html_55aa75d7.gif" NAME="Object675" ALIGN=ABSMIDDLE WIDTH=25 HEIGHT=24>.</FONT>
+</P>
+<P LANG="ru-RU" CLASS="western" ALIGN=LEFT STYLE="text-indent: 0in; margin-bottom: 0in; line-height: 170%">
+    <IMG SRC="./partials/book/book_files/i_8cd199184a27afda_html_1f9c2d49.gif" NAME="Object676" ALIGN=ABSMIDDLE WIDTH=648 HEIGHT=72>
+    <IMG SRC="./partials/book/book_files/i_8cd199184a27afda_html_a40e1c88.gif" NAME="Object677" ALIGN=ABSMIDDLE WIDTH=293 HEIGHT=41>
+    <FONT SIZE=4>.</FONT>
+</P>
+<P LANG="ru-RU" STYLE="margin-bottom: 0in; line-height: 170%">
+    <FONT SIZE=4>При
+    </FONT>
+    <FONT FACE="Symbol, serif">
+        <FONT SIZE=4>
+            <I></I>
+        </FONT>
+    </FONT>
+    <SUB><FONT SIZE=4><I>п</I></FONT></SUB>
+    <FONT SIZE=4>=0 имеем схему с индивидуальным резервом и </FONT>
+    <FONT SIZE=4>
+        <SPAN LANG="en-US">
+<IMG SRC="./partials/book/book_files/i_8cd199184a27afda_html_3ac4b297.gif" NAME="Object678" ALIGN=ABSMIDDLE WIDTH=132 HEIGHT=38></SPAN>
+    </FONT>
+    <FONT SIZE=4>. При </FONT>
+    <FONT FACE="Symbol, serif">
+        <FONT SIZE=4>
+            <SPAN LANG="en-US"><I></I></SPAN>
+        </FONT>
+    </FONT>
+    <SUB><FONT SIZE=4><I>п</I></FONT></SUB>
+    <FONT FACE="Symbol, serif">
+        <FONT SIZE=4>
+            <SPAN LANG="en-US"></SPAN>
+        </FONT>
+    </FONT>
+    <FONT SIZE=4>
+        мостиковая схема превращается в схему с&nbsp;групповым резервом и </FONT>
+    <FONT SIZE=4>
+        <SPAN LANG="en-US">
+<IMG SRC="./partials/book/book_files/i_8cd199184a27afda_html_ac2b1353.gif" NAME="Object679" ALIGN=ABSMIDDLE WIDTH=8 HEIGHT=18><IMG SRC="./partials/book/book_files/i_8cd199184a27afda_html_e1a85711.gif" NAME="Object680" ALIGN=ABSMIDDLE WIDTH=115 HEIGHT=38></SPAN>
+    </FONT>
+    <FONT SIZE=4>. Наконец, при </FONT>
+    <FONT FACE="Symbol, serif">
+        <FONT SIZE=4>
+            <SPAN LANG="en-US"><I></I></SPAN>
+        </FONT>
+    </FONT>
+    <SUB><FONT SIZE=4><I>п</I></FONT></SUB>
+    <FONT SIZE=4>=</FONT>
+    <FONT FACE="Symbol, serif">
+        <FONT SIZE=4>
+            <SPAN LANG="en-US"><I></I></SPAN>
+        </FONT>
+    </FONT>
+    <FONT SIZE=4>
+        получаем мостиковую схему из равнонадежных элементов с </FONT>
+    <FONT SIZE=4>
+        <SPAN LANG="en-US">
+<IMG SRC="./partials/book/book_files/i_8cd199184a27afda_html_7af82ce9.gif" NAME="Object681" ALIGN=ABSMIDDLE WIDTH=93 HEIGHT=24></SPAN>
+    </FONT>
+    <FONT SIZE=4>.</FONT>
+</P>

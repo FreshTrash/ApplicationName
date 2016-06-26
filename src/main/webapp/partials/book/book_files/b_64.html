@@ -1,0 +1,157 @@
+
+<H3 LANG="ru-RU" CLASS="western"><A NAME="__RefHeading__137_1940486968"></A>
+Жизненный цикл программного обеспечения</H3>
+<P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.43in; margin-bottom: 0in; line-height: 170%">
+    <FONT SIZE=4>Программное обеспечение состоит из нескольких сотен (и даже тысяч) программ и подпрограмм и создается коллективом программистов в течение нескольких месяцев и/или лет. </FONT>
+</P>
+<P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.43in; margin-bottom: 0in; line-height: 170%">
+    <FONT SIZE=4>В общем случае каждое ПО характеризуется так называемым жизненным циклом, под которым понимают отрезок времени
+        <IMG SRC="./partials/book/book_files/i_8cd199184a27afda_html_ee90e741.gif" NAME="Object1211" ALIGN=ABSMIDDLE WIDTH=56 HEIGHT=23> от момента «зарождения» комплекса программ до его вывода из эксплуатации. Жизненный цикл ПО, средняя продолжительность которого для АСУ достигает 4 – 6 лет, состоит, как правило, из 7 этапов разработки и одного (восьмого) этапа эксплуатации комплекса программ (рис.</FONT>
+    <FONT SIZE=4>
+        <SPAN LANG="en-US">&nbsp;</SPAN>
+    </FONT>
+    <FONT SIZE=4>4.1).</FONT>
+</P>
+<P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.43in; margin-bottom: 0in; line-height: 170%">
+    <BR>
+</P>
+<P LANG="ru-RU" CLASS="western" ALIGN=CENTER STYLE="text-indent: 0in; margin-bottom: 0in; line-height: 170%">
+    <IMG SRC="./partials/book/book_files/i_8cd199184a27afda_html_8201d325.jpg" NAME="graphics112" ALIGN=BOTTOM WIDTH=468 HEIGHT=176 BORDER=0>
+</P>
+<P LANG="ru-RU" CLASS="western" ALIGN=CENTER STYLE="text-indent: 0in; margin-bottom: 0in; line-height: 170%">
+    Рис. 4.1. Жизненный цикл программного обеспечения
+</P>
+<P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.43in; margin-bottom: 0in; line-height: 170%">
+    <BR>
+</P>
+<P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.43in; margin-bottom: 0in; line-height: 170%">
+    <FONT SIZE=4>На этапе 1 – «Разработка спецификаций» формулируется цель создания ПО, выбираются его основные функции и составляются соответствующие спецификации-требования к программному комплексу.
+    </FONT>
+</P>
+<P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.43in; margin-bottom: 0in; line-height: 170%">
+    <FONT SIZE=4>Второй этап - «Проектирование ПО» связан с декомпозицией всего программного комплекса на отдельные программы, подпрограммы и даже модули, установлением информационных связей и иерархий, а также с выбором языка и метода программирования: «сверху вниз» или «снизу вверх».</FONT>
+</P>
+<P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.43in; margin-bottom: 0in; line-height: 170%">
+    <FONT SIZE=4>Выбор метода программирования зависит от соотношения объемов логических и вычислительных операций в ПО. В частности, если в ПО преобладает доля логических операций, то целесообразно использовать программирование «сверху вниз», позволяющее уменьшить число логических и интерфейсных ошибок, при этом создаваемые программы будут более надежными.
+    </FONT>
+</P>
+<P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.43in; margin-bottom: 0in; line-height: 170%">
+    <FONT SIZE=4>Этапы 1, 2 выполняются без использования ЭВМ небольшим числом высококвалифицированных программистов.</FONT>
+</P>
+<P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.43in; margin-bottom: 0in; line-height: 170%">
+    <FONT SIZE=4>Этап 3 – «Реализация (кодирование) программ» предполагает написание достаточно большим числом программистов средней квалификации отдельных программ, подпрограмм и модулей. Написание или кодировка программ ведется обычно на языке программирования, выбранном на этапе 2.</FONT>
+</P>
+<P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.43in; margin-bottom: 0in; line-height: 170%">
+    <FONT SIZE=4>На 4 этапе проводится отладка отдельных программ на ЭВМ, во время которой устраняются ошибки индивидуальных программ, но, естественно, не&nbsp;решаются вопросы их информационной совместимости.
+    </FONT>
+</P>
+<P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.43in; margin-bottom: 0in; line-height: 170%">
+    <FONT SIZE=4>После установления работоспособности отдельных программ, подпрограмм и модулей на этапе 5 осуществляется отладка всего программного обеспечения, при этом устраняются преимущественно интерфейсные ошибки.</FONT>
+</P>
+<P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.43in; margin-bottom: 0in; line-height: 170%">
+    <FONT SIZE=4>На стадии 6 проверяется готовность ПО к решению тестовых задач с&nbsp;заранее известными ответами. При заметном отличии результата пробного решения от тестового ПО возвращается на отладку и поиск причин расхождения решений.</FONT>
+</P>
+<P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.43in; margin-bottom: 0in; line-height: 170%">
+    <FONT SIZE=4>Если тестирование ПО прошло успешно, то на этапе 7 осуществляется официальная сдача программного комплекса в эксплуатацию пользователю. При отказе будущего пользователя (покупателя) от приемки ПО последнее возвращается на доработку на 5 или 6 этап.</FONT>
+</P>
+<P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.43in; margin-bottom: 0in; line-height: 170%">
+    <FONT SIZE=4>После подписания приемо&nbsp;-&nbsp;сдаточных документов начинается 8 этап - «эксплуатация ПО пользователем» или этап сопровождения ПО разработчиком-программистом. Этот этап выделен на рис. 4.1 жирной линией, а время эксплуатации обозначено через
+        <IMG SRC="./partials/book/book_files/i_8cd199184a27afda_html_542060aa.gif" NAME="Object1212" ALIGN=ABSMIDDLE WIDTH=17 HEIGHT=18>,
+        <IMG SRC="./partials/book/book_files/i_8cd199184a27afda_html_1b723f6d.gif" NAME="Object1213" ALIGN=ABSMIDDLE WIDTH=60 HEIGHT=21>, где
+        <IMG SRC="./partials/book/book_files/i_8cd199184a27afda_html_542060aa.gif" NAME="Object1214" ALIGN=ABSMIDDLE WIDTH=17 HEIGHT=18>- процессорное время,
+        <IMG SRC="./partials/book/book_files/i_8cd199184a27afda_html_10221d27.gif" NAME="Object1215" ALIGN=ABSMIDDLE WIDTH=22 HEIGHT=21>- длительность этапа эксплуатации ПО. Общая продолжительность жизненного цикла ПО равна</FONT>
+</P>
+<P LANG="ru-RU" CLASS="western" ALIGN=CENTER STYLE="text-indent: 0.43in; margin-bottom: 0in; line-height: 170%">
+    <IMG SRC="./partials/book/book_files/i_8cd199184a27afda_html_6529cacc.gif" NAME="Object1216" ALIGN=ABSMIDDLE WIDTH=80 HEIGHT=21>
+    <FONT SIZE=4>,</FONT>
+</P>
+<P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0in; margin-bottom: 0in; line-height: 170%">
+    <FONT SIZE=4>где
+        <IMG SRC="./partials/book/book_files/i_8cd199184a27afda_html_86d7e00.gif" NAME="Object1217" ALIGN=ABSMIDDLE WIDTH=22 HEIGHT=21>- длительность разработки ПО (астрономическое время выполнения первых семи этапов). Момент времени
+        <IMG SRC="./partials/book/book_files/i_8cd199184a27afda_html_414e0fc2.gif" NAME="Object1218" ALIGN=ABSMIDDLE WIDTH=26 HEIGHT=21> окончания «жизни» ПО определяется одним или несколькими факторами:</FONT>
+</P>
+<UL>
+    <LI>
+        <P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0in; margin-bottom: 0in; line-height: 170%">
+            <FONT SIZE=4>замена ЭВМ на другие программно несовместимые машины;</FONT>
+        </P>
+        <LI>
+            <P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0in; margin-bottom: 0in; line-height: 170%">
+                <FONT SIZE=4>«моральный износ» самого ПО (некоторые алгоритмы оказались неэффективными или неверными, низкая надежность отдельных программ, часть функций ПО стали неактуальными).</FONT>
+            </P>
+</UL>
+<P LANG="ru-RU" STYLE="margin-bottom: 0in; line-height: 170%">
+    <FONT SIZE=4>В общем случае при создании ПО стремятся увеличить продолжительность его жизненного цикла
+        <IMG SRC="./partials/book/book_files/i_8cd199184a27afda_html_414e0fc2.gif" NAME="Object1219" ALIGN=ABSMIDDLE WIDTH=26 HEIGHT=21> и особенно отношение
+        <IMG SRC="./partials/book/book_files/i_8cd199184a27afda_html_c5c56cbe.gif" NAME="Object1220" ALIGN=ABSMIDDLE WIDTH=53 HEIGHT=21>. Подобная тенденция ведет к уменьшению стоимости ПО, но чаще всего негативно влияет на качество программного комплекса.
+    </FONT>
+</P>
+<P LANG="ru-RU" STYLE="margin-bottom: 0in; line-height: 170%">
+    <FONT SIZE=4>Качество разрабатываемого программного обеспечения оценивают вектором некоторых показателей, к числу важнейших (особенно для АСУ РВ) из них можно отнести:</FONT>
+</P>
+<UL>
+    <LI>
+        <P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0in; margin-bottom: 0in; line-height: 170%">
+            <FONT SIZE=4>быстродействие,</FONT>
+        </P>
+        <LI>
+            <P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0in; margin-bottom: 0in; line-height: 170%">
+                <FONT SIZE=4>стоимость,</FONT>
+            </P>
+            <LI>
+                <P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0in; margin-bottom: 0in; line-height: 170%">
+                    <FONT SIZE=4>корректность,</FONT>
+                </P>
+                <LI>
+                    <P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0in; margin-bottom: 0in; line-height: 170%">
+                        <FONT SIZE=4>надежность.</FONT>
+                    </P>
+</UL>
+<P LANG="ru-RU" STYLE="margin-bottom: 0in; line-height: 170%">
+    <FONT SIZE=4>
+        <B>Быстродействие
+ПО</B> оценивается затратами процессорного времени на&nbsp;выполнение всех программ, необходимых для решения задачи или выполнения той или иной функции ПО. Быстродействие ПО зависит от&nbsp;большого числа факторов, в частности обрабатываемых кодов, начальных условий в итерационных и оптимизационных процедурах, частоты обращений к&nbsp;внешним ЗУ и другим устройствам, наличия прерываний, затрат времени на&nbsp;выполнение «коротких» и «длинных» операций и т.д. Вследствие этого время выполнения функции ПО или решения задачи есть случайная величина, оцениваемая, как правило, средним арифметическим для универсальных ЭВМ и наибольшим значением затрат времени для вычислительных машин, используемых в АСУ РВ. Указанные величины находят экспериментально при&nbsp;отладке и тестировании программ, сдаче ПО в эксплуатацию.
+    </FONT>
+</P>
+<P LANG="ru-RU" STYLE="margin-bottom: 0in; line-height: 170%">
+    <FONT SIZE=4>
+        <B>Стоимость
+ПО</B> также относится к количественным показателям качества программного обеспечения (при этом чем выше качество ПО, тем больше, как&nbsp;правило, его стоимость) и оценивается финансовыми затратами на&nbsp;проектирование, реализацию программ и их сопровождение. Определение этого важнейшего показателя ПО затруднено не только изменчивостью рыночных цен, но и практикой частичного включения стоимости общего ПО в&nbsp;покупную стоимость ЭВМ. Как правило, стоимость ПО составляет 50 и более процентов стоимости АСУ РВ.</FONT>
+</P>
+<P LANG="ru-RU" STYLE="margin-bottom: 0in; line-height: 170%">
+    <FONT SIZE=4>Несмотря на случайный характер стоимости ПО, можно считать, что с ее увеличением при неизменном интерфейсе пользователя возрастает быстродействие и улучшаются другие качественные показатели типа корректности и надежности.</FONT>
+</P>
+<P LANG="ru-RU" STYLE="margin-bottom: 0in; line-height: 170%">
+    <FONT SIZE=4>
+        <B>Корректность
+ПО</B> представляет собой способность комплекса программ удовлетворять некоторым заранее установленным требованиям или спецификациям, вводимым на первом и втором этапах разработки программного обеспечения. Корректность ПО означает его формальную «правильность» относительно спецификаций, но не гарантирует получения правильных решений задач или выполнения функций. Иначе говоря, корректное ПО может давать неверные решения задач! Корректность ПО устанавливают эксперты-программисты при статической проверке всех программ, т.е. без «прогона» ПО на ЭВМ. Понятие корректности ПО носит семантический (смысловой) характер и пока не имеет количественных показателей корректности или, напротив, некорректности.</FONT>
+</P>
+<P LANG="ru-RU" STYLE="margin-bottom: 0in; line-height: 170%">
+    <FONT SIZE=4>
+        <B>Надежность
+ПО </B>есть свойство комплекса программ
+        <B>своевременно</B> выполнять все наперед установленные функции в заранее оговоренных условиях эксплуатации.</FONT>
+</P>
+<P LANG="ru-RU" STYLE="margin-bottom: 0in; line-height: 170%">
+    <FONT SIZE=4>Из этого общего определения надежности ПО можно сделать два следствия:</FONT>
+</P>
+<UL>
+    <LI>
+        <P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0in; margin-bottom: 0in; line-height: 170%">
+            <FONT SIZE=4>здесь учитывается фактор времени: все функции должны быть выполнены к заданному моменту времени, поэтому для исследования надежности нужно «динамическое» тестирование программного комплекса, т.е. прогоны ПО на ЭВМ;</FONT>
+        </P>
+        <LI>
+            <P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0in; margin-bottom: 0in; line-height: 170%">
+                <FONT SIZE=4>под «заранее оговоренными условиями эксплуатации ПО» понимаются не только технические характеристики вычислительного оборудования, но и его абсолютная надежность, т.е. отказы технических средств, в том числе и носителей информации, не должны влиять на&nbsp;надежность программ.</FONT>
+            </P>
+</UL>
+<P LANG="ru-RU" STYLE="margin-bottom: 0in; line-height: 170%">
+    <FONT SIZE=4>Надежность программного комплекса ― более тонкое свойство по&nbsp;сравнению с корректностью ПО. В частности, корректное ПО может оказаться надежным или ненадежным, а некорректное ПО всегда будет ненадежным (для этого даже не требуется проводить динамическое тестирование).</FONT>
+</P>
+<P LANG="ru-RU" STYLE="margin-bottom: 0in; line-height: 170%">
+    <FONT SIZE=4>Надежность ПО коррелирована с его быстродействием и стоимостью. Чем меньше затраты процессорного времени на выполнение той или иной функции ПО, тем выше надежность программного комплекса, но, вероятно, и выше его стоимость.</FONT>
+</P>
+<P LANG="ru-RU" STYLE="margin-bottom: 0in; line-height: 170%">
+    <FONT SIZE=4>Введенное определение «надежность ПО» далее будет конкретизировано на основе уже известных понятий работоспособности и отказа, что позволит ввести показатели надежности программ и всего ПО.</FONT>
+</P>
+<H2 LANG="ru-RU" CLASS="western" STYLE="margin-bottom: 0in; line-height: 170%"><A NAME="__RefHeading__139_1940486968"></A>

@@ -1,0 +1,527 @@
+
+<H3 LANG="ru-RU" CLASS="western"><A NAME="__RefHeading__125_1940486968"></A>
+Определение вероятностей состояния
+системы</H3>
+<P LANG="ru-RU" STYLE="text-indent: 0.49in; margin-bottom: 0in; line-height: 170%">
+    <FONT SIZE=4>При известных интенсивностях
+        <FONT FACE="Symbol, serif">
+            <I></I>
+        </FONT>
+        <SUB><I>ij</I></SUB>,
+        <FONT FACE="Symbol, serif">
+            <I></I>
+        </FONT>
+        <SUB><I>ji</I></SUB> переходов системы из состояния
+        <I>S</I>
+        <SUB><I>i</I></SUB> в любое другое состояние
+        <I>S</I>
+        <SUB><I>j</I></SUB>,
+        <IMG SRC="./partials/book/book_files/i_8cd199184a27afda_html_a6f1d298.gif" NAME="Object1015" ALIGN=ABSMIDDLE WIDTH=110 HEIGHT=18> и обратно из
+        <I>S</I>
+        <SUB><I>j</I></SUB> в
+        <I>S</I>
+        <SUB><I>i</I></SUB> вероятности
+        <I>Р</I>
+        <SUB><I>i</I></SUB> нахождения сложной системы в состоянии
+        <I>S</I>
+        <SUB><I>i</I></SUB>,
+        <IMG SRC="./partials/book/book_files/i_8cd199184a27afda_html_b866edc8.gif" NAME="Object1016" ALIGN=ABSMIDDLE WIDTH=55 HEIGHT=18> находятся как решения линейных дифференциальных уравнений Колмогорова</FONT>
+</P>
+<P LANG="ru-RU" CLASS="western" ALIGN=CENTER STYLE="text-indent: 0in; margin-bottom: 0in; line-height: 170%">
+    <IMG SRC="./partials/book/book_files/i_8cd199184a27afda_html_b3ea5e8e.gif" NAME="Object1017" ALIGN=ABSMIDDLE WIDTH=413 HEIGHT=45>
+    <FONT SIZE=4>,</FONT>
+</P>
+<P LANG="ru-RU" CLASS="western" ALIGN=LEFT STYLE="text-indent: 0in; margin-bottom: 0in; line-height: 170%">
+    <FONT SIZE=4>где в общем случае </FONT>
+    <FONT FACE="Symbol, serif">
+        <FONT SIZE=4>
+            <I></I>
+        </FONT>
+    </FONT>
+    <SUB><FONT SIZE=4><I>ij</I></FONT></SUB>
+    <FONT FACE="Symbol, serif">
+        <FONT SIZE=4></FONT>
+    </FONT>
+    <FONT FACE="Symbol, serif">
+        <FONT SIZE=4>
+            <I></I>
+        </FONT>
+    </FONT>
+    <SUB><FONT SIZE=4><I>ji</I></FONT></SUB>
+    <FONT SIZE=4>.</FONT>
+</P>
+<P LANG="ru-RU" STYLE="text-indent: 0.49in; margin-bottom: 0in; line-height: 170%">
+    <FONT SIZE=4>Сложная система всегда находится в одном из
+        <I>M</I> состояний, поэтому
+        <IMG SRC="./partials/book/book_files/i_8cd199184a27afda_html_ee4eb38e.gif" NAME="Object1018" ALIGN=ABSMIDDLE WIDTH=96 HEIGHT=41> для любого
+        <I>t</I> и число дифференциальных уравнений можно уменьшить на единицу (для сложной системы
+        <I>M</I>=2
+        <SUP><I>m</I></SUP> и число уравнений достигает нескольких сотен и тысяч).</FONT>
+</P>
+<P LANG="ru-RU" STYLE="text-indent: 0.49in; margin-bottom: 0in; line-height: 170%">
+    <FONT SIZE=4>Для решения системы уравнений надо задать
+        <I>M</I> (или, точнее
+        <I>M</I>-1) начальных условий
+        <I>P</I>
+        <SUB><I>i</I></SUB>(0). Если считать, что система включается полностью исправной, то </FONT>
+</P>
+<P LANG="ru-RU" CLASS="western" ALIGN=CENTER STYLE="text-indent: 0in; margin-bottom: 0in; line-height: 170%">
+    <FONT SIZE=4>
+        <I>P</I>
+    </FONT>
+    <SUB><FONT SIZE=4><I>1</I></FONT></SUB>
+    <FONT SIZE=4>(0)=1,
+    </FONT>
+    <FONT SIZE=4>
+        <I>P</I>
+    </FONT>
+    <SUB><FONT SIZE=4><I>i</I></FONT></SUB>
+    <FONT SIZE=4>(0)=0,
+        <IMG SRC="./partials/book/book_files/i_8cd199184a27afda_html_4735fbcd.gif" NAME="Object1019" ALIGN=ABSMIDDLE WIDTH=55 HEIGHT=18>.</FONT>
+</P>
+<P LANG="ru-RU" STYLE="text-indent: 0.49in; margin-bottom: 0in; line-height: 170%">
+    <FONT SIZE=4>Системы линейных дифференциальных уравнений высокой размерности целесообразно решать численно, используя для этого известные методы интегрирования, например, Рунге-Кутта 4-го порядка, или более точные явные и неявные методы Адамса с автоматическим выбором шага интегрирования.
+    </FONT>
+</P>
+<P LANG="ru-RU" STYLE="text-indent: 0.49in; margin-bottom: 0in; line-height: 170%">
+    <FONT SIZE=4>При больших значениях времени
+        <I>t</I> производные
+        <I>dP</I>
+        <SUB><I>i</I></SUB>/
+        <I>dt</I> становятся малыми и тогда дифференциальные уравнения можно заменить на линейные алгебраические
+    </FONT>
+</P>
+<P LANG="ru-RU" CLASS="western" ALIGN=CENTER STYLE="text-indent: 0in; margin-bottom: 0in; line-height: 170%">
+    <IMG SRC="./partials/book/book_files/i_8cd199184a27afda_html_ab6ee0a0.gif" NAME="Object1020" ALIGN=ABSMIDDLE WIDTH=227 HEIGHT=41>
+    <FONT SIZE=4>,</FONT>
+</P>
+<P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0in; margin-bottom: 0in; line-height: 170%">
+    <FONT SIZE=4>где
+        <IMG SRC="./partials/book/book_files/i_8cd199184a27afda_html_86730127.gif" NAME="Object1021" ALIGN=ABSMIDDLE WIDTH=25 HEIGHT=21> - стационарная вероятность нахождения системы в состоянии </FONT>
+    <FONT SIZE=4>
+        <I>S</I>
+    </FONT>
+    <SUB><FONT SIZE=4><I>i</I></FONT></SUB>
+    <FONT SIZE=4>.</FONT>
+</P>
+<P LANG="ru-RU" STYLE="text-indent: 0.49in; margin-bottom: 0in; line-height: 170%">
+    <FONT SIZE=4>Так как в правую часть этого уравнения не входит
+        <IMG SRC="./partials/book/book_files/i_8cd199184a27afda_html_86730127.gif" NAME="Object1022" ALIGN=ABSMIDDLE WIDTH=25 HEIGHT=21>, то оно разрешается относительно вероятности
+        <IMG SRC="./partials/book/book_files/i_8cd199184a27afda_html_86730127.gif" NAME="Object1023" ALIGN=ABSMIDDLE WIDTH=25 HEIGHT=21>:</FONT>
+</P>
+<P LANG="ru-RU" CLASS="western" ALIGN=CENTER STYLE="text-indent: 0in; margin-bottom: 0in; line-height: 170%">
+    <IMG SRC="./partials/book/book_files/i_8cd199184a27afda_html_932fd6a0.gif" NAME="Object1024" ALIGN=ABSMIDDLE WIDTH=155 HEIGHT=84>
+    <FONT SIZE=4>.</FONT>
+</P>
+<P LANG="ru-RU" CLASS="western" ALIGN=LEFT STYLE="text-indent: 0in; margin-bottom: 0in; line-height: 170%">
+    <BR>
+</P>
+<P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.49in; margin-bottom: 0in; line-height: 170%">
+    Рассмотрим кратко аналитический вывод уравнений Колмогорова и численное определение
+    <SPAN LANG="en-US"><I>P</I></SPAN>
+    <SUB><SPAN LANG="en-US"><I>i</I></SPAN></SUB>(
+    <SPAN LANG="en-US"><I>t</I></SPAN>).</P>
+<P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.49in; margin-bottom: 0in; line-height: 170%">
+    Сложная система
+    <IMG SRC="./partials/book/book_files/i_8cd199184a27afda_html_3faa6296.gif" NAME="Object1025" ALIGN=ABSMIDDLE WIDTH=19 HEIGHT=18> состоит из
+    <SPAN LANG="en-US"><I>m</I></SPAN> восстанавливаемых элементов с интенсивностями отказов
+    <IMG SRC="./partials/book/book_files/i_8cd199184a27afda_html_2b591ae4.gif" NAME="Object1026" ALIGN=ABSMIDDLE WIDTH=23 HEIGHT=21> и восстановлений
+    <IMG SRC="./partials/book/book_files/i_8cd199184a27afda_html_f851065e.gif" NAME="Object1027" ALIGN=ABSMIDDLE WIDTH=24 HEIGHT=21>,
+    <IMG SRC="./partials/book/book_files/i_8cd199184a27afda_html_c0bd85b0.gif" NAME="Object1028" ALIGN=ABSMIDDLE WIDTH=52 HEIGHT=18>. Система может находиться в каждый момент времени
+    <SPAN LANG="en-US"><I>t</I></SPAN> в одном и только в одном техническом состоянии
+    <IMG SRC="./partials/book/book_files/i_8cd199184a27afda_html_b8657b5f.gif" NAME="Object1029" ALIGN=ABSMIDDLE WIDTH=22 HEIGHT=20>,
+    <IMG SRC="./partials/book/book_files/i_8cd199184a27afda_html_1f851bee.gif" NAME="Object1030" ALIGN=ABSMIDDLE WIDTH=84 HEIGHT=18> (здесь
+    <IMG SRC="./partials/book/book_files/i_8cd199184a27afda_html_2a74a677.gif" NAME="Object1031" ALIGN=ABSMIDDLE WIDTH=53 HEIGHT=20>). Система
+    <SPAN LANG="en-US"><I>S</I></SPAN> может мгновенно переходить из состояния
+    <IMG SRC="./partials/book/book_files/i_8cd199184a27afda_html_72bcea85.gif" NAME="Object1032" ALIGN=ABSMIDDLE WIDTH=23 HEIGHT=21>,
+    <IMG SRC="./partials/book/book_files/i_8cd199184a27afda_html_495b9061.gif" NAME="Object1033" ALIGN=ABSMIDDLE WIDTH=55 HEIGHT=18> в любое другое состояние
+    <IMG SRC="./partials/book/book_files/i_8cd199184a27afda_html_15335d0e.gif" NAME="Object1034" ALIGN=ABSMIDDLE WIDTH=25 HEIGHT=21>,
+    <IMG SRC="./partials/book/book_files/i_8cd199184a27afda_html_b921982d.gif" NAME="Object1035" ALIGN=ABSMIDDLE WIDTH=34 HEIGHT=18>,
+    <IMG SRC="./partials/book/book_files/i_8cd199184a27afda_html_8b92e3a.gif" NAME="Object1036" ALIGN=ABSMIDDLE WIDTH=58 HEIGHT=18> с некоторой интенсивностью перехода
+    <IMG SRC="./partials/book/book_files/i_8cd199184a27afda_html_91407627.gif" NAME="Object1037" ALIGN=ABSMIDDLE WIDTH=24 HEIGHT=21> или
+    <IMG SRC="./partials/book/book_files/i_8cd199184a27afda_html_96bac310.gif" NAME="Object1038" ALIGN=ABSMIDDLE WIDTH=27 HEIGHT=21> при переходе из
+    <IMG SRC="./partials/book/book_files/i_8cd199184a27afda_html_15335d0e.gif" NAME="Object1039" ALIGN=ABSMIDDLE WIDTH=25 HEIGHT=21> в
+    <IMG SRC="./partials/book/book_files/i_8cd199184a27afda_html_219f1860.gif" NAME="Object1040" ALIGN=ABSMIDDLE WIDTH=23 HEIGHT=21>, причем
+    <IMG SRC="./partials/book/book_files/i_8cd199184a27afda_html_58566c79.gif" NAME="Object1041" ALIGN=ABSMIDDLE WIDTH=52 HEIGHT=21> в общем случае. Имеющие место в системе потоки отказов и восстановлений (именно они вызывают смену состояний
+    <IMG SRC="./partials/book/book_files/i_8cd199184a27afda_html_52040643.gif" NAME="Object1042" ALIGN=ABSMIDDLE WIDTH=22 HEIGHT=20> на
+    <IMG SRC="./partials/book/book_files/i_8cd199184a27afda_html_15335d0e.gif" NAME="Object1043" ALIGN=ABSMIDDLE WIDTH=25 HEIGHT=21>,
+    <IMG SRC="./partials/book/book_files/i_8cd199184a27afda_html_9c9bc8ea.gif" NAME="Object1044" ALIGN=ABSMIDDLE WIDTH=34 HEIGHT=18>,
+    <IMG SRC="./partials/book/book_files/i_8cd199184a27afda_html_cb12367.gif" NAME="Object1045" ALIGN=ABSMIDDLE WIDTH=72 HEIGHT=18>) являются простейшими и обладают свойствами стационарности (независимость вероятностных характеристик потока от времени), ординарности (невозможность двух или более отказов (восстановлений) в данный момент
+    <IMG SRC="./partials/book/book_files/i_8cd199184a27afda_html_eb1959cc.gif" NAME="Object1046" ALIGN=ABSMIDDLE WIDTH=9 HEIGHT=16>) и отсутствием последействия (вероятность будущего состояния зависит только от состояния в данное время
+    <IMG SRC="./partials/book/book_files/i_8cd199184a27afda_html_eb1959cc.gif" NAME="Object1047" ALIGN=ABSMIDDLE WIDTH=9 HEIGHT=16> и не зависит от предыстории).</P>
+<P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.49in; margin-bottom: 0in; line-height: 170%">
+    Для исследования сложной системы необходимо знать вероятность
+    <IMG SRC="./partials/book/book_files/i_8cd199184a27afda_html_a3f0d527.gif" NAME="Object1048" ALIGN=ABSMIDDLE WIDTH=60 HEIGHT=21> возникновения во времени состояния
+    <IMG SRC="./partials/book/book_files/i_8cd199184a27afda_html_98d41660.gif" NAME="Object1049" ALIGN=ABSMIDDLE WIDTH=22 HEIGHT=20>,
+    <IMG SRC="./partials/book/book_files/i_8cd199184a27afda_html_f5887fae.gif" NAME="Object1050" ALIGN=ABSMIDDLE WIDTH=55 HEIGHT=18> или, при &quot;удаленном&quot; времени, констант
+    <IMG SRC="./partials/book/book_files/i_8cd199184a27afda_html_f5bf8130.gif" NAME="Object1051" ALIGN=ABSMIDDLE WIDTH=25 HEIGHT=21>, что упрощает задачу описания поведения во времени динамической системы
+    <IMG SRC="./partials/book/book_files/i_8cd199184a27afda_html_3faa6296.gif" NAME="Object1052" ALIGN=ABSMIDDLE WIDTH=19 HEIGHT=18> путем замены ее статической системой
+    <IMG SRC="./partials/book/book_files/i_8cd199184a27afda_html_dc117289.gif" NAME="Object1053" ALIGN=ABSMIDDLE WIDTH=19 HEIGHT=18>.</P>
+<P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.49in; margin-bottom: 0in; line-height: 170%">
+    Первоначально рассмотрим элементарную систему, которая может находиться в&nbsp;одном из двух состояний -
+    <IMG SRC="./partials/book/book_files/i_8cd199184a27afda_html_d097eb1e.gif" NAME="Object1054" ALIGN=ABSMIDDLE WIDTH=25 HEIGHT=21> или
+    <IMG SRC="./partials/book/book_files/i_8cd199184a27afda_html_4b1469f7.gif" NAME="Object1055" ALIGN=ABSMIDDLE WIDTH=25 HEIGHT=21> (схема&nbsp;1), и обладает интенсивностями переходов
+    <IMG SRC="./partials/book/book_files/i_8cd199184a27afda_html_13aaf5cc.gif" NAME="Object1056" ALIGN=ABSMIDDLE WIDTH=29 HEIGHT=21> и
+    <IMG SRC="./partials/book/book_files/i_8cd199184a27afda_html_c85d041d.gif" NAME="Object1057" ALIGN=ABSMIDDLE WIDTH=29 HEIGHT=21>.</P>
+<P LANG="ru-RU" CLASS="стиль2-western" ALIGN=CENTER>
+    <IMG SRC="./partials/book/book_files/i_8cd199184a27afda_html_4a591095.jpg" NAME="graphics109" ALIGN=BOTTOM WIDTH=281 HEIGHT=144 BORDER=0>
+</P>
+<P LANG="ru-RU" CLASS="стиль2-western" ALIGN=CENTER>
+    <FONT SIZE=3>Схема 1 переходов системы из одного состояния в другое</FONT>
+</P>
+<P LANG="ru-RU" CLASS="стиль2-western" ALIGN=CENTER STYLE="text-indent: 0.37in">
+    <BR>
+    <BR>
+</P>
+<P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.49in; margin-bottom: 0in; line-height: 170%">
+    Введем малый отрезок времени
+    <IMG SRC="./partials/book/book_files/i_8cd199184a27afda_html_97636f89.gif" NAME="Object1058" ALIGN=ABSMIDDLE WIDTH=20 HEIGHT=19> и определим вероятность
+    <IMG SRC="./partials/book/book_files/i_8cd199184a27afda_html_d91c7fd1.gif" NAME="Object1059" ALIGN=ABSMIDDLE WIDTH=97 HEIGHT=21> нахождения системы
+    <IMG SRC="./partials/book/book_files/i_8cd199184a27afda_html_3faa6296.gif" NAME="Object1060" ALIGN=ABSMIDDLE WIDTH=19 HEIGHT=18> в состоянии
+    <IMG SRC="./partials/book/book_files/i_8cd199184a27afda_html_35562027.gif" NAME="Object1061" ALIGN=ABSMIDDLE WIDTH=25 HEIGHT=21> в момент
+    <IMG SRC="./partials/book/book_files/i_8cd199184a27afda_html_b407bc16.gif" NAME="Object1062" ALIGN=ABSMIDDLE WIDTH=50 HEIGHT=18>. При этом возможны два варианта: система
+    <IMG SRC="./partials/book/book_files/i_8cd199184a27afda_html_38c0c6ad.gif" NAME="Object1063" ALIGN=ABSMIDDLE WIDTH=19 HEIGHT=20> остается в состоянии
+    <IMG SRC="./partials/book/book_files/i_8cd199184a27afda_html_35562027.gif" NAME="Object1064" ALIGN=ABSMIDDLE WIDTH=25 HEIGHT=21> в течение времени
+    <IMG SRC="./partials/book/book_files/i_8cd199184a27afda_html_97636f89.gif" NAME="Object1065" ALIGN=ABSMIDDLE WIDTH=20 HEIGHT=19>(вероятность этого события -
+    <IMG SRC="./partials/book/book_files/i_8cd199184a27afda_html_d27cf4ae.gif" NAME="Object1066" ALIGN=ABSMIDDLE WIDTH=27 HEIGHT=21>), система
+    <IMG SRC="./partials/book/book_files/i_8cd199184a27afda_html_38c0c6ad.gif" NAME="Object1067" ALIGN=ABSMIDDLE WIDTH=19 HEIGHT=20> перейдет из
+    <IMG SRC="./partials/book/book_files/i_8cd199184a27afda_html_4b1469f7.gif" NAME="Object1068" ALIGN=ABSMIDDLE WIDTH=25 HEIGHT=21> в
+    <IMG SRC="./partials/book/book_files/i_8cd199184a27afda_html_d097eb1e.gif" NAME="Object1069" ALIGN=ABSMIDDLE WIDTH=25 HEIGHT=21> за время
+    <IMG SRC="./partials/book/book_files/i_8cd199184a27afda_html_97636f89.gif" NAME="Object1070" ALIGN=ABSMIDDLE WIDTH=20 HEIGHT=19> (вероятность этого равна
+    <IMG SRC="./partials/book/book_files/i_8cd199184a27afda_html_5be987ec.gif" NAME="Object1071" ALIGN=ABSMIDDLE WIDTH=30 HEIGHT=21>). Согласно теореме сложения случайных несовместных событий имеем
+    <IMG SRC="./partials/book/book_files/i_8cd199184a27afda_html_9ce6ff32.gif" NAME="Object1072" ALIGN=ABSMIDDLE WIDTH=164 HEIGHT=21>.</P>
+<P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.49in; margin-bottom: 0in; line-height: 170%">
+    В свою очередь,
+    <IMG SRC="./partials/book/book_files/i_8cd199184a27afda_html_a44be9d4.gif" NAME="Object1073" ALIGN=ABSMIDDLE WIDTH=185 HEIGHT=21>, где
+    <IMG SRC="./partials/book/book_files/i_8cd199184a27afda_html_1d333270.gif" NAME="Object1074" ALIGN=ABSMIDDLE WIDTH=62 HEIGHT=21> - вероятность нахождения
+    <IMG SRC="./partials/book/book_files/i_8cd199184a27afda_html_38c0c6ad.gif" NAME="Object1075" ALIGN=ABSMIDDLE WIDTH=19 HEIGHT=20> в состоянии
+    <IMG SRC="./partials/book/book_files/i_8cd199184a27afda_html_d097eb1e.gif" NAME="Object1076" ALIGN=ABSMIDDLE WIDTH=25 HEIGHT=21> в момент
+    <SPAN LANG="en-US"><I>t</I></SPAN>;
+    <IMG SRC="./partials/book/book_files/i_8cd199184a27afda_html_c4430341.gif" NAME="Object1077" ALIGN=ABSMIDDLE WIDTH=101 HEIGHT=21> - условная вероятность того, что система остается в состоянии
+    <IMG SRC="./partials/book/book_files/i_8cd199184a27afda_html_35562027.gif" NAME="Object1078" ALIGN=ABSMIDDLE WIDTH=25 HEIGHT=21> при условии, что в момент
+    <SPAN LANG="en-US"><I>t</I></SPAN> она была в
+    <IMG SRC="./partials/book/book_files/i_8cd199184a27afda_html_35562027.gif" NAME="Object1079" ALIGN=ABSMIDDLE WIDTH=25 HEIGHT=21>
+</P>
+<P LANG="ru-RU" CLASS="стиль2-western" ALIGN=CENTER STYLE="text-indent: 0in">
+    <IMG SRC="./partials/book/book_files/i_8cd199184a27afda_html_b30ee5cc.gif" NAME="Object1080" ALIGN=ABSMIDDLE WIDTH=290 HEIGHT=21>
+    <FONT SIZE=3>.</FONT>
+</P>
+<P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.49in; margin-bottom: 0in; line-height: 170%">
+    Здесь условная вероятность
+    <IMG SRC="./partials/book/book_files/i_8cd199184a27afda_html_daa5a5a3.gif" NAME="Object1081" ALIGN=ABSMIDDLE WIDTH=150 HEIGHT=21>. Следовательно
+</P>
+<P LANG="ru-RU" CLASS="стиль2-western" ALIGN=CENTER>
+    <IMG SRC="./partials/book/book_files/i_8cd199184a27afda_html_75589d71.gif" NAME="Object1082" ALIGN=ABSMIDDLE WIDTH=170 HEIGHT=23>
+    <FONT SIZE=3>.</FONT>
+</P>
+<P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.49in; margin-bottom: 0in; line-height: 170%">
+    Вероятность
+    <IMG SRC="./partials/book/book_files/i_8cd199184a27afda_html_86c3e96.gif" NAME="Object1083" ALIGN=ABSMIDDLE WIDTH=185 HEIGHT=21>, где
+    <IMG SRC="./partials/book/book_files/i_8cd199184a27afda_html_54652e6b.gif" NAME="Object1084" ALIGN=ABSMIDDLE WIDTH=62 HEIGHT=21> - вероятность нахождения
+    <IMG SRC="./partials/book/book_files/i_8cd199184a27afda_html_38c0c6ad.gif" NAME="Object1085" ALIGN=ABSMIDDLE WIDTH=19 HEIGHT=20> в состоянии
+    <IMG SRC="./partials/book/book_files/i_8cd199184a27afda_html_4b1469f7.gif" NAME="Object1086" ALIGN=ABSMIDDLE WIDTH=25 HEIGHT=21> в момент
+    <SPAN LANG="en-US"><I>t</I></SPAN>,
+    <IMG SRC="./partials/book/book_files/i_8cd199184a27afda_html_b0dd5e9b.gif" NAME="Object1087" ALIGN=ABSMIDDLE WIDTH=100 HEIGHT=21> - условная вероятность того, что за время
+    <IMG SRC="./partials/book/book_files/i_8cd199184a27afda_html_97636f89.gif" NAME="Object1088" ALIGN=ABSMIDDLE WIDTH=20 HEIGHT=19> произойдет хотя бы один переход системы из состояния
+    <IMG SRC="./partials/book/book_files/i_8cd199184a27afda_html_149c3642.gif" NAME="Object1089" ALIGN=ABSMIDDLE WIDTH=25 HEIGHT=21> в
+    <IMG SRC="./partials/book/book_files/i_8cd199184a27afda_html_d097eb1e.gif" NAME="Object1090" ALIGN=ABSMIDDLE WIDTH=25 HEIGHT=21> при условии нахождения
+    <IMG SRC="./partials/book/book_files/i_8cd199184a27afda_html_38c0c6ad.gif" NAME="Object1091" ALIGN=ABSMIDDLE WIDTH=19 HEIGHT=20> в момент
+    <SPAN LANG="en-US"><I>t</I></SPAN> в состоянии
+    <IMG SRC="./partials/book/book_files/i_8cd199184a27afda_html_4b1469f7.gif" NAME="Object1092" ALIGN=ABSMIDDLE WIDTH=25 HEIGHT=21>, т. е.
+    <IMG SRC="./partials/book/book_files/i_8cd199184a27afda_html_1e241b0d.gif" NAME="Object1093" ALIGN=ABSMIDDLE WIDTH=150 HEIGHT=21>.</P>
+<P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.49in; margin-bottom: 0in; line-height: 170%">
+    Вычислим
+    <SPAN LANG="en-US">теперь</SPAN>
+    <IMG SRC="./partials/book/book_files/i_8cd199184a27afda_html_9364b6a1.gif" NAME="Object1094" ALIGN=ABSMIDDLE WIDTH=132 HEIGHT=21> и
+    <IMG SRC="./partials/book/book_files/i_8cd199184a27afda_html_98620341.gif" NAME="Object1095" ALIGN=ABSMIDDLE WIDTH=361 HEIGHT=21>.</P>
+<P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.49in; margin-bottom: 0in; line-height: 170%">
+    Раскроем в этом
+    <SPAN LANG="en-US">выражении</SPAN> скобки, перенесем
+    <IMG SRC="./partials/book/book_files/i_8cd199184a27afda_html_ce2e7801.gif" NAME="Object1096" ALIGN=ABSMIDDLE WIDTH=74 HEIGHT=21> в левую сторону равенства, разделим все слагаемые на
+    <IMG SRC="./partials/book/book_files/i_8cd199184a27afda_html_97636f89.gif" NAME="Object1097" ALIGN=ABSMIDDLE WIDTH=20 HEIGHT=19> и, устремив
+    <IMG SRC="./partials/book/book_files/i_8cd199184a27afda_html_88c6975e.gif" NAME="Object1098" ALIGN=ABSMIDDLE WIDTH=51 HEIGHT=19>, получим линейное дифференциальное уравнение
+</P>
+<P LANG="ru-RU" CLASS="стиль2-western" ALIGN=CENTER>
+    <IMG SRC="./partials/book/book_files/i_8cd199184a27afda_html_7467baa9.gif" NAME="Object1099" ALIGN=ABSMIDDLE WIDTH=288 HEIGHT=21>
+    <FONT SIZE=3>.</FONT>
+</P>
+<P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.49in; margin-bottom: 0in; line-height: 170%">
+    Аналогично
+    <SPAN LANG="en-US">выводится</SPAN> и второе уравнение</P>
+<P LANG="ru-RU" CLASS="стиль2-western" ALIGN=CENTER STYLE="text-indent: 0in">
+    <IMG SRC="./partials/book/book_files/i_8cd199184a27afda_html_30606cf.gif" NAME="Object1100" ALIGN=ABSMIDDLE WIDTH=287 HEIGHT=21>
+    <FONT SIZE=3>.</FONT>
+</P>
+<P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.49in; margin-bottom: 0in; line-height: 170%">
+    Для контроля наших
+    <SPAN LANG="en-US">рассуждений</SPAN> сложим эти уравнения и получим</P>
+<P LANG="ru-RU" CLASS="стиль2-western" ALIGN=CENTER STYLE="text-indent: 0in; margin-bottom: 0in">
+    <IMG SRC="./partials/book/book_files/i_8cd199184a27afda_html_37ffe20a.gif" NAME="Object1101" ALIGN=ABSMIDDLE WIDTH=232 HEIGHT=21>
+    <FONT SIZE=3>,
+        <IMG SRC="./partials/book/book_files/i_8cd199184a27afda_html_3e82a9ee.gif" NAME="Object1102" ALIGN=ABSMIDDLE WIDTH=69 HEIGHT=23>
+    </FONT>
+</P>
+<P LANG="ru-RU" CLASS="стиль2-western" STYLE="text-indent: 0in; margin-bottom: 0in">
+    <FONT SIZE=3>или</FONT>
+</P>
+<P LANG="ru-RU" CLASS="стиль2-western" ALIGN=CENTER STYLE="text-indent: 0in">
+    <IMG SRC="./partials/book/book_files/i_8cd199184a27afda_html_b73eb23e.gif" NAME="Object1103" ALIGN=ABSMIDDLE WIDTH=196 HEIGHT=21>
+    <FONT SIZE=3>.</FONT>
+</P>
+<P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.49in; margin-bottom: 0in; line-height: 170%">
+    Для нахождения
+    <SPAN LANG="en-US">решения</SPAN>
+    <IMG SRC="./partials/book/book_files/i_8cd199184a27afda_html_4c19d193.gif" NAME="Object1104" ALIGN=ABSMIDDLE WIDTH=62 HEIGHT=21> и
+    <IMG SRC="./partials/book/book_files/i_8cd199184a27afda_html_28201cfd.gif" NAME="Object1105" ALIGN=ABSMIDDLE WIDTH=62 HEIGHT=21> надо задать начальные условия
+    <IMG SRC="./partials/book/book_files/i_8cd199184a27afda_html_20be0971.gif" NAME="Object1106" ALIGN=ABSMIDDLE WIDTH=65 HEIGHT=21> и
+    <IMG SRC="./partials/book/book_files/i_8cd199184a27afda_html_f3503dfb.gif" NAME="Object1107" ALIGN=ABSMIDDLE WIDTH=64 HEIGHT=21>, удовлетворяющие равенству</P>
+<P LANG="ru-RU" CLASS="стиль2-western" ALIGN=CENTER STYLE="text-indent: 0.37in; margin-bottom: 0in">
+    <IMG SRC="./partials/book/book_files/i_8cd199184a27afda_html_26f20fa6.gif" NAME="Object1108" ALIGN=ABSMIDDLE WIDTH=156 HEIGHT=21>
+    <FONT SIZE=3>,
+        <IMG SRC="./partials/book/book_files/i_8cd199184a27afda_html_50ac1da.gif" NAME="Object1109" ALIGN=ABSMIDDLE WIDTH=115 HEIGHT=22>,
+        <IMG SRC="./partials/book/book_files/i_8cd199184a27afda_html_2b14c6f6.gif" NAME="Object1110" ALIGN=ABSMIDDLE WIDTH=115 HEIGHT=22>.</FONT>
+</P>
+<P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.49in; margin-bottom: 0in; line-height: 170%">
+    Вернемся к системе
+    <SPAN LANG="en-US"><I>S</I></SPAN>, которая обладает
+    <SPAN LANG="en-US"><I>M</I></SPAN> состояниями
+    <IMG SRC="./partials/book/book_files/i_8cd199184a27afda_html_adf628a.gif" NAME="Object1111" ALIGN=ABSMIDDLE WIDTH=23 HEIGHT=21>,
+    <IMG SRC="./partials/book/book_files/i_8cd199184a27afda_html_f5887fae.gif" NAME="Object1112" ALIGN=ABSMIDDLE WIDTH=55 HEIGHT=18> и может переходить из
+    <IMG SRC="./partials/book/book_files/i_8cd199184a27afda_html_adf628a.gif" NAME="Object1113" ALIGN=ABSMIDDLE WIDTH=23 HEIGHT=21> в
+    <SPAN LANG="en-US">любое</SPAN> другое состояние
+    <IMG SRC="./partials/book/book_files/i_8cd199184a27afda_html_9e693947.gif" NAME="Object1114" ALIGN=ABSMIDDLE WIDTH=25 HEIGHT=21>,
+    <IMG SRC="./partials/book/book_files/i_8cd199184a27afda_html_1e83abc1.gif" NAME="Object1115" ALIGN=ABSMIDDLE WIDTH=58 HEIGHT=18>,
+    <IMG SRC="./partials/book/book_files/i_8cd199184a27afda_html_ba38fd0e.gif" NAME="Object1116" ALIGN=ABSMIDDLE WIDTH=34 HEIGHT=18> (в приведенном выше примере система
+    <SPAN LANG="en-US"><I>S</I></SPAN> переходила только в одно состояние). Учитывая это замечание, повторяем
+    <I>М</I>-1 раз все рассуждения по выводу
+    <IMG SRC="./partials/book/book_files/i_8cd199184a27afda_html_4c19d193.gif" NAME="Object1117" ALIGN=ABSMIDDLE WIDTH=62 HEIGHT=21>,
+    <IMG SRC="./partials/book/book_files/i_8cd199184a27afda_html_28201cfd.gif" NAME="Object1118" ALIGN=ABSMIDDLE WIDTH=62 HEIGHT=21> в примере и получаем систему линейных дифференциальных уравнений с постоянными коэффициентами
+    <IMG SRC="./partials/book/book_files/i_8cd199184a27afda_html_91407627.gif" NAME="Object1119" ALIGN=ABSMIDDLE WIDTH=24 HEIGHT=21>,
+    <IMG SRC="./partials/book/book_files/i_8cd199184a27afda_html_96bac310.gif" NAME="Object1120" ALIGN=ABSMIDDLE WIDTH=27 HEIGHT=21>:</P>
+<P LANG="ru-RU" CLASS="стиль2-western" ALIGN=CENTER STYLE="text-indent: 0in; margin-bottom: 0in">
+    <IMG SRC="./partials/book/book_files/i_8cd199184a27afda_html_9dbfa573.gif" NAME="Object1121" ALIGN=ABSMIDDLE WIDTH=326 HEIGHT=41>
+    <FONT SIZE=3>,
+        <IMG SRC="./partials/book/book_files/i_8cd199184a27afda_html_9a896be6.gif" NAME="Object1122" ALIGN=ABSMIDDLE WIDTH=84 HEIGHT=18>,
+        <IMG SRC="./partials/book/book_files/i_8cd199184a27afda_html_ba38fd0e.gif" NAME="Object1123" ALIGN=ABSMIDDLE WIDTH=34 HEIGHT=18>.</FONT>
+</P>
+<P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.49in; margin-bottom: 0in; line-height: 170%">
+    <SPAN LANG="en-US">Для решения этой системы 
+необходимо знать матрицы </SPAN>
+    <IMG SRC="./partials/book/book_files/i_8cd199184a27afda_html_91407627.gif" NAME="Object1124" ALIGN=ABSMIDDLE WIDTH=24 HEIGHT=21>
+    <SUB><SPAN LANG="en-US">,
+</SPAN></SUB>
+    <IMG SRC="./partials/book/book_files/i_8cd199184a27afda_html_96bac310.gif" NAME="Object1125" ALIGN=ABSMIDDLE WIDTH=27 HEIGHT=21>
+    <SPAN LANG="en-US">,
+</SPAN>
+    <IMG SRC="./partials/book/book_files/i_8cd199184a27afda_html_3ca1ac9a.gif" NAME="Object1126" ALIGN=ABSMIDDLE WIDTH=72 HEIGHT=29>
+    <SPAN LANG="en-US">
+и задать </SPAN>
+    <SPAN LANG="en-US"><I>М</I></SPAN>
+    <SPAN LANG="en-US">
+(или </SPAN>
+    <SPAN LANG="en-US"><I>М</I></SPAN>
+    <SPAN LANG="en-US">-1)
+начальных условий </SPAN>
+    <SPAN LANG="en-US"><I>Р</I></SPAN>
+    <SUB><SPAN LANG="en-US"><I>i</I></SPAN></SUB>
+    <SPAN LANG="en-US">(0)</SPAN>
+    <FONT FACE="Symbol, serif">
+        <SPAN LANG="en-US"></SPAN>
+    </FONT>
+    <SPAN LANG="en-US">[0,1],
+<IMG SRC="./partials/book/book_files/i_8cd199184a27afda_html_e586e702.gif" NAME="Object1127" ALIGN=ABSMIDDLE WIDTH=99 HEIGHT=41>.</SPAN>
+</P>
+<P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.49in; margin-bottom: 0in; line-height: 170%">
+    <SPAN LANG="en-US">Приведем упрощенный
+“технологический” способ получения
+дифференциальных уравнений вероятностей
+состояний системы </SPAN>
+    <SPAN LANG="en-US"><I>S</I></SPAN>
+    <SPAN LANG="en-US">.
+Пусть имеется </SPAN>
+    <SPAN LANG="en-US"><I>М</I></SPAN>
+    <SPAN LANG="en-US">
+смесителей субстанции (например,
+жидкостей) единичного объема, работающих
+в режиме полного (идеального) смешения.
+При этом в </SPAN>каждый
+    <SPAN LANG="en-US"> смеситель
+<IMG SRC="./partials/book/book_files/i_8cd199184a27afda_html_e0403f9d.gif" NAME="Object1128" ALIGN=ABSMIDDLE WIDTH=23 HEIGHT=21>
+вводится </SPAN>
+    <SPAN LANG="en-US"><I>М</I></SPAN>
+    <SPAN LANG="en-US">-1
+потоков с “расходами” </SPAN>
+    <FONT FACE="Symbol, serif">
+        <SPAN LANG="en-US"><I></I></SPAN>
+    </FONT>
+    <SUB><SPAN LANG="en-US"><I>ji</I></SPAN></SUB>
+    <SPAN LANG="en-US">
+и “концентрациями” </SPAN>
+    <SPAN LANG="en-US"><I>P</I></SPAN>
+    <SUB><SPAN LANG="en-US"><I>j</I></SPAN></SUB>
+    <SPAN LANG="en-US">(</SPAN>
+    <SPAN LANG="en-US"><I>t</I></SPAN>
+    <SPAN LANG="en-US">)
+из всех других смесителей</SPAN>
+    <SPAN LANG="en-US">
+<IMG SRC="./partials/book/book_files/i_8cd199184a27afda_html_b5b1adac.gif" NAME="Object1129" ALIGN=ABSMIDDLE WIDTH=25 HEIGHT=21>,
+</SPAN>
+    <IMG SRC="./partials/book/book_files/i_8cd199184a27afda_html_2fca3588.gif" NAME="Object1130" ALIGN=ABSMIDDLE WIDTH=58 HEIGHT=29>,
+    <SUB><B> </B></SUB> и одновременно выводится
+    <I>М</I>-1 потоков перемешанной субстанции с “концентрацией”
+    <SPAN LANG="en-US"><I>P</I></SPAN>
+    <SUB><SPAN LANG="en-US"><I>i</I></SPAN></SUB>(
+    <SPAN LANG="en-US"><I>t</I></SPAN>) и “расходами”
+    <FONT FACE="Symbol, serif">
+        <I></I>
+    </FONT>
+    <SUB><SPAN LANG="en-US"><I>ij</I></SPAN></SUB>,
+    <IMG SRC="./partials/book/book_files/i_8cd199184a27afda_html_bb7d455a.gif" NAME="Object1131" ALIGN=ABSMIDDLE WIDTH=58 HEIGHT=29>,
+    <SUB><B> </B></SUB>, все выходящие из
+    <SPAN LANG="en-US">
+<IMG SRC="./partials/book/book_files/i_8cd199184a27afda_html_b8e9c1e6.gif" NAME="Object1132" ALIGN=ABSMIDDLE WIDTH=23 HEIGHT=21></SPAN> потоки вводятся в соответствующие смесители
+    <SPAN LANG="en-US">
+<IMG SRC="./partials/book/book_files/i_8cd199184a27afda_html_b5b1adac.gif" NAME="Object1133" ALIGN=ABSMIDDLE WIDTH=25 HEIGHT=21></SPAN>,
+    <IMG SRC="./partials/book/book_files/i_8cd199184a27afda_html_2fca3588.gif" NAME="Object1134" ALIGN=ABSMIDDLE WIDTH=58 HEIGHT=29>,
+    <SUB><B> </B></SUB> (схема&nbsp;2).</P>
+<P LANG="ru-RU" CLASS="western" ALIGN=CENTER STYLE="text-indent: 0.5in; margin-bottom: 0in; line-height: 170%">
+    <IMG SRC="./partials/book/book_files/i_8cd199184a27afda_html_695f2c2f.jpg" NAME="Object1135" ALIGN=BOTTOM WIDTH=365 HEIGHT=298>
+</P>
+<P LANG="ru-RU" CLASS="western" ALIGN=CENTER STYLE="text-indent: 0in; margin-bottom: 0in; line-height: 170%">
+    <SPAN LANG="en-US">Схема 2 перетоков субстанции
+из одного смесителя 
+<IMG SRC="./partials/book/book_files/i_8cd199184a27afda_html_b8e9c1e6.gif" NAME="Object1136" ALIGN=ABSMIDDLE WIDTH=23 HEIGHT=21>
+в другие 
+<IMG SRC="./partials/book/book_files/i_8cd199184a27afda_html_b5b1adac.gif" NAME="Object1137" ALIGN=ABSMIDDLE WIDTH=25 HEIGHT=21>
+</SPAN>и из
+    <SPAN LANG="en-US">
+<IMG SRC="./partials/book/book_files/i_8cd199184a27afda_html_b5b1adac.gif" NAME="Object1138" ALIGN=ABSMIDDLE WIDTH=25 HEIGHT=21>
+в 
+<IMG SRC="./partials/book/book_files/i_8cd199184a27afda_html_b8e9c1e6.gif" NAME="Object1139" ALIGN=ABSMIDDLE WIDTH=23 HEIGHT=21>,
+<IMG SRC="./partials/book/book_files/i_8cd199184a27afda_html_5801df2.gif" NAME="Object1140" ALIGN=ABSMIDDLE WIDTH=58 HEIGHT=18></SPAN>
+</P>
+<P LANG="en-US" CLASS="western" ALIGN=LEFT STYLE="text-indent: 0in; margin-bottom: 0in; line-height: 170%">
+    <BR>
+</P>
+<P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.49in; margin-bottom: 0in; line-height: 170%">
+    Можно отметить, что физический расход, так же как и интенсивность
+    <FONT FACE="Symbol, serif">
+        <I></I>
+    </FONT>, всегда больше или равен нулю; а концентрация какого – либо вещества в смеси, так же как вероятность
+    <SPAN LANG="en-US"><I>P</I></SPAN>(
+    <SPAN LANG="en-US"><I>t</I></SPAN>), может изменяться от 0 до 1 (или от 0 до 100%), если ее измерять в долях общей массы субстанции или общего числа молей.</P>
+<P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.49in; margin-bottom: 0in; line-height: 170%">
+    Составим теперь уравнение баланса субстанции в дифференциальной форме. В&nbsp;каждый момент времени
+    <IMG SRC="./partials/book/book_files/i_8cd199184a27afda_html_eb1959cc.gif" NAME="Object1141" ALIGN=ABSMIDDLE WIDTH=15 HEIGHT=18> в смеситель
+    <SPAN LANG="en-US">
+<IMG SRC="./partials/book/book_files/i_8cd199184a27afda_html_e0403f9d.gif" NAME="Object1142" ALIGN=ABSMIDDLE WIDTH=23 HEIGHT=21></SPAN> входит
+    <I>М</I>-1 поток с “расходами”
+    <FONT FACE="Symbol, serif">
+        <I></I>
+    </FONT>
+    <SUB><SPAN LANG="en-US"><I>ji</I></SPAN></SUB> и “концентрациями”
+    <SPAN LANG="en-US"><I>P</I></SPAN>
+    <SUB><SPAN LANG="en-US"><I>j</I></SPAN></SUB>(
+    <SPAN LANG="en-US"><I>t</I></SPAN>), т.е. общая входная мольная масса равна
+    <SPAN LANG="en-US">
+<IMG SRC="./partials/book/book_files/i_8cd199184a27afda_html_ad1e7c97.gif" NAME="Object1143" ALIGN=ABSMIDDLE WIDTH=102 HEIGHT=41></SPAN>, а выходит мольная масса
+    <SPAN LANG="en-US">
+<IMG SRC="./partials/book/book_files/i_8cd199184a27afda_html_75c03c07.gif" NAME="Object1144" ALIGN=ABSMIDDLE WIDTH=97 HEIGHT=41></SPAN>. Так как в каждый момент
+    <IMG SRC="./partials/book/book_files/i_8cd199184a27afda_html_eb1959cc.gif" NAME="Object1145" ALIGN=ABSMIDDLE WIDTH=15 HEIGHT=18> входная и выходная массы не равны друг другу, то их “разбаланс” ведет к изменению “концентрации”
+    <SPAN LANG="en-US"><I>P</I></SPAN>
+    <SUB><SPAN LANG="en-US"><I>i</I></SPAN></SUB>(
+    <SPAN LANG="en-US"><I>t</I></SPAN>) в смесителе
+    <SPAN LANG="en-US">
+<IMG SRC="./partials/book/book_files/i_8cd199184a27afda_html_e0403f9d.gif" NAME="Object1146" ALIGN=ABSMIDDLE WIDTH=23 HEIGHT=21>,
+</SPAN>при этом скорость
+    <I>d</I>
+    <SPAN LANG="en-US"><I>P</I></SPAN>
+    <SUB><SPAN LANG="en-US"><I>i</I></SPAN></SUB>/
+    <I>d</I>
+    <SPAN LANG="en-US"><I>t</I></SPAN> в первом приближении пропорциональна этому “разбалансу”</P>
+<P LANG="ru-RU" CLASS="western" ALIGN=CENTER STYLE="text-indent: 0in; margin-bottom: 0in; line-height: 170%">
+    <IMG SRC="./partials/book/book_files/i_8cd199184a27afda_html_939f34f6.gif" NAME="Object1147" ALIGN=ABSMIDDLE WIDTH=284 HEIGHT=41>
+    <SPAN LANG="en-US">,
+</SPAN>
+    <IMG SRC="./partials/book/book_files/i_8cd199184a27afda_html_10b3afd5.gif" NAME="Object1148" ALIGN=ABSMIDDLE WIDTH=88 HEIGHT=18>.</P>
+<P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.49in; margin-bottom: 0in; line-height: 170%">
+    Стационарные вероятности
+    <IMG SRC="./partials/book/book_files/i_8cd199184a27afda_html_11978fc7.gif" NAME="Object1149" ALIGN=ABSMIDDLE WIDTH=109 HEIGHT=21>, где
+    <SPAN LANG="en-US"><I>t</I></SPAN>
+    <SUB><I>0</I></SUB> – “удаленный” момент времени, можно определить из решения системы линейных алгебраических уравнений “баланса” субстанции (при
+    <IMG SRC="./partials/book/book_files/i_8cd199184a27afda_html_e71863fb.gif" NAME="Object1150" ALIGN=ABSMIDDLE WIDTH=138 HEIGHT=21>)</P>
+<P LANG="ru-RU" CLASS="western" ALIGN=CENTER STYLE="text-indent: 0in; margin-bottom: 0in; line-height: 170%">
+    <IMG SRC="./partials/book/book_files/i_8cd199184a27afda_html_737d863e.gif" NAME="Object1151" ALIGN=ABSMIDDLE WIDTH=130 HEIGHT=41>
+    <SPAN LANG="en-US">,
+</SPAN>
+    <IMG SRC="./partials/book/book_files/i_8cd199184a27afda_html_b3d30435.gif" NAME="Object1152" ALIGN=ABSMIDDLE WIDTH=88 HEIGHT=18>.</P>
+<P LANG="ru-RU" STYLE="text-indent: 0.5in; margin-bottom: 0in; line-height: 170%">
+    <FONT SIZE=4>
+        <FONT SIZE=3>Оценки стационарных вероятностей </FONT>
+        <IMG SRC="./partials/book/book_files/i_8cd199184a27afda_html_9776b06f.gif" NAME="Object1153" ALIGN=ABSMIDDLE WIDTH=25 HEIGHT=21>
+        <FONT SIZE=3>,
+        </FONT>
+        <IMG SRC="./partials/book/book_files/i_8cd199184a27afda_html_842b157b.gif" NAME="Object1154" ALIGN=ABSMIDDLE WIDTH=55 HEIGHT=18>
+        <FONT SIZE=3>
+            в ряде случаев удобно опреде&shy;лять методом статистических испытаний. Для реализации простейших потоков отказов и восстановлений каждого элемента стационарной марковской системы </FONT>
+        <IMG SRC="./partials/book/book_files/i_8cd199184a27afda_html_538964dc.gif" NAME="Object1155" ALIGN=ABSMIDDLE WIDTH=19 HEIGHT=18>
+        <FONT SIZE=3>
+            требуется знание матриц интенсивностей отказов </FONT>
+        <FONT FACE="Symbol, serif">
+            <FONT SIZE=3>
+                <I></I>
+            </FONT>
+        </FONT>
+        <SUB><FONT SIZE=3><SPAN LANG="en-US"><I>j</I></SPAN></FONT></SUB>
+        <FONT SIZE=3>
+            и восстановлений </FONT>
+        <FONT FACE="Symbol, serif">
+            <FONT SIZE=3>
+                <I></I>
+            </FONT>
+        </FONT>
+        <SUB><FONT FACE="Symbol, serif"><FONT SIZE=3><SPAN LANG="en-US"><I></I></SPAN></FONT></FONT></SUB>
+        <FONT SIZE=3>
+            и 2</FONT>
+        <FONT SIZE=3>
+            <SPAN LANG="en-US"><I>m</I></SPAN>
+        </FONT>
+        <FONT SIZE=3>
+            генераторов случайных экспоненциально распределенных наработок на отказ и восстановлений с соответствующими </FONT>
+        <FONT FACE="Symbol, serif">
+            <FONT SIZE=3>
+                <I></I>
+            </FONT>
+        </FONT>
+        <SUB><FONT SIZE=3><SPAN LANG="en-US"><I>j</I></SPAN></FONT></SUB>
+        <FONT SIZE=3>,</FONT>
+        <SUB><FONT SIZE=3>
+</FONT></SUB>
+        <FONT FACE="Symbol, serif">
+            <FONT SIZE=3>
+                <I></I>
+            </FONT>
+        </FONT>
+        <SUB><FONT FACE="Symbol, serif"><FONT SIZE=3><SPAN LANG="en-US"><I></I></SPAN></FONT></FONT></SUB>
+        <FONT SIZE=3>. Для имитационного моделирования процесса смены состояний </FONT>
+        <FONT SIZE=3>
+            <SPAN LANG="en-US">
+<IMG SRC="./partials/book/book_files/i_8cd199184a27afda_html_e0403f9d.gif" NAME="Object1156" ALIGN=ABSMIDDLE WIDTH=23 HEIGHT=21>
+</SPAN>
+        </FONT>
+        <FONT SIZE=3>марковской системы из-за отказов элементов и их восстановлений используется специализированное программное обеспечение ЭВМ, позволяющее находить с заранее оговоренной погрешностью оценки </FONT>
+        <IMG SRC="./partials/book/book_files/i_8cd199184a27afda_html_9776b06f.gif" NAME="Object1157" ALIGN=ABSMIDDLE WIDTH=25 HEIGHT=21>
+        <FONT SIZE=3>,
+        </FONT>
+        <IMG SRC="./partials/book/book_files/i_8cd199184a27afda_html_842b157b.gif" NAME="Object1158" ALIGN=ABSMIDDLE WIDTH=55 HEIGHT=18>
+        <FONT SIZE=3>. Подробное описание метода статистических испытаний, лежащего в основе имитационного моделирования сложных марковских систем, можно найти в книгах [1],[2].</FONT>
+    </FONT>
+</P>
+<OL>
+    <LI>
+        <P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0in; margin-bottom: 0in; line-height: 170%">
+            Бусленко&nbsp;Н.П., Шрейдер&nbsp;Ю.А. Метод статистических испытаний и его применение в цифровых машинах. М.: Физматгиз,1961.</P>
+        <LI>
+            <P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0in; margin-bottom: 0in; line-height: 170%">
+                Метод статистических испытаний (метод Монте – Карло).&nbsp;/&nbsp;Под ред. Ю.А.&nbsp;Шрейдера. М.: Физматгиз, 1962.</P>
+</OL>

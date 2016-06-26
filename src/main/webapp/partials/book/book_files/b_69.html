@@ -1,0 +1,126 @@
+
+<H3 LANG="ru-RU" CLASS="western" STYLE="margin-bottom: 0.17in; line-height: 170%"><A NAME="__RefHeading__149_1940486968"></A>
+Модели поведения ошибок функционирующего
+программного обеспечения</H3>
+<P LANG="ru-RU" STYLE="margin-bottom: 0in; line-height: 170%">
+    <FONT SIZE=4>Принятое в эксплуатацию ПО содержит случайное число
+        <SPAN LANG="en-US"><I>N</I></SPAN>
+        <I>(0)</I> скрытых ошибок (дефектов), которые впоследствии проявляют себя в случайные моменты процессорного времени
+        <IMG SRC="./partials/book/book_files/i_8cd199184a27afda_html_20683ad.gif" NAME="Object1256" ALIGN=ABSMIDDLE WIDTH=88 HEIGHT=21>
+        <IMG SRC="./partials/book/book_files/i_8cd199184a27afda_html_82389b11.gif" NAME="Object1257" ALIGN=ABSMIDDLE WIDTH=21 HEIGHT=21>,
+        <I>…</I>(наработки до отказов) и вызывают отказы отдельных программ и всего комплекса (рис. 4.4).</FONT>
+</P>
+<P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.43in; margin-bottom: 0in; line-height: 170%">
+    <BR>
+</P>
+<P LANG="ru-RU" CLASS="western" ALIGN=CENTER STYLE="text-indent: 0in; margin-bottom: 0in; line-height: 170%">
+    <IMG SRC="./partials/book/book_files/i_8cd199184a27afda_html_669473e7.jpg" NAME="graphics115" ALIGN=BOTTOM WIDTH=619 HEIGHT=150 BORDER=0>
+</P>
+<P LANG="ru-RU" CLASS="western" ALIGN=CENTER STYLE="text-indent: 0in; margin-top: 0.04in; margin-bottom: 0in; line-height: 170%">
+    Рис. 4.4. Схема функционирования ПО на стадии эксплуатации:
+    <IMG SRC="./partials/book/book_files/i_8cd199184a27afda_html_82389b11.gif" NAME="Object1258" ALIGN=ABSMIDDLE WIDTH=21 HEIGHT=21> - процессорное время,
+</P>
+<P LANG="ru-RU" CLASS="western" ALIGN=CENTER STYLE="text-indent: 0in; margin-top: 0.04in; margin-bottom: 0in; line-height: 170%">
+    <IMG SRC="./partials/book/book_files/i_8cd199184a27afda_html_e93d41a4.gif" NAME="Object1259" ALIGN=ABSMIDDLE WIDTH=23 HEIGHT=24> - астрономическое время; Р – работа, В - восстановление</P>
+<P LANG="ru-RU" CLASS="western" ALIGN=CENTER STYLE="text-indent: 0in; margin-bottom: 0in; line-height: 170%">
+    <BR>
+</P>
+<P LANG="ru-RU" STYLE="margin-bottom: 0in; line-height: 170%">
+    <FONT SIZE=4>Каждый отказ полностью восстанавливается за случайное время
+        <IMG SRC="./partials/book/book_files/i_8cd199184a27afda_html_f553284b.gif" NAME="Object1260" ALIGN=ABSMIDDLE WIDTH=90 HEIGHT=24> программистом-«ремонтником», который находит ошибку и устраняет ее путем исправления алгоритма и/или текста ПО. После подобного полного «ремонта» ПО проходит статическое и/или динамическое тестирование и считается сертифицированным программным продуктом, вводимым как бы заново в условный момент времени
+        <FONT FACE="Symbol, serif"></FONT>=0 в эксплуатацию.</FONT>
+</P>
+<P LANG="ru-RU" STYLE="margin-bottom: 0in; line-height: 170%">
+    <FONT SIZE=4>В процессе функционирования ПО число
+        <SPAN LANG="en-US"><I>N</I></SPAN>
+        <I>(</I>
+        <FONT FACE="Symbol, serif"></FONT>
+        <I>)</I> оставшихся ошибок изменяется случайным образом в каждый момент
+        <FONT FACE="Symbol, serif"></FONT>,
+        <IMG SRC="./partials/book/book_files/i_8cd199184a27afda_html_5c496c33.gif" NAME="Object1261" ALIGN=ABSMIDDLE WIDTH=60 HEIGHT=21>, так как значения
+        <IMG SRC="./partials/book/book_files/i_8cd199184a27afda_html_82389b11.gif" NAME="Object1262" ALIGN=ABSMIDDLE WIDTH=21 HEIGHT=21> и
+        <IMG SRC="./partials/book/book_files/i_8cd199184a27afda_html_2ed43533.gif" NAME="Object1263" ALIGN=ABSMIDDLE WIDTH=23 HEIGHT=24>- случайные и, кроме того, программисты-«ремонтники» могут вносить в&nbsp;программы новые случайные дефекты. Зависимость числа ошибок ПО от&nbsp;времени
+        <FONT FACE="Symbol, serif"></FONT>
+        можно описать моделью поведения
+        <IMG SRC="./partials/book/book_files/i_8cd199184a27afda_html_e68e41de.gif" NAME="Object1264" ALIGN=ABSMIDDLE WIDTH=61 HEIGHT=18>, являющейся оценкой математического ожидания дискретной случайной величины
+        <SPAN LANG="en-US"><I>N</I></SPAN>. Три возможные модели поведения ошибок ПО на этапе эксплуатации показаны на рис.&nbsp;4.3 и 4.5.</FONT>
+</P>
+<P LANG="ru-RU" STYLE="margin-bottom: 0in; line-height: 170%">
+    <FONT SIZE=4>Первая модель
+        <IMG SRC="./partials/book/book_files/i_8cd199184a27afda_html_b30743ca.gif" NAME="Object1265" ALIGN=ABSMIDDLE WIDTH=66 HEIGHT=21> базируется на оптимистической гипотезе о том, что программист-«ремонтник» при каждом восстановлении программы
+        <B>полностью </B>удаляет появившуюся ошибку и при этом не вносит новых дефектов. Тогда рано или поздно ПО станет свободным от ошибок при некотором
+        <FONT FACE="Symbol, serif">
+            <I></I>
+        </FONT>
+        <SUB><I>0</I></SUB>,
+        <FONT FACE="Symbol, serif">
+            <I></I>
+        </FONT>
+        <SUB><I>0</I></SUB>
+        <SUB>
+</SUB>
+        <FONT FACE="Symbol, serif"></FONT> 0 и
+        <B>абсолютно
+надежным </B>в асимптотике, т.е.</FONT>
+</P>
+<P LANG="ru-RU" CLASS="western" ALIGN=CENTER STYLE="text-indent: 0in; margin-bottom: 0in; line-height: 170%">
+    <IMG SRC="./partials/book/book_files/i_8cd199184a27afda_html_1668a70d.gif" NAME="Object1266" ALIGN=ABSMIDDLE WIDTH=111 HEIGHT=29>
+    <FONT SIZE=4>.</FONT>
+</P>
+<P LANG="ru-RU" STYLE="margin-bottom: 0in; line-height: 170%">
+    <BR>
+</P>
+<P LANG="ru-RU" CLASS="western" ALIGN=CENTER STYLE="text-indent: 0in; margin-bottom: 0in; line-height: 170%">
+    <IMG SRC="./partials/book/book_files/i_8cd199184a27afda_html_5809eaf2.png" NAME="graphics116" ALIGN=BOTTOM WIDTH=398 HEIGHT=241 BORDER=0>
+</P>
+<P LANG="ru-RU" CLASS="western" ALIGN=CENTER STYLE="text-indent: 0in; margin-bottom: 0in; line-height: 170%">
+    <BR>
+</P>
+<P LANG="ru-RU" CLASS="western" ALIGN=CENTER STYLE="text-indent: 0in; margin-bottom: 0in; line-height: 170%">
+    Рис. 4.5. Модели поведения числа ошибок
+    <IMG SRC="./partials/book/book_files/i_8cd199184a27afda_html_8de74f95.gif" NAME="Object1267" ALIGN=ABSMIDDLE WIDTH=61 HEIGHT=18> на этапе эксплуатации ПО</P>
+<P LANG="ru-RU" CLASS="western" ALIGN=CENTER STYLE="text-indent: 0in; margin-bottom: 0in; line-height: 170%">
+    <BR>
+</P>
+<P LANG="ru-RU" STYLE="margin-bottom: 0in; line-height: 170%">
+    <FONT SIZE=4>Итак, если модель
+        <IMG SRC="./partials/book/book_files/i_8cd199184a27afda_html_b30743ca.gif" NAME="Object1268" ALIGN=ABSMIDDLE WIDTH=66 HEIGHT=21> справедлива, то при хорошей или правильной организации сопровождения ПО можно обеспечить абсолютную надежность программного комплекса. При этом вероятность такого события возрастает с&nbsp;увеличением времени эксплуатации ПО.
+    </FONT>
+</P>
+<P LANG="ru-RU" STYLE="margin-bottom: 0in; line-height: 170%">
+    <FONT SIZE=4>Указанное свойство ПО рано или поздно становится (в рамках модели
+        <IMG SRC="./partials/book/book_files/i_8cd199184a27afda_html_4a89eba7.gif" NAME="Object1269" ALIGN=ABSMIDDLE WIDTH=66 HEIGHT=21>) безошибочным и, тем самым, абсолютно надежным, характерно только для программных объектов и не наблюдается у технических элементов и систем. Действительно, для технических элементов надежность всегда снижается при увеличении срока их эксплуатации, т.е.
+        <I>Р</I>(
+        <SPAN LANG="en-US"><I>t</I></SPAN>)
+        <FONT FACE="Symbol, serif"></FONT>
+        0 при
+        <SPAN LANG="en-US"><I>t</I></SPAN>
+        <FONT FACE="Symbol, serif"></FONT>
+        <FONT FACE="Symbol, serif"></FONT>.</FONT>
+</P>
+<P LANG="ru-RU" STYLE="margin-bottom: 0in; line-height: 170%">
+    <FONT SIZE=4>Практика создания и эксплуатации ПО показывает, что при длительной работе отдельные программы (обычно небольшой длины) действительно становятся безошибочными и абсолютно надежными. Подобные факты характерны для стандартных, библиотечных программ, подпрограмм и модулей, широко используемых в универсальных ЭВМ. Однако для достаточно сложных ПО, и особенно ПО РВ, обладающих коротким жизненным циклом, не&nbsp;удается удалить все скрытые ошибки и обеспечить абсолютную надежность программного комплекса. Наиболее вероятное объяснение этого факта заключается в трудности полного восстановления ПО «неидеальным» программистом-«ремонтником» и невнесения новых ошибок в ремонтируемые программы.</FONT>
+</P>
+<P LANG="ru-RU" STYLE="margin-bottom: 0in; line-height: 170%">
+    <FONT SIZE=4>Вторая модель поведения ошибок
+        <IMG SRC="./partials/book/book_files/i_8cd199184a27afda_html_472177ee.gif" NAME="Object1270" ALIGN=ABSMIDDLE WIDTH=66 HEIGHT=21> основана на реалистической гипотезе о том, что при восстановлении отказавшей программы «ремонтники» удаляют проявившиеся ошибки (возможно, не полностью, т.е. «маскируют» их) и вносят новые дефекты, влияющие на отказы данной и других программ. Согласно этой гипотезе, случайный процесс
+        <IMG SRC="./partials/book/book_files/i_8cd199184a27afda_html_472177ee.gif" NAME="Object1271" ALIGN=ABSMIDDLE WIDTH=66 HEIGHT=21> может иметь участок стационарности, когда оценка
+        <IMG SRC="./partials/book/book_files/i_8cd199184a27afda_html_1bebbdf3.gif" NAME="Object1272" ALIGN=ABSMIDDLE WIDTH=76 HEIGHT=21> (рис.&nbsp;4.5, кривая
+        <IMG SRC="./partials/book/book_files/i_8cd199184a27afda_html_472177ee.gif" NAME="Object1273" ALIGN=ABSMIDDLE WIDTH=66 HEIGHT=21>). Скорость достижения участка стационарности и значения
+        <IMG SRC="./partials/book/book_files/i_8cd199184a27afda_html_c9115287.gif" NAME="Object1274" ALIGN=ABSMIDDLE WIDTH=29 HEIGHT=21> зависят от показателей ПО и особенно характеристик службы сопровождения функционирующего программного комплекса.</FONT>
+</P>
+<P LANG="ru-RU" STYLE="margin-bottom: 0in; line-height: 170%">
+    <FONT SIZE=4>Третья модель поведения ошибки
+        <IMG SRC="./partials/book/book_files/i_8cd199184a27afda_html_61fbfa35.gif" NAME="Object1275" ALIGN=ABSMIDDLE WIDTH=66 HEIGHT=21> функционирующей ПО базируется на пессимистическом предположении о том, что при&nbsp;восстановлении отказавшей программы «ремонтник» вносит в нее дефектов больше, чем удаляет проявившихся ошибок. </FONT>
+</P>
+<P LANG="ru-RU" STYLE="margin-bottom: 0in; line-height: 170%">
+    <FONT SIZE=4>В связи с низкой ремонтопригодностью ПО и невысокой квалификацией ремонтного персонала службы сопровождения среднее число скрытых ошибок
+        <IMG SRC="./partials/book/book_files/i_8cd199184a27afda_html_e42e20bf.gif" NAME="Object1276" ALIGN=ABSMIDDLE WIDTH=29 HEIGHT=21> возрастает, начиная с некоторого момента времени
+        <FONT FACE="Symbol, serif"></FONT>
+        <SUB>1</SUB>, который может быть равным и нулю (
+        <IMG SRC="./partials/book/book_files/i_8cd199184a27afda_html_fba323a7.gif" NAME="Object1277" ALIGN=ABSMIDDLE WIDTH=66 HEIGHT=21> на рис.&nbsp;4.5).</FONT>
+</P>
+<P LANG="ru-RU" STYLE="margin-bottom: 0in; line-height: 170%">
+    <FONT SIZE=4>При быстром возрастании
+        <IMG SRC="./partials/book/book_files/i_8cd199184a27afda_html_61fbfa35.gif" NAME="Object1278" ALIGN=ABSMIDDLE WIDTH=66 HEIGHT=21> и числа программных отказов необходим «капитальный ремонт» ПО, заключающийся в переписывании всех или наименее надежных программ.</FONT>
+</P>

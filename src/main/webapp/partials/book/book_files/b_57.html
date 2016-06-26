@@ -1,0 +1,169 @@
+
+<H3 LANG="ru-RU" CLASS="western"><A NAME="__RefHeading__121_1940486968"></A>
+Модель функционирования сложной системы</H3>
+<P LANG="ru-RU" STYLE="text-indent: 0.49in; margin-bottom: 0in; line-height: 170%">
+    <FONT SIZE=4>Пусть сложная система состоит из
+        <I>m</I> восстанавливаемых элементов, часть из которых может быть основными, а часть – резервными. При этом каждый элемент может находиться в состоянии работоспособности или отказа (восстановления); переходы из одного состояния в другое происходят мгновенно (рис.&nbsp;3.53).
+    </FONT>
+</P>
+<P LANG="ru-RU" CLASS="western" ALIGN=LEFT STYLE="text-indent: 0in; margin-bottom: 0in; line-height: 170%">
+    <BR>
+</P>
+<P LANG="ru-RU" CLASS="western" ALIGN=CENTER STYLE="text-indent: 0in; margin-bottom: 0in; line-height: 170%">
+    <IMG SRC="./partials/book/book_files/i_8cd199184a27afda_html_c455f406.png" NAME="graphics105" ALIGN=BOTTOM WIDTH=400 HEIGHT=155 BORDER=0>
+</P>
+<P CLASS="western" ALIGN=CENTER STYLE="text-indent: 0in; margin-bottom: 0in; line-height: 170%">
+    <BR>
+</P>
+<P LANG="ru-RU" CLASS="western" ALIGN=CENTER STYLE="text-indent: 0in; margin-bottom: 0in; line-height: 170%">
+    Рис. 3.53. Схема функционирования элемента сложной системы</P>
+<P LANG="ru-RU" CLASS="western" ALIGN=CENTER STYLE="text-indent: 0in; margin-bottom: 0in; line-height: 170%">
+    <BR>
+</P>
+<P LANG="ru-RU" STYLE="text-indent: 0.49in; margin-bottom: 0in; line-height: 170%">
+    <FONT SIZE=4>Присвоим каждому элементу системы индекс (имя)
+        <FONT FACE="Symbol, serif">
+            <I></I>
+        </FONT>,
+        <FONT FACE="Symbol, serif">
+            <I></I>
+        </FONT>=1,2,...,
+        <I>m</I>.</FONT>
+</P>
+<P LANG="ru-RU" STYLE="text-indent: 0.49in; margin-bottom: 0in; line-height: 170%">
+    <FONT SIZE=4>В каждый момент времени
+        <I>t</I>
+        <SPAN LANG="uk-UA">
+</SPAN>система находится в некотором
+        <B>техническом состоянии</B>
+        <I>S</I>
+        <SUB><I>i</I></SUB>,
+        <I>i</I>=1,2,…,
+        <I>M</I>, однозначно определяемом числом и номерами отказавших элементов. Например, в состоянии
+        <I>S</I>
+        <SUB><I>1</I></SUB> все
+        <I>m</I> элементов системы исправны; в состоянии
+        <I>S</I>
+        <SUB><I>2</I></SUB> – отказал один элемент с&nbsp;номером
+        <FONT FACE="Symbol, serif">
+            <I></I>
+        </FONT>=1 (все остальные исправны); в состоянии
+        <I>S</I>
+        <SUB><I>3</I></SUB> – отказал один элемент с номером
+        <FONT FACE="Symbol, serif">
+            <I></I>
+        </FONT>=2 (остальные
+        <I>m</I>&#8209;1 элемента работоспособны); при&nbsp;выходе из строя элементов с
+        <FONT FACE="Symbol, serif">
+            <I></I>
+        </FONT>=1 и
+        <FONT FACE="Symbol, serif">
+            <I></I>
+        </FONT>=2 возникает состояние
+        <I>S</I>
+        <SUB><I>m+2</I></SUB> и т.д.</FONT>
+</P>
+<P LANG="ru-RU" STYLE="text-indent: 0.49in; margin-bottom: 0in; line-height: 170%">
+    <FONT SIZE=4>Наконец, в состоянии
+        <I>S</I>
+        <SUB><FONT SIZE=2><SPAN LANG="en-US"><I>M</I></SPAN></FONT></SUB> отказали все
+        <I>m</I> элементов (состояние полной неработоспособности). Можно подсчитать общее число
+        <I>М</I>=2
+        <SUP><SPAN LANG="en-US"><I>m</I></SPAN></SUP> разных состояний системы
+        <I>S</I>
+        <SUB><I>i</I></SUB>,
+        <IMG SRC="./partials/book/book_files/i_8cd199184a27afda_html_b866edc8.gif" NAME="Object978" ALIGN=ABSMIDDLE WIDTH=55 HEIGHT=18>.</FONT>
+</P>
+<P LANG="ru-RU" STYLE="text-indent: 0.49in; margin-bottom: 0in; line-height: 170%">
+    <FONT SIZE=4>В процессе функционирования система мгновенно переходит из&nbsp;произвольного состояния
+        <I>S</I>
+        <SUB><I>i</I></SUB>,
+        <IMG SRC="./partials/book/book_files/i_8cd199184a27afda_html_b866edc8.gif" NAME="Object979" ALIGN=ABSMIDDLE WIDTH=55 HEIGHT=18> в любое другое состояние
+        <I>S</I>
+        <SUB><I>j</I></SUB>,
+        <IMG SRC="./partials/book/book_files/i_8cd199184a27afda_html_f5f87b90.gif" NAME="Object980" ALIGN=ABSMIDDLE WIDTH=97 HEIGHT=18> вследствие отказов тех или иных элементов и/или ввода их в работу после окончания ремонта. Эти события – отказ и восстановление – происходят в случайные моменты времени, поэтому, считая потоки отказов и восстановлений простейшими, смену состояний можно описать случайным марковским процессом с непрерывным временем
+        <I>t</I> и дискретными состояниями
+        <I>S</I>
+        <SUB><I>i</I></SUB>,
+        <IMG SRC="./partials/book/book_files/i_8cd199184a27afda_html_b866edc8.gif" NAME="Object981" ALIGN=ABSMIDDLE WIDTH=55 HEIGHT=18> (рис.&nbsp;3.54).
+    </FONT>
+</P>
+<P LANG="ru-RU" CLASS="western" ALIGN=LEFT STYLE="text-indent: 0in; margin-bottom: 0in; line-height: 170%">
+    <BR>
+</P>
+<P LANG="ru-RU" CLASS="western" ALIGN=CENTER STYLE="text-indent: 0in; margin-bottom: 0in; line-height: 170%">
+    <IMG SRC="./partials/book/book_files/i_8cd199184a27afda_html_3b3c29dd.png" NAME="graphics106" ALIGN=BOTTOM WIDTH=376 HEIGHT=141 BORDER=0>
+</P>
+<P LANG="ru-RU" CLASS="western" ALIGN=CENTER STYLE="text-indent: 0in; margin-top: 0.04in; margin-bottom: 0in; line-height: 170%">
+    Рис 3.54. График смены состояний сложной системы
+</P>
+<P LANG="ru-RU" CLASS="western" ALIGN=LEFT STYLE="text-indent: 0in; margin-bottom: 0in; line-height: 170%">
+    <BR>
+</P>
+<P LANG="ru-RU" STYLE="text-indent: 0.49in; margin-bottom: 0in; line-height: 170%">
+    <FONT SIZE=4>Для марковского процесса переход из состояния
+        <I>S</I>
+        <SUB><I>i</I></SUB> в состояние
+        <I>S</I>
+        <SUB><I>j</I></SUB> определяется одним числовым параметром – интенсивностью перехода
+        <IMG SRC="./partials/book/book_files/i_8cd199184a27afda_html_666c421.gif" NAME="Object982" ALIGN=ABSMIDDLE WIDTH=219 HEIGHT=21>. В общем случае
+        <IMG SRC="./partials/book/book_files/i_8cd199184a27afda_html_c599ee14.gif" NAME="Object983" ALIGN=ABSMIDDLE WIDTH=82 HEIGHT=21>.</FONT>
+</P>
+<P LANG="ru-RU" STYLE="text-indent: 0.49in; margin-bottom: 0in; line-height: 170%">
+    <FONT SIZE=4>Интенсивности перехода
+        <FONT FACE="Symbol, serif">
+            <I></I>
+        </FONT>
+        <SUB><I>i,
+j</I></SUB> определяются интенсивностями отказов
+        <IMG SRC="./partials/book/book_files/i_8cd199184a27afda_html_8adf22c.gif" NAME="Object984" ALIGN=ABSMIDDLE WIDTH=23 HEIGHT=21> и восстановлений
+        <IMG SRC="./partials/book/book_files/i_8cd199184a27afda_html_fa6d0120.gif" NAME="Object985" ALIGN=ABSMIDDLE WIDTH=24 HEIGHT=21> отдельных элементов системы,
+        <IMG SRC="./partials/book/book_files/i_8cd199184a27afda_html_1614c263.gif" NAME="Object986" ALIGN=ABSMIDDLE WIDTH=58 HEIGHT=18>
+    </FONT>
+</P>
+<P LANG="ru-RU" STYLE="text-indent: 0.49in; margin-bottom: 0in; line-height: 170%">
+    <FONT SIZE=4>Для удобства описания введем конечномерный вектор состояния системы
+    </FONT>
+</P>
+<P LANG="ru-RU" CLASS="western" ALIGN=CENTER STYLE="text-indent: 0in; margin-bottom: 0in; line-height: 170%">
+    <IMG SRC="./partials/book/book_files/i_8cd199184a27afda_html_6cf52dc2.gif" NAME="Object987" ALIGN=ABSMIDDLE WIDTH=186 HEIGHT=21>
+    <FONT SIZE=4>,</FONT>
+</P>
+<P LANG="ru-RU" CLASS="western" ALIGN=LEFT STYLE="text-indent: 0in; margin-bottom: 0in; line-height: 170%">
+    <FONT SIZE=4>а также векторы интенсивностей отказов </FONT>
+    <IMG SRC="./partials/book/book_files/i_8cd199184a27afda_html_500e4db3.gif" NAME="Object988" ALIGN=ABSMIDDLE WIDTH=177 HEIGHT=21>
+</P>
+<P LANG="ru-RU" CLASS="western" ALIGN=LEFT STYLE="text-indent: 0in; margin-bottom: 0in; line-height: 170%">
+    <FONT SIZE=4>и восстановлений элементов </FONT>
+    <IMG SRC="./partials/book/book_files/i_8cd199184a27afda_html_147c13fe.gif" NAME="Object989" ALIGN=ABSMIDDLE WIDTH=184 HEIGHT=21>
+    <FONT SIZE=4>,</FONT>
+</P>
+<P LANG="ru-RU" CLASS="western" ALIGN=LEFT STYLE="text-indent: 0in; margin-bottom: 0in; line-height: 170%">
+    <FONT SIZE=4>вектор интенсивностей переходов системы </FONT>
+    <IMG SRC="./partials/book/book_files/i_8cd199184a27afda_html_bd161d2a.gif" NAME="Object990" ALIGN=ABSMIDDLE WIDTH=169 HEIGHT=21>
+    <FONT SIZE=4>.</FONT>
+</P>
+<P LANG="ru-RU" STYLE="text-indent: 0.49in; margin-bottom: 0in; line-height: 170%">
+    <FONT SIZE=4>При этом вектор
+        <FONT FACE="Symbol, serif">
+            <I></I>
+        </FONT>
+        <I>&nbsp;</I>=&nbsp;
+        <FONT FACE="Symbol, serif">
+            <I></I>
+        </FONT>(
+        <FONT FACE="Symbol, serif">
+            <I></I>
+        </FONT>,
+        <IMG SRC="./partials/book/book_files/i_8cd199184a27afda_html_884d6b3e.gif" NAME="Object991" ALIGN=ABSMIDDLE WIDTH=19 HEIGHT=18>), а вектор состояний системы
+        <I>S&nbsp;</I>=&nbsp;
+        <I>S</I>(
+        <FONT FACE="Symbol, serif">
+            <I></I>
+        </FONT>)&nbsp;=&nbsp;
+        <I>S</I>(
+        <FONT FACE="Symbol, serif">
+            <I></I>
+        </FONT>,
+        <IMG SRC="./partials/book/book_files/i_8cd199184a27afda_html_884d6b3e.gif" NAME="Object992" ALIGN=ABSMIDDLE WIDTH=19 HEIGHT=18>).</FONT>
+</P>

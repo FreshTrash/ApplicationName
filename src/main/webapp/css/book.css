@@ -14,6 +14,7 @@ P {
     widows: 2;
     orphans: 2;
     font-family: "Times New Roman", serif;
+    font-size: large;
 }
 
 P.western {
@@ -243,9 +244,7 @@ A:link {
     color: #0000ff
 }
 
-A:visited {
-    color: #800080
-}
+
 
 A.western:visited {
     so-language: en-US

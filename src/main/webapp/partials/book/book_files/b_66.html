@@ -1,0 +1,65 @@
+
+<H3 LANG="ru-RU" CLASS="western"><A NAME="__RefHeading__143_1940486968"></A>
+Понятие ошибки программы</H3>
+<P LANG="ru-RU" STYLE="margin-bottom: 0in; line-height: 170%">
+    <FONT SIZE=4>Введенное определение надежности ПО базируется на понятии «отказ» программы, трактуемом как наблюдаемое экспертами случайное событие
+        <IMG SRC="./partials/book/book_files/i_8cd199184a27afda_html_2fac6d63.gif" NAME="Object1237" ALIGN=ABSMIDDLE WIDTH=46 HEIGHT=18> (непринадлежность
+        <SPAN LANG="en-US"><I>y</I></SPAN> множеству
+        <IMG SRC="./partials/book/book_files/i_8cd199184a27afda_html_95964e5c.gif" NAME="Object1238" ALIGN=ABSMIDDLE WIDTH=21 HEIGHT=18>) при
+        <IMG SRC="./partials/book/book_files/i_8cd199184a27afda_html_15c7f88e.gif" NAME="Object1239" ALIGN=ABSMIDDLE WIDTH=48 HEIGHT=18>. Если используемые при этом технические средства считаются абсолютно надежными, а сама программа рассматривается только как фрагмент некоторой информации, то невольно возникает вопрос: каковы же истинные причины отказа? Что «ломается», «разрушается» в программе, если она в случайные моменты вдруг выдает «неразумные» результаты?</FONT>
+</P>
+<P LANG="ru-RU" STYLE="margin-bottom: 0in; line-height: 170%">
+    <FONT SIZE=4>Ответы на эти вопросы может дать понятие
+        <B>ошибки
+(неточности, дефекта) программы</B>, вносимой программистом при написании алгоритма и текста программы и проявляющей себя при некотором, возможно весьма редком сочетании кодов перерабатываемой информации, погрешности округления при выполнении вычислительных операций, адресации команд и др. Эти ошибки попадают в программный комплекс на стадии разработки спецификации, проектирования ПО и реализации программ. Процесс появления ошибок при разработке ПО иллюстрируют рис.&nbsp;4.1 и особенно рис.&nbsp;4.3, где
+        <SPAN LANG="en-US"><I>N</I></SPAN>
+        <I>(</I>
+        <SPAN LANG="en-US"><I>t</I></SPAN>
+        <I>)</I> – число скрытых ошибок в момент времени
+        <SPAN LANG="en-US"><I>t</I></SPAN>,
+        <IMG SRC="./partials/book/book_files/i_8cd199184a27afda_html_38c4c46e.gif" NAME="Object1240" ALIGN=ABSMIDDLE WIDTH=58 HEIGHT=21>.</FONT>
+</P>
+<P LANG="ru-RU" CLASS="western" ALIGN=CENTER STYLE="text-indent: 0.43in; margin-bottom: 0in; line-height: 170%">
+    <IMG SRC="./partials/book/book_files/i_8cd199184a27afda_html_43270872.jpg" NAME="graphics114" ALIGN=BOTTOM WIDTH=484 HEIGHT=165 BORDER=0>
+</P>
+<P LANG="ru-RU" CLASS="western" ALIGN=CENTER STYLE="text-indent: 0in; margin-top: 0.04in; margin-bottom: 0in; line-height: 170%">
+    Рис. 4.3. Зависимость числа ошибок
+    <SPAN LANG="en-US"><I>N</I></SPAN> на стадиях разработки ПО</P>
+<P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.43in; margin-bottom: 0in; line-height: 170%">
+    <BR>
+</P>
+<P LANG="ru-RU" STYLE="margin-bottom: 0in; line-height: 170%">
+    <FONT SIZE=4>Вероятнее всего, что наибольшее количество ошибок
+        <SPAN LANG="en-US"><I>N</I></SPAN>
+        <SUB><SPAN LANG="en-US"><I>max</I></SPAN></SUB>
+        <I>
+</I>накапливается в программе к концу этапа реализации (кодирования) программ. На этапах отладки отдельных программ и всего ПО число ошибок
+        <SPAN LANG="en-US"><I>N</I></SPAN>
+        <I>(</I>
+        <SPAN LANG="en-US"><I>t</I></SPAN>
+        <I>)</I> естественно уменьшается относительно
+        <SPAN LANG="en-US"><I>N</I></SPAN>
+        <SUB><SPAN LANG="en-US"><I>max</I></SPAN></SUB>. Этому способствует и этап динамического тестирования, когда ПО (или программа) полностью и правильно решает тестовые задачи. К моменту времени
+        <SPAN LANG="en-US"><I>t</I></SPAN>
+        <SUB><I>р</I></SUB> заканчивается оформление документов по сертификации ПО и готовности его к эксплуатации. Однако на самом деле в полностью готовом программном комплексе остается
+        <IMG SRC="./partials/book/book_files/i_8cd199184a27afda_html_8f1f6ebb.gif" NAME="Object1241" ALIGN=ABSMIDDLE WIDTH=141 HEIGHT=18> еще не выявленных ошибок. При этом, судя по американскому опыту, для ПО РВ величина
+        <SPAN LANG="en-US"><I>N</I></SPAN>
+        <I>(0)</I>
+        <FONT FACE="Symbol, serif"></FONT>0,5
+        <SPAN LANG="en-US"><I>N</I></SPAN>
+        <SUB><SPAN LANG="en-US"><I>max</I></SPAN></SUB>
+        <SUB><I>
+</I></SUB> и несколько меньше для ПО универсальных ЭВМ, в&nbsp;частности
+        <SPAN LANG="en-US"><I>N</I></SPAN>
+        <I>(0)</I>
+        <FONT FACE="Symbol, serif"></FONT>(0,2-0,3)
+        <SPAN LANG="en-US"><I>N</I></SPAN>
+        <SUB><SPAN LANG="en-US"><I>max</I></SPAN></SUB>. Вероятно, что подобные значения
+        <SPAN LANG="en-US"><I>N</I></SPAN>
+        <I>(0)</I> характерны и для отечественных программных комплексов, используемых в&nbsp;АСУТП.</FONT>
+</P>
+<P LANG="ru-RU" STYLE="margin-bottom: 0in; line-height: 170%">
+    <FONT SIZE=4>Итак, сертифицированное ПО, принятое в эксплуатацию пользователем, содержит некоторое число
+        <SPAN LANG="en-US"><I>N</I></SPAN>
+        <I>(0)</I> скрытых ошибок, которые могут проявить себя в случайный момент процессорного времени функционирующего программного обеспечения (на этапе эксплуатации ПО) и вызвать его отказы.</FONT>
+</P>

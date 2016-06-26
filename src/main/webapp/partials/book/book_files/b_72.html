@@ -1,0 +1,186 @@
+
+<H3 LANG="ru-RU" CLASS="western" STYLE="margin-bottom: 0.17in; line-height: 170%"><A NAME="__RefHeading__157_1940486968"></A>
+Повышение надежности программного
+обеспечения путем резервирования</H3>
+<P LANG="ru-RU" STYLE="margin-bottom: 0in; line-height: 170%">
+    <FONT SIZE=4>Другой перспективный путь повышения надежности ПО (и особенно ПО РВ) связан с созданием в программной системе некоторой избыточности. Применительно к ПО РВ различают четыре вида резервирования: временное, информационное, программное, программно-техническое.
+    </FONT>
+</P>
+<P LANG="ru-RU" STYLE="margin-bottom: 0in; line-height: 170%">
+    <FONT SIZE=4>
+        <B>Временное
+резервирование ПО</B> заключается в многократном прогоне одного и того же программного комплекса с неизменными исходными данными
+        <IMG SRC="./partials/book/book_files/i_8cd199184a27afda_html_1fed2fc.gif" NAME="Object1321" ALIGN=ABSMIDDLE WIDTH=48 HEIGHT=18> и последующего анализа полученных результатов
+        <SPAN LANG="en-US"><I>y</I></SPAN>
+        <I>
+</I>(рис.&nbsp;4.11а).</FONT>
+</P>
+<P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.43in; margin-bottom: 0in; line-height: 170%">
+    <BR>
+</P>
+<P LANG="ru-RU" CLASS="western" ALIGN=CENTER STYLE="text-indent: 0in; margin-bottom: 0in; line-height: 170%">
+    <IMG SRC="./partials/book/book_files/i_8cd199184a27afda_html_542f4336.jpg" NAME="graphics122" ALIGN=BOTTOM WIDTH=523 HEIGHT=110 BORDER=0>
+</P>
+<P LANG="ru-RU" CLASS="western" ALIGN=CENTER STYLE="text-indent: 0in; margin-bottom: 0in; line-height: 170%">
+    <BR>
+</P>
+<P LANG="ru-RU" CLASS="western" ALIGN=CENTER STYLE="text-indent: 0in; margin-bottom: 0in; line-height: 170%">
+    Рис. 4.11а. Схема временного резервирования ПО (нагруженный вариант “два из трех”)</P>
+<P LANG="ru-RU" CLASS="western" ALIGN=CENTER STYLE="text-indent: 0in; margin-bottom: 0in; line-height: 170%">
+    <BR>
+</P>
+<P LANG="ru-RU" STYLE="margin-bottom: 0in; line-height: 170%">
+    <FONT SIZE=4>Подобное нагруженное резервирование позволяет устранять программные сбои и выявлять случайные устойчивые отказы, требующие восстановления программ. Анализ результатов
+        <IMG SRC="./partials/book/book_files/i_8cd199184a27afda_html_f9214918.gif" NAME="Object1322" ALIGN=ABSMIDDLE WIDTH=108 HEIGHT=21>
+        <IMG SRC="./partials/book/book_files/i_8cd199184a27afda_html_9a808d4d.gif" NAME="Object1323" ALIGN=ABSMIDDLE WIDTH=19 HEIGHT=18> - номер прогона ПО, на предмет выявления «неразумных» решений
+        <IMG SRC="./partials/book/book_files/i_8cd199184a27afda_html_f31b8927.gif" NAME="Object1324" ALIGN=ABSMIDDLE WIDTH=52 HEIGHT=21>осуществляет эксперт (группа экспертов) или, реже специальная программа-анализатор (последнее возможно для тех хорошо изученных задач, для которых известны границы Г(
+        <I>у</I>) множества
+        <IMG SRC="./partials/book/book_files/i_8cd199184a27afda_html_140a430b.gif" NAME="Object1325" ALIGN=ABSMIDDLE WIDTH=21 HEIGHT=18>). Выбор правильного результата из ряда «разумных», но различающихся
+        <IMG SRC="./partials/book/book_files/i_8cd199184a27afda_html_afe460d3.gif" NAME="Object1326" ALIGN=ABSMIDDLE WIDTH=26 HEIGHT=21> осуществляется по&nbsp;мажоритарному правилу «два из трех» или, реже, «три из пяти».
+    </FONT>
+</P>
+<P LANG="ru-RU" STYLE="margin-bottom: 0in; line-height: 170%">
+    <FONT SIZE=4>Временное резервирование реализуется достаточно просто, однако требует заметного
+        <SPAN LANG="en-US"><I>l</I></SPAN>-кратного увеличения затрат машинного времени на&nbsp;получение решения
+        <I>у</I> или повышения быстродействия ЭВМ, что удорожает АСУ.</FONT>
+</P>
+<P LANG="ru-RU" STYLE="margin-bottom: 0in; line-height: 170%">
+    <FONT SIZE=4>С позиции экономии ресурсов ЭВМ более предпочтительно ненагруженное временное резервирование, когда повторные прогоны ПО выполняют только при появлении «неразумного» решения
+        <IMG SRC="./partials/book/book_files/i_8cd199184a27afda_html_2fac6d63.gif" NAME="Object1327" ALIGN=ABSMIDDLE WIDTH=46 HEIGHT=18>. Однако для&nbsp;реализации такого способа резервирования ПО РВ необходимо наличие программы-анализатора, которая автоматически идентифицирует и реализует режим повторного прогона (рис.&nbsp;4.11б).</FONT>
+</P>
+<P LANG="ru-RU" STYLE="margin-bottom: 0in; line-height: 170%">
+    <BR>
+</P>
+<P LANG="ru-RU" CLASS="western" ALIGN=CENTER STYLE="text-indent: 0in; margin-bottom: 0in; line-height: 170%; page-break-after: avoid">
+    <IMG SRC="./partials/book/book_files/i_8cd199184a27afda_html_13fcb273.jpg" NAME="graphics123" ALIGN=BOTTOM WIDTH=642 HEIGHT=111 BORDER=0>
+</P>
+<P LANG="ru-RU" CLASS="western" ALIGN=CENTER STYLE="text-indent: 0in; margin-bottom: 0in; line-height: 170%; page-break-after: avoid">
+    <BR>
+</P>
+<P LANG="ru-RU" CLASS="western" ALIGN=CENTER STYLE="text-indent: 0in; margin-bottom: 0in; line-height: 170%; page-break-after: avoid">
+    Рис. 4.11б. Схема временного резервирования ПО (ненагруженный вариант)</P>
+<P LANG="ru-RU" CLASS="western" ALIGN=CENTER STYLE="text-indent: 0in; margin-bottom: 0in; line-height: 170%">
+    <BR>
+</P>
+<P LANG="ru-RU" STYLE="margin-bottom: 0in; line-height: 170%">
+    <FONT SIZE=4>Подобное резервирование также требует больших затрат ресурсов ЭВМ, но выполняется эпизодически только в случае отказа ПО.
+    </FONT>
+</P>
+<P LANG="ru-RU" STYLE="margin-bottom: 0in; line-height: 170%">
+    <FONT SIZE=4>
+        <B>Информационное
+резервирование</B> основано на дублировании исходной информации
+        <IMG SRC="./partials/book/book_files/i_8cd199184a27afda_html_b88c0e53.gif" NAME="Object1328" ALIGN=ABSMIDDLE WIDTH=24 HEIGHT=21> и двукратном последовательном решении (одним и тем же ПО) задачи
+        <IMG SRC="./partials/book/book_files/i_8cd199184a27afda_html_18cd78ae.gif" NAME="Object1329" ALIGN=ABSMIDDLE WIDTH=68 HEIGHT=21> и
+        <IMG SRC="./partials/book/book_files/i_8cd199184a27afda_html_89f1afb.gif" NAME="Object1330" ALIGN=ABSMIDDLE WIDTH=69 HEIGHT=21> с данными
+        <IMG SRC="./partials/book/book_files/i_8cd199184a27afda_html_958232d5.gif" NAME="Object1331" ALIGN=ABSMIDDLE WIDTH=24 HEIGHT=21> и эквивалентными им данными
+        <IMG SRC="./partials/book/book_files/i_8cd199184a27afda_html_44d59ec7.gif" NAME="Object1332" ALIGN=ABSMIDDLE WIDTH=24 HEIGHT=21> (рис. 4.12). Если
+        <IMG SRC="./partials/book/book_files/i_8cd199184a27afda_html_9d5cb9f2.gif" NAME="Object1333" ALIGN=ABSMIDDLE WIDTH=78 HEIGHT=21>, то ПО работоспособно, при
+        <IMG SRC="./partials/book/book_files/i_8cd199184a27afda_html_9d792d97.gif" NAME="Object1334" ALIGN=ABSMIDDLE WIDTH=78 HEIGHT=21> имеет место устойчивый отказ какой-либо из программ ПО, при
+        <IMG SRC="./partials/book/book_files/i_8cd199184a27afda_html_2edb227.gif" NAME="Object1335" ALIGN=ABSMIDDLE WIDTH=78 HEIGHT=21> наблюдается сбой ПО и требуется еще раз решить задачу с данными
+        <IMG SRC="./partials/book/book_files/i_8cd199184a27afda_html_958232d5.gif" NAME="Object1336" ALIGN=ABSMIDDLE WIDTH=24 HEIGHT=21> и
+        <IMG SRC="./partials/book/book_files/i_8cd199184a27afda_html_24ff137f.gif" NAME="Object1337" ALIGN=ABSMIDDLE WIDTH=24 HEIGHT=21>, и с помощью правила «два из трех» выбрать правильный результат. Функции анализатора АН выполняют эксперты или, при известных границах множества «разумных» решений
+        <IMG SRC="./partials/book/book_files/i_8cd199184a27afda_html_95964e5c.gif" NAME="Object1338" ALIGN=ABSMIDDLE WIDTH=21 HEIGHT=18>, специальные программы-идентификаторы (рис.&nbsp;4.12).
+    </FONT>
+</P>
+<P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.43in; margin-bottom: 0in; line-height: 170%">
+    <BR>
+</P>
+<P LANG="ru-RU" CLASS="western" ALIGN=CENTER STYLE="text-indent: 0in; margin-bottom: 0in; line-height: 170%">
+    <IMG SRC="./partials/book/book_files/i_8cd199184a27afda_html_254e63d3.jpg" NAME="graphics124" ALIGN=BOTTOM WIDTH=642 HEIGHT=120 BORDER=0>
+</P>
+<P LANG="ru-RU" CLASS="western" ALIGN=CENTER STYLE="text-indent: 0in; margin-bottom: 0in; line-height: 170%">
+    <BR>
+</P>
+<P LANG="ru-RU" CLASS="western" ALIGN=CENTER STYLE="text-indent: 0in; margin-bottom: 0in; line-height: 170%">
+    Рис. 4.12. Схема нагруженного информационного резервирования ПО</P>
+<P LANG="ru-RU" CLASS="western" ALIGN=CENTER STYLE="text-indent: 0in; margin-bottom: 0in; line-height: 170%">
+    <BR>
+</P>
+<P LANG="ru-RU" STYLE="margin-bottom: 0in; line-height: 170%">
+    <FONT SIZE=4>Информационное резервирование допускает нагруженный и/или ненагруженный режимы работы. Основной трудностью при реализации информационного резервирования ПО РВ является получение второго набора исходных данных
+        <IMG SRC="./partials/book/book_files/i_8cd199184a27afda_html_24ff137f.gif" NAME="Object1339" ALIGN=ABSMIDDLE WIDTH=24 HEIGHT=21>, количественно и семантически эквивалентных данным
+        <IMG SRC="./partials/book/book_files/i_8cd199184a27afda_html_958232d5.gif" NAME="Object1340" ALIGN=ABSMIDDLE WIDTH=24 HEIGHT=21>.</FONT>
+</P>
+<P LANG="ru-RU" STYLE="margin-bottom: 0in; line-height: 170%">
+    <FONT SIZE=4>
+        <B>Программное
+резервирование ПО</B> предусматривает наличие двух (или более) алгоритмов
+        <IMG SRC="./partials/book/book_files/i_8cd199184a27afda_html_7307abfc.gif" NAME="Object1341" ALIGN=ABSMIDDLE WIDTH=26 HEIGHT=21>,
+        <IMG SRC="./partials/book/book_files/i_8cd199184a27afda_html_f2f34d48.gif" NAME="Object1342" ALIGN=ABSMIDDLE WIDTH=26 HEIGHT=21> решения одной и той же задачи с одинаковыми исходными данными (знаниями)
+        <IMG SRC="./partials/book/book_files/i_8cd199184a27afda_html_15c7f88e.gif" NAME="Object1343" ALIGN=ABSMIDDLE WIDTH=48 HEIGHT=18> и двух ПО1 и ПО2 (рис.&nbsp;4.13).</FONT>
+</P>
+<P LANG="ru-RU" CLASS="western" ALIGN=LEFT STYLE="text-indent: 0in; margin-bottom: 0in; line-height: 170%">
+    <BR>
+</P>
+<P LANG="ru-RU" CLASS="western" ALIGN=LEFT STYLE="text-indent: 0in; margin-bottom: 0in; line-height: 170%">
+    <IMG SRC="./partials/book/book_files/i_8cd199184a27afda_html_b2410fb.png" NAME="graphics125" ALIGN=BOTTOM WIDTH=642 HEIGHT=219 BORDER=0>
+</P>
+<P LANG="ru-RU" CLASS="western" ALIGN=CENTER STYLE="text-indent: 0in; margin-bottom: 0in; line-height: 170%">
+    <BR>
+</P>
+<P LANG="ru-RU" CLASS="western" ALIGN=CENTER STYLE="text-indent: 0in; margin-bottom: 0in; line-height: 170%">
+    Рис. 4.13. Схема ненагруженного программного резервирования ПО</P>
+<P LANG="ru-RU" CLASS="western" ALIGN=LEFT STYLE="text-indent: 0in; margin-bottom: 0in; line-height: 170%">
+    <BR>
+</P>
+<P LANG="ru-RU" STYLE="margin-bottom: 0in; line-height: 170%">
+    <FONT SIZE=4>Здесь возможно нагруженное и ненагруженное резервирование. В первом случае исходная информация
+        <SPAN LANG="en-US"><I>x</I></SPAN>
+        <I> </I>постоянно перерабатывается на одной ЭВМ двумя последовательно выполняемыми ПО1 и ПО2, результаты действия которых
+        <IMG SRC="./partials/book/book_files/i_8cd199184a27afda_html_8e0ad436.gif" NAME="Object1344" ALIGN=ABSMIDDLE WIDTH=24 HEIGHT=21> и
+        <IMG SRC="./partials/book/book_files/i_8cd199184a27afda_html_36374a2c.gif" NAME="Object1345" ALIGN=ABSMIDDLE WIDTH=25 HEIGHT=21> сравниваются в анализаторе между собой, и если они близки в&nbsp;определенном смысле, то выносится заключение об отсутствии отказа ПО. Если при этом
+        <IMG SRC="./partials/book/book_files/i_8cd199184a27afda_html_9d5cb9f2.gif" NAME="Object1346" ALIGN=ABSMIDDLE WIDTH=78 HEIGHT=21>, то ПО считается исправным и за решение задачи принимается
+        <IMG SRC="./partials/book/book_files/i_8cd199184a27afda_html_8e0ad436.gif" NAME="Object1347" ALIGN=ABSMIDDLE WIDTH=24 HEIGHT=21> или
+        <IMG SRC="./partials/book/book_files/i_8cd199184a27afda_html_36374a2c.gif" NAME="Object1348" ALIGN=ABSMIDDLE WIDTH=25 HEIGHT=21> или их среднее. При
+        <IMG SRC="./partials/book/book_files/i_8cd199184a27afda_html_c5633882.gif" NAME="Object1349" ALIGN=ABSMIDDLE WIDTH=51 HEIGHT=21> и
+        <IMG SRC="./partials/book/book_files/i_8cd199184a27afda_html_a09b052a.gif" NAME="Object1350" ALIGN=ABSMIDDLE WIDTH=52 HEIGHT=21> выполняется повторный прогон ПО1, и если новый результат
+        <IMG SRC="./partials/book/book_files/i_8cd199184a27afda_html_e69cef5a.gif" NAME="Object1351" ALIGN=ABSMIDDLE WIDTH=51 HEIGHT=24>, то объявляется сбой программного обеспечения 1. Наконец, если при повторном прогоне ПО1 снова
+        <IMG SRC="./partials/book/book_files/i_8cd199184a27afda_html_8f4cff33.gif" NAME="Object1352" ALIGN=ABSMIDDLE WIDTH=51 HEIGHT=24>, то имеет место отказ программного обеспечения 1, которое направляется на восстановление, а ПО2 начинает функционировать в режиме временного резервирования.
+    </FONT>
+</P>
+<P LANG="ru-RU" STYLE="margin-bottom: 0in; line-height: 170%">
+    <FONT SIZE=4>При ненагруженном резервировании постоянно функционирует только одно ПО1 (или ПО2), обрабатывающее данные
+        <SPAN LANG="en-US"><I>x</I></SPAN>. Если анализатор идентифицирует случайное событие
+        <IMG SRC="./partials/book/book_files/i_8cd199184a27afda_html_c5633882.gif" NAME="Object1353" ALIGN=ABSMIDDLE WIDTH=51 HEIGHT=21>, то исходная информация
+        <SPAN LANG="en-US"><I>x</I></SPAN> вводится и в ПО2, которое получает решение задачи
+        <IMG SRC="./partials/book/book_files/i_8cd199184a27afda_html_36374a2c.gif" NAME="Object1354" ALIGN=ABSMIDDLE WIDTH=25 HEIGHT=21>. Дальнейший алгоритм анализа
+        <IMG SRC="./partials/book/book_files/i_8cd199184a27afda_html_8e0ad436.gif" NAME="Object1355" ALIGN=ABSMIDDLE WIDTH=24 HEIGHT=21>,
+        <IMG SRC="./partials/book/book_files/i_8cd199184a27afda_html_36374a2c.gif" NAME="Object1356" ALIGN=ABSMIDDLE WIDTH=25 HEIGHT=21> (и возможно
+        <IMG SRC="./partials/book/book_files/i_8cd199184a27afda_html_8814c1d4.gif" NAME="Object1357" ALIGN=ABSMIDDLE WIDTH=25 HEIGHT=24>) таков же, как и при нагруженном резервировании. </FONT>
+</P>
+<P LANG="ru-RU" STYLE="margin-bottom: 0in; line-height: 170%">
+    <FONT SIZE=4>Программное резервирование позволяет эффективно выявлять и устранять сбои ПО и случайные отказы программ, которые вызываются первичными ошибками, вносимыми в ПО на начальных этапах его жизненного цикла. Вместе с тем программное резервирование вызывает более чем двукратное увеличение стоимости ПО, так оно требует удвоения объема алгоритмизации и программирования, двукратного увеличения объема запоминающего устройства и машинного времени ЭВМ на прогоны ПО1 и ПО2. В связи с этим программное обеспечение находит, как правило, широкое применение в АСУ РВ, применяемым для автоматизации ответственных объектов.</FONT>
+</P>
+<P LANG="ru-RU" STYLE="margin-bottom: 0in; line-height: 170%">
+    <FONT SIZE=4>Программно-техническое резервирование представляет собой расширенный вариант программного резервирования, реализуемого с помощью нескольких ЭВМ (рис.&nbsp;4.14).</FONT>
+</P>
+<P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0.43in; margin-bottom: 0in; line-height: 170%">
+    <BR>
+</P>
+<P LANG="ru-RU" CLASS="western" ALIGN=CENTER STYLE="text-indent: 0in; margin-bottom: 0in; line-height: 170%">
+    <IMG SRC="./partials/book/book_files/i_8cd199184a27afda_html_32b67466.jpg" NAME="graphics126" ALIGN=BOTTOM WIDTH=642 HEIGHT=191 BORDER=0>
+</P>
+<P LANG="ru-RU" CLASS="western" ALIGN=CENTER STYLE="text-indent: 0in; margin-bottom: 0in; line-height: 170%">
+    <BR>
+</P>
+<P LANG="ru-RU" CLASS="western" ALIGN=CENTER STYLE="text-indent: 0in; margin-bottom: 0in; line-height: 170%">
+    Рис. 4.14. Схема нагруженного программно-технического резервирования ПО и ЭВМ</P>
+<P LANG="ru-RU" CLASS="western" ALIGN=LEFT STYLE="text-indent: 0in; margin-bottom: 0in; line-height: 170%">
+    <BR>
+</P>
+<P LANG="ru-RU" STYLE="margin-bottom: 0in; line-height: 170%">
+    <FONT SIZE=4>Такой способ резервирования предполагает использование как минимум двух ЭВМ1 и ЭВМ2 , двух алгоритмов
+        <IMG SRC="./partials/book/book_files/i_8cd199184a27afda_html_a0f137cf.gif" NAME="Object1358" ALIGN=ABSMIDDLE WIDTH=26 HEIGHT=21>,
+        <IMG SRC="./partials/book/book_files/i_8cd199184a27afda_html_8a7ee4f9.gif" NAME="Object1359" ALIGN=ABSMIDDLE WIDTH=26 HEIGHT=21> решения одной и той же задачи
+        <IMG SRC="./partials/book/book_files/i_8cd199184a27afda_html_e2e77cf8.gif" NAME="Object1360" ALIGN=ABSMIDDLE WIDTH=58 HEIGHT=18>, и наконец, двух независимо написанных ПО1 и ПО2, выполняющих решения задач
+        <IMG SRC="./partials/book/book_files/i_8cd199184a27afda_html_83ecabf0.gif" NAME="Object1361" ALIGN=ABSMIDDLE WIDTH=71 HEIGHT=21> и
+        <IMG SRC="./partials/book/book_files/i_8cd199184a27afda_html_b903602d.gif" NAME="Object1362" ALIGN=ABSMIDDLE WIDTH=72 HEIGHT=21> (рис.&nbsp;4.14). Возможно нагруженное резервирование (работают ЭВМ1 и ЭВМ2, функционируют соответственно ПО1 и ПО2, анализатор с помощью правил «два из двух» и «два из трех» идентифицирует безотказную работу программ, сбои и случайные отказы) и ненагруженное резервирование (ЭВМ1 постоянно решает задачу
+        <IMG SRC="./partials/book/book_files/i_8cd199184a27afda_html_3232a8ca.gif" NAME="Object1363" ALIGN=ABSMIDDLE WIDTH=71 HEIGHT=21>, ЭВМ2 с ПО2 находится в «теплом» или, реже, «холодном» резерве; анализатор идентифицирует безотказность ПО при
+        <IMG SRC="./partials/book/book_files/i_8cd199184a27afda_html_8da0b09e.gif" NAME="Object1364" ALIGN=ABSMIDDLE WIDTH=51 HEIGHT=21>, сбои программ по правилу «два из трех» и случайные отказы ПО или ЭВМ при
+        <IMG SRC="./partials/book/book_files/i_8cd199184a27afda_html_c5633882.gif" NAME="Object1365" ALIGN=ABSMIDDLE WIDTH=51 HEIGHT=21>,
+        <IMG SRC="./partials/book/book_files/i_8cd199184a27afda_html_cdb283c2.gif" NAME="Object1366" ALIGN=ABSMIDDLE WIDTH=52 HEIGHT=21>).</FONT>
+</P>
+<P LANG="ru-RU" STYLE="margin-bottom: 0in; line-height: 170%">
+    <FONT SIZE=4>Программно-техническое резервирование, несомненно, самый дорогой способ повышения надежности ПО и ЭВМ, однако он наиболее универсален и позволяет уменьшить риск отказа АСУ РВ из-за ошибок алгоритмического и, частично, программно-технического обеспечения системы реального времени. Эта особенность программно-технического резервирования способствует его широкому применению в современных распределенных АСУ ТП, работающих, как правило, в реальном времени. Так, например, в середине 90-х годов ХХ века около половины подобных систем управления использовали нагруженное программно-техническое резервирование, в 70&nbsp;% АСУ ТП применялось «холодное» или «теплое» резервирование ПО и управляющих ЭВМ.</FONT>
+</P>

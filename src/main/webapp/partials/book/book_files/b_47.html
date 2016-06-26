@@ -1,0 +1,462 @@
+
+<H3 LANG="ru-RU" CLASS="western" STYLE="margin-top: 0.25in; margin-bottom: 0.08in; line-height: 170%"><A NAME="__RefHeading__101_1940486968"></A>
+Анализ эффективности резервирования
+системы с отказами разного вида</H3>
+<P LANG="ru-RU" STYLE="margin-bottom: 0in; line-height: 170%">
+    <FONT SIZE=4>Многие электротехнические элементы ТСА подвержены действию отказов типа &quot;обрыв&quot; (О) и &quot;короткое замыкание&quot; (КЗ). Отказ &quot;обрыв&quot; выводит из строя сам элемент и всю цепочку последовательно соединенных элементов (рис. 3.38).</FONT>
+</P>
+<P LANG="ru-RU" STYLE="margin-bottom: 0in; line-height: 170%">
+    <BR>
+</P>
+<P LANG="ru-RU" CLASS="western" ALIGN=CENTER STYLE="text-indent: 0in; margin-bottom: 0in; line-height: 170%">
+    <IMG SRC="./partials/book/book_files/i_8cd199184a27afda_html_a073b551.png" NAME="graphics86" ALIGN=BOTTOM WIDTH=469 HEIGHT=136 BORDER=0>
+</P>
+<P LANG="ru-RU" CLASS="western" ALIGN=CENTER STYLE="text-indent: 0in; margin-top: 0.06in; margin-bottom: 0in; line-height: 170%">
+    Рис. 3.38. К понятию отказа типа “обрыв”</P>
+<P LANG="ru-RU" STYLE="margin-bottom: 0in; line-height: 170%">
+    <FONT SIZE=4>Отказ типа КЗ также выводит из строя (шунтирует) отказавший элемент и все параллельно включенные другие элементы (рис.</FONT>
+    <FONT SIZE=4>
+        <SPAN LANG="en-US">&nbsp;</SPAN>
+    </FONT>
+    <FONT SIZE=4>3.39).</FONT>
+</P>
+<P LANG="ru-RU" CLASS="western" ALIGN=LEFT STYLE="text-indent: 0in; margin-bottom: 0in; line-height: 170%">
+    <BR>
+</P>
+<P LANG="ru-RU" CLASS="western" ALIGN=CENTER STYLE="text-indent: 0in; margin-bottom: 0in; line-height: 170%">
+    <IMG SRC="./partials/book/book_files/i_8cd199184a27afda_html_95fbfdd9.png" NAME="graphics87" ALIGN=BOTTOM WIDTH=271 HEIGHT=245 BORDER=0>
+</P>
+<P LANG="ru-RU" CLASS="western" ALIGN=CENTER STYLE="text-indent: 0in; margin-bottom: 0in; line-height: 170%">
+    <BR>
+</P>
+<P LANG="ru-RU" CLASS="western" ALIGN=CENTER STYLE="text-indent: 0in; margin-bottom: 0in; line-height: 170%">
+    Рис. 3.39. К понятию отказа типа “короткое замыкание”
+</P>
+<P LANG="ru-RU" CLASS="western" ALIGN=LEFT STYLE="text-indent: 0in; margin-bottom: 0in; line-height: 170%">
+    <BR>
+</P>
+<P LANG="ru-RU" STYLE="margin-bottom: 0in; line-height: 170%">
+    <FONT SIZE=4>В описанной ситуации один и тот же элемент может находиться в одном из трех состояний:
+    </FONT>
+</P>
+<UL>
+    <LI>
+        <P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0in; margin-bottom: 0in; line-height: 170%">
+            <FONT SIZE=4>работоспособности (с вероятностью
+            </FONT>
+            <FONT SIZE=4>
+                <SPAN LANG="en-US"><I>P</I></SPAN>
+            </FONT>
+            <FONT SIZE=4>(</FONT>
+            <FONT SIZE=4>
+                <SPAN LANG="en-US"><I>t</I></SPAN>
+            </FONT>
+            <FONT SIZE=4>));</FONT>
+        </P>
+        <LI>
+            <P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0in; margin-bottom: 0in; line-height: 170%">
+                <FONT SIZE=4>отказа типа &quot;обрыв&quot; (с вероятностью </FONT>
+                <FONT SIZE=4>
+                    <SPAN LANG="en-US"><I>Q</I></SPAN>
+                </FONT>
+                <SUB><FONT SIZE=4><I>0</I></FONT></SUB>
+                <FONT SIZE=4>(</FONT>
+                <FONT SIZE=4>
+                    <SPAN LANG="en-US"><I>t</I></SPAN>
+                </FONT>
+                <FONT SIZE=4>));</FONT>
+            </P>
+            <LI>
+                <P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0in; margin-bottom: 0in; line-height: 170%">
+                    <FONT SIZE=4>отказа типа КЗ (с вероятностью
+                    </FONT>
+                    <FONT SIZE=4>
+                        <SPAN LANG="en-US"><I>Q</I></SPAN>
+                    </FONT>
+                    <SUB><FONT SIZE=4><I>кз</I></FONT></SUB>
+                    <FONT SIZE=4>(</FONT>
+                    <FONT SIZE=4>
+                        <SPAN LANG="en-US"><I>t</I></SPAN>
+                    </FONT>
+                    <FONT SIZE=4>)).</FONT>
+                </P>
+</UL>
+<P LANG="ru-RU" STYLE="margin-bottom: 0in; line-height: 170%">
+    <FONT SIZE=4>Эти случайные события независимы, несовместны и образуют полную группу событий:</FONT>
+</P>
+<P LANG="ru-RU" CLASS="western" ALIGN=CENTER STYLE="text-indent: 0in; margin-bottom: 0in; line-height: 170%">
+    <FONT SIZE=4>
+        <SPAN LANG="en-US"><I>P</I></SPAN>
+    </FONT>
+    <FONT SIZE=4>(</FONT>
+    <FONT SIZE=4>
+        <SPAN LANG="en-US"><I>t</I></SPAN>
+    </FONT>
+    <FONT SIZE=4>) + </FONT>
+    <FONT SIZE=4>
+        <SPAN LANG="en-US"><I>Q</I></SPAN>
+    </FONT>
+    <SUB><FONT SIZE=4><I>0</I></FONT></SUB>
+    <FONT SIZE=4>(</FONT>
+    <FONT SIZE=4>
+        <SPAN LANG="en-US"><I>t</I></SPAN>
+    </FONT>
+    <FONT SIZE=4>) + </FONT>
+    <FONT SIZE=4>
+        <SPAN LANG="en-US"><I>Q</I></SPAN>
+    </FONT>
+    <SUB><FONT SIZE=4><I>кз</I></FONT></SUB>
+    <FONT SIZE=4>(</FONT>
+    <FONT SIZE=4>
+        <SPAN LANG="en-US"><I>t</I></SPAN>
+    </FONT>
+    <FONT SIZE=4>) = 1.</FONT>
+</P>
+<P LANG="ru-RU" STYLE="margin-bottom: 0in; line-height: 170%">
+    <FONT SIZE=4>Для повышения надежности элемента 1 с отказами &quot;обрыв&quot; и КЗ применяют нагруженное резервирование с использованием равнонадежных элементов 1 и 2 (рис.</FONT>
+    <FONT SIZE=4>
+        <SPAN LANG="en-US">&nbsp;</SPAN>
+    </FONT>
+    <FONT SIZE=4>3.40).</FONT>
+</P>
+<P LANG="ru-RU" CLASS="western" ALIGN=LEFT STYLE="text-indent: 0in; margin-bottom: 0in; line-height: 170%">
+    <BR>
+</P>
+<P CLASS="western" ALIGN=CENTER STYLE="text-indent: 0in; margin-bottom: 0in; line-height: 170%">
+    <IMG SRC="./partials/book/book_files/i_8cd199184a27afda_html_526aad3f.png" NAME="graphics88" ALIGN=BOTTOM WIDTH=288 HEIGHT=181 BORDER=0>
+</P>
+<P CLASS="western" ALIGN=CENTER STYLE="text-indent: 0in; margin-bottom: 0in; line-height: 170%">
+    <BR>
+</P>
+<P LANG="ru-RU" CLASS="western" ALIGN=CENTER STYLE="text-indent: 0in; margin-bottom: 0in; line-height: 170%">
+    Рис. 3.40. Структурная схема расчета надежности резервированной системы</P>
+<P LANG="ru-RU" CLASS="western" ALIGN=CENTER STYLE="text-indent: 0in; margin-bottom: 0in; line-height: 170%">
+    с отказами элементов типа КЗ и “обрыв”</P>
+<P LANG="ru-RU" CLASS="western" ALIGN=LEFT STYLE="text-indent: 0in; margin-bottom: 0in; line-height: 170%">
+    <BR>
+</P>
+<P LANG="ru-RU" STYLE="margin-bottom: 0in; line-height: 170%">
+    <FONT SIZE=4>Задача анализа такой системы заключается в определении вероятности безотказной работы системы </FONT>
+    <FONT SIZE=4>
+        <SPAN LANG="en-US"><I>P</I></SPAN>
+    </FONT>
+    <SUB><FONT SIZE=4><I>с</I></FONT></SUB>
+    <FONT SIZE=4>(</FONT>
+    <FONT SIZE=4>
+        <SPAN LANG="en-US"><I>t</I></SPAN>
+    </FONT>
+    <FONT SIZE=4>),
+    </FONT>
+    <FONT SIZE=4>
+        <SPAN LANG="en-US"><I>Q</I></SPAN>
+    </FONT>
+    <SUB><FONT SIZE=4><SPAN LANG="en-US"><I>c</I></SPAN></FONT></SUB>
+    <FONT SIZE=4>(</FONT>
+    <FONT SIZE=4>
+        <SPAN LANG="en-US"><I>t</I></SPAN>
+    </FONT>
+    <FONT SIZE=4>),
+    </FONT>
+    <FONT SIZE=4>
+        <SPAN LANG="en-US">
+<IMG SRC="./partials/book/book_files/i_8cd199184a27afda_html_18337a16.gif" NAME="Object682" ALIGN=ABSMIDDLE WIDTH=25 HEIGHT=24></SPAN>
+    </FONT>
+    <FONT SIZE=4>
+        по известным </FONT>
+    <FONT SIZE=4>
+        <SPAN LANG="en-US"><I>P</I></SPAN>
+    </FONT>
+    <FONT SIZE=4>(</FONT>
+    <FONT SIZE=4>
+        <SPAN LANG="en-US"><I>t</I></SPAN>
+    </FONT>
+    <FONT SIZE=4>),
+    </FONT>
+    <FONT SIZE=4>
+        <SPAN LANG="en-US"><I>Q</I></SPAN>
+    </FONT>
+    <SUB><FONT SIZE=4><I>0</I></FONT></SUB>
+    <FONT SIZE=4>(</FONT>
+    <FONT SIZE=4>
+        <SPAN LANG="en-US"><I>t</I></SPAN>
+    </FONT>
+    <FONT SIZE=4>),
+    </FONT>
+    <FONT SIZE=4>
+        <SPAN LANG="en-US"><I>Q</I></SPAN>
+    </FONT>
+    <SUB><FONT SIZE=4><I>кз</I></FONT></SUB>
+    <FONT SIZE=4>(</FONT>
+    <FONT SIZE=4>
+        <SPAN LANG="en-US"><I>t</I></SPAN>
+    </FONT>
+    <FONT SIZE=4>) элементов и нахождении условий эффективности резервирования.</FONT>
+</P>
+<P LANG="ru-RU" STYLE="margin-bottom: 0in; line-height: 170%">
+    <FONT SIZE=4>Состояния работоспособности резервированной системы:
+    </FONT>
+</P>
+<UL>
+    <LI>
+        <P LANG="ru-RU" CLASS="western" ALIGN=LEFT STYLE="text-indent: 0in; margin-bottom: 0in; line-height: 170%">
+            <FONT SIZE=4>
+                <SPAN LANG="en-US">I</SPAN>
+            </FONT>
+            <FONT SIZE=4> – исправны элементы 1 и 2</FONT>
+            <FONT SIZE=4>
+                <SPAN LANG="en-US">;</SPAN>
+            </FONT>
+        </P>
+        <LI>
+            <P LANG="ru-RU" CLASS="western" ALIGN=LEFT STYLE="text-indent: 0in; margin-bottom: 0in; line-height: 170%">
+                <FONT SIZE=4>
+                    <SPAN LANG="en-US">II</SPAN>
+                </FONT>
+                <FONT SIZE=4> – исправен элемент 1 и отказал элемент 2 (&quot;обрыв&quot;);
+                </FONT>
+            </P>
+            <LI>
+                <P LANG="ru-RU" CLASS="western" ALIGN=LEFT STYLE="text-indent: 0in; margin-bottom: 0in; line-height: 170%">
+                    <FONT SIZE=4>
+                        <SPAN LANG="en-US">III</SPAN>
+                    </FONT>
+                    <FONT SIZE=4> – исправен элемент 2 и отказал элемент 1 (&quot;обрыв&quot;).
+                    </FONT>
+                </P>
+</UL>
+<P LANG="ru-RU" STYLE="margin-bottom: 0in; line-height: 170%">
+    <FONT SIZE=4>При отказах типа КЗ система выходит из строя.
+    </FONT>
+</P>
+<P LANG="ru-RU" STYLE="margin-bottom: 0in; line-height: 170%">
+    <FONT SIZE=4>Для работоспособного состояния системы можно определить</FONT>
+</P>
+<P LANG="ru-RU" CLASS="western" ALIGN=CENTER STYLE="text-indent: 0in; margin-bottom: 0in; line-height: 170%">
+    <IMG SRC="./partials/book/book_files/i_8cd199184a27afda_html_54dd8179.gif" NAME="Object683" ALIGN=ABSMIDDLE WIDTH=597 HEIGHT=24>
+    <FONT SIZE=4>.</FONT>
+</P>
+<P LANG="ru-RU" STYLE="margin-bottom: 0in; line-height: 170%">
+    <FONT SIZE=4>Хотя
+    </FONT>
+    <FONT SIZE=4>
+        <SPAN LANG="en-US"><I>Q</I></SPAN>
+    </FONT>
+    <SUB><FONT SIZE=4><I>кз</I></FONT></SUB>
+    <FONT SIZE=4>(</FONT>
+    <FONT SIZE=4>
+        <SPAN LANG="en-US"><I>t</I></SPAN>
+    </FONT>
+    <FONT SIZE=4>) явно не входит в эту формулу, но отказы КЗ косвенно влияют на надежность системы. Действительно, определив</FONT>
+</P>
+<P LANG="ru-RU" STYLE="margin-left: 1.48in; text-indent: 0in; margin-bottom: 0in; line-height: 170%">
+    <FONT SIZE=4>
+        <SPAN LANG="en-US"><I>Q</I></SPAN>
+    </FONT>
+    <SUB><FONT SIZE=4><I>0</I></FONT></SUB>
+    <FONT SIZE=4>(</FONT>
+    <FONT SIZE=4>
+        <SPAN LANG="en-US"><I>t</I></SPAN>
+    </FONT>
+    <FONT SIZE=4>)=1-</FONT>
+    <FONT SIZE=4>
+        <SPAN LANG="en-US"><I>P</I></SPAN>
+    </FONT>
+    <FONT SIZE=4>(</FONT>
+    <FONT SIZE=4>
+        <SPAN LANG="en-US"><I>t</I></SPAN>
+    </FONT>
+    <FONT SIZE=4>)-</FONT>
+    <FONT SIZE=4>
+        <SPAN LANG="en-US"><I>Q</I></SPAN>
+    </FONT>
+    <SUB><FONT SIZE=4><I>кз</I></FONT></SUB>
+    <FONT SIZE=4>(</FONT>
+    <FONT SIZE=4>
+        <SPAN LANG="en-US"><I>t</I></SPAN>
+    </FONT>
+    <FONT SIZE=4>),</FONT>
+</P>
+<P LANG="ru-RU" STYLE="text-indent: 0in; margin-bottom: 0in; line-height: 170%">
+    <FONT SIZE=4>получим</FONT>
+</P>
+<P LANG="ru-RU" CLASS="western" ALIGN=LEFT STYLE="margin-left: 1.48in; text-indent: 0in; margin-bottom: 0in; line-height: 170%">
+    <IMG SRC="./partials/book/book_files/i_8cd199184a27afda_html_2241b3c.gif" NAME="Object684" ALIGN=ABSMIDDLE WIDTH=311 HEIGHT=24>
+    <FONT SIZE=4>
+        <I>,</I>
+    </FONT>
+</P>
+<P LANG="ru-RU" CLASS="western" ALIGN=LEFT STYLE="margin-left: 1.48in; text-indent: 0in; margin-bottom: 0in; line-height: 170%">
+    <IMG SRC="./partials/book/book_files/i_8cd199184a27afda_html_3194fb71.gif" NAME="Object685" ALIGN=ABSMIDDLE WIDTH=345 HEIGHT=24>
+    <FONT SIZE=4>.</FONT>
+</P>
+<P LANG="ru-RU" STYLE="margin-bottom: 0in; line-height: 170%">
+    <FONT SIZE=4>Средняя наработка до отказа находится по обычной формуле
+    </FONT>
+</P>
+<P LANG="ru-RU" CLASS="western" ALIGN=CENTER STYLE="text-indent: 0in; margin-bottom: 0in; line-height: 170%">
+    <IMG SRC="./partials/book/book_files/i_8cd199184a27afda_html_62da4aef.gif" NAME="Object686" ALIGN=ABSMIDDLE WIDTH=114 HEIGHT=40>
+    <FONT SIZE=4>.</FONT>
+</P>
+<P LANG="ru-RU" STYLE="margin-bottom: 0in; line-height: 170%">
+    <FONT SIZE=4>Для оценки эффективности резервирования можно использовать критерий</FONT>
+</P>
+<P LANG="ru-RU" CLASS="western" ALIGN=CENTER STYLE="text-indent: 0in; margin-bottom: 0in; line-height: 170%">
+    <IMG SRC="./partials/book/book_files/i_8cd199184a27afda_html_9be1aa73.gif" NAME="Object687" ALIGN=ABSMIDDLE WIDTH=192 HEIGHT=21>
+</P>
+<P LANG="ru-RU" CLASS="western" ALIGN=LEFT STYLE="text-indent: 0in; margin-bottom: 0in; line-height: 170%">
+    <FONT SIZE=4>и очевидное условие:</FONT>
+</P>
+<P LANG="ru-RU" CLASS="western" ALIGN=CENTER STYLE="text-indent: 0in; margin-bottom: 0in; line-height: 170%">
+    <IMG SRC="./partials/book/book_files/i_8cd199184a27afda_html_ca4353e0.gif" NAME="Object688" ALIGN=ABSMIDDLE WIDTH=48 HEIGHT=21>
+    <FONT SIZE=4>или </FONT>
+    <FONT SIZE=4>
+        <I>
+<IMG SRC="./partials/book/book_files/i_8cd199184a27afda_html_f0cf401b.gif" NAME="Object689" ALIGN=ABSMIDDLE WIDTH=120 HEIGHT=21></I>
+    </FONT>
+    <FONT SIZE=4>.</FONT>
+</P>
+<P LANG="ru-RU" STYLE="margin-bottom: 0in; line-height: 170%">
+    <FONT SIZE=4>Подставляя сюда </FONT>
+    <FONT SIZE=4>
+        <I>
+<IMG SRC="./partials/book/book_files/i_8cd199184a27afda_html_c509d1c8.gif" NAME="Object690" ALIGN=ABSMIDDLE WIDTH=112 HEIGHT=24></I>
+    </FONT>
+    <FONT SIZE=4>, получим
+    </FONT>
+</P>
+<P LANG="ru-RU" CLASS="western" ALIGN=CENTER STYLE="text-indent: 0in; margin-bottom: 0in; line-height: 170%">
+    <IMG SRC="./partials/book/book_files/i_8cd199184a27afda_html_141e3bc3.gif" NAME="Object691" ALIGN=ABSMIDDLE WIDTH=143 HEIGHT=24>
+</P>
+<P LANG="ru-RU" CLASS="western" ALIGN=LEFT STYLE="text-indent: 0in; margin-bottom: 0in; line-height: 170%">
+    <FONT SIZE=4>или</FONT>
+</P>
+<P LANG="ru-RU" CLASS="western" ALIGN=CENTER STYLE="text-indent: 0in; margin-bottom: 0in; line-height: 170%">
+    <IMG SRC="./partials/book/book_files/i_8cd199184a27afda_html_13fc816a.gif" NAME="Object692" ALIGN=ABSMIDDLE WIDTH=84 HEIGHT=21>
+    <FONT SIZE=4>.</FONT>
+</P>
+<P LANG="ru-RU" STYLE="margin-bottom: 0in; line-height: 170%">
+    <FONT SIZE=4>После подстановки </FONT>
+    <FONT SIZE=4>
+        <I>
+<IMG SRC="./partials/book/book_files/i_8cd199184a27afda_html_8e2fdbe.gif" NAME="Object693" ALIGN=ABSMIDDLE WIDTH=207 HEIGHT=21></I>
+    </FONT>
+    <FONT SIZE=4>
+        получаем окончательно:</FONT>
+</P>
+<P LANG="ru-RU" CLASS="western" ALIGN=CENTER STYLE="text-indent: 0in; margin-bottom: 0in; line-height: 170%">
+    <IMG SRC="./partials/book/book_files/i_8cd199184a27afda_html_131cc3b6.gif" NAME="Object694" ALIGN=ABSMIDDLE WIDTH=131 HEIGHT=21>
+    <FONT SIZE=4>
+        <SPAN LANG="en-US"><I>Q</I></SPAN>
+    </FONT>
+    <SUB><FONT SIZE=4>0</FONT></SUB>
+    <FONT SIZE=4>(</FONT>
+    <FONT SIZE=4>
+        <SPAN LANG="en-US">t</SPAN>
+    </FONT>
+    <FONT SIZE=4>).</FONT>
+</P>
+<P LANG="ru-RU" STYLE="margin-bottom: 0in; line-height: 170%">
+    <FONT SIZE=4>Итак, резервированная система становится эффективной (в смысле надежности), если у ее элементов отказы типа &quot;обрыв&quot; происходят чаще, чем отказы типа &quot;короткое замыкание&quot;. Следует указать, что применительно к техническим средствам автоматизации частота отказов типа &quot;обрыв&quot; значительно (в 4-5 раз) превышает частоту отказов КЗ.</FONT>
+</P>
+<P LANG="ru-RU" STYLE="margin-bottom: 0in; line-height: 170%">
+    <FONT SIZE=4>Для исключения индивидуального влияния отказов элементов типа &quot;обрыв&quot; на надежность системы резервные элементы должны быть соединены параллельно, а для отказа типа КЗ – последовательно. Для исключения одновременного влияния отказов элементов типа &quot;обрыв&quot; и КЗ на надежность системы, необходимо применять параллельно-последовательное соединение элементов (рис.&nbsp;3.41).</FONT>
+</P>
+<P LANG="ru-RU" CLASS="western" ALIGN=LEFT STYLE="text-indent: 0in; margin-bottom: 0in; line-height: 170%">
+    <BR>
+</P>
+<P LANG="ru-RU" CLASS="western" ALIGN=CENTER STYLE="text-indent: 0in; margin-bottom: 0in; line-height: 170%">
+    <IMG SRC="./partials/book/book_files/i_8cd199184a27afda_html_3f14d501.png" NAME="graphics89" ALIGN=BOTTOM WIDTH=437 HEIGHT=198 BORDER=0>
+</P>
+<P LANG="ru-RU" CLASS="western" ALIGN=CENTER STYLE="text-indent: 0in; margin-bottom: 0in; line-height: 170%">
+    <BR>
+</P>
+<P LANG="ru-RU" CLASS="western" ALIGN=CENTER STYLE="text-indent: 0in; margin-bottom: 0in; line-height: 170%">
+    Рис. 3.41. Структурная схема расчета надежности параллельно-последовательного соединения элементов с отказами типа “обрыв” и КЗ</P>
+<P LANG="ru-RU" CLASS="western" ALIGN=LEFT STYLE="text-indent: 0in; margin-bottom: 0in; line-height: 170%">
+    <BR>
+</P>
+<P LANG="ru-RU" STYLE="margin-bottom: 0in; line-height: 170%">
+    <FONT SIZE=4>Пусть в каждой цепочке будет </FONT>
+    <FONT SIZE=4>
+        <SPAN LANG="en-US"><I>k</I></SPAN>
+    </FONT>
+    <FONT SIZE=4>
+        равнонадежных элементов с </FONT>
+    <FONT SIZE=4>
+        <SPAN LANG="en-US"><I>P</I></SPAN>
+    </FONT>
+    <FONT SIZE=4>(</FONT>
+    <FONT SIZE=4>
+        <SPAN LANG="en-US"><I>t</I></SPAN>
+    </FONT>
+    <FONT SIZE=4>),
+    </FONT>
+    <FONT SIZE=4>
+        <SPAN LANG="en-US"><I>Q</I></SPAN>
+    </FONT>
+    <SUB><FONT SIZE=4><I>0</I></FONT></SUB>
+    <FONT SIZE=4>(</FONT>
+    <FONT SIZE=4>
+        <SPAN LANG="en-US"><I>t</I></SPAN>
+    </FONT>
+    <FONT SIZE=4>),
+    </FONT>
+    <FONT SIZE=4>
+        <SPAN LANG="en-US"><I>Q</I></SPAN>
+    </FONT>
+    <SUB><FONT SIZE=4><I>кз</I></FONT></SUB>
+    <FONT SIZE=4>(</FONT>
+    <FONT SIZE=4>
+        <SPAN LANG="en-US"><I>t</I></SPAN>
+    </FONT>
+    <FONT SIZE=4>), а число самих цепочек равно </FONT>
+    <FONT SIZE=4>
+        <SPAN LANG="en-US"><I>m</I></SPAN>
+    </FONT>
+    <FONT SIZE=4>. Полагаем, что при КЗ в одной из цепочек отказ типа &quot;обрыв&quot; уже не происходит, и наоборот, при &quot;обрыве&quot; элемента КЗ в цепочке не происходит. Кроме того, отказы &quot;обрыв&quot; и КЗ не влияют на показатели надежности работающих элементов.
+    </FONT>
+</P>
+<P LANG="ru-RU" STYLE="margin-bottom: 0in; line-height: 170%">
+    <FONT SIZE=4>При указанных условиях вероятность безотказной работы системы (рис.&nbsp;3.41) равна
+    </FONT>
+</P>
+<P LANG="ru-RU" CLASS="western" ALIGN=CENTER STYLE="text-indent: 0in; margin-bottom: 0in; line-height: 170%">
+    <IMG SRC="./partials/book/book_files/i_8cd199184a27afda_html_5a0785ea.gif" NAME="Object695" ALIGN=ABSMIDDLE WIDTH=346 HEIGHT=24>
+    <FONT SIZE=4>.</FONT>
+</P>
+<P LANG="ru-RU" STYLE="margin-bottom: 0in; line-height: 170%">
+    <FONT SIZE=4>Средняя наработка до отказа</FONT>
+</P>
+<P LANG="ru-RU" CLASS="western" ALIGN=CENTER STYLE="text-indent: 0in; margin-bottom: 0in; line-height: 170%">
+    <IMG SRC="./partials/book/book_files/i_8cd199184a27afda_html_62da4aef.gif" NAME="Object696" ALIGN=ABSMIDDLE WIDTH=114 HEIGHT=40>
+    <FONT SIZE=4>.</FONT>
+</P>
+<P LANG="ru-RU" STYLE="margin-bottom: 0in; line-height: 170%">
+    <FONT SIZE=4>Применение параллельно-последовательного соединения равнонадежных элементов с отказами КЗ и &quot;обрыв&quot; эффективно (в смысле
+    </FONT>
+    <FONT FACE="Symbol, serif">
+        <FONT SIZE=4>
+            <I></I>
+        </FONT>
+    </FONT>
+    <SUB><FONT SIZE=4><I>р</I></FONT></SUB>
+    <FONT SIZE=4>=</FONT>
+    <FONT SIZE=4>
+        <SPAN LANG="en-US"><I>P</I></SPAN>
+    </FONT>
+    <SUB><FONT SIZE=4><SPAN LANG="en-US"><I>c</I></SPAN></FONT></SUB>
+    <FONT SIZE=4>(</FONT>
+    <FONT SIZE=4>
+        <SPAN LANG="en-US"><I>t</I></SPAN>
+    </FONT>
+    <FONT SIZE=4>)/</FONT>
+    <FONT SIZE=4>
+        <SPAN LANG="en-US"><I>P</I></SPAN>
+    </FONT>
+    <SUB><FONT SIZE=4><I>элем</I></FONT></SUB>
+    <FONT SIZE=4>&gt;1 ) при условии</FONT>
+</P>
+<P LANG="ru-RU" CLASS="western" ALIGN=CENTER STYLE="text-indent: 0in; margin-bottom: 0in; line-height: 170%">
+    <IMG SRC="./partials/book/book_files/i_8cd199184a27afda_html_843e7113.gif" NAME="Object697" ALIGN=ABSMIDDLE WIDTH=339 HEIGHT=24>
+    <FONT SIZE=4>.</FONT>
+</P>

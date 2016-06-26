@@ -1,0 +1,195 @@
+
+<H3 LANG="ru-RU" CLASS="western"><A NAME="__RefHeading__131_1940486968"></A>
+Понижение размерности задачи оценивания
+эффективности</H3>
+<P LANG="ru-RU" CLASS="western" STYLE="line-height: 170%">
+    <FONT SIZE=4>Для понижения размерности задачи оценивания эффективности сложной системы следует уменьшать число </FONT>
+    <FONT SIZE=4>
+        <I>М</I>
+    </FONT>
+    <FONT SIZE=4>
+        её возможных состояний </FONT>
+    <FONT SIZE=4>
+        <SPAN LANG="en-US"><I>S</I></SPAN>
+    </FONT>
+    <SUB><FONT SIZE=4><SPAN LANG="en-US"><I>i</I></SPAN></FONT></SUB>
+    <FONT SIZE=4>,
+        <IMG SRC="./partials/book/book_files/i_8cd199184a27afda_html_b866edc8.gif" NAME="Object1186" ALIGN=ABSMIDDLE WIDTH=55 HEIGHT=18>. Сделать это можно разными способами, в частности, путем «укрупнения» элементов и уменьшения их числа </FONT>
+    <FONT SIZE=4>
+        <SPAN LANG="en-US"><I>m</I></SPAN>
+    </FONT>
+    <FONT SIZE=4>.</FONT>
+</P>
+<P LANG="ru-RU" CLASS="western" STYLE="line-height: 170%">
+    <FONT SIZE=4>Метод «крупных» элементов – блоков. Для некоторых сложных систем (типа АСУТП, информационно-вычислительных систем и др.) можно ввести новые, более «крупные» элементы – блоки, объединяющие ряд исходных основных элементов. Для простейших потоков отказов и восстановлений элементов интенсивности отказов и восстановлений блоков находятся по&nbsp;известным формулам</FONT>
+</P>
+<P LANG="ru-RU" CLASS="western" ALIGN=CENTER STYLE="text-indent: 0in; margin-bottom: 0in; line-height: 170%">
+    <IMG SRC="./partials/book/book_files/i_8cd199184a27afda_html_723ef8f3.gif" NAME="Object1187" ALIGN=ABSMIDDLE WIDTH=70 HEIGHT=41>
+    <FONT SIZE=4>,
+        <IMG SRC="./partials/book/book_files/i_8cd199184a27afda_html_16e874a0.gif" NAME="Object1188" ALIGN=ABSMIDDLE WIDTH=75 HEIGHT=41>,</FONT>
+</P>
+<P LANG="ru-RU" CLASS="western" STYLE="text-indent: 0in; line-height: 170%">
+    <FONT SIZE=4>где </FONT>
+    <FONT SIZE=4>
+        <SPAN LANG="en-US"><I>k</I></SPAN>
+    </FONT>
+    <FONT SIZE=4>
+        – число основных элементов с интенсивностями
+        <IMG SRC="./partials/book/book_files/i_8cd199184a27afda_html_66c56b95.gif" NAME="Object1189" ALIGN=ABSMIDDLE WIDTH=100 HEIGHT=21>, включенных в один блок.</FONT>
+</P>
+<P LANG="ru-RU" STYLE="margin-bottom: 0in; line-height: 170%">
+    <FONT SIZE=4>Среднее число блоков равно отношению
+        <IMG SRC="./partials/book/book_files/i_8cd199184a27afda_html_82566f43.gif" NAME="Object1190" ALIGN=ABSMIDDLE WIDTH=25 HEIGHT=38>, поэтому при
+        <SPAN LANG="en-US"><I>k</I></SPAN>
+        <FONT FACE="Symbol, serif"></FONT>3-8 размерность задачи оценивания эффективности существенно снижается. Так, например, в системе из 20 исходных элементов возможны 2
+        <SUP>20</SUP> =&nbsp;1&nbsp;048&nbsp;576 состояний. Если удастся создать блоки из
+        <SPAN LANG="en-US"><I>k</I></SPAN>=5 элементов, то число блоков окажется равным четырем и количество «блочных» состояний станет равно 2
+        <SUP>4</SUP>=16, следовательно, размерность задачи снизится в
+        <IMG SRC="./partials/book/book_files/i_8cd199184a27afda_html_3f4e592b.gif" NAME="Object1191" ALIGN=ABSMIDDLE WIDTH=118 HEIGHT=38> раза.
+    </FONT>
+</P>
+<P LANG="ru-RU" STYLE="margin-bottom: 0in; line-height: 170%">
+    <FONT SIZE=4>Даже создание 10 блоков по 2 элемента каждый позволяет получить 2
+        <SUP>10&nbsp;</SUP>=&nbsp;1024 “блочных” состояния и снизить размерность задачи оценивания эффективности в
+        <IMG SRC="./partials/book/book_files/i_8cd199184a27afda_html_77a396c8.gif" NAME="Object1192" ALIGN=ABSMIDDLE WIDTH=111 HEIGHT=38> раза.
+    </FONT>
+</P>
+<P LANG="ru-RU" STYLE="margin-bottom: 0in; line-height: 170%">
+    <FONT SIZE=4>
+        <I>Метод
+критериальных состояний.</I> Понижение размерности задачи здесь достигается за счет введения нового понятия «состояние системы», что обеспечивает значительное (в 10-100 раз) уменьшение числа
+        <I>М</I> состояний. Так, если известен диапазон (шкала) изменения критерия
+        <SPAN LANG="en-US"><I>I</I></SPAN>(
+        <SPAN LANG="en-US"><I>S</I></SPAN>,
+        <SPAN LANG="en-US"><I>R</I></SPAN>) сложной системы, то можно выделить несколько непересекающихся поддиапазонов
+        <FONT FACE="Symbol, serif">
+            <I></I>
+        </FONT>
+        <SPAN LANG="en-US"><I>I</I></SPAN>
+        <SUB><I>1</I></SUB>,
+        <FONT FACE="Symbol, serif">
+            <I></I>
+        </FONT>
+        <SPAN LANG="en-US"><I>I</I></SPAN>
+        <SUB><I>2</I></SUB>,…,
+        <FONT FACE="Symbol, serif">
+            <I></I>
+        </FONT>
+        <SPAN LANG="en-US"><I>I</I></SPAN>
+        <SUB><FONT FACE="Symbol, serif"><SPAN LANG="en-US"><I></I></SPAN></FONT></SUB>, …,
+        <FONT FACE="Symbol, serif">
+            <I></I>
+        </FONT>
+        <SPAN LANG="en-US"><I>I</I></SPAN>
+        <SUB><SPAN LANG="en-US"><I>d</I></SPAN></SUB>,
+        <SPAN LANG="en-US"><I>d</I></SPAN>&lt;&lt;
+        <SPAN LANG="en-US"><I>M</I></SPAN> и рассматривать
+        <SPAN LANG="en-US"><I>d</I></SPAN> новых критериальных состояний.</FONT>
+</P>
+<P LANG="ru-RU" STYLE="margin-bottom: 0in; line-height: 170%">
+    <FONT SIZE=4>Под
+        <B>критериальным состоянием </B>
+        <SPAN LANG="en-US"><I>S</I></SPAN>
+        <SUB><FONT FACE="Symbol, serif"><SPAN LANG="en-US"><I></I></SPAN></FONT></SUB> понимается такая структура сложной системы и режим работы её элементов, при которых значение критерия
+        <SPAN LANG="en-US"><I>I</I></SPAN>
+        <SUB><FONT FACE="Symbol, serif"><SPAN LANG="en-US"><I></I></SPAN></FONT></SUB>
+        <SPAN LANG="en-US">&nbsp;</SPAN>
+        <FONT FACE="Symbol, serif"></FONT>
+        <FONT FACE="Symbol, serif">
+            <I></I>
+        </FONT>
+        <SPAN LANG="en-US"><I>I</I></SPAN>
+        <SUB><FONT FACE="Symbol, serif"><SPAN LANG="en-US"><I></I></SPAN></FONT></SUB>,
+        <IMG SRC="./partials/book/book_files/i_8cd199184a27afda_html_b3685ed.gif" NAME="Object1193" ALIGN=ABSMIDDLE WIDTH=56 HEIGHT=20>. В частности, при анализе эффективности распределенных АСУТП рекомендуется вводить 3 или 4 подынтервала: оптимальный и/или нормальный (номинальный), резервный и аварийный. Понятно, что при столь малых числах
+        <SPAN LANG="en-US"><I>d</I></SPAN> проблема размерности задачи становится неактуальной: вычисление вероятностей критериальных состояний
+        <I>Р</I>
+        <SUB><FONT FACE="Symbol, serif"><I></I></FONT></SUB> и значений
+        <SPAN LANG="en-US"><I>I</I></SPAN>
+        <SUB><FONT FACE="Symbol, serif"><SPAN LANG="en-US"><I></I></SPAN></FONT></SUB>,
+        <IMG SRC="./partials/book/book_files/i_8cd199184a27afda_html_b3685ed.gif" NAME="Object1194" ALIGN=ABSMIDDLE WIDTH=56 HEIGHT=20> не вызывает затруднений. Однако при этом возникает дополнительная задача выявления связей между каждым техническим «элементным» состоянием
+        <SPAN LANG="en-US"><I>S</I></SPAN>
+        <SUB><SPAN LANG="en-US"><I>j</I></SPAN></SUB>,
+        <IMG SRC="./partials/book/book_files/i_8cd199184a27afda_html_19085e13.gif" NAME="Object1195" ALIGN=ABSMIDDLE WIDTH=62 HEIGHT=20> и критериальным состоянием
+        <IMG SRC="./partials/book/book_files/i_8cd199184a27afda_html_8b7b206f.gif" NAME="Object1196" ALIGN=ABSMIDDLE WIDTH=26 HEIGHT=24>,
+        <IMG SRC="./partials/book/book_files/i_8cd199184a27afda_html_b3685ed.gif" NAME="Object1197" ALIGN=ABSMIDDLE WIDTH=56 HEIGHT=20> (рис.
+        <SPAN LANG="en-US">&nbsp;</SPAN>3.57).</FONT>
+</P>
+<P CLASS="western" ALIGN=CENTER STYLE="text-indent: 0in; line-height: 170%">
+    <IMG SRC="./partials/book/book_files/i_8cd199184a27afda_html_20f36ac9.png" NAME="graphics110" ALIGN=BOTTOM WIDTH=487 HEIGHT=392 BORDER=0>
+</P>
+<P LANG="ru-RU" CLASS="western" ALIGN=CENTER STYLE="text-indent: 0in; margin-bottom: 0.17in; line-height: 170%">
+    Рис. 3.57. К понятию критериального состояния сложной системы</P>
+<P LANG="ru-RU" STYLE="margin-bottom: 0in; line-height: 170%">
+    <FONT SIZE=4>
+        <I>Метод
+функциональных состояний</I>. Применяется при анализе эффективности сложных систем с четко указанными функциями (например, АСУТП с централизованной и распределенной технической структурой).</FONT>
+</P>
+<P LANG="ru-RU" STYLE="margin-bottom: 0in; line-height: 170%">
+    <FONT SIZE=4>Предположим, что сложная система из
+        <SPAN LANG="en-US"><I>m</I></SPAN> элементов выполняет
+        <I> </I>
+        <SPAN LANG="en-US"><I>l</I></SPAN> функций,
+        <SPAN LANG="en-US"><I>l</I></SPAN>&lt;&lt;
+        <SPAN LANG="en-US"><I>m</I></SPAN>, т.е.
+        <SPAN LANG="en-US"><I>l</I></SPAN> в 10-100 раз меньше
+        <SPAN LANG="en-US"><I>m</I></SPAN>. Пусть известны все элементы системы, реализующие каждую
+        <SPAN LANG="en-US"><I>j</I></SPAN>-ю функцию,
+        <SPAN LANG="en-US"><I>j</I></SPAN>=1,2,…,
+        <SPAN LANG="en-US"><I>l</I></SPAN> и образующие при этом некоторую простую подсистему с формализованными понятиями работоспособности и отказа. Тогда можно ввести понятие
+        <B>функционального состояния</B> системы
+        <SPAN LANG="en-US"><I>h</I></SPAN>
+        <SUB><SPAN LANG="en-US"><I>j</I></SPAN></SUB>, однозначно определяемого числом и номерами отказавших функций. Общее число
+        <I>М</I>
+        <SUB><I>ф</I></SUB> функциональных состояний системы равно 2
+        <SUP><SPAN LANG="en-US"><I>l</I></SPAN></SUP>.</FONT>
+</P>
+<P LANG="ru-RU" STYLE="margin-bottom: 0in; line-height: 170%">
+    <FONT SIZE=4>При
+        <SPAN LANG="en-US"><I>l</I></SPAN>&lt;
+        <SPAN LANG="en-US"><I>m</I></SPAN> и
+        <SPAN LANG="en-US"><I>l</I></SPAN>&lt;&lt;
+        <SPAN LANG="en-US"><I>m</I></SPAN> число функциональных состояний заметно уменьшается относительно числа М. Так, если
+        <SPAN LANG="en-US"><I>l</I></SPAN>&lt;0.5∙
+        <SPAN LANG="en-US"><I>m</I></SPAN>, то
+        <I>М</I>
+        <SUB><I>ф</I></SUB>&lt;&lt;
+        <I>М</I>. Например, при
+        <SPAN LANG="en-US"><I>m</I></SPAN>=20 имеем
+        <I>М</I>=1048576,
+        <SPAN LANG="en-US"><I>l</I></SPAN>=0.5∙20=10,
+        <I>М</I>
+        <SUB><I>ф</I></SUB>=2
+        <SUP>10</SUP>=1024; тогда
+        <IMG SRC="./partials/book/book_files/i_8cd199184a27afda_html_1d4f189a.gif" NAME="Object1198" ALIGN=ABSMIDDLE WIDTH=149 HEIGHT=44>, следовательно число состояний системы уменьшилось в 65536 раз.</FONT>
+</P>
+<P LANG="ru-RU" STYLE="margin-bottom: 0.17in; line-height: 170%">
+    <FONT SIZE=4>Как и в методе критериальных состояний, здесь возникает дополнительная (причем достаточно сложная) задача выявления связей между состоянием каждого элемента или техническим «элементным» состоянием
+        <SPAN LANG="en-US"><I>S</I></SPAN>
+        <SUB><SPAN LANG="en-US"><I>i</I></SPAN></SUB>,
+        <IMG SRC="./partials/book/book_files/i_8cd199184a27afda_html_5c3bbd13.gif" NAME="Object1199" ALIGN=ABSMIDDLE WIDTH=58 HEIGHT=20> и функциональным состоянием
+        <SPAN LANG="en-US"><I>S</I></SPAN>
+        <SUB><I>ф</I></SUB> (рис.&nbsp;3.58).
+    </FONT>
+</P>
+<P LANG="en-US" CLASS="western" ALIGN=CENTER STYLE="text-indent: 0in; line-height: 170%">
+    <IMG SRC="./partials/book/book_files/i_8cd199184a27afda_html_e7604431.jpg" NAME="graphics111" ALIGN=BOTTOM WIDTH=327 HEIGHT=465 BORDER=0>
+</P>
+<P LANG="ru-RU" CLASS="western" ALIGN=CENTER STYLE="margin-bottom: 0.17in; line-height: 170%">
+    Рис. 3.58. К понятию функционального состояния сложной системы</P>
+<P LANG="ru-RU" STYLE="margin-bottom: 0in; line-height: 170%">
+    <FONT SIZE=4>Помимо рассмотренных выше методов существуют еще несколько приемов уменьшения размерности задачи оценивания эффективности сложных систем, заключающиеся в объединении ряда элементов в небольшое число групп по тем или иным признакам, в частности по значениям стационарных вероятностей
+        <IMG SRC="./partials/book/book_files/i_8cd199184a27afda_html_5e540460.gif" NAME="Object1200" ALIGN=ABSMIDDLE WIDTH=25 HEIGHT=21> и введении понятия группового состояния системы
+        <IMG SRC="./partials/book/book_files/i_8cd199184a27afda_html_c89505ff.gif" NAME="Object1201" ALIGN=ABSMIDDLE WIDTH=26 HEIGHT=24>,
+        <IMG SRC="./partials/book/book_files/i_8cd199184a27afda_html_9cb24568.gif" NAME="Object1202" ALIGN=ABSMIDDLE WIDTH=57 HEIGHT=21>. Число групп обычно на порядок меньше числа технических элементов
+        <SPAN LANG="en-US"><I>m</I></SPAN>, что существенно (на 2-3 порядка) уменьшает число групповых состояний и снижает трудоемкость определения
+        <IMG SRC="./partials/book/book_files/i_8cd199184a27afda_html_d166382.gif" NAME="Object1203" ALIGN=ABSMIDDLE WIDTH=26 HEIGHT=21>. Вместе с тем использование групповых состояний
+        <IMG SRC="./partials/book/book_files/i_8cd199184a27afda_html_c89505ff.gif" NAME="Object1204" ALIGN=ABSMIDDLE WIDTH=26 HEIGHT=24> влияет на точность вычисления
+        <IMG SRC="./partials/book/book_files/i_8cd199184a27afda_html_f7046f21.gif" NAME="Object1205" ALIGN=ABSMIDDLE WIDTH=51 HEIGHT=24> и
+        <IMG SRC="./partials/book/book_files/i_8cd199184a27afda_html_d166382.gif" NAME="Object1206" ALIGN=ABSMIDDLE WIDTH=26 HEIGHT=21> (чем меньше групп, тем больше погрешность определения
+        <IMG SRC="./partials/book/book_files/i_8cd199184a27afda_html_d166382.gif" NAME="Object1207" ALIGN=ABSMIDDLE WIDTH=26 HEIGHT=21>) и требует выявления связей между каждым элементным состоянием
+        <SPAN LANG="en-US"><I>S</I></SPAN>
+        <SUB><SPAN LANG="en-US"><I>i</I></SPAN></SUB>,
+        <IMG SRC="./partials/book/book_files/i_8cd199184a27afda_html_9118a5e7.gif" NAME="Object1208" ALIGN=ABSMIDDLE WIDTH=58 HEIGHT=20> и групповым состоянием
+        <IMG SRC="./partials/book/book_files/i_8cd199184a27afda_html_c89505ff.gif" NAME="Object1209" ALIGN=ABSMIDDLE WIDTH=26 HEIGHT=24>,
+        <IMG SRC="./partials/book/book_files/i_8cd199184a27afda_html_32bd93e4.gif" NAME="Object1210" ALIGN=ABSMIDDLE WIDTH=60 HEIGHT=23>.</FONT>
+</P>

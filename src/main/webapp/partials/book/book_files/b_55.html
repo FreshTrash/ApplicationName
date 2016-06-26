@@ -1,0 +1,682 @@
+
+<H3 LANG="ru-RU" CLASS="western"><A NAME="__RefHeading__117_1940486968"></A>
+Алгоритм надежностного синтеза локальной
+системы</H3>
+<P LANG="ru-RU" CLASS="western" STYLE="line-height: 170%">
+    <FONT SIZE=4>Как и раньше, здесь под локальной системой понимается «малоразмерная» система, состоящая из небольшого числа </FONT>
+    <FONT SIZE=4>
+        <SPAN LANG="en-US"><I>n</I></SPAN>
+    </FONT>
+    <FONT SIZE=4>
+        элементов (</FONT>
+    <FONT SIZE=4>
+        <SPAN LANG="en-US"><I>n</I></SPAN>
+    </FONT>
+    <FONT FACE="Symbol, serif">
+        <FONT SIZE=4>
+            <SPAN LANG="en-US"></SPAN>
+        </FONT>
+    </FONT>
+    <FONT SIZE=4>6-8). Это условие позволяет построить относительно несложный алгоритм поиска условного экстремума целочисленного критерия </FONT>
+    <FONT SIZE=4>
+        <SPAN LANG="en-US"><I>n</I></SPAN>
+    </FONT>
+    <FONT SIZE=4>
+        с дискретными ограничениями и связями. Алгоритм базируется на известных принципах «от&nbsp;простого – к сложному» и полного перебора возможных вариантов решения задачи.</FONT>
+</P>
+<P LANG="ru-RU" CLASS="western" STYLE="line-height: 170%">
+    <FONT SIZE=4>Выпишем условие математической задачи синтеза. Заданы: </FONT>
+</P>
+<UL>
+    <LI>
+        <P LANG="ru-RU" CLASS="western" STYLE="line-height: 170%">
+            <FONT SIZE=4>критерий оптимальности </FONT>
+            <FONT SIZE=4>
+                <SPAN LANG="en-US"><I>n</I></SPAN>
+            </FONT>
+            <FONT SIZE=4>, являющийся натуральным числом </FONT>
+            <FONT SIZE=4>
+                <SPAN LANG="en-US"><I>n</I></SPAN>
+            </FONT>
+            <FONT SIZE=4>=1,2,…,
+            </FONT>
+            <FONT SIZE=4>
+                <SPAN LANG="en-US"><I>n</I></SPAN>
+            </FONT>
+            <SUP><FONT SIZE=4><I>+</I></FONT></SUP>
+            <FONT SIZE=4>;
+            </FONT>
+            <FONT SIZE=4>
+                <SPAN LANG="en-US"><I>n</I></SPAN>
+            </FONT>
+            <SUP><FONT SIZE=4><I>+</I></FONT></SUP>
+            <FONT FACE="Symbol, serif">
+                <FONT SIZE=4></FONT>
+            </FONT>
+            <FONT SIZE=4>6-8;</FONT>
+        </P>
+        <LI>
+            <P LANG="ru-RU" CLASS="western" STYLE="margin-bottom: 0in; line-height: 170%">
+                <FONT SIZE=4>вектор интенсивностей отказов элементов
+                </FONT>
+            </P>
+</UL>
+<P LANG="ru-RU" CLASS="western" ALIGN=LEFT STYLE="margin-left: 0.49in; line-height: 170%">
+    <IMG SRC="./partials/book/book_files/i_8cd199184a27afda_html_75c9e3a1.gif" NAME="Object920" ALIGN=ABSMIDDLE WIDTH=152 HEIGHT=70>
+    <FONT SIZE=4>,
+        <IMG SRC="./partials/book/book_files/i_8cd199184a27afda_html_26e3082b.gif" NAME="Object921" ALIGN=ABSMIDDLE WIDTH=189 HEIGHT=24>,
+    </FONT>
+    <FONT SIZE=4>
+        <SPAN LANG="en-US"><I>k</I></SPAN>
+    </FONT>
+    <FONT FACE="Symbol, serif">
+        <FONT SIZE=4>
+            <SPAN LANG="en-US"></SPAN>
+        </FONT>
+    </FONT>
+    <FONT SIZE=4>5-6,
+        <IMG SRC="./partials/book/book_files/i_8cd199184a27afda_html_15948bbe.gif" NAME="Object922" ALIGN=ABSMIDDLE WIDTH=61 HEIGHT=20>
+    </FONT>
+    <FONT SIZE=4>
+        <SPAN LANG="en-US">;</SPAN>
+    </FONT>
+</P>
+<P LANG="ru-RU" CLASS="western" STYLE="margin-left: 0.49in; text-indent: 0.49in; line-height: 170%">
+    <IMG SRC="./partials/book/book_files/i_8cd199184a27afda_html_cbb809b2.gif" NAME="Object923" ALIGN=ABSMIDDLE WIDTH=24 HEIGHT=24>
+    <FONT SIZE=4>- положительные числа,
+        <IMG SRC="./partials/book/book_files/i_8cd199184a27afda_html_15948bbe.gif" NAME="Object924" ALIGN=ABSMIDDLE WIDTH=61 HEIGHT=20>
+    </FONT>
+    <FONT SIZE=4>
+        <SPAN LANG="en-US">;
+</SPAN>
+    </FONT>
+    <FONT SIZE=4>
+        <IMG SRC="./partials/book/book_files/i_8cd199184a27afda_html_d3433579.gif" NAME="Object925" ALIGN=ABSMIDDLE WIDTH=52 HEIGHT=18>
+    </FONT>
+    <FONT SIZE=4>
+        <SPAN LANG="en-US">;</SPAN>
+    </FONT>
+</P>
+<UL>
+    <LI>
+        <P LANG="ru-RU" CLASS="western" STYLE="margin-bottom: 0in; line-height: 170%">
+            <FONT SIZE=4>вектор возможных структур и вариантов системы </FONT>
+        </P>
+</UL>
+<P LANG="ru-RU" CLASS="western" STYLE="margin-left: 1in; text-indent: 0in; margin-bottom: 0in; line-height: 170%">
+    <IMG SRC="./partials/book/book_files/i_8cd199184a27afda_html_b84bba5a.gif" NAME="Object926" ALIGN=ABSMIDDLE WIDTH=243 HEIGHT=76>
+    <IMG SRC="./partials/book/book_files/i_8cd199184a27afda_html_991b79b2.gif" NAME="Object927" ALIGN=ABSMIDDLE WIDTH=148 HEIGHT=27>
+    <FONT SIZE=4>
+        <SPAN LANG="en-US">;</SPAN>
+    </FONT>
+</P>
+<UL>
+    <LI>
+        <P LANG="ru-RU" CLASS="western" ALIGN=LEFT STYLE="line-height: 170%">
+            <FONT SIZE=4>желаемый уровень надежности синтезируемой системы</FONT>
+        </P>
+</UL>
+<P LANG="ru-RU" CLASS="western" ALIGN=CENTER STYLE="line-height: 170%">
+    <IMG SRC="./partials/book/book_files/i_8cd199184a27afda_html_4e49e575.gif" NAME="Object928" ALIGN=ABSMIDDLE WIDTH=94 HEIGHT=21>
+    <FONT SIZE=4>(или
+        <IMG SRC="./partials/book/book_files/i_8cd199184a27afda_html_1afcea6d.gif" NAME="Object929" ALIGN=ABSMIDDLE WIDTH=25 HEIGHT=24>).</FONT>
+</P>
+<P LANG="ru-RU" CLASS="western" STYLE="line-height: 170%">
+    <FONT SIZE=4>Перед решением задачи синтеза составим таблицу формул (табл.</FONT>
+    <FONT SIZE=4>
+        <SPAN LANG="en-US">&nbsp;</SPAN>
+    </FONT>
+    <FONT SIZE=4>11), необходимых для вычисления показателя
+    </FONT>
+    <FONT SIZE=4>
+        <SPAN LANG="en-US"><I>P</I></SPAN>
+    </FONT>
+    <SUB><FONT SIZE=4><SPAN LANG="en-US"><I>c</I></SPAN></FONT></SUB>
+    <FONT SIZE=4>(</FONT>
+    <FONT SIZE=4>
+        <SPAN LANG="en-US"><I>t</I></SPAN>
+    </FONT>
+    <SUB><FONT SIZE=4><I>0</I></FONT></SUB>
+    <FONT SIZE=4>) (и/или
+        <IMG SRC="./partials/book/book_files/i_8cd199184a27afda_html_55aa75d7.gif" NAME="Object930" ALIGN=ABSMIDDLE WIDTH=25 HEIGHT=24>) при заданном понятии «отказ системы».</FONT>
+</P>
+<P LANG="ru-RU" CLASS="western" ALIGN=RIGHT STYLE="text-indent: 0.1in; line-height: 170%">
+    <FONT SIZE=4>Таблица 11</FONT>
+</P>
+<TABLE WIDTH=651 CELLPADDING=7 CELLSPACING=0>
+    <COL WIDTH=90>
+    <COL WIDTH=109>
+    <COL WIDTH=99>
+    <COL WIDTH=141>
+    <COL WIDTH=141>
+    <TR>
+        <TD WIDTH=90 STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0in">
+            <P LANG="ru-RU" CLASS="western" ALIGN=CENTER STYLE="text-indent: 0in">
+                <FONT SIZE=4>Структура</FONT>
+            </P>
+        </TD>
+        <TD WIDTH=109 STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0in">
+            <P CLASS="western" ALIGN=CENTER STYLE="text-indent: 0in">
+                <IMG SRC="./partials/book/book_files/i_8cd199184a27afda_html_5e32960a.gif" NAME="Object931" ALIGN=ABSMIDDLE WIDTH=25 HEIGHT=21>
+            </P>
+        </TD>
+        <TD WIDTH=99 STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0in">
+            <P CLASS="western" ALIGN=CENTER STYLE="text-indent: 0in">
+                <IMG SRC="./partials/book/book_files/i_8cd199184a27afda_html_b32cac14.gif" NAME="Object932" ALIGN=ABSMIDDLE WIDTH=25 HEIGHT=21>
+            </P>
+        </TD>
+        <TD WIDTH=141 STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0in">
+            <P CLASS="western" ALIGN=CENTER STYLE="text-indent: 0in">
+                <IMG SRC="./partials/book/book_files/i_8cd199184a27afda_html_d170eadc.gif" NAME="Object933" ALIGN=ABSMIDDLE WIDTH=25 HEIGHT=21>
+            </P>
+        </TD>
+        <TD WIDTH=141 VALIGN=TOP STYLE="border: 1px solid #000000; padding: 0in 0.08in">
+            <P CLASS="western" ALIGN=CENTER STYLE="text-indent: 0in">
+                <IMG SRC="./partials/book/book_files/i_8cd199184a27afda_html_6a8bc25.gif" NAME="Object934" ALIGN=ABSMIDDLE WIDTH=25 HEIGHT=21>
+            </P>
+        </TD>
+    </TR>
+    <TR>
+        <TD WIDTH=90 STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0in">
+            <P LANG="ru-RU" CLASS="western" ALIGN=CENTER STYLE="text-indent: 0in">
+                <FONT SIZE=4>Варианты</FONT>
+            </P>
+        </TD>
+        <TD WIDTH=109 STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0in">
+            <P LANG="ru-RU" CLASS="western" ALIGN=CENTER STYLE="text-indent: 0in">
+                <IMG SRC="./partials/book/book_files/i_8cd199184a27afda_html_6641ac5d.gif" NAME="Object935" ALIGN=ABSMIDDLE WIDTH=25 HEIGHT=24>
+                <FONT SIZE=4>
+                    <SPAN LANG="en-US">,…</SPAN>
+                </FONT>
+            </P>
+        </TD>
+        <TD WIDTH=99 STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0in">
+            <P LANG="ru-RU" CLASS="western" ALIGN=CENTER STYLE="text-indent: 0in">
+                <IMG SRC="./partials/book/book_files/i_8cd199184a27afda_html_127602db.gif" NAME="Object936" ALIGN=ABSMIDDLE WIDTH=25 HEIGHT=24>
+                <FONT SIZE=4>
+                    <SPAN LANG="en-US">,…,<IMG SRC="./partials/book/book_files/i_8cd199184a27afda_html_f36f45c3.gif" NAME="Object937" ALIGN=ABSMIDDLE WIDTH=25 HEIGHT=24></SPAN>
+                </FONT>
+            </P>
+        </TD>
+        <TD WIDTH=141 STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0in">
+            <P LANG="ru-RU" CLASS="western" ALIGN=CENTER STYLE="text-indent: 0in">
+                <IMG SRC="./partials/book/book_files/i_8cd199184a27afda_html_d9deafe2.gif" NAME="Object938" ALIGN=ABSMIDDLE WIDTH=25 HEIGHT=24>
+                <FONT SIZE=4>
+                    <SPAN LANG="en-US">,…,<IMG SRC="./partials/book/book_files/i_8cd199184a27afda_html_49ad821c.gif" NAME="Object939" ALIGN=ABSMIDDLE WIDTH=25 HEIGHT=24></SPAN>
+                </FONT>
+                <SUB><FONT SIZE=4><SPAN LANG="en-US">,</SPAN></FONT></SUB>
+                <FONT SIZE=4>
+                    <SPAN LANG="en-US">…</SPAN>
+                </FONT>
+                <FONT SIZE=4>,</FONT>
+                <FONT SIZE=4>
+                    <SPAN LANG="en-US">
+						<IMG SRC="./partials/book/book_files/i_8cd199184a27afda_html_5d334113.gif" NAME="Object940" ALIGN=ABSMIDDLE WIDTH=45 HEIGHT=21></SPAN>
+                </FONT>
+            </P>
+        </TD>
+        <TD WIDTH=141 VALIGN=TOP STYLE="border: 1px solid #000000; padding: 0in 0.08in">
+            <P LANG="ru-RU" CLASS="western" ALIGN=CENTER STYLE="text-indent: 0in">
+                <IMG SRC="./partials/book/book_files/i_8cd199184a27afda_html_a7f212ea.gif" NAME="Object941" ALIGN=ABSMIDDLE WIDTH=25 HEIGHT=24>
+                <FONT SIZE=4>
+                    <SPAN LANG="en-US">,…,<IMG SRC="./partials/book/book_files/i_8cd199184a27afda_html_c152d65e.gif" NAME="Object942" ALIGN=ABSMIDDLE WIDTH=25 HEIGHT=24></SPAN>
+                </FONT>
+                <SUB><FONT SIZE=4><SPAN LANG="en-US">,</SPAN></FONT></SUB>
+                <FONT SIZE=4>
+                    <SPAN LANG="en-US">…</SPAN>
+                </FONT>
+                <FONT SIZE=4>,</FONT>
+                <FONT SIZE=4>
+                    <SPAN LANG="en-US">
+						<IMG SRC="./partials/book/book_files/i_8cd199184a27afda_html_990f729e.gif" NAME="Object943" ALIGN=ABSMIDDLE WIDTH=45 HEIGHT=21></SPAN>
+                </FONT>
+            </P>
+        </TD>
+    </TR>
+    <TR>
+        <TD WIDTH=90 STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0in">
+            <P LANG="ru-RU" CLASS="western" ALIGN=CENTER STYLE="text-indent: 0in">
+                <FONT SIZE=4>Формулы</FONT>
+            </P>
+        </TD>
+        <TD WIDTH=109 STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0in">
+            <P LANG="ru-RU" CLASS="western" ALIGN=CENTER STYLE="text-indent: 0in">
+                <FONT SIZE=4>П</FONT>
+                <FONT SIZE=4>
+                    <SPAN LANG="en-US"><IMG SRC="./partials/book/book_files/i_8cd199184a27afda_html_ea54c123.gif" NAME="Object944" ALIGN=ABSMIDDLE WIDTH=15 HEIGHT=24></SPAN>
+                </FONT>
+                <FONT SIZE=4>,…</FONT>
+            </P>
+        </TD>
+        <TD WIDTH=99 STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0in">
+            <P LANG="ru-RU" CLASS="western" ALIGN=CENTER STYLE="text-indent: 0in">
+                <FONT SIZE=4>П</FONT>
+                <FONT SIZE=4>
+                    <SPAN LANG="en-US"><IMG SRC="./partials/book/book_files/i_8cd199184a27afda_html_99a63e81.gif" NAME="Object945" ALIGN=ABSMIDDLE WIDTH=15 HEIGHT=24></SPAN>
+                </FONT>
+                <FONT SIZE=4>,…, П
+                </FONT>
+                <FONT SIZE=4>
+                    <SPAN LANG="en-US"><IMG SRC="./partials/book/book_files/i_8cd199184a27afda_html_b00a2bd0.gif" NAME="Object946" ALIGN=ABSMIDDLE WIDTH=15 HEIGHT=24></SPAN>
+                </FONT>
+            </P>
+        </TD>
+        <TD WIDTH=141 STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0in">
+            <P LANG="ru-RU" CLASS="western" ALIGN=CENTER STYLE="text-indent: 0in">
+                <FONT SIZE=4>П</FONT>
+                <FONT SIZE=4>
+                    <SPAN LANG="en-US"><IMG SRC="./partials/book/book_files/i_8cd199184a27afda_html_74425e9.gif" NAME="Object947" ALIGN=ABSMIDDLE WIDTH=15 HEIGHT=24></SPAN>
+                </FONT>
+                <FONT SIZE=4>,…, П
+                </FONT>
+                <FONT SIZE=4>
+                    <SPAN LANG="en-US"><IMG SRC="./partials/book/book_files/i_8cd199184a27afda_html_ed11e624.gif" NAME="Object948" ALIGN=ABSMIDDLE WIDTH=15 HEIGHT=24></SPAN>
+                </FONT>
+                <FONT SIZE=4>,…,
+                </FONT>
+                <FONT SIZE=4>
+                    <SPAN LANG="en-US">
+			<IMG SRC="./partials/book/book_files/i_8cd199184a27afda_html_5d334113.gif" NAME="Object949" ALIGN=ABSMIDDLE WIDTH=45 HEIGHT=21></SPAN>
+                </FONT>
+            </P>
+        </TD>
+        <TD WIDTH=141 VALIGN=TOP STYLE="border: 1px solid #000000; padding: 0in 0.08in">
+            <P LANG="ru-RU" CLASS="western" ALIGN=CENTER STYLE="text-indent: 0in">
+                <FONT SIZE=4>П</FONT>
+                <FONT SIZE=4>
+                    <SPAN LANG="en-US"><IMG SRC="./partials/book/book_files/i_8cd199184a27afda_html_ff632260.gif" NAME="Object950" ALIGN=ABSMIDDLE WIDTH=15 HEIGHT=24></SPAN>
+                </FONT>
+                <FONT SIZE=4>,…, П
+                </FONT>
+                <FONT SIZE=4>
+                    <SPAN LANG="en-US"><IMG SRC="./partials/book/book_files/i_8cd199184a27afda_html_a9c04462.gif" NAME="Object951" ALIGN=ABSMIDDLE WIDTH=15 HEIGHT=24></SPAN>
+                </FONT>
+                <FONT SIZE=4>,…,
+                </FONT>
+                <FONT SIZE=4>
+                    <SPAN LANG="en-US">
+			<IMG SRC="./partials/book/book_files/i_8cd199184a27afda_html_990f729e.gif" NAME="Object952" ALIGN=ABSMIDDLE WIDTH=45 HEIGHT=21></SPAN>
+                </FONT>
+            </P>
+        </TD>
+    </TR>
+</TABLE>
+<P LANG="ru-RU" CLASS="western" STYLE="line-height: 170%">
+    <FONT SIZE=4>Введем
+    </FONT>
+    <FONT SIZE=4>функцию</FONT>
+    <FONT SIZE=4> невязки</FONT>
+</P>
+<P LANG="ru-RU" CLASS="western" STYLE="line-height: 170%">
+    <IMG SRC="./partials/book/book_files/i_8cd199184a27afda_html_e9fa8dc6.gif" NAME="Object953" ALIGN=ABSMIDDLE WIDTH=253 HEIGHT=21>
+</P>
+<P LANG="ru-RU" CLASS="western" STYLE="text-indent: 0in; line-height: 170%">
+    <FONT SIZE=4>и условие окончания поиска приближенного решения</FONT>
+</P>
+<P LANG="ru-RU" CLASS="western" STYLE="line-height: 170%">
+    <FONT SIZE=4>0,
+    </FONT>
+    <FONT FACE="Symbol, serif">
+        <FONT SIZE=4></FONT>
+    </FONT>
+    <SUB><FONT SIZE=4>0</FONT></SUB>
+    <FONT SIZE=4>,</FONT>
+</P>
+<P LANG="ru-RU" CLASS="western" STYLE="text-indent: 0in; line-height: 170%">
+    <FONT SIZE=4>где </FONT>
+    <FONT FACE="Symbol, serif">
+        <FONT SIZE=4></FONT>
+    </FONT>
+    <SUB><FONT SIZE=4>0</FONT></SUB>
+    <FONT SIZE=4>
+        – заданная допустимая погрешность,
+    </FONT>
+    <FONT FACE="Symbol, serif">
+        <FONT SIZE=4></FONT>
+    </FONT>
+    <SUB><FONT SIZE=4>0</FONT></SUB>
+    <FONT FACE="Symbol, serif">
+        <FONT SIZE=4></FONT>
+    </FONT>
+    <FONT SIZE=4>0.</FONT>
+</P>
+<P LANG="ru-RU" CLASS="western" STYLE="line-height: 170%">
+    <FONT SIZE=4>Алгоритм состоит из ряда последовательно выполняемых этапов.</FONT>
+</P>
+<P LANG="ru-RU" CLASS="western" STYLE="text-indent: 0in; line-height: 170%">
+    <FONT SIZE=4>
+        <I>Этап 1.</I>
+    </FONT>
+</P>
+<P LANG="ru-RU" CLASS="western" STYLE="line-height: 170%">
+    <FONT SIZE=4>Задается самая простая для данной задачи структура
+    </FONT>
+    <FONT SIZE=4>
+        <SPAN LANG="en-US"><I>S</I></SPAN>
+    </FONT>
+    <SUB><FONT SIZE=4><SPAN LANG="en-US"><I>j</I></SPAN></FONT></SUB>
+    <FONT SIZE=4>.</FONT>
+</P>
+<P LANG="ru-RU" CLASS="western" STYLE="line-height: 170%">
+    <FONT SIZE=4>Для варианта
+        <IMG SRC="./partials/book/book_files/i_8cd199184a27afda_html_8ffc95f9.gif" NAME="Object954" ALIGN=ABSMIDDLE WIDTH=25 HEIGHT=24> по формуле П
+        <IMG SRC="./partials/book/book_files/i_8cd199184a27afda_html_ae531513.gif" NAME="Object955" ALIGN=ABSMIDDLE WIDTH=15 HEIGHT=24> из табл.&nbsp;11 находятся </FONT>
+    <FONT SIZE=4>
+        <SPAN LANG="en-US"><I>k</I></SPAN>
+    </FONT>
+    <FONT SIZE=4>
+        значений </FONT>
+    <FONT SIZE=4>
+        <SPAN LANG="en-US"><I>P</I></SPAN>
+    </FONT>
+    <SUB><FONT SIZE=4><SPAN LANG="en-US"><I>c</I></SPAN></FONT></SUB>
+    <FONT SIZE=4>(</FONT>
+    <FONT SIZE=4>
+        <SPAN LANG="en-US"><I>t</I></SPAN>
+    </FONT>
+    <SUB><FONT SIZE=4><I>0</I></FONT></SUB>
+    <FONT SIZE=4>)</FONT>
+    <SUB><FONT FACE="Symbol, serif"><FONT SIZE=4><I></I></FONT></FONT></SUB>
+    <FONT SIZE=4>,
+    </FONT>
+    <FONT FACE="Symbol, serif">
+        <FONT SIZE=4>
+            <I></I>
+        </FONT>
+    </FONT>
+    <FONT SIZE=4>=1,2,…,</FONT>
+    <FONT SIZE=4>
+        <SPAN LANG="en-US"><I>k</I></SPAN>
+    </FONT>
+    <FONT SIZE=4>
+        для всех интенсивностей отказов элемента
+        <IMG SRC="./partials/book/book_files/i_8cd199184a27afda_html_cbb809b2.gif" NAME="Object956" ALIGN=ABSMIDDLE WIDTH=24 HEIGHT=24>,
+    </FONT>
+    <FONT FACE="Symbol, serif">
+        <FONT SIZE=4>
+            <I></I>
+        </FONT>
+    </FONT>
+    <FONT SIZE=4>=1,2,…,</FONT>
+    <FONT SIZE=4>
+        <SPAN LANG="en-US"><I>k</I></SPAN>
+    </FONT>
+    <FONT SIZE=4>. Вычисляются </FONT>
+    <FONT SIZE=4>
+        <SPAN LANG="en-US"><I>k</I></SPAN>
+    </FONT>
+    <FONT SIZE=4>
+        значений функции невязки
+        <IMG SRC="./partials/book/book_files/i_8cd199184a27afda_html_d380baff.gif" NAME="Object957" ALIGN=ABSMIDDLE WIDTH=131 HEIGHT=21>,
+    </FONT>
+    <FONT FACE="Symbol, serif">
+        <FONT SIZE=4>
+            <I></I>
+        </FONT>
+    </FONT>
+    <FONT SIZE=4>=1,2,…,</FONT>
+    <FONT SIZE=4>
+        <SPAN LANG="en-US"><I>k</I></SPAN>
+    </FONT>
+    <FONT SIZE=4>.</FONT>
+</P>
+<P LANG="ru-RU" CLASS="western" STYLE="line-height: 170%">
+    <FONT SIZE=4>Для положительных </FONT>
+    <FONT FACE="Symbol, serif">
+        <FONT SIZE=4></FONT>
+    </FONT>
+    <SUB><FONT FACE="Symbol, serif"><FONT SIZE=4><I></I></FONT></FONT></SUB>
+    <FONT SIZE=4>
+        проверяются условия «конца решения»:</FONT>
+</P>
+<OL>
+    <LI>
+        <P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0in; margin-bottom: 0in; line-height: 170%">
+            <FONT SIZE=4>если какое-либо </FONT>
+            <FONT FACE="Symbol, serif">
+                <FONT SIZE=4></FONT>
+            </FONT>
+            <SUB><FONT FACE="Symbol, serif"><FONT SIZE=4><I></I></FONT></FONT></SUB>
+            <FONT FACE="Symbol, serif">
+                <FONT SIZE=4></FONT>
+            </FONT>
+            <SUB><FONT SIZE=4>0</FONT></SUB>
+            <FONT SIZE=4>, то задача синтеза системы решена: найдена структура
+                <IMG SRC="./partials/book/book_files/i_8cd199184a27afda_html_8ffc95f9.gif" NAME="Object958" ALIGN=ABSMIDDLE WIDTH=25 HEIGHT=24> системы из минимального числа </FONT>
+            <FONT SIZE=4>
+                <SPAN LANG="en-US"><I>j</I></SPAN>
+            </FONT>
+            <FONT SIZE=4>
+                равнонадежных элементов с&nbsp;интенсивностями отказов
+                <IMG SRC="./partials/book/book_files/i_8cd199184a27afda_html_cbb809b2.gif" NAME="Object959" ALIGN=ABSMIDDLE WIDTH=24 HEIGHT=24>, обеспечивающая желаемую надежность
+                <IMG SRC="./partials/book/book_files/i_8cd199184a27afda_html_576b0a1a.gif" NAME="Object960" ALIGN=ABSMIDDLE WIDTH=105 HEIGHT=21>;</FONT>
+        </P>
+        <LI>
+            <P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0in; margin-bottom: 0in; line-height: 170%">
+                <FONT SIZE=4>если условие «конца» </FONT>
+                <FONT FACE="Symbol, serif">
+                    <FONT SIZE=4></FONT>
+                </FONT>
+                <SUB><FONT FACE="Symbol, serif"><FONT SIZE=4><I></I></FONT></FONT></SUB>
+                <FONT FACE="Symbol, serif">
+                    <FONT SIZE=4></FONT>
+                </FONT>
+                <SUB><FONT SIZE=4>0</FONT></SUB>
+                <FONT SIZE=4>
+                    выполняется для нескольких </FONT>
+                <FONT FACE="Symbol, serif">
+                    <FONT SIZE=4>
+                        <I></I>
+                    </FONT>
+                </FONT>
+                <FONT SIZE=4>, то за решение задачи принимается число
+                </FONT>
+                <FONT SIZE=4>
+                    <SPAN LANG="en-US"><I>j</I></SPAN>
+                </FONT>
+                <FONT SIZE=4>
+                    равнонадежных элементов с&nbsp;интенсивностью отказов
+                    <IMG SRC="./partials/book/book_files/i_8cd199184a27afda_html_cbb809b2.gif" NAME="Object961" ALIGN=ABSMIDDLE WIDTH=24 HEIGHT=24>, где индекс </FONT>
+                <FONT FACE="Symbol, serif">
+                    <FONT SIZE=4>
+                        <I></I>
+                    </FONT>
+                </FONT>
+                <FONT SIZE=4>
+                    соответствует наименьшему положительному
+                </FONT>
+                <FONT FACE="Symbol, serif">
+                    <FONT SIZE=4></FONT>
+                </FONT>
+                <SUB><FONT FACE="Symbol, serif"><FONT SIZE=4><I></I></FONT></FONT></SUB>
+                <FONT SIZE=4>.;</FONT>
+            </P>
+            <LI>
+                <P LANG="ru-RU" CLASS="western" ALIGN=LEFT STYLE="text-indent: 0in; margin-bottom: 0in; line-height: 170%">
+                    <FONT SIZE=4>если все </FONT>
+                    <FONT FACE="Symbol, serif">
+                        <FONT SIZE=4></FONT>
+                    </FONT>
+                    <SUB><FONT FACE="Symbol, serif"><FONT SIZE=4><I></I></FONT></FONT></SUB>
+                    <FONT SIZE=4>
+                        отрицательны, </FONT>
+                    <FONT FACE="Symbol, serif">
+                        <FONT SIZE=4>
+                            <I></I>
+                        </FONT>
+                    </FONT>
+                    <FONT SIZE=4>=1,2,…,</FONT>
+                    <FONT SIZE=4>
+                        <SPAN LANG="en-US"><I>k</I></SPAN>
+                    </FONT>
+                    <FONT SIZE=4>, то:
+                    </FONT>
+                </P>
+</OL>
+<P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0in; margin-bottom: 0in; line-height: 170%">
+    <FONT SIZE=4>для варианта
+        <IMG SRC="./partials/book/book_files/i_8cd199184a27afda_html_db5bd91d.gif" NAME="Object962" ALIGN=ABSMIDDLE WIDTH=25 HEIGHT=24> повторяются все операции пункта 1 и либо находится решение задачи синтеза системы из </FONT>
+    <FONT SIZE=4>
+        <SPAN LANG="en-US"><I>j</I></SPAN>
+    </FONT>
+    <FONT SIZE=4>
+        элементов, либо вводится вариант
+        <IMG SRC="./partials/book/book_files/i_8cd199184a27afda_html_1c60a2e6.gif" NAME="Object963" ALIGN=ABSMIDDLE WIDTH=25 HEIGHT=24> структуры </FONT>
+    <FONT SIZE=4>
+        <SPAN LANG="en-US"><I>S</I></SPAN>
+    </FONT>
+    <SUB><FONT SIZE=4><SPAN LANG="en-US"><I>j</I></SPAN></FONT></SUB>
+    <FONT SIZE=4>
+        и т.д. до тех пор, пока не будут проанализированы все </FONT>
+    <FONT SIZE=4>
+        <SPAN LANG="en-US"><I>k</I></SPAN>
+    </FONT>
+    <FONT SIZE=4>
+        вариантов </FONT>
+    <FONT SIZE=4>
+        <SPAN LANG="en-US"><I>S</I></SPAN>
+    </FONT>
+    <SUB><FONT SIZE=4><SPAN LANG="en-US"><I>j</I></SPAN></FONT></SUB>
+    <FONT SIZE=4>.</FONT>
+</P>
+<P LANG="ru-RU" CLASS="western" STYLE="line-height: 170%">
+    <FONT SIZE=4>Если структура </FONT>
+    <FONT SIZE=4>
+        <SPAN LANG="en-US"><I>S</I></SPAN>
+    </FONT>
+    <SUB><FONT SIZE=4><SPAN LANG="en-US"><I>j</I></SPAN></FONT></SUB>
+    <FONT SIZE=4>
+        и все её варианты
+        <IMG SRC="./partials/book/book_files/i_8cd199184a27afda_html_9361447c.gif" NAME="Object964" ALIGN=ABSMIDDLE WIDTH=26 HEIGHT=24> не обеспечивают решения задачи синтеза, то осуществляется переход к следующей более сложной структуре </FONT>
+    <FONT SIZE=4>
+        <SPAN LANG="en-US"><I>S</I></SPAN>
+    </FONT>
+    <SUB><FONT SIZE=4><SPAN LANG="en-US"><I>j</I></SPAN></FONT></SUB>
+    <SUB><FONT SIZE=4><I>+</I></FONT></SUB>
+    <SUB><FONT SIZE=4>1</FONT></SUB>
+    <FONT SIZE=4>.</FONT>
+</P>
+<P LANG="ru-RU" CLASS="western" ALIGN=LEFT STYLE="text-indent: 0in; margin-bottom: 0in; line-height: 170%">
+    <BR>
+</P>
+<P LANG="ru-RU" CLASS="western" ALIGN=LEFT STYLE="text-indent: 0in; margin-bottom: 0in; line-height: 170%">
+    <FONT SIZE=4>
+        <I>Этап 2.</I>
+    </FONT>
+</P>
+<P LANG="ru-RU" STYLE="text-indent: 0.49in; margin-bottom: 0in; line-height: 170%">
+    <FONT SIZE=4>Пусть задана структура
+        <SPAN LANG="en-US"><I>S</I></SPAN>
+        <SUB><SPAN LANG="en-US"><I>j</I></SPAN></SUB>
+        <SUB><I>+</I></SUB>
+        <SUB>1</SUB>.</FONT>
+</P>
+<OL>
+    <LI>
+        <P LANG="ru-RU" CLASS="western" ALIGN=JUSTIFY STYLE="text-indent: 0in; margin-bottom: 0in; line-height: 170%">
+            <FONT SIZE=4>Для варианта
+                <IMG SRC="./partials/book/book_files/i_8cd199184a27afda_html_22d3996f.gif" NAME="Object965" ALIGN=ABSMIDDLE WIDTH=43 HEIGHT=24> по формуле П
+                <IMG SRC="./partials/book/book_files/i_8cd199184a27afda_html_e2d9d9dd.gif" NAME="Object966" ALIGN=ABSMIDDLE WIDTH=33 HEIGHT=24> (табл.
+            </FONT>
+            <FONT SIZE=4>
+                <SPAN LANG="en-US">&nbsp;</SPAN>
+            </FONT>
+            <FONT SIZE=4>11) находятся </FONT>
+            <FONT SIZE=4>
+                <SPAN LANG="en-US"><I>k</I></SPAN>
+            </FONT>
+            <FONT SIZE=4>
+                значений </FONT>
+            <FONT SIZE=4>
+                <SPAN LANG="en-US"><I>P</I></SPAN>
+            </FONT>
+            <SUB><FONT SIZE=4><SPAN LANG="en-US"><I>c</I></SPAN></FONT></SUB>
+            <FONT SIZE=4>(</FONT>
+            <FONT SIZE=4>
+                <SPAN LANG="en-US"><I>t</I></SPAN>
+            </FONT>
+            <SUB><FONT SIZE=4><I>0</I></FONT></SUB>
+            <FONT SIZE=4>)</FONT>
+            <SUB><FONT FACE="Symbol, serif"><FONT SIZE=4><I></I></FONT></FONT></SUB>
+            <FONT SIZE=4>,
+            </FONT>
+            <FONT FACE="Symbol, serif">
+                <FONT SIZE=4>
+                    <I></I>
+                </FONT>
+            </FONT>
+            <FONT SIZE=4>=1,2,…,</FONT>
+            <FONT SIZE=4>
+                <SPAN LANG="en-US"><I>k</I></SPAN>
+            </FONT>
+            <FONT SIZE=4>
+                для всех
+                <IMG SRC="./partials/book/book_files/i_8cd199184a27afda_html_15730530.gif" NAME="Object967" ALIGN=ABSMIDDLE WIDTH=43 HEIGHT=24>,
+            </FONT>
+            <FONT FACE="Symbol, serif">
+                <FONT SIZE=4>
+                    <I></I>
+                </FONT>
+            </FONT>
+            <FONT SIZE=4>=1,2,…,</FONT>
+            <FONT SIZE=4>
+                <SPAN LANG="en-US"><I>k</I></SPAN>
+            </FONT>
+            <FONT SIZE=4>.</FONT>
+        </P>
+</OL>
+<P LANG="ru-RU" STYLE="text-indent: 0.49in; margin-bottom: 0in; line-height: 170%">
+    <FONT SIZE=4>Вычисляются
+        <SPAN LANG="en-US"><I>k</I></SPAN> значений функции невязки
+        <IMG SRC="./partials/book/book_files/i_8cd199184a27afda_html_d380baff.gif" NAME="Object968" ALIGN=ABSMIDDLE WIDTH=131 HEIGHT=21>,
+        <FONT FACE="Symbol, serif">
+            <I></I>
+        </FONT>=1,2,…,
+        <SPAN LANG="en-US"><I>k</I></SPAN>.</FONT>
+</P>
+<P LANG="ru-RU" STYLE="text-indent: 0.49in; margin-bottom: 0in; line-height: 170%">
+    <FONT SIZE=4>Для положительных
+        <FONT FACE="Symbol, serif"></FONT>
+        <SUB><FONT FACE="Symbol, serif"><I></I></FONT></SUB> проверяются условия «конца решения» и пункты а), б), в) и т.д., пока не найдется решение задачи синтеза среди структур
+        <IMG SRC="./partials/book/book_files/i_8cd199184a27afda_html_15730530.gif" NAME="Object969" ALIGN=ABSMIDDLE WIDTH=43 HEIGHT=24>,
+        <SPAN LANG="en-US"><I>j</I></SPAN>=1,2,…,
+        <SPAN LANG="en-US"><I>n</I></SPAN>
+        <SUP><I>+</I></SUP>, или будет установлена после
+        <SPAN LANG="en-US"><I>n</I></SPAN>
+        <SUP><I>+</I></SUP> этапов невозможность конструирования технической системы с желаемым
+        <IMG SRC="./partials/book/book_files/i_8cd199184a27afda_html_e139560c.gif" NAME="Object970" ALIGN=ABSMIDDLE WIDTH=67 HEIGHT=21> (или
+        <IMG SRC="./partials/book/book_files/i_8cd199184a27afda_html_1afcea6d.gif" NAME="Object971" ALIGN=ABSMIDDLE WIDTH=25 HEIGHT=24>) из
+        <SPAN LANG="en-US"><I>n</I></SPAN>
+        <SUP><I>+</I></SUP> равнонадежных элементов с интенсивностями отказов
+        <IMG SRC="./partials/book/book_files/i_8cd199184a27afda_html_cbb809b2.gif" NAME="Object972" ALIGN=ABSMIDDLE WIDTH=24 HEIGHT=24>,
+        <IMG SRC="./partials/book/book_files/i_8cd199184a27afda_html_4fa94755.gif" NAME="Object973" ALIGN=ABSMIDDLE WIDTH=118 HEIGHT=20>.</FONT>
+</P>
+<P LANG="ru-RU" STYLE="text-indent: 0.49in; margin-bottom: 0in; line-height: 170%">
+    <FONT SIZE=4>При отрицательном решении задачи синтеза следует пересмотреть заданные параметры
+        <SPAN LANG="en-US"><I>n</I></SPAN>
+        <SUP><I>+</I></SUP>,
+        <IMG SRC="./partials/book/book_files/i_8cd199184a27afda_html_cbb809b2.gif" NAME="Object974" ALIGN=ABSMIDDLE WIDTH=24 HEIGHT=24>,
+        <IMG SRC="./partials/book/book_files/i_8cd199184a27afda_html_15948bbe.gif" NAME="Object975" ALIGN=ABSMIDDLE WIDTH=61 HEIGHT=20> (
+        <SPAN LANG="en-US"><I>n</I></SPAN>
+        <SUP><I>+</I></SUP> - в сторону увеличения,
+        <FONT FACE="Symbol, serif">
+            <I></I>
+        </FONT>
+        <SUB><SPAN LANG="en-US"><I>j</I></SPAN></SUB> – в сторону уменьшения).</FONT>
+</P>
+<P LANG="ru-RU" STYLE="text-indent: 0.49in; margin-bottom: 0in; line-height: 170%">
+    <FONT SIZE=4>Целесообразно также обсудить с конструктором системы возможность уменьшения желаемого значения
+        <IMG SRC="./partials/book/book_files/i_8cd199184a27afda_html_e139560c.gif" NAME="Object976" ALIGN=ABSMIDDLE WIDTH=67 HEIGHT=21> (или
+        <IMG SRC="./partials/book/book_files/i_8cd199184a27afda_html_1afcea6d.gif" NAME="Object977" ALIGN=ABSMIDDLE WIDTH=25 HEIGHT=24>), задания другого реперного значения времени
+        <SPAN LANG="en-US"><I>t</I></SPAN>
+        <SUB>1</SUB>,
+        <SPAN LANG="en-US"><I>t</I></SPAN>
+        <SUB>1</SUB>
+        <I>≠</I>
+        <SPAN LANG="en-US"><I>t</I></SPAN>
+        <SUB>0</SUB>, обычно
+        <SPAN LANG="en-US"><I>t</I></SPAN>
+        <SUB>1</SUB>&gt;
+        <SPAN LANG="en-US"><I>t</I></SPAN>
+        <SUB>0</SUB>.</FONT>
+</P>

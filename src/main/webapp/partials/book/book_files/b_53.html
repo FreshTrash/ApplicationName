@@ -1,0 +1,1078 @@
+
+<H3 LANG="ru-RU" CLASS="western"><A NAME="__RefHeading__113_1940486968"></A>
+Анализ задачи надежностного синтеза</H3>
+<P LANG="ru-RU" STYLE="text-indent: 0.49in; margin-bottom: 0in; line-height: 170%">
+    <FONT SIZE=4>В задачу оптимального надежностного синтеза входят:</FONT>
+</P>
+<UL>
+    <LI>
+        <P LANG="ru-RU" CLASS="western" STYLE="margin-bottom: 0in; line-height: 170%">
+            <FONT SIZE=4>критерий оптимальности</FONT>
+            <FONT SIZE=4>
+                <SPAN LANG="en-US">,</SPAN>
+            </FONT>
+        </P>
+        <LI>
+            <P LANG="ru-RU" CLASS="western" STYLE="margin-bottom: 0in; line-height: 170%">
+                <FONT SIZE=4>независимые переменные</FONT>
+                <FONT SIZE=4>
+                    <SPAN LANG="en-US">,</SPAN>
+                </FONT>
+            </P>
+            <LI>
+                <P LANG="ru-RU" CLASS="western" STYLE="margin-bottom: 0in; line-height: 170%">
+                    <FONT SIZE=4>ограничения на переменные</FONT>
+                    <FONT SIZE=4>
+                        <SPAN LANG="en-US">,</SPAN>
+                    </FONT>
+                </P>
+                <LI>
+                    <P LANG="ru-RU" CLASS="western" STYLE="margin-bottom: 0in; line-height: 170%">
+                        <FONT SIZE=4>связи между переменными.</FONT>
+                    </P>
+</UL>
+<P LANG="ru-RU" CLASS="western" STYLE="margin-bottom: 0in; line-height: 170%">
+    <FONT SIZE=4>Критерии оптимальности.</FONT>
+    <FONT SIZE=4>
+        <B>
+</B>
+    </FONT>
+    <FONT SIZE=4>В качестве критерия П в задачах надежностного синтеза обычно используют:
+    </FONT>
+</P>
+<UL>
+    <LI>
+        <P LANG="ru-RU" CLASS="western" STYLE="text-indent: 0in; margin-bottom: 0in; line-height: 170%">
+            <FONT SIZE=4>среднюю наработку до отказа
+                <IMG SRC="./partials/book/book_files/i_8cd199184a27afda_html_55aa75d7.gif" NAME="Object835" ALIGN=ABSMIDDLE WIDTH=25 HEIGHT=24>;</FONT>
+        </P>
+        <LI>
+            <P LANG="ru-RU" CLASS="western" STYLE="text-indent: 0in; margin-bottom: 0in; line-height: 170%">
+                <FONT SIZE=4>вероятность исправной работы системы </FONT>
+                <FONT SIZE=4>
+                    <SPAN LANG="en-US"><I>P</I></SPAN>
+                </FONT>
+                <SUB><FONT SIZE=4><SPAN LANG="en-US"><I>c</I></SPAN></FONT></SUB>
+                <FONT SIZE=4>(</FONT>
+                <FONT SIZE=4>
+                    <SPAN LANG="en-US"><I>t</I></SPAN>
+                </FONT>
+                <SUB><FONT SIZE=4><I>0</I></FONT></SUB>
+                <FONT SIZE=4>) в заданный момент времени </FONT>
+                <FONT SIZE=4>
+                    <SPAN LANG="en-US"><I>t</I></SPAN>
+                </FONT>
+                <SUB><FONT SIZE=4><I>0</I></FONT></SUB>
+                <FONT SIZE=4>, 0&lt;
+                </FONT>
+                <FONT SIZE=4>
+                    <SPAN LANG="en-US"><I>t</I></SPAN>
+                </FONT>
+                <SUB><FONT SIZE=4><I>0</I></FONT></SUB>
+                <FONT SIZE=4>&lt;</FONT>
+                <FONT FACE="Symbol, serif">
+                    <FONT SIZE=4></FONT>
+                </FONT>
+                <FONT SIZE=4>.</FONT>
+            </P>
+</UL>
+<P LANG="ru-RU" CLASS="western" STYLE="line-height: 170%">
+    <FONT SIZE=4>Критерий П={
+        <IMG SRC="./partials/book/book_files/i_8cd199184a27afda_html_55aa75d7.gif" NAME="Object836" ALIGN=ABSMIDDLE WIDTH=25 HEIGHT=24> или </FONT>
+    <FONT SIZE=4>
+        <I>Р</I>
+    </FONT>
+    <SUB><FONT SIZE=4><I>с</I></FONT></SUB>
+    <FONT SIZE=4>(</FONT>
+    <FONT SIZE=4>
+        <SPAN LANG="en-US"><I>t</I></SPAN>
+    </FONT>
+    <SUB><FONT SIZE=4><I>0</I></FONT></SUB>
+    <FONT SIZE=4>)} в общем случае явно или опосредованно зависит от: структуры </FONT>
+    <FONT SIZE=4>
+        <SPAN LANG="en-US"><I>S</I></SPAN>
+    </FONT>
+    <FONT SIZE=4>
+        системы; понятия отказа системы (ОС); вектора интенсивностей отказов </FONT>
+    <FONT FACE="Symbol, serif">
+        <FONT SIZE=4>
+            <I></I>
+        </FONT>
+    </FONT>
+    <FONT SIZE=4>
+        элементов, входящих в систему, т.е.</FONT>
+</P>
+<P LANG="ru-RU" CLASS="western" ALIGN=CENTER STYLE="text-indent: 0in; margin-top: 0.17in; line-height: 170%">
+    <FONT SIZE=4>П=П(</FONT>
+    <FONT SIZE=4>
+        <SPAN LANG="en-US"><I>S</I></SPAN>
+    </FONT>
+    <FONT SIZE=4>, ОС, </FONT>
+    <FONT FACE="Symbol, serif">
+        <FONT SIZE=4>
+            <I></I>
+        </FONT>
+    </FONT>
+    <FONT SIZE=4>).</FONT>
+</P>
+<P LANG="ru-RU" CLASS="western" STYLE="line-height: 170%">
+    <FONT SIZE=4>Структура</FONT>
+    <FONT SIZE=4>
+        <B>
+</B>
+    </FONT>
+    <FONT SIZE=4>
+        <SPAN LANG="en-US"><I>S</I></SPAN>
+    </FONT>
+    <FONT SIZE=4>
+        <B>
+</B>
+    </FONT>
+    <FONT SIZE=4>в данной задаче определяется только
+    </FONT>
+    <FONT SIZE=4>
+        <B> </B>
+    </FONT>
+    <FONT SIZE=4>числом элементов, каждый из которых имеет два состояния: отказ или работоспособность. Тогда структура </FONT>
+    <FONT SIZE=4>
+        <SPAN LANG="en-US"><I>S</I></SPAN>
+    </FONT>
+    <SUB><FONT SIZE=4><I>1</I></FONT></SUB>
+    <FONT SIZE=4>
+        включает всего один элемент, структура
+    </FONT>
+    <FONT SIZE=4>
+        <SPAN LANG="en-US"><I>S</I></SPAN>
+    </FONT>
+    <SUB><FONT SIZE=4><I>2</I></FONT></SUB>
+    <FONT SIZE=4>
+        – имеет 2 элемента, и т.д. Наконец, последняя структура </FONT>
+    <FONT SIZE=4>
+        <SPAN LANG="en-US"><I>S</I></SPAN>
+    </FONT>
+    <SUB><FONT SIZE=4><SPAN LANG="en-US"><I>n</I></SPAN></FONT></SUB>
+    <FONT SIZE=4>
+        будет включать </FONT>
+    <FONT SIZE=4>
+        <SPAN LANG="en-US"><I>n</I></SPAN>
+    </FONT>
+    <FONT SIZE=4>
+        элементов (число </FONT>
+    <FONT SIZE=4>
+        <SPAN LANG="en-US"><I>n</I></SPAN>
+    </FONT>
+    <FONT SIZE=4>
+        <I>
+</I>
+    </FONT>
+    <FONT SIZE=4>определяется человеком-экспертом в зависимости от условий задачи).</FONT>
+</P>
+<P LANG="ru-RU" CLASS="western" STYLE="line-height: 170%">
+    <FONT SIZE=4>Для произвольной структуры </FONT>
+    <FONT SIZE=4>
+        <SPAN LANG="en-US"><I>S</I></SPAN>
+    </FONT>
+    <SUB><FONT SIZE=4><SPAN LANG="en-US"><I>j</I></SPAN></FONT></SUB>
+    <FONT SIZE=4>, 1&lt;
+    </FONT>
+    <FONT SIZE=4>
+        <I>j</I>
+    </FONT>
+    <FONT SIZE=4>&lt;</FONT>
+    <FONT SIZE=4>
+        <I>n</I>
+    </FONT>
+    <FONT SIZE=4>, возможны разные </FONT>
+    <FONT SIZE=4>варианты
+    </FONT>
+    <FONT SIZE=4>соединения элементов, например последовательное или параллельное включение. Будем обозначать каждый вариант структуры </FONT>
+    <FONT SIZE=4>
+        <SPAN LANG="en-US"><I>S</I></SPAN>
+    </FONT>
+    <SUB><FONT SIZE=4><SPAN LANG="en-US"><I>j</I></SPAN></FONT></SUB>
+    <FONT SIZE=4>
+        верхним индексом </FONT>
+    <FONT SIZE=4>
+        <SPAN LANG="en-US"><I>h</I></SPAN>
+    </FONT>
+    <FONT SIZE=4>,
+    </FONT>
+    <FONT SIZE=4>
+        <SPAN LANG="en-US"><I>h</I></SPAN>
+    </FONT>
+    <FONT SIZE=4>=1,2,3,…,
+    </FONT>
+    <FONT SIZE=4>
+        <SPAN LANG="en-US"><I>d</I></SPAN>
+    </FONT>
+    <SUB><FONT SIZE=4><SPAN LANG="en-US"><I>j</I></SPAN></FONT></SUB>
+    <FONT SIZE=4>, т.е. получим запись
+        <IMG SRC="./partials/book/book_files/i_8cd199184a27afda_html_10b0ba03.gif" NAME="Object837" ALIGN=ABSMIDDLE WIDTH=25 HEIGHT=24>. Тогда для </FONT>
+    <FONT SIZE=4>
+        <SPAN LANG="en-US"><I>S</I></SPAN>
+    </FONT>
+    <SUB><FONT SIZE=4><I>1</I></FONT></SUB>
+    <FONT SIZE=4>
+        возможен только один вариант включения (рис.
+    </FONT>
+    <FONT SIZE=4>
+        <SPAN LANG="en-US">&nbsp;</SPAN>
+    </FONT>
+    <FONT SIZE=4>3.49).</FONT>
+</P>
+<P LANG="ru-RU" CLASS="western" ALIGN=CENTER STYLE="text-indent: 0in; margin-top: 0.25in; margin-bottom: 0.04in; line-height: 170%">
+    <IMG SRC="./partials/book/book_files/i_8cd199184a27afda_html_1338b67.png" NAME="graphics101" ALIGN=BOTTOM WIDTH=175 HEIGHT=79 BORDER=0>
+</P>
+<P LANG="ru-RU" CLASS="western" ALIGN=CENTER STYLE="text-indent: 0in; margin-top: 0.04in; line-height: 170%">
+    Рис. 3.49. Пример структуры
+    <SPAN LANG="en-US"><I>S</I></SPAN>
+    <SUB><I>1</I></SUB>
+</P>
+<P LANG="ru-RU" CLASS="western" STYLE="margin-bottom: 0in; line-height: 170%">
+    <FONT SIZE=4>Для структуры </FONT>
+    <FONT SIZE=4>
+        <SPAN LANG="en-US"><I>S</I></SPAN>
+    </FONT>
+    <SUB><FONT SIZE=4><I>2</I></FONT></SUB>
+    <FONT SIZE=4>
+        возможны два варианта (рис</FONT>
+    <FONT SIZE=4>
+        <SPAN LANG="en-US">&nbsp;</SPAN>
+    </FONT>
+    <FONT SIZE=4>3.50).</FONT>
+</P>
+<P LANG="ru-RU" CLASS="western" ALIGN=CENTER STYLE="text-indent: 0in; margin-top: 0.25in; margin-bottom: 0.04in; line-height: 170%">
+    <IMG SRC="./partials/book/book_files/i_8cd199184a27afda_html_d481e632.png" NAME="graphics102" ALIGN=BOTTOM WIDTH=466 HEIGHT=113 BORDER=0>
+</P>
+<P LANG="ru-RU" CLASS="western" ALIGN=CENTER STYLE="text-indent: 0in; margin-top: 0.04in; margin-bottom: 0.17in; line-height: 170%">
+    Рис. 3.50. Примеры вариантов структуры
+    <SPAN LANG="en-US"><I>S</I></SPAN>
+    <SUB><I>2</I></SUB>
+</P>
+<P LANG="ru-RU" CLASS="western" STYLE="margin-bottom: 0in; line-height: 170%">
+    <FONT SIZE=4>Для структуры </FONT>
+    <FONT SIZE=4>
+        <SPAN LANG="en-US"><I>S</I></SPAN>
+    </FONT>
+    <SUB><FONT SIZE=4><I>3</I></FONT></SUB>
+    <FONT SIZE=4>
+        допустимы следующие 8 вариантов (рис.
+    </FONT>
+    <FONT SIZE=4>
+        <SPAN LANG="en-US">&nbsp;</SPAN>
+    </FONT>
+    <FONT SIZE=4>3.51):</FONT>
+</P>
+<P LANG="ru-RU" CLASS="western" ALIGN=CENTER STYLE="text-indent: 0in; margin-top: 0.17in; margin-bottom: 0in; line-height: 170%; page-break-after: avoid">
+    <IMG SRC="./partials/book/book_files/i_8cd199184a27afda_html_685c8c8b.jpg" NAME="graphics103" ALIGN=BOTTOM WIDTH=517 HEIGHT=415 BORDER=0>
+</P>
+<P LANG="ru-RU" CLASS="western" ALIGN=CENTER STYLE="text-indent: 0in; margin-top: 0.04in; line-height: 170%">
+    Рис. 3.51. Примеры вариантов структуры
+    <SPAN LANG="en-US"><I>S</I></SPAN>
+    <SUB><I>3</I></SUB>
+</P>
+<P LANG="ru-RU" CLASS="western" STYLE="line-height: 170%">
+    <FONT SIZE=4>Из этих примеров видно, что число возможных вариантов каждой структуры </FONT>
+    <FONT SIZE=4>
+        <SPAN LANG="en-US"><I>S</I></SPAN>
+    </FONT>
+    <SUB><FONT SIZE=4><SPAN LANG="en-US"><I>j</I></SPAN></FONT></SUB>
+    <FONT SIZE=4>
+        очень быстро возрастает по мере увеличения её номера </FONT>
+    <FONT SIZE=4>
+        <SPAN LANG="en-US"><I>j</I></SPAN>
+    </FONT>
+    <FONT SIZE=4>. Подобный бурный рост размерности задачи синтеза затрудняет её решение уже при структурах из 6-8 элементов.</FONT>
+</P>
+<P LANG="ru-RU" CLASS="western" STYLE="line-height: 170%">
+    <FONT SIZE=4>Для снижения размерности задачи синтеза следует искусственно ограничивать число </FONT>
+    <FONT SIZE=4>
+        <SPAN LANG="en-US"><I>d</I></SPAN>
+    </FONT>
+    <SUB><FONT SIZE=4><SPAN LANG="en-US"><I>j</I></SPAN></FONT></SUB>
+    <FONT SIZE=4>
+        допустимых вариантов каждой структуры
+    </FONT>
+    <FONT SIZE=4>
+        <SPAN LANG="en-US"><I>S</I></SPAN>
+    </FONT>
+    <SUB><FONT SIZE=4><SPAN LANG="en-US"><I>j</I></SPAN></FONT></SUB>
+    <FONT SIZE=4>. Делается это введением в условия задачи синтеза ряда ограничений, например, таких:
+    </FONT>
+</P>
+<OL>
+    <LI>
+        <P LANG="ru-RU" CLASS="western" STYLE="margin-bottom: 0in; line-height: 170%">
+            <FONT SIZE=4>Задано число основных элементов</FONT>
+            <FONT SIZE=4>
+                <SPAN LANG="en-US">.</SPAN>
+            </FONT>
+        </P>
+        <LI>
+            <P LANG="ru-RU" CLASS="western" STYLE="margin-bottom: 0in; line-height: 170%">
+                <FONT SIZE=4>Указана равнонадежность элементов
+                </FONT>
+                <FONT SIZE=4>
+                    <SPAN LANG="en-US">.</SPAN>
+                </FONT>
+            </P>
+            <LI>
+                <P LANG="ru-RU" CLASS="western" STYLE="margin-bottom: 0in; line-height: 170%">
+                    <FONT SIZE=4>Введено ограничение на стоимость всей системы.</FONT>
+                </P>
+</OL>
+<P LANG="ru-RU" CLASS="western" STYLE="line-height: 170%">
+    <FONT SIZE=4>В таком случае ограничение 1 «в синтезируемую систему входят 2 основных элемента» - оставляет для структуры </FONT>
+    <FONT SIZE=4>
+        <SPAN LANG="en-US"><I>S</I></SPAN>
+    </FONT>
+    <SUB><FONT SIZE=4><I>2</I></FONT></SUB>
+    <FONT SIZE=4>
+        только один вариант
+        <IMG SRC="./partials/book/book_files/i_8cd199184a27afda_html_127602db.gif" NAME="Object838" ALIGN=ABSMIDDLE WIDTH=25 HEIGHT=24>; для&nbsp;структуры </FONT>
+    <FONT SIZE=4>
+        <SPAN LANG="en-US"><I>S</I></SPAN>
+    </FONT>
+    <SUB><FONT SIZE=4><I>3</I></FONT></SUB>
+    <FONT SIZE=4>
+        оказываются возможными всего три варианта –
+        <IMG SRC="./partials/book/book_files/i_8cd199184a27afda_html_d9deafe2.gif" NAME="Object839" ALIGN=ABSMIDDLE WIDTH=25 HEIGHT=24>,
+        <IMG SRC="./partials/book/book_files/i_8cd199184a27afda_html_9133030b.gif" NAME="Object840" ALIGN=ABSMIDDLE WIDTH=25 HEIGHT=24>,
+        <IMG SRC="./partials/book/book_files/i_8cd199184a27afda_html_bee52921.gif" NAME="Object841" ALIGN=ABSMIDDLE WIDTH=25 HEIGHT=24> (если за основные элементы принять, например, 1 и 2).</FONT>
+</P>
+<P LANG="ru-RU" CLASS="western" STYLE="line-height: 170%">
+    <FONT SIZE=4>Ограничение 2: - «все элементы равнонадежны» - не влияет на число вариантов структур </FONT>
+    <FONT SIZE=4>
+        <SPAN LANG="en-US"><I>S</I></SPAN>
+    </FONT>
+    <SUB><FONT SIZE=4><I>1</I></FONT></SUB>
+    <FONT SIZE=4>,
+    </FONT>
+    <FONT SIZE=4>
+        <SPAN LANG="en-US"><I>S</I></SPAN>
+    </FONT>
+    <SUB><FONT SIZE=4><I>2</I></FONT></SUB>
+    <FONT SIZE=4>
+        и резко снижает число вариантов </FONT>
+    <FONT SIZE=4>
+        <SPAN LANG="en-US"><I>d</I></SPAN>
+    </FONT>
+    <SUB><FONT SIZE=4><I>3</I></FONT></SUB>
+    <FONT SIZE=4>
+        до 4-х для&nbsp;структуры </FONT>
+    <FONT SIZE=4>
+        <SPAN LANG="en-US"><I>S</I></SPAN>
+    </FONT>
+    <SUB><FONT SIZE=4><I>3</I></FONT></SUB>
+    <FONT SIZE=4>
+        (рис.&nbsp;3.52).</FONT>
+</P>
+<P LANG="ru-RU" CLASS="western" ALIGN=CENTER STYLE="text-indent: 0in; margin-top: 0.31in; line-height: 170%">
+    <IMG SRC="./partials/book/book_files/i_8cd199184a27afda_html_6b98e37d.png" NAME="graphics104" ALIGN=BOTTOM WIDTH=502 HEIGHT=292 BORDER=0>
+</P>
+<P LANG="ru-RU" CLASS="western" ALIGN=CENTER STYLE="text-indent: 0in; line-height: 170%">
+    Рис. 3.52. Примеры допустимых вариантов структуры
+    <SPAN LANG="en-US"><I>S</I></SPAN>
+    <SUB><I>3</I></SUB>
+</P>
+<P LANG="ru-RU" CLASS="western" ALIGN=CENTER STYLE="text-indent: 0in; line-height: 170%">
+    <BR>
+    <BR>
+</P>
+<P LANG="ru-RU" CLASS="western" STYLE="line-height: 170%">
+    <FONT SIZE=4>Ограничение на стоимость синтезируемой системы эквивалентно уменьшению числа </FONT>
+    <FONT SIZE=4>
+        <SPAN LANG="en-US"><I>n</I></SPAN>
+    </FONT>
+    <FONT SIZE=4>
+        используемых элементов с относительно малыми интенсивностями (напомним, что «дорогие» элементы обычно более надежны, а соответствующие им интенсивности </FONT>
+    <FONT FACE="Symbol, serif">
+        <FONT SIZE=4>
+            <I></I>
+        </FONT>
+    </FONT>
+    <FONT SIZE=4>
+        - малы) или увеличение числа малонадежных элементов </FONT>
+    <FONT SIZE=4>
+        <SPAN LANG="en-US"><I>n</I></SPAN>
+    </FONT>
+    <FONT SIZE=4>
+        <I>
+</I>
+    </FONT>
+    <FONT SIZE=4>с относительно большими интенсивностями </FONT>
+    <FONT FACE="Symbol, serif">
+        <FONT SIZE=4>
+            <I></I>
+        </FONT>
+    </FONT>
+    <FONT SIZE=4>.</FONT>
+</P>
+<P LANG="ru-RU" CLASS="western" STYLE="line-height: 170%">
+    <FONT SIZE=4>При постановке задачи синтеза структура системы </FONT>
+    <FONT SIZE=4>
+        <SPAN LANG="en-US"><I>S</I></SPAN>
+    </FONT>
+    <FONT SIZE=4>
+        рассматривается как лингвистическая переменная, принимающая дискретные «значения»
+        <IMG SRC="./partials/book/book_files/i_8cd199184a27afda_html_10b0ba03.gif" NAME="Object842" ALIGN=ABSMIDDLE WIDTH=25 HEIGHT=24>,
+    </FONT>
+    <FONT SIZE=4>
+        <SPAN LANG="en-US"><I>j</I></SPAN>
+    </FONT>
+    <FONT SIZE=4>=1,2,…,</FONT>
+    <FONT SIZE=4>
+        <SPAN LANG="en-US"><I>n</I></SPAN>
+    </FONT>
+    <FONT SIZE=4>;
+    </FONT>
+    <FONT SIZE=4>
+        <SPAN LANG="en-US"><I>h</I></SPAN>
+    </FONT>
+    <FONT SIZE=4>=1,2,…,</FONT>
+    <FONT SIZE=4>
+        <SPAN LANG="en-US"><I>d</I></SPAN>
+    </FONT>
+    <SUB><FONT SIZE=4><SPAN LANG="en-US"><I>j</I></SPAN></FONT></SUB>
+    <FONT SIZE=4>, которые заранее выписываются человеком-экспертом и используются для вычисления по соответствующим формулам значения критерия П(
+        <IMG SRC="./partials/book/book_files/i_8cd199184a27afda_html_10b0ba03.gif" NAME="Object843" ALIGN=ABSMIDDLE WIDTH=25 HEIGHT=24>) для каждого варианта
+        <IMG SRC="./partials/book/book_files/i_8cd199184a27afda_html_10b0ba03.gif" NAME="Object844" ALIGN=ABSMIDDLE WIDTH=25 HEIGHT=24>.</FONT>
+</P>
+<P LANG="ru-RU" CLASS="western" STYLE="line-height: 170%">
+    <FONT SIZE=4>
+        <I>Понятие
+«отказ системы».</I>
+    </FONT>
+    <FONT SIZE=4> Значения критерия П(
+        <IMG SRC="./partials/book/book_files/i_8cd199184a27afda_html_10b0ba03.gif" NAME="Object845" ALIGN=ABSMIDDLE WIDTH=25 HEIGHT=24>) зависят не только от&nbsp;структуры системы
+    </FONT>
+    <FONT SIZE=4>
+        <SPAN LANG="en-US"><I>S</I></SPAN>
+    </FONT>
+    <SUB><FONT SIZE=4><SPAN LANG="en-US"><I>j</I></SPAN></FONT></SUB>
+    <FONT SIZE=4>
+        или её варианта
+        <IMG SRC="./partials/book/book_files/i_8cd199184a27afda_html_10b0ba03.gif" NAME="Object846" ALIGN=ABSMIDDLE WIDTH=25 HEIGHT=24>, но и от используемого расширенного понятия «отказ системы». Так, например, для системы </FONT>
+    <FONT SIZE=4>
+        <SPAN LANG="en-US"><I>S</I></SPAN>
+    </FONT>
+    <SUB><FONT SIZE=4><I>5</I></FONT></SUB>
+    <FONT SIZE=4>
+        из пяти равнонадежных элементов с интенсивностью </FONT>
+    <FONT FACE="Symbol, serif">
+        <FONT SIZE=4>
+            <I></I>
+        </FONT>
+    </FONT>
+    <FONT SIZE=4>
+        под её отказом может пониматься случайное событие выхода из строя </FONT>
+    <FONT SIZE=4>
+        <I>М</I>
+    </FONT>
+    <FONT SIZE=4>
+        элементов, </FONT>
+    <FONT SIZE=4>
+        <I>М</I>
+    </FONT>
+    <FONT SIZE=4>=1,2,3,4,5. Тогда из нижеприведенной табл.&nbsp;10 видно, что изменение числа </FONT>
+    <FONT SIZE=4>
+        <I>М</I>
+    </FONT>
+    <FONT SIZE=4>
+        с 1 по 5 изменяет среднюю наработку на отказ системы
+        <IMG SRC="./partials/book/book_files/i_8cd199184a27afda_html_55aa75d7.gif" NAME="Object847" ALIGN=ABSMIDDLE WIDTH=25 HEIGHT=24> более чем на порядок.</FONT>
+</P>
+<P LANG="ru-RU" CLASS="western" ALIGN=RIGHT STYLE="text-indent: 0in; margin-top: 0.08in; margin-bottom: 0.04in; line-height: 170%">
+    <FONT SIZE=4>Таблица 10 </FONT>
+</P>
+<P LANG="ru-RU" CLASS="western" ALIGN=CENTER STYLE="text-indent: 0in; margin-bottom: 0.04in; line-height: 170%">
+    <FONT SIZE=4>
+        <B>Показатели надежности
+резервированной системы при расширенном
+понятии отказа</B>
+    </FONT>
+</P>
+<DL>
+    <DL>
+        <DL>
+            <DD>
+                <TABLE WIDTH=469 CELLPADDING=7 CELLSPACING=0>
+                    <COL WIDTH=21>
+                    <COL WIDTH=202>
+                    <COL WIDTH=202>
+                    <TR>
+                        <TD WIDTH=21 STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0in">
+                            <P LANG="ru-RU" CLASS="western" ALIGN=CENTER STYLE="text-indent: 0in">
+                                <FONT SIZE=4>
+                                    <I>М</I>
+                                </FONT>
+                            </P>
+                        </TD>
+                        <TD WIDTH=202 VALIGN=TOP STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0in">
+                            <P LANG="ru-RU" CLASS="western" ALIGN=CENTER STYLE="text-indent: 0in">
+                                <FONT SIZE=4>
+                                    <SPAN LANG="en-US"><I>P</I></SPAN>
+                                </FONT>
+                                <SUB><FONT SIZE=4><SPAN LANG="en-US"><I>c</I></SPAN></FONT></SUB>
+                            </P>
+                        </TD>
+                        <TD WIDTH=202 VALIGN=TOP STYLE="border: 1px solid #000000; padding: 0in 0.08in">
+                            <P LANG="ru-RU" CLASS="western" ALIGN=CENTER STYLE="text-indent: 0in">
+                                <IMG SRC="./partials/book/book_files/i_8cd199184a27afda_html_55aa75d7.gif" NAME="Object848" ALIGN=ABSMIDDLE WIDTH=25 HEIGHT=24>
+                            </P>
+                        </TD>
+                    </TR>
+                    <TR>
+                        <TD WIDTH=21 STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0in">
+                            <P CLASS="western" ALIGN=CENTER STYLE="text-indent: 0in">
+                                <FONT SIZE=4>1</FONT>
+                            </P>
+                        </TD>
+                        <TD WIDTH=202 STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0in">
+                            <P LANG="ru-RU" CLASS="western" ALIGN=CENTER STYLE="text-indent: 0in">
+                                <FONT SIZE=4>
+                                    <I>Р</I>
+                                </FONT>
+                                <SUP><FONT SIZE=4><SPAN LANG="en-US">5</SPAN></FONT></SUP>
+                            </P>
+                        </TD>
+                        <TD WIDTH=202 VALIGN=TOP STYLE="border: 1px solid #000000; padding: 0in 0.08in">
+                            <P LANG="ru-RU" CLASS="western" ALIGN=CENTER STYLE="text-indent: 0in">
+                                <FONT SIZE=3 STYLE="font-size: 13pt">
+                                    <SPAN LANG="en-US">0.200</SPAN>
+                                </FONT>
+                                <FONT SIZE=4>
+                                    <SPAN LANG="en-US">
+												<IMG SRC="./partials/book/book_files/i_8cd199184a27afda_html_bd1b707a.gif" NAME="Object849" ALIGN=ABSMIDDLE WIDTH=21 HEIGHT=38></SPAN>
+                                </FONT>
+                            </P>
+                        </TD>
+                    </TR>
+                    <TR>
+                        <TD WIDTH=21 STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0in">
+                            <P CLASS="western" ALIGN=CENTER STYLE="text-indent: 0in">
+                                <FONT SIZE=4>2</FONT>
+                            </P>
+                        </TD>
+                        <TD WIDTH=202 STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0in">
+                            <P LANG="ru-RU" CLASS="western" ALIGN=CENTER STYLE="text-indent: 0in">
+                                <FONT SIZE=4>
+                                    <SPAN LANG="en-US">5</SPAN>
+                                </FONT>
+                                <FONT SIZE=4>
+                                    <SPAN LANG="en-US"><I>P</I></SPAN>
+                                </FONT>
+                                <SUP><FONT SIZE=4><SPAN LANG="en-US">4</SPAN></FONT></SUP>
+                                <FONT SIZE=4>
+                                    <SPAN LANG="en-US">-4</SPAN>
+                                </FONT>
+                                <FONT SIZE=4>
+                                    <SPAN LANG="en-US"><I>
+						P</I></SPAN>
+                                </FONT>
+                                <SUP><FONT SIZE=4><SPAN LANG="en-US"> 5</SPAN></FONT></SUP>
+                            </P>
+                        </TD>
+                        <TD WIDTH=202 VALIGN=TOP STYLE="border: 1px solid #000000; padding: 0in 0.08in">
+                            <P LANG="ru-RU" CLASS="western" ALIGN=CENTER STYLE="text-indent: 0in">
+                                <FONT SIZE=3 STYLE="font-size: 13pt">
+                                    <SPAN LANG="en-US">0.45</SPAN>
+                                </FONT>
+                                <FONT SIZE=4>
+                                    <SPAN LANG="en-US"><IMG SRC="./partials/book/book_files/i_8cd199184a27afda_html_bd1b707a.gif" NAME="Object850" ALIGN=ABSMIDDLE WIDTH=21 HEIGHT=38></SPAN>
+                                </FONT>
+                            </P>
+                        </TD>
+                    </TR>
+                    <TR>
+                        <TD WIDTH=21 STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0in">
+                            <P CLASS="western" ALIGN=CENTER STYLE="text-indent: 0in">
+                                <FONT SIZE=4>3</FONT>
+                            </P>
+                        </TD>
+                        <TD WIDTH=202 STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0in">
+                            <P LANG="ru-RU" CLASS="western" ALIGN=CENTER STYLE="text-indent: 0in">
+                                <FONT SIZE=4>
+                                    <SPAN LANG="en-US">6</SPAN>
+                                </FONT>
+                                <FONT SIZE=4>
+                                    <SPAN LANG="en-US"><I>
+						P</I></SPAN>
+                                </FONT>
+                                <SUP><FONT SIZE=4><SPAN LANG="en-US"> 5</SPAN></FONT></SUP>
+                                <FONT SIZE=4>
+                                    <SPAN LANG="en-US">-15</SPAN>
+                                </FONT>
+                                <FONT SIZE=4>
+                                    <SPAN LANG="en-US"><I>
+						P</I></SPAN>
+                                </FONT>
+                                <SUP><FONT SIZE=4><SPAN LANG="en-US"> 4</SPAN></FONT></SUP>
+                                <FONT SIZE=4>
+                                    <SPAN LANG="en-US">+10</SPAN>
+                                </FONT>
+                                <FONT SIZE=4>
+                                    <SPAN LANG="en-US"><I>
+						P</I></SPAN>
+                                </FONT>
+                                <SUP><FONT SIZE=4><SPAN LANG="en-US"> 3</SPAN></FONT></SUP>
+                            </P>
+                        </TD>
+                        <TD WIDTH=202 VALIGN=TOP STYLE="border: 1px solid #000000; padding: 0in 0.08in">
+                            <P CLASS="western" ALIGN=CENTER STYLE="text-indent: 0in">
+                                <IMG SRC="./partials/book/book_files/i_8cd199184a27afda_html_ebb5b531.gif" NAME="Object851" ALIGN=ABSMIDDLE WIDTH=103 HEIGHT=38>
+                            </P>
+                        </TD>
+                    </TR>
+                    <TR>
+                        <TD WIDTH=21 STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0in">
+                            <P CLASS="western" ALIGN=CENTER STYLE="text-indent: 0in">
+                                <FONT SIZE=4>4</FONT>
+                            </P>
+                        </TD>
+                        <TD WIDTH=202 STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0in">
+                            <P LANG="ru-RU" CLASS="western" ALIGN=CENTER STYLE="text-indent: 0in">
+                                <FONT SIZE=4>
+                                    <SPAN LANG="en-US">-4</SPAN>
+                                </FONT>
+                                <FONT SIZE=4>
+                                    <SPAN LANG="en-US"><I>
+						P</I></SPAN>
+                                </FONT>
+                                <SUP><FONT SIZE=4><SPAN LANG="en-US"> 5</SPAN></FONT></SUP>
+                                <FONT SIZE=4>
+                                    <SPAN LANG="en-US">+15</SPAN>
+                                </FONT>
+                                <FONT SIZE=4>
+                                    <SPAN LANG="en-US"><I>
+						P</I></SPAN>
+                                </FONT>
+                                <SUP><FONT SIZE=4><SPAN LANG="en-US"> 4</SPAN></FONT></SUP>
+                                <FONT SIZE=4>
+                                    <SPAN LANG="en-US">-20</SPAN>
+                                </FONT>
+                                <FONT SIZE=4>
+                                    <SPAN LANG="en-US"><I>
+						P</I></SPAN>
+                                </FONT>
+                                <SUP><FONT SIZE=4><SPAN LANG="en-US"> 3</SPAN></FONT></SUP>
+                                <FONT SIZE=4>
+                                    <SPAN LANG="en-US">+10</SPAN>
+                                </FONT>
+                                <FONT SIZE=4>
+                                    <SPAN LANG="en-US"><I>
+						P</I></SPAN>
+                                </FONT>
+                                <SUP><FONT SIZE=4><SPAN LANG="en-US"> 2</SPAN></FONT></SUP>
+                            </P>
+                        </TD>
+                        <TD WIDTH=202 VALIGN=TOP STYLE="border: 1px solid #000000; padding: 0in 0.08in">
+                            <P CLASS="western" ALIGN=CENTER STYLE="text-indent: 0in">
+                                <IMG SRC="./partials/book/book_files/i_8cd199184a27afda_html_27a3ff2d.gif" NAME="Object852" ALIGN=ABSMIDDLE WIDTH=103 HEIGHT=38>
+                            </P>
+                        </TD>
+                    </TR>
+                    <TR>
+                        <TD WIDTH=21 STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0in">
+                            <P CLASS="western" ALIGN=CENTER STYLE="text-indent: 0in">
+                                <FONT SIZE=4>5</FONT>
+                            </P>
+                        </TD>
+                        <TD WIDTH=202 STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0in">
+                            <P LANG="ru-RU" CLASS="western" ALIGN=CENTER STYLE="text-indent: 0in">
+                                <FONT SIZE=4>
+                                    <SPAN LANG="en-US">1-(1-</SPAN>
+                                </FONT>
+                                <FONT SIZE=4>
+                                    <SPAN LANG="en-US"><I>
+						P</I></SPAN>
+                                </FONT>
+                                <FONT SIZE=4>
+                                    <SPAN LANG="en-US">)</SPAN>
+                                </FONT>
+                                <SUP><FONT SIZE=4><SPAN LANG="en-US">5</SPAN></FONT></SUP>
+                            </P>
+                        </TD>
+                        <TD WIDTH=202 VALIGN=TOP STYLE="border: 1px solid #000000; padding: 0in 0.08in">
+                            <P CLASS="western" ALIGN=CENTER STYLE="text-indent: 0in">
+                                <IMG SRC="./partials/book/book_files/i_8cd199184a27afda_html_2ca5529.gif" NAME="Object853" ALIGN=ABSMIDDLE WIDTH=77 HEIGHT=38>
+                            </P>
+                        </TD>
+                    </TR>
+                </TABLE>
+        </DL>
+    </DL>
+</DL>
+<P LANG="ru-RU" CLASS="western" ALIGN=CENTER STYLE="line-height: 170%">
+    <BR>
+    <BR>
+</P>
+<P LANG="ru-RU" CLASS="western" STYLE="line-height: 170%">
+    <FONT SIZE=4>Строго говоря, понятие «отказ системы» относится к условиям (описанию) задачи синтеза и не является независимой переменной критерия П, т.е. не может изменяться в процессе синтеза системы. Вводя условное обозначение «отказ системы» - ОС в перечень аргументов критерия П(</FONT>
+    <FONT SIZE=4>
+        <SPAN LANG="en-US"><I>S</I></SPAN>
+    </FONT>
+    <FONT SIZE=4>, ОС, </FONT>
+    <FONT FACE="Symbol, serif">
+        <FONT SIZE=4>
+            <I></I>
+        </FONT>
+    </FONT>
+    <FONT SIZE=4>), мы хотели подчеркнуть, что формулы для вычисления </FONT>
+    <FONT SIZE=4>
+        <I>Р</I>
+    </FONT>
+    <SUB><FONT SIZE=4><I>с</I></FONT></SUB>
+    <FONT SIZE=4>(</FONT>
+    <FONT SIZE=4>
+        <SPAN LANG="en-US"><I>t</I></SPAN>
+    </FONT>
+    <SUB><FONT SIZE=4><I>0</I></FONT></SUB>
+    <FONT SIZE=4>) и
+        <IMG SRC="./partials/book/book_files/i_8cd199184a27afda_html_55aa75d7.gif" NAME="Object854" ALIGN=ABSMIDDLE WIDTH=25 HEIGHT=24> существенно зависят от лингвистического определения «отказ системы».</FONT>
+</P>
+<P LANG="ru-RU" CLASS="western" STYLE="line-height: 170%">
+    <FONT SIZE=4>
+        <I>Интенсивности
+отказов элементов </I>
+    </FONT>
+    <FONT FACE="Symbol, serif">
+        <FONT SIZE=4>
+            <I></I>
+        </FONT>
+    </FONT>
+    <FONT SIZE=4>
+        <I>.</I>
+    </FONT>
+    <FONT SIZE=4>
+        Значение критерия П, вычисляемого для каждого состояния системы </FONT>
+    <FONT SIZE=4>
+        <SPAN LANG="en-US"><I>S</I></SPAN>
+    </FONT>
+    <SUB><FONT SIZE=4><SPAN LANG="en-US"><I>j</I></SPAN></FONT></SUB>
+    <FONT SIZE=4>, зависит от вектор-функции интенсивностей</FONT>
+</P>
+<P LANG="ru-RU" CLASS="western" ALIGN=CENTER STYLE="line-height: 170%">
+    <IMG SRC="./partials/book/book_files/i_8cd199184a27afda_html_39f82036.gif" NAME="Object855" ALIGN=ABSMIDDLE WIDTH=279 HEIGHT=21>
+</P>
+<P LANG="ru-RU" CLASS="western" STYLE="text-indent: 0in; line-height: 170%">
+    <FONT SIZE=4>или, чаще всего, для экспоненциального распределения наработок до отказа, от&nbsp;числового вектора</FONT>
+</P>
+<P LANG="ru-RU" CLASS="western" ALIGN=CENTER STYLE="line-height: 170%">
+    <IMG SRC="./partials/book/book_files/i_8cd199184a27afda_html_7318aff9.gif" NAME="Object856" ALIGN=ABSMIDDLE WIDTH=183 HEIGHT=21>
+    <FONT SIZE=4>.</FONT>
+</P>
+<P LANG="ru-RU" CLASS="western" STYLE="line-height: 170%">
+    <FONT SIZE=4>При этом каждая компонента </FONT>
+    <FONT FACE="Symbol, serif">
+        <FONT SIZE=4>
+            <I></I>
+        </FONT>
+    </FONT>
+    <SUB><FONT FACE="Symbol, serif"><FONT SIZE=4><I></I></FONT></FONT></SUB>
+    <FONT SIZE=4>
+        ограничена снизу и сверху
+        <IMG SRC="./partials/book/book_files/i_8cd199184a27afda_html_b0d9181e.gif" NAME="Object857" ALIGN=ABSMIDDLE WIDTH=140 HEIGHT=24>, где </FONT>
+    <IMG SRC="./partials/book/book_files/i_8cd199184a27afda_html_7b2fd0d.gif" NAME="Object858" ALIGN=ABSMIDDLE WIDTH=52 HEIGHT=24>
+    <FONT SIZE=4>
+        - физически или экономически возможные минимальные и максимальные интенсивности отказов.
+    </FONT>
+</P>
+<P LANG="ru-RU" CLASS="western" STYLE="line-height: 170%">
+    <FONT SIZE=4>Интенсивность отказа </FONT>
+    <IMG SRC="./partials/book/book_files/i_8cd199184a27afda_html_cdf6e3e4.gif" NAME="Object859" ALIGN=ABSMIDDLE WIDTH=129 HEIGHT=24>
+    <FONT SIZE=4>
+        можно при синтезе системы рассматривать как непрерывную независимую переменную из&nbsp;интервала
+    </FONT>
+    <IMG SRC="./partials/book/book_files/i_8cd199184a27afda_html_59fedb12.gif" NAME="Object860" ALIGN=ABSMIDDLE WIDTH=79 HEIGHT=24>
+    <FONT SIZE=4>.</FONT>
+</P>
+<P LANG="ru-RU" CLASS="western" STYLE="line-height: 170%">
+    <FONT SIZE=4>В этом случае после синтеза системы с желаемым показателем надежности на векторе </FONT>
+    <FONT FACE="Symbol, serif">
+        <FONT SIZE=4>
+            <I></I>
+        </FONT>
+    </FONT>
+    <SUP><FONT SIZE=4><I>*</I></FONT></SUP>
+    <FONT SIZE=4>
+        возникает дополнительная задача конструирования или подбора элементов с интенсивностями отказов, равными оптимальным значениям
+        <IMG SRC="./partials/book/book_files/i_8cd199184a27afda_html_4195ceb6.gif" NAME="Object861" ALIGN=ABSMIDDLE WIDTH=74 HEIGHT=22>. Эта дополнительная задача может оказаться весьма сложной и трудоемкой (особенно при малом числе элементов в системе), поэтому при синтезе системы удобнее рассматривать каждую </FONT>
+    <FONT FACE="Symbol, serif">
+        <FONT SIZE=4>
+            <I></I>
+        </FONT>
+    </FONT>
+    <SUB><FONT FACE="Symbol, serif"><FONT SIZE=4><I></I></FONT></FONT></SUB>
+    <FONT SIZE=4>
+        как дискретную переменную, принимающую некоторые возможные значения
+        <IMG SRC="./partials/book/book_files/i_8cd199184a27afda_html_84ede3ac.gif" NAME="Object862" ALIGN=ABSMIDDLE WIDTH=139 HEIGHT=24> из интервала</FONT>
+    <IMG SRC="./partials/book/book_files/i_8cd199184a27afda_html_59fedb12.gif" NAME="Object863" ALIGN=ABSMIDDLE WIDTH=79 HEIGHT=24>
+    <FONT SIZE=4>.</FONT>
+</P>
+<P LANG="ru-RU" CLASS="western" STYLE="line-height: 170%">
+    <FONT SIZE=4>При этом каждый набор
+        <IMG SRC="./partials/book/book_files/i_8cd199184a27afda_html_41868fc9.gif" NAME="Object864" ALIGN=BOTTOM WIDTH=24 HEIGHT=24>,
+        <IMG SRC="./partials/book/book_files/i_8cd199184a27afda_html_924e36b8.gif" NAME="Object865" ALIGN=BOTTOM WIDTH=52 HEIGHT=18> соответствует существующей номенклатуре элементов с интенсивностями отказов
+        <IMG SRC="./partials/book/book_files/i_8cd199184a27afda_html_41868fc9.gif" NAME="Object866" ALIGN=BOTTOM WIDTH=24 HEIGHT=24>. Обычно число </FONT>
+    <FONT SIZE=4>
+        <SPAN LANG="en-US"><I>k</I></SPAN>
+    </FONT>
+    <FONT SIZE=4>
+        возможных значений
+        <IMG SRC="./partials/book/book_files/i_8cd199184a27afda_html_41868fc9.gif" NAME="Object867" ALIGN=BOTTOM WIDTH=24 HEIGHT=24> (или номенклатурных вариантов одного элемента) невелико, </FONT>
+    <FONT SIZE=4>
+        <SPAN LANG="en-US"><I>k</I></SPAN>
+    </FONT>
+    <FONT SIZE=4>&lt;3-5. Поэтому преобразование непрерывной переменной </FONT>
+    <FONT FACE="Symbol, serif">
+        <FONT SIZE=4></FONT>
+    </FONT>
+    <SUB><FONT FACE="Symbol, serif"><FONT SIZE=4></FONT></FONT></SUB>
+    <FONT SIZE=4>
+        в&nbsp;дискретный аргумент
+        <IMG SRC="./partials/book/book_files/i_8cd199184a27afda_html_41868fc9.gif" NAME="Object868" ALIGN=BOTTOM WIDTH=24 HEIGHT=24> несущественно усложняет общую задачу синтеза (напомним, что П(
+        <IMG SRC="./partials/book/book_files/i_8cd199184a27afda_html_10b0ba03.gif" NAME="Object869" ALIGN=BOTTOM WIDTH=25 HEIGHT=24>) уже является дискретной функцией лингвистической переменной </FONT>
+    <FONT SIZE=4>
+        <SPAN LANG="en-US"><I>i</I></SPAN>
+    </FONT>
+    <FONT SIZE=4>), но заметно упрощает последующую реализацию синтезированной системы (и снижает её стоимость, так как при&nbsp;конструировании используются только серийные элементы).</FONT>
+</P>
+<P LANG="ru-RU" CLASS="western" STYLE="line-height: 170%">
+    <FONT SIZE=4>Проведенный анализ задачи надежностного синтеза показывает целесообразность и необходимость рассмотрения критерия оптимальности </FONT>
+    <FONT SIZE=4>
+        <I>Р</I>
+    </FONT>
+    <SUB><FONT SIZE=4><I>с</I></FONT></SUB>
+    <FONT SIZE=4>(</FONT>
+    <FONT SIZE=4>
+        <SPAN LANG="en-US"><I>t</I></SPAN>
+    </FONT>
+    <SUB><FONT SIZE=4><I>0</I></FONT></SUB>
+    <FONT SIZE=4>) или
+        <IMG SRC="./partials/book/book_files/i_8cd199184a27afda_html_55aa75d7.gif" NAME="Object870" ALIGN=ABSMIDDLE WIDTH=25 HEIGHT=24> как кусочно-постоянной функции с разрывами </FONT>
+    <FONT SIZE=4>
+        <SPAN LANG="en-US">I</SPAN>
+    </FONT>
+    <FONT SIZE=4>-го рода на&nbsp;множестве вариантов структур
+        <IMG SRC="./partials/book/book_files/i_8cd199184a27afda_html_72f3df17.gif" NAME="Object871" ALIGN=ABSMIDDLE WIDTH=145 HEIGHT=24>и множестве дискрет
+        <IMG SRC="./partials/book/book_files/i_8cd199184a27afda_html_41868fc9.gif" NAME="Object872" ALIGN=ABSMIDDLE WIDTH=24 HEIGHT=24>,
+        <IMG SRC="./partials/book/book_files/i_8cd199184a27afda_html_4bc8904.gif" NAME="Object873" ALIGN=ABSMIDDLE WIDTH=160 HEIGHT=18> при неизменном понятии «отказ системы», определяющем формулы для вычисления П(
+        <IMG SRC="./partials/book/book_files/i_8cd199184a27afda_html_10b0ba03.gif" NAME="Object874" ALIGN=ABSMIDDLE WIDTH=25 HEIGHT=24>,
+        <IMG SRC="./partials/book/book_files/i_8cd199184a27afda_html_41868fc9.gif" NAME="Object875" ALIGN=ABSMIDDLE WIDTH=24 HEIGHT=24>).</FONT>
+</P>
+<P LANG="ru-RU" CLASS="western" STYLE="line-height: 170%">
+    <FONT SIZE=4>
+        <I>Ограничения
+задачи синтеза. </I>
+    </FONT>
+    <FONT SIZE=4>К ним относятся ограничения снизу и сверху на интенсивности </FONT>
+    <FONT FACE="Symbol, serif">
+        <FONT SIZE=4>
+            <I></I>
+        </FONT>
+    </FONT>
+    <SUB><FONT FACE="Symbol, serif"><FONT SIZE=4><I></I></FONT></FONT></SUB>
+    <FONT SIZE=4>, структуры </FONT>
+    <FONT SIZE=4>
+        <SPAN LANG="en-US"><I>S</I></SPAN>
+    </FONT>
+    <SUB><FONT SIZE=4><SPAN LANG="en-US"><I>j</I></SPAN></FONT></SUB>
+    <FONT SIZE=4>, число целесообразных вариантов </FONT>
+    <FONT SIZE=4>
+        <SPAN LANG="en-US"><I>d</I></SPAN>
+    </FONT>
+    <SUB><FONT SIZE=4><SPAN LANG="en-US"><I>j</I></SPAN></FONT></SUB>
+    <FONT SIZE=4>:</FONT>
+</P>
+<P LANG="ru-RU" CLASS="western" ALIGN=CENTER STYLE="line-height: 170%">
+    <IMG SRC="./partials/book/book_files/i_8cd199184a27afda_html_3e195b51.gif" NAME="Object876" ALIGN=ABSMIDDLE WIDTH=237 HEIGHT=24>
+    <FONT SIZE=4>;
+        <IMG SRC="./partials/book/book_files/i_8cd199184a27afda_html_8df898ab.gif" NAME="Object877" ALIGN=ABSMIDDLE WIDTH=192 HEIGHT=24>,</FONT>
+</P>
+<P LANG="ru-RU" CLASS="western" STYLE="text-indent: 0in; line-height: 170%">
+    <FONT SIZE=4>где числа </FONT>
+    <FONT SIZE=4>
+        <SPAN LANG="en-US"><I>n</I></SPAN>
+    </FONT>
+    <SUP><FONT SIZE=4><I>+</I></FONT></SUP>
+    <FONT SIZE=4>
+        и
+        <IMG SRC="./partials/book/book_files/i_8cd199184a27afda_html_68977ba7.gif" NAME="Object878" ALIGN=ABSMIDDLE WIDTH=103 HEIGHT=24> задаются человеком-экспертом и указываются в&nbsp;условии (описании) задачи.</FONT>
+</P>
+<P LANG="ru-RU" CLASS="western" STYLE="line-height: 170%">
+    <FONT SIZE=4>Одним из распространенных условий при надежностном синтезе систем является ограничение на их стоимость </FONT>
+    <FONT SIZE=4>
+        <I>С</I>
+    </FONT>
+    <SUB><FONT SIZE=4><I>с</I></FONT></SUB>
+    <FONT SIZE=4>. В первом приближении стоимость </FONT>
+    <FONT SIZE=4>
+        <I>С</I>
+    </FONT>
+    <SUB><FONT SIZE=4><I>с</I></FONT></SUB>
+    <FONT SIZE=4>
+        прямо пропорциональна числу элементов, входящих в систему, и обратно пропорциональна интенсивностям отказов </FONT>
+    <FONT FACE="Symbol, serif">
+        <FONT SIZE=4>
+            <I></I>
+        </FONT>
+    </FONT>
+    <FONT SIZE=4>. Более того, во многих случаях
+        <IMG SRC="./partials/book/book_files/i_8cd199184a27afda_html_adee40da.gif" NAME="Object879" ALIGN=ABSMIDDLE WIDTH=90 HEIGHT=27>, где </FONT>
+    <FONT SIZE=4>
+        <I>а</I>
+    </FONT>
+    <SUB><FONT SIZE=4><I>1</I></FONT></SUB>
+    <FONT SIZE=4>,
+    </FONT>
+    <FONT SIZE=4>
+        <I>а</I>
+    </FONT>
+    <SUB><FONT SIZE=4><I>2</I></FONT></SUB>
+    <FONT SIZE=4>
+        – эмпирические параметры, причем </FONT>
+    <FONT SIZE=4>
+        <I>а</I>
+    </FONT>
+    <SUB><FONT SIZE=4><I>2</I></FONT></SUB>
+    <FONT FACE="Symbol, serif">
+        <FONT SIZE=4></FONT>
+    </FONT>
+    <FONT SIZE=4>2-3, т.е.&nbsp; уменьшение </FONT>
+    <FONT FACE="Symbol, serif">
+        <FONT SIZE=4>
+            <I></I>
+        </FONT>
+    </FONT>
+    <FONT SIZE=4>, например, в 2 раза вызывает увеличение стоимости в 4-10 раз.</FONT>
+</P>
+<P LANG="ru-RU" CLASS="western" STYLE="line-height: 170%">
+    <FONT SIZE=4>Непосредственное использование в задаче надежностного синтеза стоимостного ограничения типа
+        <IMG SRC="./partials/book/book_files/i_8cd199184a27afda_html_6cd7dcd5.gif" NAME="Object880" ALIGN=ABSMIDDLE WIDTH=60 HEIGHT=24>, где
+        <IMG SRC="./partials/book/book_files/i_8cd199184a27afda_html_afdafcec.gif" NAME="Object881" ALIGN=ABSMIDDLE WIDTH=32 HEIGHT=24> - допустимая стоимость системы, весьма затруднено существенной изменчивостью стоимостей отдельных элементов и всей системы в целом. Поэтому при синтезе системы из&nbsp;элементов с примерно близкими интенсивностями </FONT>
+    <FONT FACE="Symbol, serif">
+        <FONT SIZE=4>
+            <I></I>
+        </FONT>
+    </FONT>
+    <FONT SIZE=4>
+        более целесообразно говорить об ограничениях на </FONT>
+    <FONT SIZE=4>
+        <B>сложность
+</B>
+    </FONT>
+    <FONT SIZE=4>системы, понимая под сложностью число элементов или структуру
+    </FONT>
+    <FONT SIZE=4>
+        <SPAN LANG="en-US"><I>S</I></SPAN>
+    </FONT>
+    <SUB><FONT SIZE=4><SPAN LANG="en-US"><I>j</I></SPAN></FONT></SUB>
+    <FONT SIZE=4>. Тогда система минимальной сложности (минимальной структуры), удовлетворяющая некоторым дополнительным требованиям, будет состоять из наименьшего числа элементов, а её стоимость будет, вероятно, достаточно близкой к минимальной стоимости.
+    </FONT>
+</P>
+<P LANG="ru-RU" CLASS="western" STYLE="line-height: 170%">
+    <FONT SIZE=4>Связями</FONT>
+    <FONT SIZE=4>
+        в задачах надежностного синтеза служат формулы для&nbsp;вычисления вероятности безотказной работы системы </FONT>
+    <FONT SIZE=4>
+        <SPAN LANG="en-US"><I>P</I></SPAN>
+    </FONT>
+    <SUB><FONT SIZE=4><SPAN LANG="en-US"><I>c</I></SPAN></FONT></SUB>
+    <FONT SIZE=4>(</FONT>
+    <FONT SIZE=4>
+        <SPAN LANG="en-US"><I>t</I></SPAN>
+    </FONT>
+    <FONT SIZE=4>) и средней наработки на отказ
+        <IMG SRC="./partials/book/book_files/i_8cd199184a27afda_html_55aa75d7.gif" NAME="Object882" ALIGN=ABSMIDDLE WIDTH=25 HEIGHT=24>, т.е. связи фактически включены в критерии оптимальности </FONT>
+    <FONT SIZE=4>
+        <SPAN LANG="en-US"><I>P</I></SPAN>
+    </FONT>
+    <SUB><FONT SIZE=4><SPAN LANG="en-US"><I>c</I></SPAN></FONT></SUB>
+    <FONT SIZE=4>(</FONT>
+    <FONT SIZE=4>
+        <SPAN LANG="en-US"><I>t</I></SPAN>
+    </FONT>
+    <SUB><FONT SIZE=4><I>0</I></FONT></SUB>
+    <FONT SIZE=4>) и
+        <IMG SRC="./partials/book/book_files/i_8cd199184a27afda_html_55aa75d7.gif" NAME="Object883" ALIGN=ABSMIDDLE WIDTH=25 HEIGHT=24> синтезируемой системы.</FONT>
+</P>
+<P LANG="ru-RU" CLASS="western" STYLE="line-height: 170%">
+    <FONT SIZE=4>Ранее указывалось, что критерий П зависит от вариантов структуры
+        <IMG SRC="./partials/book/book_files/i_8cd199184a27afda_html_10b0ba03.gif" NAME="Object884" ALIGN=ABSMIDDLE WIDTH=25 HEIGHT=24>,</FONT>
+    <SUP><FONT SIZE=4>
+</FONT></SUP>
+    <FONT SIZE=4>вектора интенсивностей
+    </FONT>
+    <FONT FACE="Symbol, serif">
+        <FONT SIZE=4>
+            <I></I>
+        </FONT>
+    </FONT>
+    <FONT SIZE=4>
+        и понятия отказа системы ОС, т.е. П=П(
+        <IMG SRC="./partials/book/book_files/i_8cd199184a27afda_html_10b0ba03.gif" NAME="Object885" ALIGN=ABSMIDDLE WIDTH=25 HEIGHT=24>,
+    </FONT>
+    <FONT FACE="Symbol, serif">
+        <FONT SIZE=4>
+            <I></I>
+        </FONT>
+    </FONT>
+    <FONT SIZE=4>,ОС). Переменные </FONT>
+    <FONT FACE="Symbol, serif">
+        <FONT SIZE=4>
+            <I></I>
+        </FONT>
+    </FONT>
+    <FONT SIZE=4>
+        и ОС вводятся в условия задачи надежностного синтеза и не&nbsp;влияют на структуру формул П(
+        <IMG SRC="./partials/book/book_files/i_8cd199184a27afda_html_10b0ba03.gif" NAME="Object886" ALIGN=ABSMIDDLE WIDTH=25 HEIGHT=24>,
+    </FONT>
+    <FONT FACE="Symbol, serif">
+        <FONT SIZE=4>
+            <I></I>
+        </FONT>
+    </FONT>
+    <FONT SIZE=4>,ОС) (хотя, конечно, </FONT>
+    <FONT FACE="Symbol, serif">
+        <FONT SIZE=4>
+            <I></I>
+        </FONT>
+    </FONT>
+    <FONT SIZE=4>
+        и ОС влияют на&nbsp;значения П). Дискретная переменная </FONT>
+    <FONT SIZE=4>
+        <SPAN LANG="en-US"><I>S</I></SPAN>
+    </FONT>
+    <FONT SIZE=4>
+        определяет число элементов в&nbsp;синтезируемой системе и их роль (основные или резервные) в каждом варианте структуры
+        <IMG SRC="./partials/book/book_files/i_8cd199184a27afda_html_10b0ba03.gif" NAME="Object887" ALIGN=ABSMIDDLE WIDTH=25 HEIGHT=24>, поэтому формулы для вычисления </FONT>
+    <FONT SIZE=4>
+        <I>P</I>
+    </FONT>
+    <SUB><FONT SIZE=4><I>с</I></FONT></SUB>
+    <FONT SIZE=4>(</FONT>
+    <FONT SIZE=4>
+        <SPAN LANG="en-US"><I>t</I></SPAN>
+    </FONT>
+    <FONT SIZE=4>) и
+        <IMG SRC="./partials/book/book_files/i_8cd199184a27afda_html_55aa75d7.gif" NAME="Object888" ALIGN=ABSMIDDLE WIDTH=25 HEIGHT=24> существенно зависят от
+        <IMG SRC="./partials/book/book_files/i_8cd199184a27afda_html_10b0ba03.gif" NAME="Object889" ALIGN=ABSMIDDLE WIDTH=25 HEIGHT=24>. Поэтому в общем виде связи следует записывать в&nbsp;таком виде</FONT>
+</P>
+<P LANG="ru-RU" CLASS="western" ALIGN=CENTER STYLE="line-height: 170%">
+    <FONT SIZE=4>П=П
+        <IMG SRC="./partials/book/book_files/i_8cd199184a27afda_html_97a356cf.gif" NAME="Object890" ALIGN=ABSMIDDLE WIDTH=15 HEIGHT=24>(
+        <IMG SRC="./partials/book/book_files/i_8cd199184a27afda_html_10b0ba03.gif" NAME="Object891" ALIGN=ABSMIDDLE WIDTH=25 HEIGHT=24>,
+    </FONT>
+    <FONT FACE="Symbol, serif">
+        <FONT SIZE=4>
+            <I></I>
+        </FONT>
+    </FONT>
+    <FONT SIZE=4>, ОС),
+        <IMG SRC="./partials/book/book_files/i_8cd199184a27afda_html_b68ddf30.gif" NAME="Object892" ALIGN=ABSMIDDLE WIDTH=106 HEIGHT=18>.</FONT>
+</P>
+<P LANG="ru-RU" CLASS="western" ALIGN=CENTER STYLE="line-height: 170%">
+    <BR>
+    <BR>
+</P>
