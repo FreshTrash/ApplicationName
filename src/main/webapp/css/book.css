@@ -1,0 +1,264 @@
+
+@page {
+    margin-right: 0.98in;
+    margin-bottom: 0.98in
+}
+
+P {
+    text-indent: 0.5in;
+    margin-bottom: 0.08in;
+    direction: ltr;
+    color: #000000;
+    line-height: 170%;
+    text-align: justify;
+    widows: 2;
+    orphans: 2;
+    font-family: "Times New Roman", serif;
+}
+
+P.western {
+    font-family: "Times New Roman", serif;
+    font-size: 12pt;
+    so-language: ru-RU
+}
+
+P.cjk {
+    font-family: "Times New Roman", serif;
+    font-size: 12pt
+}
+
+P.ctl {
+    font-family: "Times New Roman", serif;
+    font-size: 10pt;
+    so-language: ar-SA
+}
+
+H1 {
+    text-indent: 0.49in;
+    margin-bottom: 0.04in;
+    direction: ltr;
+    color: #000000;
+    widows: 2;
+    orphans: 2
+}
+
+H1.western {
+    font-family: "Times New Roman", sans-serif;
+    font-size: 16pt;
+    so-language: ru-RU
+}
+
+H1.cjk {
+    font-family: "Times New Roman", serif;
+    font-size: 16pt
+}
+
+H1.ctl {
+    font-family: "Times New Roman", sans-serif;
+    font-size: 16pt;
+    so-language: ar-SA
+}
+
+H2 {
+    text-indent: 0.5in;
+    margin-bottom: 0.04in;
+    direction: ltr;
+    color: #000000;
+    line-height: 170%;
+    text-align: justify;
+    widows: 2;
+    orphans: 2
+}
+
+H2.western {
+    font-family: "Times New Roman", sans-serif;
+    font-size: 14pt;
+    so-language: ru-RU;
+    font-style: italic
+}
+
+H2.cjk {
+    font-family: "Times New Roman", serif;
+    font-size: 14pt;
+    font-style: italic
+}
+
+H2.ctl {
+    font-family: "Times New Roman", sans-serif;
+    font-size: 14pt;
+    so-language: ar-SA;
+    font-style: italic
+}
+
+H3 {
+    text-indent: 0.5in;
+    margin-bottom: 0.04in;
+    direction: ltr;
+    color: #000000;
+    line-height: 170%;
+    text-align: justify;
+    widows: 2;
+    orphans: 2
+}
+
+H3.western {
+    font-family: "Times New Roman", sans-serif;
+    font-size: 13pt;
+    so-language: ru-RU
+}
+
+H3.cjk {
+    font-family: "Times New Roman", serif;
+    font-size: 13pt
+}
+
+H3.ctl {
+    font-family: "Times New Roman", sans-serif;
+    font-size: 13pt;
+    so-language: ar-SA
+}
+
+H5 {
+    margin-top: 0in;
+    margin-bottom: 0in;
+    direction: ltr;
+    color: #000000;
+    text-align: center;
+    page-break-inside: avoid;
+    widows: 2;
+    orphans: 2
+}
+
+H5.western {
+    font-size: 14pt;
+    so-language: ru-RU;
+    font-weight: normal
+}
+
+H5.cjk {
+    font-family: "Times New Roman", serif;
+    font-size: 14pt;
+    font-weight: normal
+}
+
+H5.ctl {
+    font-family: "Times New Roman", serif;
+    font-size: 14pt;
+    so-language: ar-SA;
+    font-weight: normal
+}
+
+H6 {
+    margin-top: 0in;
+    margin-bottom: 0in;
+    direction: ltr;
+    color: #000000;
+    text-align: center;
+    widows: 2;
+    orphans: 2
+}
+
+H6.western {
+    font-size: 14pt;
+    so-language: ru-RU;
+    font-weight: normal
+}
+
+H6.cjk {
+    font-family: "Times New Roman", serif;
+    font-size: 14pt;
+    font-weight: normal
+}
+
+H6.ctl {
+    font-family: "Times New Roman", serif;
+    font-size: 12pt;
+    so-language: ar-SA
+}
+
+P.sdfootnote-western {
+    margin-bottom: 0in;
+    font-family: "Times New Roman", serif;
+    font-size: 10pt;
+    so-language: ru-RU
+}
+
+P.sdfootnote-cjk {
+    margin-bottom: 0in;
+    font-family: "Times New Roman", serif;
+    font-size: 10pt
+}
+
+P.sdfootnote-ctl {
+    margin-bottom: 0in;
+    font-family: "Times New Roman", serif;
+    font-size: 10pt;
+    so-language: ar-SA
+}
+
+P.красная-строка-western {
+    text-indent: 0.15in;
+    font-family: "Times New Roman", serif;
+    font-size: 12pt;
+    so-language: ru-RU
+}
+
+P.красная-строка-cjk {
+    text-indent: 0.15in;
+    font-family: "Times New Roman", serif;
+    font-size: 12pt
+}
+
+P.красная-строка-ctl {
+    text-indent: 0.15in;
+    font-family: "Times New Roman", serif;
+    font-size: 10pt;
+    so-language: ar-SA
+}
+
+P.стиль2-western {
+    text-indent: 0.38in;
+    font-family: "Times New Roman", serif;
+    font-size: 14pt;
+    so-language: ru-RU;
+    line-height: 170%
+}
+
+P.стиль2-cjk {
+    text-indent: 0.38in;
+    font-family: "Times New Roman", serif;
+    font-size: 14pt;
+    line-height: 170%
+}
+
+P.стиль2-ctl {
+    text-indent: 0.38in;
+    font-family: "Times New Roman", serif;
+    font-size: 12pt;
+    so-language: ar-SA;
+    line-height: 170%
+}
+
+A:link {
+    color: #0000ff
+}
+
+A:visited {
+    color: #800080
+}
+
+A.western:visited {
+    so-language: en-US
+}
+
+A.cjk:visited {
+    so-language: zh-CN
+}
+
+A.ctl:visited {
+    so-language: hi-IN
+}
+
+A.sdfootnoteanc {
+    font-size: 57%
+}
