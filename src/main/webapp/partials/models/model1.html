@@ -1,7 +1,7 @@
 <div header></div>
 <div class="container">
     <div class="row">
-        <div class="col-lg-12">
+        <div class="col-md-12">
             <h1 class="page-header">Расчет показателей надежности<br/>
                 <!-- <small>Резервированных и нерезервированных систем</small> -->
             </h1>
@@ -31,7 +31,7 @@
         </div>
     </script>
     <div class="row">
-        <div class="col-lg-3">
+        <div class="col-md-3">
             <!-- <p class="p-header">Введите параметры системы</p> -->
             <fieldset class="scheduler-border" ng-show="!show_comparison">
                 <legend class="scheduler-border">Общие параметры</legend>
@@ -112,7 +112,7 @@
                 </div>
             </fieldset>
         </div>
-        <div class="col-lg-3 vertical_line" ng-show="show_nonreserved">
+        <div class="col-md-3 vertical_line" ng-show="show_nonreserved">
             <form name="form_exp">
                 <fieldset class="scheduler-border" ng-show="exp_if">
                     <legend class="scheduler-border">Экспоненицальный</legend>
@@ -203,7 +203,7 @@
                 </fieldset>
             </form>
         </div>
-        <div class="col-lg-6 vertical_line" ng-if="show_nonreserved_button_tables() && show_nonreserved">
+        <div class="col-md-6 vertical_line" ng-if="show_nonreserved_button_tables() && show_nonreserved">
             <button type="button" class="btn btn-default navbar-btn" ng-click="start_nonreserved()">Рассчитать</button>
             <div ng-if="show_nonreserved_tables">
                 <p class="data_header">Параметры законов распределения времени до отказа</p>
@@ -219,7 +219,7 @@
             </div>
         </div>
         <!--  -->
-        <div class="col-lg-6 vertical_line" ng-if="show_reserved_1">
+        <div class="col-md-6 vertical_line" ng-if="show_reserved_1">
             <button type="button" class="btn btn-default navbar-btn" ng-click="start_reserved_1()">Рассчитать</button>
             <div ng-if="show_reserved_1_tables">
                 <p class="reserv-time">Время безотказной работы: {{reserved_1_T}} ч.</p>
@@ -229,7 +229,7 @@
                 <highchart id="highchart_reserved_1_F" config="highchart_reserved_1_F_conf"></highchart>
             </div>
         </div>
-        <div class="col-lg-6 vertical_line" ng-if="show_reserved_2">
+        <div class="col-md-6 vertical_line" ng-if="show_reserved_2">
             <button type="button" class="btn btn-default navbar-btn" ng-click="start_reserved_2()">Рассчитать</button>
             <div ng-if="show_reserved_2_tables">
                 <p class="reserv-time">Время безотказной работы: {{reserved_2_T}} ч.</p>
@@ -238,7 +238,7 @@
                 <highchart id="highchart_reserved_2_P" config="highchart_reserved_2_P_conf"></highchart>
             </div>
         </div>
-        <div class="col-lg-6 vertical_line" ng-if="show_reserved_3">
+        <div class="col-md-6 vertical_line" ng-if="show_reserved_3">
             <button type="button" class="btn btn-default navbar-btn" ng-click="start_reserved_3()">Рассчитать</button>
             <div ng-if="show_reserved_3_tables">
                 <p class="reserv-time">Время безотказной работы: {{reserved_3_T}} ч.</p>
@@ -247,7 +247,7 @@
                 <highchart id="highchart_reserved_3_P" config="highchart_reserved_3_P_conf"></highchart>
             </div>
         </div>
-        <div class="col-lg-6 vertical_line" ng-if="show_reserved_4">
+        <div class="col-md-6 vertical_line" ng-if="show_reserved_4">
             <button type="button" class="btn btn-default navbar-btn" ng-click="start_reserved_4()">Рассчитать</button>
             <div ng-if="show_reserved_4_tables">
                 <p class="reserv-time">Время безотказной работы: {{reserved_4_T}} ч.</p>
@@ -256,7 +256,7 @@
                 <highchart id="highchart_reserved_4_P" config="highchart_reserved_4_P_conf"></highchart>
             </div>
         </div>
-        <div class="col-lg-6 vertical_line" ng-if="show_reserved_5">
+        <div class="col-md-6 vertical_line" ng-if="show_reserved_5">
             <button type="button" class="btn btn-default navbar-btn" ng-click="start_reserved_5()">Рассчитать</button>
             <div ng-if="show_reserved_5_tables">
                 <p class="reserv-time">Время безотказной работы: {{reserved_5_T}} ч.</p>
@@ -265,7 +265,7 @@
                 <highchart id="highchart_reserved_5_P" config="highchart_reserved_5_P_conf"></highchart>
             </div>
         </div>
-        <div class="col-lg-6" ng-if="show_comparison">
+        <div class="col-md-6" ng-if="show_comparison">
             <highchart ng-if="reserved_1_T || reserved_2_T || reserved_3_T || reserved_4_T" id="highchart_comparison" config="highchart_comparison_conf"></highchart>
             <h4 class="center" ng-if="!(reserved_1_T || reserved_2_T || reserved_3_T || reserved_4_T)">К сожалению сравнивать нечего<br/>Рассчитайте параметры по одному из законов</h4>
         </div>
