@@ -98,6 +98,10 @@
                     <h5>Скользящее резервирование</h5>
                     <p>{{reserved_4_T}} ч.</p>
                 </div>
+                                <div class="form-group" ng-if="reserved_5_T">
+                    <h5>С дробнй кратностью</h5>
+                    <p>{{reserved_5_T}} ч.</p>
+                </div>
             </fieldset>
             <!-- LAW DROPDOWNS  -->
             <fieldset class="scheduler-border" ng-if="show_dropdowns && show_nonreserved">
@@ -266,8 +270,8 @@
             </div>
         </div>
         <div class="col-md-6" ng-if="show_comparison">
-            <highchart ng-if="reserved_1_T || reserved_2_T || reserved_3_T || reserved_4_T" id="highchart_comparison" config="highchart_comparison_conf"></highchart>
-            <h4 class="center" ng-if="!(reserved_1_T || reserved_2_T || reserved_3_T || reserved_4_T)">К сожалению сравнивать нечего<br/>Рассчитайте параметры по одному из законов</h4>
+            <highchart ng-if="reserved_1_T || reserved_2_T || reserved_3_T || reserved_4_T ||reserved_5_T" id="highchart_comparison" config="highchart_comparison_conf"></highchart>
+            <h4 class="center" ng-if="!(reserved_1_T || reserved_2_T || reserved_3_T || reserved_4_T||reserved_5_T)">К сожалению сравнивать нечего<br/>Рассчитайте параметры по одному из законов</h4>
         </div>
     </div>
 </div>

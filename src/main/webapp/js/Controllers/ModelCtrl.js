@@ -166,7 +166,6 @@
                     // проверяем валидацию формы для этого закона
                     //
                     var enable_length = enable_if_arr.length;
-                    // console.log(enable_if_arr);
                     for (var i = 0; i < enable_length; i += 1) {
 
                         if (enable_if_arr[i]) {
@@ -174,7 +173,6 @@
                                 case 0:
                                     {
                                         if ($scope.form_exp.lambda_exp.$invalid) {
-                                            console.log("4 ret failed ");
                                             return 0;
                                         }
                                     }
@@ -183,7 +181,6 @@
                                     {
                                         if ($scope.form_gamma.alpha_gam.$invalid ||
                                             $scope.form_gamma.beta_gam.$invalid) {
-                                            console.log("6 ret failed ");
                                             return 0;
                                         }
 
@@ -193,7 +190,6 @@
                                     {
                                         if ($scope.form_usech.m_zero.$invalid ||
                                             $scope.form_usech.b_zero.$invalid) {
-                                            console.log("7 ret failed ");
                                             return 0;
                                         }
 
@@ -202,7 +198,6 @@
                                 case 3:
                                     {
                                         if ($scope.form_rel.lambda_rel.$invalid) {
-                                            console.log("8 ret failed ");
                                             return 0;
                                         }
                                     }
@@ -211,7 +206,6 @@
                                     {
                                         if ($scope.form_veib.alpha_veib.$invalid ||
                                             $scope.form_veib.beta_veib.$invalid) {
-                                            console.log("9 ret failed ");
                                             return 0;
                                         }
 
@@ -1182,6 +1176,12 @@
                         }
                     }
 
+                    var x =0;
+                    for(var i = 0;i<m;i++){
+                        x=x+(1/(n+i));
+                    }
+                    $scope.reserved_5_T = roundFloat((1/lambda)*x,3);
+
                     // T = 1 / lambda * (m + 1);
                     // $scope.reserved_5_T = roundFloat(T, 2);
 
@@ -1206,6 +1206,7 @@
                         data_reserved_5.push(true_obj);
                     }
 
+                    comparisonPush("С дробной кратностью", P[n-1]);
 
                     $scope.grid_reserved_5_opts.columnDefs = column_def_reserved_5;
                     $scope.grid_reserved_5_opts.data = data_reserved_5;
@@ -1332,8 +1333,6 @@
 
                     }
                 }
-
-
 
 
 
@@ -1587,10 +1586,6 @@
 
 
 
-
-
-
-
                 function stringArrToIntArr(a) {
                     var int_arr = [];
                     for (var value in a) {
@@ -1651,10 +1646,8 @@
                     var dn = 0;
 
                     if (p >= 0 && p <= 1) {
-                        console.log("Domain error in BinomialDistribution");
                     }
                     if (k >= -1 && k <= n) {
-                        console.log("Domain error in BinomialDistribution");
                     }
 
                     if (k == -1) {
@@ -1707,10 +1700,8 @@
                     maxlog = Math.log(math.maxrealnumber);
 
                     if ((a) > (0) && (b) > (0)) {
-                        console.log("Domain error in BinomialDistribution");
                     }
                     if ((x) >= (0) && (x) <= (1)) {
-                        console.log("Domain error in BinomialDistribution");
                     }
 
                     if ((x) == (0)) {
